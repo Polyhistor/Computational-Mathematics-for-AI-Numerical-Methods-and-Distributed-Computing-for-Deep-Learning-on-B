@@ -1,0 +1,123 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{natbib}
+\usepackage{url}
+
+\title{Computational Mathematics for AI: Numerical Methods and Distributed Computing for Deep Learning on Big Data}
+\author{[Your Name]}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+This document outlines the protocol for a systematic literature review (SLR) on computational mathematics for AI, focusing on numerical methods and distributed computing techniques for deep learning on big data. The review will follow the PRISMA guidelines \citep{moher2009preferred} and Kitchenham's methodology for SLRs in software engineering \citep{kitchenham2007guidelines}.
+
+\section{Background}
+\subsection{Rationale}
+As deep learning models grow in complexity and data volumes continue to increase, there is a critical need to understand and optimize the computational methods underpinning these systems. This review aims to synthesize current knowledge on numerical methods and distributed computing techniques specifically applied to deep learning in big data contexts.
+
+\subsection{Objectives}
+The primary objectives of this SLR are:
+\begin{enumerate}
+    \item To identify and categorize state-of-the-art numerical methods used in deep learning for big data.
+    \item To evaluate the effectiveness of various distributed computing techniques for scaling deep learning to big data problems.
+    \item To compare these methods and techniques in terms of computational efficiency, scalability, and accuracy.
+    \item To identify emerging trends and future directions in this field.
+\end{enumerate}
+
+\section{Methods}
+\subsection{Eligibility Criteria}
+\subsubsection{Inclusion Criteria}
+\begin{itemize}
+    \item Studies published in the last 5 years (2019-2024)
+    \item Peer-reviewed journal articles and conference papers
+    \item English language publications
+    \item Studies that directly address numerical methods or distributed computing for deep learning on big data
+\end{itemize}
+
+\subsubsection{Exclusion Criteria}
+\begin{itemize}
+    \item Studies not focusing on big data scenarios
+    \item Publications without clear methodological details
+    \item Review papers (can be used for background but not included in the analysis)
+\end{itemize}
+
+\subsection{Information Sources}
+The following electronic databases will be searched:
+\begin{itemize}
+    \item IEEE Xplore
+    \item ACM Digital Library
+    \item arXiv
+    \item Google Scholar
+    \item Scopus
+\end{itemize}
+
+\subsection{Search Strategy}
+The search string will be constructed using the following terms:
+\begin{verbatim}
+(("deep learning" OR "neural network") AND 
+("big data" OR "large-scale") AND 
+("numerical method*" OR "distributed computing" OR 
+"parallel processing" OR "GPU acceleration" OR 
+"federated learning"))
+\end{verbatim}
+
+The search string will be adapted for each database as necessary.
+
+\subsection{Study Records}
+\subsubsection{Data Management}
+References will be managed using Zotero. A spreadsheet will be used to track the selection process and reasons for exclusion.
+
+\subsubsection{Selection Process}
+Two reviewers will independently screen titles and abstracts. Full texts of potentially eligible studies will then be retrieved and independently assessed for eligibility by two reviewers. Disagreements will be resolved through discussion with a third reviewer.
+
+\subsubsection{Data Collection Process}
+A standardized, pre-piloted form will be used to extract data from the included studies. Two reviewers will extract data independently, with discrepancies resolved by consensus or by a third reviewer.
+
+\subsection{Data Items}
+For each included study, the following information will be extracted:
+\begin{itemize}
+    \item Bibliographic information (authors, year, title, venue)
+    \item Type of numerical method(s) or distributed computing technique(s) used
+    \item Problem domain and dataset characteristics
+    \item Performance metrics (e.g., training time, accuracy, scalability)
+    \item Hardware and software environment
+    \item Key findings and limitations
+\end{itemize}
+
+\subsection{Outcomes and Prioritization}
+Primary outcomes will include:
+\begin{itemize}
+    \item Effectiveness of numerical methods in terms of convergence speed and accuracy
+    \item Scalability of distributed computing techniques
+    \item Trade-offs between computational efficiency and model performance
+\end{itemize}
+
+Secondary outcomes will include emerging trends and identified research gaps.
+
+\subsection{Risk of Bias in Individual Studies}
+The quality of individual studies will be assessed using a modified version of the Quality Assessment Checklist for Technology Reports \citep{kitchenham2007guidelines}. Two reviewers will independently assess the quality of each included study.
+
+\subsection{Data Synthesis}
+A narrative synthesis will be provided of the findings from the included studies, structured around the types of interventions, target population characteristics, outcome measures and intervention content. Where possible, we will conduct:
+
+\subsubsection{Network Analysis}
+Using network analysis tools (e.g., Gephi), we will create a network graph where nodes represent papers and edges represent shared methods, techniques, or citations.
+
+\subsubsection{Meta-Analysis}
+For studies with comparable outcomes, we will perform a meta-analysis using a random-effects model. Forest plots will be used to visualize the combined effect sizes.
+
+\subsection{Meta-Bias(es)}
+To assess reporting bias, we will examine funnel plots for asymmetry when there are 10 or more studies in a meta-analysis.
+
+\section{Discussion}
+This systematic review will provide a comprehensive overview of the current state of numerical methods and distributed computing techniques for deep learning on big data. The findings will be interpreted considering the strength of evidence, applicability, and generalizability. Limitations of the review and the included studies will be discussed, and implications for future research will be outlined.
+
+\bibliographystyle{apalike}
+\bibliography{references}
+
+\end{document}
