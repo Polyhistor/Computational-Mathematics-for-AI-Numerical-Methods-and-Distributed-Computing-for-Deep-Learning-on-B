@@ -29,90 +29,179 @@ The primary objectives of this SLR are:
     \item To identify emerging trends and future directions in this field.
 \end{enumerate}
 
-\section{Methods}
-\subsection{Eligibility Criteria}
-\subsubsection{Inclusion Criteria}
+\section{Research Methodology}
+
+This study employs a comprehensive approach combining two systematic literature reviews (SLRs) with subsequent meta-analysis and network analysis. The methodology is structured into seven distinct phases:
+
+\subsection{Phase 1: Planning and Protocol Development}
+
+\subsubsection{Research Questions}
+For SLR 1 (Numerical Methods):
+\begin{enumerate}
+    \item[RQ1.1] What are the state-of-the-art numerical methods used in deep learning for big data?
+    \item[RQ1.2] How do these methods perform in terms of computational efficiency and accuracy?
+\end{enumerate}
+
+For SLR 2 (Distributed Computing Techniques):
+\begin{enumerate}
+    \item[RQ2.1] What distributed computing techniques are used for scaling deep learning to big data problems?
+    \item[RQ2.2] How effective are these techniques in terms of scalability and performance?
+\end{enumerate}
+
+\subsubsection{Literature Review Classification Framework}
+We will use Cooper's taxonomy \citep{cooper1988} to classify the literature in both SLRs:
+
+\begin{table}[h]
+\caption{Adaptation of Cooper's Literature Review Taxonomy}
+\begin{tabular}{ll}
+\hline
+Characteristic & Categories \\
+\hline
+(a) Focus     & Research outcomes, Research methods, Theories, Practices or applications \\
+(b) Goal      & Integration, Criticism, Identification of central issues \\
+(c) Perspective & Neutral representation, Espousal of position \\
+(d) Coverage  & Exhaustive, Exhaustive with selective citation, Representative, Central or pivotal \\
+(e) Organization & Historical, Conceptual, Methodological \\
+(f) Audience  & Specialized scholars, General scholars, Practitioners or policymakers, General public \\
+\hline
+\end{tabular}
+\end{table}
+
+This classification will be applied to each included study during the data extraction phase. It will help us to:
+
 \begin{itemize}
-    \item Studies published in the last 10 years (2019-2024)
-    \item Peer-reviewed journal articles and conference papers
-    \item English language publications
-    \item Studies that directly address numerical methods or distributed computing for deep learning on big data
+    \item Systematically categorize the nature and scope of each study
+    \item Identify patterns and trends in the literature
+    \item Ensure a balanced representation of different types of research in our review
+    \item Tailor our findings to different audience needs
+    \item Guide our analysis and synthesis of the literature
 \end{itemize}
 
-\subsubsection{Exclusion Criteria}
+The classification results will be used in Phase 6 (Study Classification and Bias Assessment) to provide additional context for interpreting our findings and identifying gaps in the current research landscape.
+
+\subsubsection{Search Strategy Development}
+PICO-based search strings for each SLR:
+
+SLR 1:
+\begin{verbatim}
+(("deep learning" OR "neural network*") AND 
+("numerical method*" OR "optimization algorithm*") AND 
+("big data" OR "large-scale") AND 
+(efficiency OR accuracy))
+\end{verbatim}
+
+SLR 2:
+\begin{verbatim}
+(("deep learning" OR "neural network*") AND 
+("distributed computing" OR "parallel processing" OR 
+"GPU acceleration" OR "federated learning") AND 
+("big data" OR "large-scale") AND 
+(scalability OR performance))
+\end{verbatim}
+
+\subsubsection{Information Sources}
+IEEE Xplore, ACM Digital Library, SpringerLink, Scopus, Web of Science, JSTOR, AIS 
+
+\subsubsection{Eligibility Criteria}
+Inclusion:
+\begin{itemize}
+    \item Studies from 2019-2024
+    \item Peer-reviewed journal articles and conference papers
+    \item English language publications
+    \item Directly addressing the respective SLR focus
+\end{itemize}
+
+Exclusion:
 \begin{itemize}
     \item Studies not focusing on big data scenarios
     \item Publications without clear methodological details
-    \item Review papers (can be used for background but not included in the analysis)
+    \item Review papers
 \end{itemize}
 
-\subsection{Information Sources}
-The following electronic databases will be searched:
+\subsection{Phase 2: Literature Search and Study Selection}
+
+\begin{enumerate}
+    \item Execute search strategy on selected databases
+    \item Import results to reference management software
+    \item Remove duplicates
+    \item Initial screening of titles and abstracts
+    \item Full-text assessment of potentially eligible studies
+    \item Document selection process using PRISMA flow diagram
+\end{enumerate}
+
+\subsection{Phase 3: Data Extraction and Quality Assessment}
+
+\subsubsection{Data Extraction}
+Using a standardized, pre-piloted form to extract:
 \begin{itemize}
-    \item IEEE Xplore
-    \item ACM Digital Library
-    \item arXiv
-    \item Google Scholar
-    \item Scopus
-\end{itemize}
-
-\subsection{Search Strategy}
-The search string will be constructed using the following terms:
-\begin{verbatim}
-(("deep learning" OR "neural network") AND 
-("big data" OR "large-scale") AND 
-("numerical method*" OR "distributed computing" OR 
-"parallel processing" OR "GPU acceleration" OR 
-"federated learning"))
-\end{verbatim}
-
-The search string will be adapted for each database as necessary.
-
-\subsection{Study Records}
-\subsubsection{Data Management}
-References will be managed using Zotero. A spreadsheet will be used to track the selection process and reasons for exclusion.
-
-\subsubsection{Selection Process}
-Two reviewers will independently screen titles and abstracts. Full texts of potentially eligible studies will then be retrieved and independently assessed for eligibility by two reviewers. Disagreements will be resolved through discussion with a third reviewer.
-
-\subsubsection{Data Collection Process}
-A standardized, pre-piloted form will be used to extract data from the included studies. Two reviewers will extract data independently, with discrepancies resolved by consensus or by a third reviewer.
-
-\subsection{Data Items}
-For each included study, the following information will be extracted:
-\begin{itemize}
-    \item Bibliographic information (authors, year, title, venue)
-    \item Type of numerical method(s) or distributed computing technique(s) used
+    \item Bibliographic information
+    \item Methods/techniques used
     \item Problem domain and dataset characteristics
-    \item Performance metrics (e.g., training time, accuracy, scalability)
+    \item Performance metrics
     \item Hardware and software environment
     \item Key findings and limitations
 \end{itemize}
 
-\subsection{Outcomes and Prioritization}
-Primary outcomes will include:
+\subsubsection{Quality Assessment}
+Two-phase process using 7-element criteria:
+\begin{enumerate}
+    \item Minimum quality threshold
+    \item Rigour, credibility, and relevance
+\end{enumerate}
+
+Quality threshold: 75\% positive responses, 75\% inter-rater reliability (Krippendorff's q > 0.8)
+
+\subsection{Phase 4: Data Synthesis for Individual SLRs}
+
+For each SLR:
 \begin{itemize}
-    \item Effectiveness of numerical methods in terms of convergence speed and accuracy
-    \item Scalability of distributed computing techniques
-    \item Trade-offs between computational efficiency and model performance
+    \item Narrative synthesis of findings
+    \item Categorization of methods/techniques
+    \item Analysis of performance metrics
 \end{itemize}
 
-Secondary outcomes will include emerging trends and identified research gaps.
-
-\subsection{Risk of Bias in Individual Studies}
-The quality of individual studies will be assessed using a modified version of the Quality Assessment Checklist for Technology Reports \citep{kitchenham2007guidelines}. Two reviewers will independently assess the quality of each included study.
-
-\subsection{Data Synthesis}
-A narrative synthesis will be provided of the findings from the included studies, structured around the types of interventions, target population characteristics, outcome measures and intervention content. Where possible, we will conduct:
-
-\subsubsection{Network Analysis}
-Using network analysis tools (e.g., Gephi), we will create a network graph where nodes represent papers and edges represent shared methods, techniques, or citations.
+\subsection{Phase 5: Combined Analysis}
 
 \subsubsection{Meta-Analysis}
-For studies with comparable outcomes, we will perform a meta-analysis using a random-effects model. Forest plots will be used to visualize the combined effect sizes.
+\begin{itemize}
+    \item Random-effects model for common outcome measures
+    \item Forest plots for combined effect sizes
+    \item Subgroup analyses for different categories
+\end{itemize}
 
-\subsection{Meta-Bias(es)}
-To assess reporting bias, we will examine funnel plots for asymmetry when there are 10 or more studies in a meta-analysis.
+\subsubsection{Network Analysis}
+\begin{itemize}
+    \item Comprehensive network graph
+    \item Community detection
+    \item Centrality measure analysis
+\end{itemize}
+
+\subsection{Phase 6: Study Classification and Bias Assessment}
+
+\subsubsection{Study Classification}
+Classify all studies according to Cooper's taxonomy:
+\begin{itemize}
+    \item Focus, Goal, Perspective, Coverage, Organization, Audience
+\end{itemize}
+
+\subsubsection{Assessment of Meta-Bias}
+\begin{itemize}
+    \item Funnel plot examination
+    \item Egger's test for small-study effects
+\end{itemize}
+
+\subsection{Phase 7: Synthesis and Reporting}
+
+\begin{itemize}
+    \item Compare and contrast findings from both SLRs
+    \item Identify synergies between numerical methods and distributed computing techniques
+    \item Discuss trade-offs between efficiency, scalability, and accuracy
+    \item Highlight emerging trends and future research directions
+    \item Assess confidence in cumulative evidence using GRADE approach
+    \item Prepare final report following PRISMA guidelines
+\end{itemize}
+
+This phased approach ensures a systematic and comprehensive review of computational mathematics for AI in big data contexts, combining insights from numerical methods and distributed computing techniques.
 
 \section{Discussion}
 This systematic review will provide a comprehensive overview of the current state of numerical methods and distributed computing techniques for deep learning on big data. The findings will be interpreted considering the strength of evidence, applicability, and generalizability. Limitations of the review and the included studies will be discussed, and implications for future research will be outlined.
