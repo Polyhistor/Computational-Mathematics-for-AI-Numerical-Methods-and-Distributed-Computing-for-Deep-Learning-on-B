@@ -4,6 +4,8 @@
 \usepackage{hyperref}
 \usepackage{natbib}
 \usepackage{url}
+\usepackage{tabularx}
+\usepackage{booktabs}
 
 \title{Computational Mathematics for AI: Numerical Methods and Distributed Computing for Deep Learning on Big Data}
 \author{Pouya Ataei}
@@ -53,18 +55,18 @@ We will use Cooper's taxonomy \citep{cooper1988} to classify the literature in b
 
 \begin{table}[h]
 \caption{Adaptation of Cooper's Literature Review Taxonomy}
-\begin{tabular}{ll}
-\hline
+\begin{tabularx}{\textwidth}{lX}
+\toprule
 Characteristic & Categories \\
-\hline
+\midrule
 (a) Focus     & Research outcomes, Research methods, Theories, Practices or applications \\
 (b) Goal      & Integration, Criticism, Identification of central issues \\
 (c) Perspective & Neutral representation, Espousal of position \\
 (d) Coverage  & Exhaustive, Exhaustive with selective citation, Representative, Central or pivotal \\
 (e) Organization & Historical, Conceptual, Methodological \\
 (f) Audience  & Specialized scholars, General scholars, Practitioners or policymakers, General public \\
-\hline
-\end{tabular}
+\bottomrule
+\end{tabularx}
 \end{table}
 
 This classification will be applied to each included study during the data extraction phase. It will help us to:
@@ -84,9 +86,14 @@ PICO-based search strings for each SLR:
 
 SLR 1:
 \begin{verbatim}
-(("deep learning" OR "neural network*") AND 
-("numerical method*" OR "optimization algorithm*") AND 
-("big data" OR "large-scale") AND 
+("deep learning"
+AND 
+("numerical method*" 
+OR "computational mathematics" 
+OR "optimization algorithm*")
+AND 
+("big data" OR "large-scale")
+AND 
 (efficiency OR accuracy))
 \end{verbatim}
 

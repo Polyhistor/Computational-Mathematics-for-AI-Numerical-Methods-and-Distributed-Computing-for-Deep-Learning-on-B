@@ -1,5 +1,5 @@
 # Fdb version 4
-["bibtex main"] 0 "main.aux" "main.bbl" "main" 1725870950.96342 0
+["bibtex main"] 0 "main.aux" "main.bbl" "main" 1726127233.19919 0
   "/usr/share/texmf-dist/bibtex/bst/base/apalike.bst" 1716849630 24635 604dafcc79f521a11ea73e506e1fbd98 ""
   "main.aux" 0 -1 0 "pdflatex"
   "references.bib" 0 -1 0 ""
@@ -7,8 +7,8 @@
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1725870950.5802 "/home/pouya/Desktop/Projects/computationalMathematicsForAi/main.tex" "main.pdf" "main" 1725870950.96355 0
-  "/home/pouya/Desktop/Projects/computationalMathematicsForAi/main.tex" 1725870950.40288 11113 63ee2938ab0b05a90525d0ce761744f9 ""
+["pdflatex"] 1726127232.6934 "/home/pouya/Desktop/Projects/computationalMathematicsForAi/main.tex" "main.pdf" "main" 1726127233.19934 0
+  "/home/pouya/Desktop/Projects/computationalMathematicsForAi/main.tex" 1726127232.5097 11190 9c1061236746372431d07d12b91416cd ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1716849630 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1716849630 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1716849630 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -49,6 +49,7 @@
   "/usr/share/texmf-dist/tex/latex/base/atveryend-ltx.sty" 1716849630 2462 6bc53756156dbd71c1ad550d30a3b93f ""
   "/usr/share/texmf-dist/tex/latex/base/inputenc.sty" 1716849630 5048 425739d70251273bf93e3d51f3c40048 ""
   "/usr/share/texmf-dist/tex/latex/base/size12.clo" 1716849630 8449 f07039d8e4e89f21078d9b5137579bfc ""
+  "/usr/share/texmf-dist/tex/latex/booktabs/booktabs.sty" 1716849630 6078 f1cb470c9199e7110a27851508ed7a5c ""
   "/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1716849630 13886 d1306dcf79a944f6988e688c1785f9ce ""
   "/usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty" 1716849630 46845 3b58f70c6e861a13d927bff09d35ecbc ""
   "/usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1716849630 1224 978390e9c2234eab29404bc21b268d1e ""
@@ -70,14 +71,16 @@
   "/usr/share/texmf-dist/tex/latex/natbib/natbib.sty" 1716849630 45456 1c8843383c0bd05870c45fa0ebea6cc2 ""
   "/usr/share/texmf-dist/tex/latex/refcount/refcount.sty" 1716849630 9878 9e94e8fa600d95f9c7731bb21dfb67a4 ""
   "/usr/share/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1716849630 9714 ba3194bd52c8499b3f1e3eb91d409670 ""
+  "/usr/share/texmf-dist/tex/latex/tools/array.sty" 1716849630 12667 e4b5eb11e4b7239e6c8a52bbe074a6c6 ""
+  "/usr/share/texmf-dist/tex/latex/tools/tabularx.sty" 1716849630 7147 d45559f8a31b8c53ada0640516660003 ""
   "/usr/share/texmf-dist/tex/latex/url/url.sty" 1716849630 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1716849630 41588 b43d3e860a4f94167ee1e725ff526a72 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1721708801.69241 5312047 b07fcd2a9090df96fc745b92a3db793b ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1721708730 7112993 300a4eedd78ec8eddb1d5d082e4b8a62 ""
-  "main.aux" 1725870950.85623 4618 4457fbb91c2d1f68b99c86852998c759 "pdflatex"
+  "main.aux" 1726127233.04304 4618 291763cf3ff5fd74d489903962a7ce14 "pdflatex"
   "main.bbl" 0 -1 0 "bibtex main"
-  "main.out" 1725870950.85623 5202 58067391cf89d376134114310d8443a7 "pdflatex"
-  "main.tex" 1725870950.40288 11113 63ee2938ab0b05a90525d0ce761744f9 ""
+  "main.out" 1726127233.04304 5202 58067391cf89d376134114310d8443a7 "pdflatex"
+  "main.tex" 1726127232.5097 11190 9c1061236746372431d07d12b91416cd ""
   (generated)
   "main.aux"
   "main.log"
