@@ -1,5 +1,5 @@
 # Fdb version 4
-["bibtex main"] 0 "main.aux" "main.bbl" "main" 1726866524.81505 0
+["bibtex main"] 0 "main.aux" "main.bbl" "main" 1726867004.0664 0
   "/usr/share/texmf-dist/bibtex/bst/base/apalike.bst" 1716849630 24635 604dafcc79f521a11ea73e506e1fbd98 ""
   "main.aux" 0 -1 0 "pdflatex"
   "references.bib" 0 -1 0 ""
@@ -7,8 +7,8 @@
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1726866524.15749 "/home/pouya/Desktop/Projects/computationalMathematicsForAi/main.tex" "main.pdf" "main" 1726866524.81534 0
-  "/home/pouya/Desktop/Projects/computationalMathematicsForAi/main.tex" 1726866523.3447 11766 5651ad19c560ad0bae9dec10d5eb35be ""
+["pdflatex"] 1726867003.65341 "/home/pouya/Desktop/Projects/computationalMathematicsForAi/main.tex" "main.pdf" "main" 1726867004.06666 0
+  "/home/pouya/Desktop/Projects/computationalMathematicsForAi/main.tex" 1726867003.4692 12300 09d4139e5189f5b42f7bceb93d13593d ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1716849630 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1716849630 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1716849630 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -79,10 +79,10 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1716849630 41588 b43d3e860a4f94167ee1e725ff526a72 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1721708801.69241 5312047 b07fcd2a9090df96fc745b92a3db793b ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1721708730 7112993 300a4eedd78ec8eddb1d5d082e4b8a62 ""
-  "main.aux" 1726866524.61472 5134 28877877c761be70eb11d01318a52dd1 "pdflatex"
+  "main.aux" 1726867003.95588 5134 50cd85087f503f45bfc4df66d8f47ee2 "pdflatex"
   "main.bbl" 0 -1 0 "bibtex main"
-  "main.out" 1726866524.61472 5720 63840cffd20d2cf8d6e799fddfef0c9b "pdflatex"
-  "main.tex" 1726866523.3447 11766 5651ad19c560ad0bae9dec10d5eb35be ""
+  "main.out" 1726867003.95588 5720 63840cffd20d2cf8d6e799fddfef0c9b "pdflatex"
+  "main.tex" 1726867003.4692 12300 09d4139e5189f5b42f7bceb93d13593d ""
   (generated)
   "main.aux"
   "main.log"
