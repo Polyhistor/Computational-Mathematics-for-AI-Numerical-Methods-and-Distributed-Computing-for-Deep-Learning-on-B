@@ -84,7 +84,7 @@ The classification results will be used in Phase 6 (Study Classification and Bia
 \subsubsection{Search Strategy Development}
 PICO-based search strings for each SLR:
 
-SLR 1 (TITLE AND ABSTRACT SEARCHa) :
+SLR 1 (TITLE AND ABSTRACT SEARCH) :
 \begin{verbatim}
 ("deep learning"
 AND 
@@ -135,34 +135,40 @@ Exclusion:
     \item Review papers
 \end{itemize}
 
-\subsection*{Phase 2: Deduplication}
-
 \subsection{Phase 2: Literature Search and Study Selection}
+
+\subsubsection{Search Execution}
 
 \begin{enumerate}
     \item Execute search strategy on selected databases
-    \item Import results to reference management software
-    \item Remove duplicates
-    \item Initial screening of titles and abstracts
-    \item Full-text assessment of potentially eligible studies
-    \item Document selection process using PRISMA flow diagram
+    \item Import results to a unified CSV file
 \end{enumerate}
 
-\subsection{Phase 3: Data Extraction and Quality Assessment}
+\subsubsection{Deduplication}
 
-\subsubsection{Data Extraction}
-Using a standardized, pre-piloted form to extract:
-\begin{itemize}
-    \item Bibliographic information
-    \item Methods/techniques used
-    \item Problem domain and dataset characteristics
-    \item Performance metrics
-    \item Hardware and software environment
-    \item Key findings and limitations
-\end{itemize}
+\begin{enumerate}
+\item Remove duplicates
 
-\subsubsection{Quality Assessment}
-\subsection{Quality Assessment}
+\end{enumerate}
+
+\subsubsection{Initial Screening}
+
+\begin{enumerate}
+\item Initial screening of titles and abstracts
+\item \end{enumerate}
+
+\subsubsection{Deeper Screening}
+
+\begin{enumerate}
+    \item Full-text assessment of potentially eligible studies
+\end{enumerate}
+
+
+Document selection process should be done using PRISMA flow diagram.
+
+
+
+\subsection{Phase 3: Quality Assessment}
 The quality of individual studies will be assessed using a criteria made up of 7 elements, inspired by the CASP checklist for assessing qualitative research and Kitchenham's guidelines on empirical research in software engineering . This assessment will be applied to studies in both SLRs.
 
 \subsubsection{Quality Assessment Criteria}
@@ -216,6 +222,25 @@ To be included in the final analysis, a study must:
 This quality assessment framework will ensure that only studies meeting a minimum standard of methodological rigour and relevance are included in our analysis, thereby enhancing the reliability and validity of our findings.
 
 Quality threshold: 75\% positive responses, 75\% inter-rater reliability (Krippendorff's q > 0.8)
+
+
+
+
+\subsection{Phase 4: Data Extraction}
+
+\subsubsection{Data Extraction}
+Using a standardized, pre-piloted form to extract:
+\begin{itemize}
+    \item Bibliographic information
+    \item Methods/techniques used
+    \item Problem domain and dataset characteristics
+    \item Performance metrics
+    \item Hardware and software environment
+    \item Key findings and limitations
+\end{itemize}
+
+\subsubsection{Quality Assessment}
+
 
 \subsection{Phase 4: Data Synthesis for Individual SLRs}
 
