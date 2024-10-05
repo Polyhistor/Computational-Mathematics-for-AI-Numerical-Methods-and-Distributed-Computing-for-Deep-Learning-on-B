@@ -14,4 +14,3 @@ data = np.array([
 alpha = krippendorff.alpha(reliability_data=data, level_of_measurement='nominal')
 
 print(f"Krippendorff's alpha: {alpha:.6f}")
-print("hi") 
