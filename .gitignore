@@ -54,3 +54,5 @@ latexmkrc
 
 # MacOS specific
 .DS_Store
+
+.env
