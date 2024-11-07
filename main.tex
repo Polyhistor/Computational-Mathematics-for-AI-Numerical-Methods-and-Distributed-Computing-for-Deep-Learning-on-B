@@ -20,7 +20,9 @@ This document outlines the protocol for a systematic literature review (SLR) on 
 
 \section{Background}
 \subsection{Rationale}
-As deep learning models grow in complexity and data volumes continue to increase, there is a critical need to understand and optimize the computational methods underpinning these systems. This review aims to synthesize current knowledge on numerical methods and distributed computing techniques specifically applied to deep learning in big data contexts.
+%As deep learning models grow in complexity and data volumes continue to increase, there is a critical need to understand and optimize the computational methods underpinning these systems.
+\include{background}
+This review aims to synthesize current knowledge on numerical methods and distributed computing techniques specifically applied to deep learning in big data contexts.
 
 \subsection{Objectives}
 The primary objectives of this SLR are:
@@ -30,6 +32,8 @@ The primary objectives of this SLR are:
     \item To compare these methods and techniques in terms of computational efficiency, scalability, and accuracy.
     \item To identify emerging trends and future directions in this field.
 \end{enumerate}
+\section{Related work}
+\include{related}
 
 \section{Research Methodology}
 
@@ -476,6 +480,6 @@ There was a challenge among researchers to detect big data or what constitutes b
 For instance one paper discussed fault prediction with a large amount of data, but it did not occur naturally to us that this data could be big data. It was only clarified during the discussion phase that the data was indeed big data.
 
 \bibliographystyle{apalike}
-\bibliography{references}
+\bibliography{main, citations_1}
 
 \end{document}
