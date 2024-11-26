@@ -1,14 +1,17 @@
 # Fdb version 4
-["bibtex main"] 0 "main.aux" "main.bbl" "main" 1731016680.00686 0
+["bibtex main"] 1732659770.40183 "main.aux" "main.bbl" "main" 1732659771.10297 0
+  "./citations_1.bib" 1731019322.05826 1712 1866bf946c5580c325deb43dcbd05ac0 ""
+  "./main.bib" 1730422252.55371 4785 cff55d6cd2f2c43ef85ebd05a7a9bd3e ""
   "/usr/share/texmf-dist/bibtex/bst/base/apalike.bst" 1716849630 24635 604dafcc79f521a11ea73e506e1fbd98 ""
-  "main.aux" 0 -1 0 "pdflatex"
-  "references.bib" 0 -1 0 ""
+  "background.aux" 1732659770.72536 699 73fbd7445c513475d5117d9094c9cdf4 "pdflatex"
+  "main.aux" 1732659770.93536 8837 fb533ed8cc30e6a04961fb5705a65d75 "pdflatex"
+  "related.aux" 1732659770.73203 775 3ba30b426c2878af17017990e9f74acf "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1731016679.45155 "/home/pouya/Desktop/Projects/computationalMathematicsForAi/main.tex" "main.pdf" "main" 1731016680.00699 0
-  "/home/pouya/Desktop/Projects/computationalMathematicsForAi/main.tex" 1731016678.62172 19940 b51a4e7faa90a09ed4e18842a9537b16 ""
+["pdflatex"] 1732659770.44852 "/home/pouya/Desktop/Projects/computationalMathematicsForAi/main.tex" "main.pdf" "main" 1732659771.10316 0
+  "/home/pouya/Desktop/Projects/computationalMathematicsForAi/main.tex" 1732659768.842 21057 be68bf95d1c4893de20a4e1558cd20f8 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1716849630 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1716849630 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1716849630 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -79,14 +82,20 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1716849630 41588 b43d3e860a4f94167ee1e725ff526a72 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1728538024.22204 5348759 dfe08144b61d8479865bf6763562e93d ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1728537976 7143268 d39d1f519006938a227d3a377b867c40 ""
-  "main.aux" 1731016679.90174 7573 33f8eadf8aa46551ac7d3d141b7ca822 "pdflatex"
-  "main.bbl" 0 -1 0 "bibtex main"
-  "main.out" 1731016679.90174 7530 a49a484ce6fb93c1858b29a6c03179df "pdflatex"
-  "main.tex" 1731016678.62172 19940 b51a4e7faa90a09ed4e18842a9537b16 ""
+  "background.aux" 1732659770.72536 699 73fbd7445c513475d5117d9094c9cdf4 "pdflatex"
+  "background.tex" 1731019322.05826 2398 de573811eda7935ed27bca0d08c57759 ""
+  "main.aux" 1732659770.93536 8837 fb533ed8cc30e6a04961fb5705a65d75 "pdflatex"
+  "main.bbl" 1732659770.44202 3530 cfabadb55b72695b696f53796ff68167 "bibtex main"
+  "main.out" 1732659770.93536 7828 a4b47e0f6853e4239035337889a1ff5f "pdflatex"
+  "main.tex" 1732659768.842 21057 be68bf95d1c4893de20a4e1558cd20f8 ""
   "media/Company Structure.png" 1730422874.64436 280795 6005ac3dcfabb5101ff64541b06d4e11 ""
+  "related.aux" 1732659770.73203 775 3ba30b426c2878af17017990e9f74acf "pdflatex"
+  "related.tex" 1731019322.05826 3415 c626bcfcc23d89643b6a39a515c6c950 ""
   (generated)
+  "background.aux"
   "main.aux"
   "main.log"
   "main.out"
   "main.pdf"
+  "related.aux"
   (rewritten before read)
