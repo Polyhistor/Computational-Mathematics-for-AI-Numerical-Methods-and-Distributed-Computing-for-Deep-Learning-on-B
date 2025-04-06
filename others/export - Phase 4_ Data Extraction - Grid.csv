@@ -24,8 +24,6 @@
   doi = {10.1109/JIOT.2021.3132363},
   copyright = {https://ieeexplore.ieee.org/Xplorehelp/downloads/license-information/IEEE.html}
 }"
-3,CT Image Classification of Pulmonary Nodules Based on Deep Transfer Learning and Inception-Res-V2,R. Wang,2023.0,2023 International Conference on Advances in Electrical Engineering and Computer Applications (AEECA),10.1109/AEECA59734.2023.00108,2023.0,IEEE Conferences,,0,0,0,,,,,0,,
-4,Meta-WF: Meta-Learning-Based Few-Shot Wireless Impersonation Detection for Wi-Fi Networks,T. Li; Z. Hong; L. Liu; Z. Wen; L. Yu,2021.0,IEEE Communications Letters,10.1109/LCOMM.2021.3112518,2021.0,IEEE Journals,,1,1,1,1,1,1,1,1,0,
 5,Fault Diagnosis Method of Link Control System for Gravitational Wave Detection,A. Gao; S. Xu; Z. Zhao; H. Shang; R. Xu,2024.0,Journal of Systems Engineering and Electronics,10.23919/JSEE.2024.000048,2024.0,BIAI Journals,,1,1,1,1,1,1,1,1,1,"'@article{Gao2024922,
   title = {Fault {{Diagnosis Method}} of {{Link Control System}} for {{Gravitational Wave Detection}}},
   author = {Gao, Ai and Xu, Shengnan and Zhao, Zichen and Shang, Haibin and Xu, Rui},
@@ -38,8 +36,6 @@
   issn = {1004-4132},
   doi = {10.23919/JSEE.2024.000048}
 }"
-6,Optimized deep CNN based prediction model for injury severity risk factor in automobile crashes,Mathew J.; Emmanuel M.,2020.0,International Journal of Advanced Science and Technology,,2020.0,Scopus,,1,0,0,,,,,0,,
-7,Pragmatic Method Based on Intelligent Big Data Analytics to Prediction Air Pollution,Al_Janabi S.; Yaqoob A.; Mohammad M.,2020.0,Lecture Notes in Networks and Systems,10.1007/978-3-030-23672-4_8,2020.0,Scopus,,0,0,0,,,,,0,,
 8,Multi disease-prediction framework using hybrid deep learning: an optimal prediction model,Ampavathi A.; Saradhi T.V.,2021.0,Computer Methods in Biomechanics and Biomedical Engineering,10.1080/10255842.2020.1869726,2021.0,Scopus,,1,1,1,1,1,1,1,1,1,"'@article{Ampavathi20211146,
   title = {Multi Disease-Prediction Framework Using Hybrid Deep Learning: An Optimal Prediction Model},
   shorttitle = {Multi Disease-Prediction Framework Using Hybrid Deep Learning},
@@ -68,7 +64,6 @@
   doi = {10.1007/s00500-019-03901-y},
   langid = {english}
 }"
-10,Deep Convolutional Neural Network for Air Quality Prediction,Mao Y.; Lee S.,2019.0,Journal of Physics: Conference Series,10.1088/1742-6596/1302/3/032046,2019.0,Scopus,,1,0,0,,,,,0,,
 11,Effective Big Data Retrieval Using Deep Learning Modified Neural Networks,Prasanth T.; Gunasekaran M.,2019.0,Mobile Networks and Applications,10.1007/s11036-018-1204-y,2019.0,Scopus,,1,1,1,1,1,1,1,1,1,"'@article{Prasanth2019282,
   title = {Effective {{Big Data Retrieval Using Deep Learning Modified Neural Networks}}},
   author = {Prasanth, T. and Gunasekaran, M.},
@@ -111,9 +106,6 @@
   abstract = {Resource optimization algorithm based on clustering and improved differential evolution strategy, as a new global optimized algorithm, has wide applications in language translation, language processing, document understanding, cloud computing, and edge computing due to high efficiency. With the development of deep learning technology and the rise of big data, the resource optimization algorithm encounters a series of challenges, such as the workload imbalance and low resource utilization. To address the preceding problems, this study proposes a novel resource optimization algorithm based on clustering and an improved differential evolution strategy (Multi-objective Task Scheduling Strategy (MTSS)). Three indexes, namely task completion time, execution cost, and workload, of virtual machines are selected and used to build the fitness function of the MTSS algorithm. At the same time, the preprocessing state is set up to cluster according to the resource and task characteristics to reduce the magnitude of their matching scale. Moreover, to solve the workload imbalance among different resource sets, local resource tasks are reallocated using the Q-value method in the MTSS strategy to achieve workload balance of global resources and improve the resource utilization rate. Experiments are carried out to evaluate the effectiveness of the proposed algorithm. Results show that the proposed algorithm outperforms other algorithms in terms of task completion time, execution cost, and workload balancing.},
   langid = {english}
 }"
-14,Predicting longitudinal dispersion coefficient using ensemble models and optimized multi-layer perceptron models,"Gholami, M; Ghanbari-Adivi, E; Ehteram, M; Singh, VP; Ahmed, AN; Mosavi, A; El-Shafie, A",2023.0,AIN SHAMS ENGINEERING JOURNAL,10.1016/j.asej.2023.102223,2023.0,WoS,,1,1,0,,,,,0,,
-15,Coronavirus Optimization Algorithm: A Bioinspired Metaheuristic Based on the COVID-19 Propagation Model,"Martínez-Alvarez, F; Asencio-Cortés, G; Torres, JF; Gutiérrez-Avilés, D; Melgar-García, L; Pérez-Chacón, R; Rubio-Escudero, C; Riquelme, JC; Troncoso, A",2020.0,BIG DATA,10.1089/big.2020.0051,2020.0,WoS,,1,0,0,,,,,0,,
-16,Suggesting a Stochastic Fractal Search Paradigm in Combination with Artificial Neural Network for Early Prediction of Cooling Load in Residential Buildings,"Moayedi, H; Mosavi, A",2021.0,ENERGIES,10.3390/en14061649,2021.0,WoS,,1,1,1,0,0,0,1,0,,
 17,Meta-Heuristic Optimization of LSTM-Based Deep Network for Boosting the Prediction of Monkeypox Cases,"Eid, MM; El-Kenawy, EM; Khodadadi, N; Mirjalili, S; Khodadadi, E; Abotaleb, M; Alharbi, AH; Abdelhamid, AA; Ibrahim, A; Amer, GM; Kadi, A; Khafaga, DS",2022.0,MATHEMATICS,10.3390/math10203845,2022.0,WoS,,1,1,1,1,1,1,1,1,1,"'@article{Eid20223845,
   title = {Meta-{{Heuristic Optimization}} of {{LSTM-Based Deep Network}} for {{Boosting}} the {{Prediction}} of {{Monkeypox Cases}}},
   author = {Eid, Marwa M. and {El-Kenawy}, El-Sayed M. and Khodadadi, Nima and Mirjalili, Seyedali and Khodadadi, Ehsaneh and Abotaleb, Mostafa and Alharbi, Amal H. and Abdelhamid, Abdelaziz A. and Ibrahim, Abdelhameed and Amer, Ghada M. and Kadi, Ammar and Khafaga, Doaa Sami},
@@ -144,7 +136,6 @@
   copyright = {https://creativecommons.org/licenses/by/4.0/},
   langid = {english}
 }"
-19,A Hybrid Deep Learning-Based Unsupervised Anomaly Detection in High Dimensional Data,"Muneer, A; Taib, SM; Fati, SM; Balogun, AO; Aziz, IA",2022.0,CMC-COMPUTERS MATERIALS & CONTINUA,10.32604/cmc.2022.021113,2022.0,WoS,,1,1,1,0,1,0,1,0,,
 20,Bone age assessment using convolutional neural networks,S. Wang; Y. Shen; D. Zeng; Y. Hu,2018.0,2018 International Conference on Artificial Intelligence and Big Data (ICAIBD),10.1109/ICAIBD.2018.8396189,2018.0,IEEE Conferences,,1,1,1,1,1,1,1,1,1,"'@inproceedings{Wang2018175,
   title = {Bone Age Assessment Using Convolutional Neural Networks},
   booktitle = {2018 {{International Conference}} on {{Artificial Intelligence}} and {{Big Data}} ({{ICAIBD}})},
@@ -157,8 +148,6 @@
   doi = {10.1109/ICAIBD.2018.8396189},
   isbn = {978-1-5386-6987-7}
 }"
-21,A Intrusion Detection Model Based on Convolutional Neural Network and Feature Selection,L. Zhang; C. Xu,2022.0,2022 5th International Conference on Artificial Intelligence and Big Data (ICAIBD),10.1109/ICAIBD55127.2022.9820384,2022.0,IEEE Conferences,,1,1,1,0,0,1,1,1,0,
-22,Privacy-preserving deep learning,R. Shokri; V. Shmatikov,2015.0,"2015 53rd Annual Allerton Conference on Communication, Control, and Computing (Allerton)",10.1109/ALLERTON.2015.7447103,2015.0,IEEE Conferences,,1,1,1,1,1,0,1,0,,
 23,Improved Multi-Agent Deep Deterministic Policy Gradient for Path Planning-Based Crowd Simulation,S. Zheng; H. Liu,2019.0,IEEE Access,10.1109/ACCESS.2019.2946659,2019.0,IEEE Journals,,1,1,1,1,1,1,1,1,1,"'@article{Zheng2019147755,
   title = {Improved {{Multi-Agent Deep Deterministic Policy Gradient}} for {{Path Planning-Based Crowd Simulation}}},
   author = {Zheng, Shangfei and Liu, Hong},
@@ -321,8 +310,6 @@
   doi = {10.1109/TIP.2024.3378461},
   copyright = {https://ieeexplore.ieee.org/Xplorehelp/downloads/license-information/IEEE.html}
 }"
-36,Real-time Optimization Algorithm for Intelligent Logistics Transportation Routes Based on Big Data Analysis,Wang J,2024.0,Association for Computing Machinery,10.1145/3662739.3672306,2024.0,ACM,Conference Paper,1,0,0,0,0,0,0,0,,
-37,Optimisation algorithm-based recurrent neural network for big data classification,"Akhtar MM,Ahamad D,AlamHameed S",2021.0,Inderscience Publishers,10.1504/ijiids.2021.114527,2021.0,ACM,Journal Article,1,0,0,0,0,0,0,0,,
 38,Exponential Chimp Optimization Algorithm based Deep Neuro‐Fuzzy Network with MapReduce framework for fake news detection in big data analytics,"Kanchanamala P,Selva Rani B,Vairamuthu S",2023.0,"John Wiley & Sons, Inc.",10.1002/acs.3645,2023.0,ACM,Journal Article,1,1,1,1,1,1,1,1,1,"'@article{Kanchanamala20232414,
   title = {Exponential {{Chimp Optimization Algorithm}} Based {{Deep Neuro}}-{{Fuzzy Network}} with {{MapReduce}} Framework for Fake News Detection in Big Data Analytics},
   author = {Kanchanamala, Pendela and Selva Rani, B. and Vairamuthu, S.},
@@ -337,8 +324,6 @@
   abstract = {Summary             In the present epoch of computing, the world has changed from older conventional print media to social platform channels. Fake news articles have the prospects to handle the opinions of the public and so may harm human groupings. Therefore, it is necessary to explore the authenticity and credibility of the news flash being shared on the internet community. Hence, this research paper devises an efficient and robust fake news detection model, named Exponential Chimp Optimization Algorithm (EChOA)-based Deep Neuro-Fuzzy Network (DNFN) for detecting fake news. The introduced model utilizes a MapReduce framework that includes the mapper and reducer phases for processing big data for detecting fake news. First phase of processing is the Mapper work, in which every input used in the database is processed and creates an intermediate key-value pair. In the reducer phase, the fusion of features is performed by arranging the features with the help of computing the optimal parameter and Rand similarity coefficient using a Deep Q Network (DQN). Here, the detection of fake news is obtained by DNFN, and the DNFN is done using implemented EChOA. The EChOA-based DNFN effectively generates robust and effective fake news detection performance by choosing the optimal feature subsets through feature fusion. The EChOA is designed by integrating the Exponential Weighted Moving Average (EWMA) and Chimp Optimization Algorithm (ChOA). Moreover, the EChOA-based DNFN method outperformed various former fake news detection approaches and attains the highest performance based on the testing accuracy is 0.909, sensitivity is 0.937, and specificity is 0.891 using the FakeNewsNet dataset.},
   langid = {english}
 }"
-39,Real-Time Controllable Optimization Algorithm for Correlated Big Data in Cloud Computing Environment,"Li R,Pu Z,Choi JM",2022.0,IOS Press,10.1155/2022/7025597,2022.0,ACM,Journal Article,1,1,0,0,0,0,0,0,,
-40,Big data-driven scheduling optimization algorithm for Cyber–Physical Systems based on a cloud platform,"Niu C,Wang L",2022.0,Elsevier Science Publishers B. V.,10.1016/j.comcom.2021.10.020,2022.0,ACM,Journal Article,1,1,0,0,0,0,0,0,,
 41,Machine Learning in Business Process Monitoring: A Comparison of Deep Learning and Classical Approaches Used for Outcome Prediction,,,Duplicate of 31,,,,,1,1,1,1,1,1,1,1,1,
 42,Advanced Deep Learning Model for Predicting the Academic Performances of Students in Educational Institutions,"Baniata, LH; Kang, S; Alsharaiah, MA; Baniata, MH",2024.0,APPLIED SCIENCES-BASEL,10.3390/app14051963,2024.0,WoS,,1,1,1,1,1,1,1,1,1,"'@article{Baniata20241963,
   title = {Advanced {{Deep Learning Model}} for {{Predicting}} the {{Academic Performances}} of {{Students}} in {{Educational Institutions}}},
@@ -395,7 +380,6 @@
   doi = {10.1016/j.array.2023.100317},
   langid = {english}
 }"
-46,Deep Learning and Big Data Integration with Cuckoo Search Optimization for Robust Phishing Attack Detection,B. B. Gupta; A. Gaurav; J. Wu; V. Arya; K. T. Chui,2024.0,ICC 2024 - IEEE International Conference on Communications,10.1109/ICC51166.2024.10622646,2024.0,IEEE Conferences,,1,1,0,0,0,0,0,0,,
 47,An Intrusion Detection Approach using Hierarchical Deep Learning-based Butterfly Optimization Algorithm in Big Data Platform,Manoranjithem; S. Dhanasekaran; A. Asokan; A. Kumar; C. Yamini; M. Tiwari,2023.0,2023 International Conference on Intelligent Data Communication Technologies and Internet of Things (IDCIoT),10.1109/IDCIoT56793.2023.10053504,2023.0,IEEE Conferences,,1,1,1,1,1,1,0,1,1,"'@inproceedings{Manoranjithem2023212,
   title = {An {{Intrusion Detection Approach}} Using {{Hierarchical Deep Learning-based Butterfly Optimization Algorithm}} in {{Big Data Platform}}},
   booktitle = {2023 {{International Conference}} on {{Intelligent Data Communication Technologies}} and {{Internet}} of {{Things}} ({{IDCIoT}})},
@@ -518,8 +502,6 @@
   doi = {10.25300/MISQ/2021/15574},
   abstract = {Ensuring the health and safety of senior citizens who live alone is a growing societal concern. The Activity of Daily Living (ADL) approach is a common means to monitor disease progression and the ability of these individuals to care for themselves. However, the prevailing sensor-based ADL monitoring systems primarily rely on wearable motion sensors, capture insufficient information for accurate ADL recognition, and do not provide a comprehensive understanding of ADLs at different granularities. Current healthcare IS and mobile analytics research focuses on studying the system, device, and provided services, and is in need of an end-to-end solution to comprehensively recognize ADLs based on mobile sensor data. This study adopts the design science paradigm and employs advanced deep learning algorithms to develop a novel hierarchical, multiphase ADL recognition framework to model ADLs at different granularities. We propose a novel 2D interaction kernel for convolutional neural networks to leverage interactions between human and object motion sensors. We rigorously evaluate each proposed module and the entire framework against state-of-the-art benchmarks (e.g., support vector machines, DeepConvLSTM, hidden Markov models, and topic-modeling-based ADLR) on two real-life motion sensor datasets that consist of ADLs at varying granularities: Opportunity and INTER. Results and a case study demonstrate that our framework can recognize ADLs at different levels more accurately. We discuss how stakeholders can further benefit from our proposed framework. Beyond demonstrating practical utility, we discuss contributions to the IS knowledge base for future design science-based cybersecurity, healthcare, and mobile analytics applications.}
 }"
-56,"Time series big data: a survey on data stream frameworks, analysis and algorithms",Ana AlmeidaSusana BrásSusana SargentoFilipe Cabral Pinto,2023.0,Journal of Big Data,10.1186/s40537-023-00760-1,2023.0,Springer,Ana AlmeidaSusana BrásSusana SargentoFilipe Cabral Pinto,0,1,1,0,0,0,0,0,,
-57,Artificial Intelligence Based Methods for Retrofit Projects: A Review of Applications and Impacts,Nicoleta BocanealaMohammad MayoufEdlira VakajMark Shelbourn,2024.0,Archives of Computational Methods in Engineering,10.1007/s11831-024-10159-7,2024.0,Springer,Nicoleta BocanealaMohammad MayoufEdlira VakajMark Shelbourn,0,1,1,0,0,0,0,0,,
 58,AI-Based on Machine Learning Methods for Urban Real Estate Prediction: A Systematic Survey,Stéphane C. K. TekouabouŞtefan Cristian GherghinaEric Désiré KameniYoussef FilaliKhalil Idrissi Gartoumi,2024.0,Archives of Computational Methods in Engineering,10.1007/s11831-023-10010-5,2024.0,Springer,Stéphane C. K. TekouabouŞtefan Cristian GherghinaEric Désiré KameniYoussef FilaliKhalil Idrissi Gartoumi,1,1,1,1,1,1,1,1,1,"'@article{Tekouabou20241079,
   title = {{{AI-Based}} on {{Machine Learning Methods}} for {{Urban Real Estate Prediction}}: {{A Systematic Survey}}},
   shorttitle = {{{AI-Based}} on {{Machine Learning Methods}} for {{Urban Real Estate Prediction}}},
@@ -585,7 +567,6 @@
   doi = {10.1007/s13721-022-00384-0},
   langid = {english}
 }"
-63,A deep LSTM network for the Spanish electricity consumption forecasting,"Torres, JF; Martínez-Alvarez, F; Troncoso, A",2022.0,NEURAL COMPUTING & APPLICATIONS,10.1007/s00521-021-06773-2,2022.0,WoS,,,,,,,,,,,
 64,Intelligent Slime Mould Optimization with Deep Learning Enabled Traffic Prediction in Smart Cities,"Hamza, MA; Alsolai, H; Alzahrani, JS; Alamgeer, M; Sayed, MM; Zamani, A; Yaseen, I; Motwakel, A",2022.0,CMC-COMPUTERS MATERIALS & CONTINUA,10.32604/cmc.2022.031541,2022.0,WoS,,1,1,1,1,1,1,1,1,1,"'@article{AhmedHamza20226563,
   title = {Intelligent {{Slime Mould Optimization}} with {{Deep Learning Enabled Traffic Prediction}} in {{Smart Cities}}},
   author = {Ahmed Hamza, Manar and Alsolai, Hadeel and S. Alzahrani, Jaber and Alamgeer, Mohammad and Mahmoud Sayed, Mohamed and Sarwar Zamani, Abu and Yaseen, Ishfaq and Motwakel, Abdelwahed},
@@ -729,35 +710,6 @@
   doi = {10.25300/MISQ/2022/17018},
   abstract = {Online health communities (OHCs) play an important role in enabling patients to exchange information and obtain social support from each other. However, do OHC interactions always benefit patients? In this research, we investigate different mechanisms by which OHC content may affect patients' emotions. Specifically, we notice users can read not only emotional support intended to help them but also emotional support targeting other persons or posts that are not intended to generate any emotional support (auxiliary content). Drawing from emotional contagion theories, we argue that even though emotional support may benefit targeted support seekers, it could have a negative impact on the emotions of other support seekers. Our empirical study on an OHC for depression patients supports these arguments. Our findings are new to the literature and have critical practical implications since they suggest that we should carefully manage OHC-based interventions for depression patients to avoid unintended consequences. We design a novel deep learning model to differentiate emotional support from auxiliary content. Such differentiation is critical for identifying the negative effect of emotional support on unintended recipients. We also discuss options to alter the intervention volume, length, and frequency to tackle the challenge of the negative effect.}
 }"
-74,An Imbalanced Big Data Mining Framework for Improving Optimization Algorithms Performance,E. M. Hassib; A. I. El-Desouky; E. -S. M. El-Kenawy; S. M. El-Ghamrawy,2019.0,IEEE Access,10.1109/ACCESS.2019.2955983,2019.0,IEEE Journals,,1,1,1,0,0,1,1,1,,
-75,A Fully Streaming Big Data Framework for Cyber Security Based on Optimized Deep Learning Algorithm,N. Hussen; S. M. Elghamrawy; M. Salem; A. I. El-Desouky,2023.0,IEEE Access,10.1109/ACCESS.2023.3281893,2023.0,IEEE Journals,,0,1,1,1,0,1,1,1,,
-76,A Deep Learning H2O Framework for Emergency Prediction in Biomedical Big Data,A. S. Elsayad; A. I. E. Desouky; M. M. Salem; M. Badawy,2020.0,IEEE Access,10.1109/ACCESS.2020.2995790,2020.0,IEEE Journals,,0,1,1,1,0,1,1,1,,
-77,Classification of Massive Data Sets Using a Revolutionary Grey Wolf Optimization Algorithm and a Deep Learning Model in a Cloud-Based Setting,P. Anandan; A. Manju; M. R. Reddy,2023.0,"2023 International Conference on Data Science, Agents & Artificial Intelligence (ICDSAAI)",10.1109/ICDSAAI59313.2023.10452437,2023.0,IEEE Conferences,,0,1,0,0,0,1,0,0,,
-78,Toward Optimally Efficient Search With Deep Learning for Large-Scale MIMO Systems,L. He; K. He; L. Fan; X. Lei; A. Nallanathan; G. K. Karagiannidis,2022.0,IEEE Transactions on Communications,10.1109/TCOMM.2022.3158367,2022.0,IEEE Journals,,1,1,1,1,0,1,1,1,,
-79,Machine Learning for Large-Scale Optimization in 6G Wireless Networks,Y. Shi; L. Lian; Y. Shi; Z. Wang; Y. Zhou; L. Fu; L. Bai; J. Zhang; W. Zhang,2023.0,IEEE Communications Surveys & Tutorials,10.1109/COMST.2023.3300664,2023.0,IEEE Journals,,0,1,0,1,0,1,0,0,,
-80,splitDyn: Federated Split Neural Network for Distributed Edge AI Applications,T. A. Khoa; D. -V. Nguyen; M. -S. Dao; K. Zettsu,2022.0,2022 IEEE International Conference on Big Data (Big Data),10.1109/BigData55660.2022.10020803,2022.0,IEEE Conferences,,1,1,1,0,0,1,1,1,,
-81,Convolutional Neural Network Compression Based on Improved Fractal Decomposition Algorithm for Large Scale Optimization,A. Llanza; F. E. Keddous; N. Shvai; A. Nakib,2023.0,"2023 IEEE International Conference on Systems, Man, and Cybernetics (SMC)",10.1109/SMC53992.2023.10394477,2023.0,IEEE Conferences,,1,1,1,1,1,1,1,1,,
-82,Emergency Drug Procurement Planning Based on Big-Data Driven Morbidity Prediction,Q. Song; Y. -J. Zheng; Y. -J. Huang; Z. -G. Xu; W. -G. Sheng; J. Yang,2019.0,IEEE Transactions on Industrial Informatics,10.1109/TII.2018.2870879,2019.0,IEEE Journals,,1,1,1,1,1,1,1,1,,
-83,An Intelligent Big Data Security Framework Based on AEFS-KENN Algorithms for the Detection of Cyber-Attacks from Smart Grid Systems,S. Muthubalaji; N. K. Muniyaraj; S. P. V. S. Rao; K. Thandapani; P. R. Mohan; T. Somasundaram; Y. Farhaoui,2024.0,Big Data Mining and Analytics,10.26599/BDMA.2023.9020022,2024.0,TUP Journals,,1,1,1,1,0,1,1,1,,
-84,Sorting the Digital Stream: Big Data-driven Insights into Email Classification for Spam and Ham Detection,S. A. Shah; E. A. Arputham; A. Ahmed; M. B. Farah; A. Shah; A. Aziz,2023.0,2023 IEEE International Conference on Big Data (BigData),10.1109/BigData59044.2023.10386224,2023.0,IEEE Conferences,,1,1,1,1,0,1,1,1,,
-85,Individual Recognition of Big Data Radar Digital Waveform Based on Long Short-Term Memory Network,Y. Jiang; W. Sheng; D. Cheng; L. Xiang; R. Song; W. Jiang,2023.0,"2023 IEEE 3rd International Conference on Information Technology, Big Data and Artificial Intelligence (ICIBA)",10.1109/ICIBA56860.2023.10165161,2023.0,IEEE Conferences,,1,1,1,1,1,1,1,1,,
-86,Large-Scale Mobile App Identification Using Deep Learning,S. Rezaei; B. Kroencke; X. Liu,2020.0,IEEE Access,10.1109/ACCESS.2019.2962018,2020.0,IEEE Journals,,1,1,1,1,1,1,1,1,,
-87,Big Vibration Data Diagnosis of Bearing Fault Base on Feature Representation of Autoencoder and Optimal LSSVM-CRO Classifier Model,V. Nguyen; T. Dung Hoang; V. Thai; X. Nguyen,2019.0,2019 International Conference on System Science and Engineering (ICSSE),10.1109/ICSSE.2019.8823332,2019.0,IEEE Conferences,,1,1,1,1,1,1,1,1,,
-88,Adaptive Deep Learning Model for Air Pollution Analysis Using Meteorological Big Data,S. Suganya; T. Meyyappan,2021.0,"2021 2nd International Conference on Communication, Computing and Industry 4.0 (C2I4)",10.1109/C2I454156.2021.9689298,2021.0,IEEE Conferences,,1,1,1,1,1,1,1,1,,
-89,An Improved Yin-Yang-Pair Optimization Algorithm Based on Elite Strategy and Adaptive Mutation Method for Big Data Analytics,"Xu H,Ding M,Lu Y,Ye Z",2023.0,Springer-Verlag,10.1007/978-3-031-25158-0_1,2023.0,ACM,Conference Paper,0,1,1,1,0,1,1,0,,
-90,An intrusion detection approach using ensemble Support Vector Machine based Chaos Game Optimization algorithm in big data platform,"Ponmalar A,Dhanakoti V",2022.0,Elsevier Science Publishers B. V.,10.1016/j.asoc.2021.108295,2022.0,ACM,Journal Article,1,1,1,1,1,1,1,1,,
-91,A New Distributed and Decentralized Stochastic Optimization Algorithm with Applications in Big Data Analytics,"Shahbazian R,Grandinetti L,Guerriero F",2019.0,Springer-Verlag,10.1007/978-3-030-13709-0_7,2019.0,ACM,Conference Paper,1,1,1,1,0,1,1,1,,
-92,Feature selection based on an improved cat swarm optimization algorithm for big data classification,"Lin KC,Zhang KY,Huang YH,Hung JC,Yen N",2016.0,Kluwer Academic Publishers,10.1007/s11227-016-1631-0,2016.0,ACM,Journal Article,1,1,1,1,1,1,1,1,,
-93,Developing a Novel Hybrid Biogeography-Based Optimization Algorithm for Multilayer Perceptron Training under Big Data Challenge,"Pu X,Chen S,Yu X,Zhang L",2018.0,Hindawi Limited,10.1155/2018/2943290,2018.0,ACM,Journal Article,1,1,1,1,1,1,1,1,,
-94,Machine Learning and Computational Mathematics: Studies of Accelerating Polymer Phase Discovery and Finding Optimal Policies for a Pandemic,"Xuan Y,J. Garcia-Cervera C,H Fredrickson G",2021.0,"University of California, Santa Barbara",,2021.0,ACM,Ph.D. Thesis,1,1,1,1,1,1,1,1,,
-95,Fast correlated-photon imaging enhanced by deep learning,Li Z.-M.; Wu S.-B.; Gao J.; Zhou H.; Yan Z.-Q.; Ren R.-J.; Yin S.-Y.; Jin X.-M.,2021.0,Optica,10.1364/OPTICA.408843,2021.0,Scopus,,1,1,1,1,1,1,1,1,,
-96,An effective structure of multi-modal deep convolutional neural network with adaptive group teaching optimization,Gupta V.; Pawar S.,2022.0,Soft Computing,10.1007/s00500-022-07107-7,2022.0,Scopus,,1,1,1,1,0,1,1,1,,
-97,Blockchain based Securing Medical Records in Big Data Analytics,Marichamy V.S.; Natarajan V.,2023.0,Data and Knowledge Engineering,10.1016/j.datak.2022.102122,2023.0,Scopus,,1,1,1,1,1,1,1,1,,
-98,Distributed hierarchical deep optimization for federated learning in mobile edge computing,Zheng X.; Shah S.B.H.; Bashir A.K.; Nawaz R.; Rana U.,2022.0,Computer Communications,10.1016/j.comcom.2022.07.028,2022.0,Scopus,,1,1,1,1,1,1,1,1,,
-99,Fuzzy Local Information and Bhattacharya-Based C-Means Clustering and Optimized Deep Learning in Spark Framework for Intrusion Detection,Bouya-Moko B.E.; Boahen E.K.; Wang C.,2022.0,Electronics (Switzerland),10.3390/electronics11111675,2022.0,Scopus,,1,1,1,1,1,1,1,1,,
-100,Improved Metaheuristics with Deep Autoencoders for COVID-19 Detection and Classification,Assudani M.K.; Nirmala B.; Kanimozhi N.; Chandre S.; Sunalini K.K.; Gopatoti A.,2023.0,"2023 2nd International Conference on Electrical, Electronics, Information and Communication Technologies, ICEEICT 2023",10.1109/ICEEICT56924.2023.10156986,2023.0,Scopus,,1,1,1,1,0,0,0,0,,
-101,Predictions of the Key Operating Parameters in Waste Incineration Using Big Data and a Multiverse Optimizer Deep Learning Model,Zhao Z.; Zhou Z.; Lu Y.; Li Z.; Wei Q.; Xu H.,2023.0,Sustainability (Switzerland),10.3390/su151914530,2023.0,Scopus,,1,1,1,1,1,1,1,1,,
-102,Hybrid Whale Tabu algorithm optimized convolutional neural network architecture for intrusion detection in big data,Ponmalar A.; Dhanakoti V.,2022.0,Concurrency and Computation: Practice and Experience,10.1002/cpe.7038,2022.0,Scopus,,1,1,1,1,1,1,1,1,,
 103,Hyperparameter Tuned Deep Learning Enabled Intrusion Detection on Internet of Everything Environment,Hamza M.A.; Abdalla Hashim A.H.; Mohamed H.G.; Alotaibi S.S.; Mahgoub H.; Mehanna A.S.; Motwakel A.,2022.0,"Computers, Materials and Continua",10.32604/cmc.2022.031303,2022.0,Scopus,,1,1,1,1,1,1,1,1,1,"'@ARTICLE{Hamza20226579,
 	author = {Hamza, Manar Ahmed and Abdalla Hashim, Aisha Hassan and Mohamed, Heba G. and Alotaibi, Saud S. and Mahgoub, Hany and Mehanna, Amal S. and Motwakel, Abdelwahed},
 	title = {Hyperparameter Tuned Deep Learning Enabled Intrusion Detection on Internet of Everything Environment},
@@ -803,7 +755,6 @@
 	source = {Scopus},
 	note = {Cited by: 2}
 }"
-106,Spotted Hyena Optimizer Driven Deep Learning-Based Drug-Drug Interaction Prediction in Big Data Environment,Mohammed Jasim M.J.; Kak S.F.; Ageed Z.S.; Zeebaree S.R.M.,2023.0,Computer Systems Science and Engineering,10.32604/csse.2023.037580,2023.0,Scopus,,1,1,1,1,0,0,1,0,,
 107,State-of-health and remaining-useful-life estimations of lithium-ion battery based on temporal convolutional network-long short-term memory,Li C.; Han X.; Zhang Q.; Li M.; Rao Z.; Liao W.; Liu X.; Liu X.; Li G.,2023.0,Journal of Energy Storage,10.1016/j.est.2023.109498,2023.0,Scopus,,1,1,1,1,1,1,1,1,1,"'@ARTICLE{Li2023,
 	author = {Li, Chaoran and Han, Xianjie and Zhang, Qiang and Li, Menghan and Rao, Zhonghao and Liao, Wei and Liu, Xiaori and Liu, Xinjian and Li, Gang},
 	title = {State-of-health and remaining-useful-life estimations of lithium-ion battery based on temporal convolutional network-long short-term memory},
@@ -889,8 +840,6 @@
 	source = {Scopus},
 	note = {Cited by: 26}
 }"
-113,Big Data Classification in IOT Healthcare Application Using Optimal Deep Learning,Akhtar M.D.M.; Ahamad D.; Shatat A.S.A.; Shatat A.S.A.,2023.0,International Journal of Semantic Computing,10.1142/S1793351X22400153,2023.0,Scopus,,1,1,1,1,1,1,1,1,0,
-114,Deep Learning Model for Big Data Classification in Apache Spark Environment,Nithya T.M.; Umanesan R.; Kalavathidevi T.; Selvarathi C.; Kavitha A.,2023.0,Intelligent Automation and Soft Computing,10.32604/iasc.2022.028804,2023.0,Scopus,,1,1,1,1,0,0,1,0,,
 115,Attack prevention in IoT through hybrid optimization mechanism and deep learning framework,Nagaraju R.; Pentang J.T.; Abdufattokhov S.; CosioBorda R.F.; Mageswari N.; Uganya G.,2022.0,Measurement: Sensors,10.1016/j.measen.2022.100431,2022.0,Scopus,,1,1,1,1,1,1,1,1,1,"'@ARTICLE{Nagaraju2022,
 	author = {Nagaraju, Regonda and Pentang, Jupeth Toriano and Abdufattokhov, Shokhjakhon and CosioBorda, Ricardo Fernando and Mageswari, N. and Uganya, G.},
 	title = {Attack prevention in IoT through hybrid optimization mechanism and deep learning framework},
@@ -972,7 +921,6 @@
 	source = {Scopus},
 	note = {Cited by: 21}
 }"
-121,Fuzzy Neighbors and Deep Learning-Assisted Spark Model for Imbalanced Classification of Big Data,Nalinipriya G.; Geetha M.; Sudha D.; Daniya T.,2023.0,"International Journal of Uncertainty, Fuzziness and Knowldege-Based Systems",10.1142/S0218488523500095,2023.0,Scopus,,1,1,1,1,1,1,1,1,0,
 122,Grey Wolf Shuffled Shepherd Optimization Algorithm-Based Hybrid Deep Learning Classifier for Big Data Classification,Banchhor C.; Srinivasu N.,2022.0,International Journal of Swarm Intelligence Research,10.4018/IJSIR.302612,2022.0,Scopus,,1,1,1,1,1,1,1,1,1,"'@ARTICLE{Banchhor2022,
 	author = {Banchhor, Chitrakant and Srinivasu, N.},
 	title = {Grey Wolf Shuffled Shepherd Optimization Algorithm-Based Hybrid Deep Learning Classifier for Big Data Classification},
@@ -1015,7 +963,6 @@
 	source = {Scopus},
 	note = {Cited by: 27}
 }"
-125,Parallel Optimization of Depth Learning Algorithm Based on Behavior Recognition,Y. Shi; B. Zhou; C. Li,2019.0,"2019 International Conference on Intelligent Transportation, Big Data & Smart City (ICITBS)",10.1109/ICITBS.2019.00164,2019.0,,,1,1,1,1,0,0,1,0,,
 126,A Convolutional Autoencoder Method for Simultaneous Seismic Data Reconstruction and Denoising,J. Jiang; H. Ren; M. Zhang,2022.0,IEEE Geoscience and Remote Sensing Letters,10.1109/LGRS.2021.3073560,2022.0,,,1,1,1,1,0,1,1,1,1,"'@ARTICLE{Jiang2022,
 	author = {Jiang, Jinsheng and Ren, Haoran and Zhang, Meng},
 	title = {A Convolutional Autoencoder Method for Simultaneous Seismic Data Reconstruction and Denoising},
@@ -1057,7 +1004,6 @@
 	source = {Scopus},
 	note = {Cited by: 7}
 }"
-129,"Application of machine learning, deep learning and optimization algorithms in geoengineering and geoscience: Comprehensive review and future challenge",,,,,,,,0,1,0,1,1,0,1,0,,
 130,Rider-Deep Belief Network-Based MapReduce Framework for Big Data Classification,Gujjeti S.; Pabboju S.,2021.0,"Smart Innovation, Systems and Technologies",10.1007/978-981-16-0878-0_24,2021.0,Scopus,,1,1,1,1,1,1,1,1,1,"'@ARTICLE{Gujjeti2021241,
 	author = {Gujjeti, Sridhar and Pabboju, Suresh},
 	title = {Rider-Deep Belief Network-Based MapReduce Framework for Big Data Classification},
@@ -1087,4 +1033,3 @@
 	source = {Scopus},
 	note = {Cited by: 84; All Open Access, Green Open Access, Hybrid Gold Open Access}
 }"
-132,,,,,,,,,,,,,,,,,1,
