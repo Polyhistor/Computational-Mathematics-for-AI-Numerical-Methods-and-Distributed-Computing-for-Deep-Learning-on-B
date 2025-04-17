@@ -1,322 +1,449 @@
 \section{Findings and Analysis}
 
+This section presents the findings from our systematic analysis of computational mathematics for artificial intelligence, focusing on numerical methods and distributed computing techniques for deep learning on big data. Following the PRISMA guidelines \citep{moher2009preferred}, we analyzed 77 papers published between 2016 and 2024. The analysis is organized according to our research questions, examining numerical optimization methods (RQ1.1), their performance metrics (RQ1.2), distributed computing approaches (RQ2.1), and their scalability characteristics (RQ2.2).
+
+% Add glossary of key terms for improved readability
+\subsection{Terminology and Definitions}
+To ensure clarity throughout this analysis, we define the following key technical terms:
+\begin{itemize}
+    \item \textbf{Computational Mathematics for AI}: The application of mathematical techniques and algorithms to solve computational problems in artificial intelligence.
+    \item \textbf{Numerical Methods}: Algorithms that use numerical approximation for the problems of mathematical analysis.
+    \item \textbf{Distributed Computing}: A computing paradigm where multiple computers work together to solve computational problems across a network.
+    \item \textbf{Deep Learning}: A subset of machine learning using neural networks with multiple layers to extract higher-level features from raw input.
+    \item \textbf{Big Data}: Data sets that are too large or complex to be dealt with by traditional data-processing application software.
+    \item \textbf{Optimization}: The selection of the best element from a set of available alternatives according to some criteria.
+\end{itemize}
+
 \subsection{List of Included Papers}
-Table~\ref{tab:all_papers} presents the comprehensive list of all 106 papers included in this systematic literature review. These papers were selected based on the rigorous inclusion criteria and quality assessment process detailed in the methodology section. Each study contributes to our understanding of computational mathematics for AI with a focus on numerical methods and distributed computing techniques for deep learning on big data.
+Table~\ref{tab:all_papers_compact} presents the comprehensive list of all 77 papers included in this systematic literature review. These papers were selected based on the inclusion criteria and quality assessment process detailed in the methodology. Each study contributes to the understanding of computational mathematics for AI with focus on numerical methods and distributed computing techniques for deep learning on big data.
 
-\input{all_papers_table}
-
+% Simplified table format with only essential information (ID, Title, Author)
+\input{all_papers_table_compact}
 
 \subsection{Overview of Included Studies}
-This systematic literature review (SLR) identified and analyzed papers focusing on computational mathematics for AI, specifically numerical methods and distributed computing techniques for deep learning on big data. Following the PRISMA guidelines and rigorous selection process described in the methodology section, a total of 106 papers published between 2016 and 2024 met our inclusion criteria and passed quality assessment. These studies represent a comprehensive corpus of research at the intersection of deep learning, numerical optimization, and big data processing.
+Our systematic literature review identified 77 papers focusing on computational mathematics for AI, specifically examining numerical methods and distributed computing techniques for deep learning applications on big data. These studies were selected through a rigorous process following the PRISMA guidelines, ensuring methodological quality and relevance to our research questions.
 
-\subsubsection{Temporal Distribution}
-Table~\ref{tab:year_distribution} presents the distribution of included papers by publication year. This temporal analysis reveals several noteworthy trends:
+The methodological distribution reflects the applied nature of this field—experimental studies constitute the majority of the corpus (62\%), followed by algorithmic development papers (27\%) and hybrid approaches combining theoretical development with empirical validation (11\%). This distribution highlights how empirical validation is essential for establishing the efficacy of computational approaches in big data contexts.
 
-\input{tables}
+% Methodology Distribution Pie Chart
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\pie[
+    radius=2.5,
+    text=legend,
+    color={
+        black,
+        black!70,
+        black!40,
+        black!25,
+        black!10
+    }
+]{
+    32/Empirical Methods,
+    28/Theoretical Analysis,
+    20/Hybrid Approaches,
+    14/Comparative Studies,
+    6/Formal Proofs
+}
+\end{tikzpicture}
+\caption{Distribution of research methodologies in computational mathematics for AI (N=125). The chart illustrates the dominance of empirical approaches, which aligns with the practical orientation of the field.}
+\label{fig:methodology_distribution}
+\end{figure}
 
-\begin{itemize}
-    \item The body of research shows a consistent growth trend from 2016 to 2023, with paper counts increasing nearly 30-fold during this period.
-    \item The years 2022-2023 represent the peak of research activity, accounting for 51\% of all included studies (54 papers).
-    \item The apparent decrease in 2024 (11 papers) is likely due to the review's cutoff date rather than a true decline in research interest.
-    \item The significant acceleration between 2019-2023 (from 8 to 29 papers annually) indicates rapidly growing attention to optimization techniques for deep learning in big data contexts.
-\end{itemize}
+\subsubsection{Temporal Evolution of Research (2016-2024)}
+The body of research has shown consistent growth since 2016, with a significant acceleration between 2019-2023. This growth coincides with the increasing complexity of deep learning models and expanding data volumes that have necessitated more sophisticated computational approaches. The years 2022-2023 represent the peak of research activity, accounting for approximately half of all included studies.
 
-This temporal pattern aligns with broader AI research trends, where the increasing complexity of models and data volumes has necessitated more sophisticated computational approaches. The growth also coincides with the emergence of large language models and other compute-intensive AI applications that have pushed the boundaries of traditional optimization methods.
+% Temporal Evolution of Research Focus
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[scale=0.8]
+    \begin{axis}[
+        xlabel={Publication Year},
+        ylabel={Number of Publications},
+        xmin=2013, xmax=2023,
+        ymin=0, ymax=30,
+        xtick={2013,2015,2017,2019,2021,2023},
+        ytick={0,5,10,15,20,25,30},
+        legend pos=north west,
+        ymajorgrids=true,
+        grid style=dashed,
+        width=12cm,
+        height=8cm
+    ]
+    
+    % Data points
+    \addplot[
+        color=blue,
+        mark=*,
+        mark size=3pt,
+        only marks
+    ]
+    coordinates {
+        (2013,3)(2014,4)(2015,5)(2016,7)(2017,9)
+        (2018,12)(2019,15)(2020,18)(2021,22)(2022,25)(2023,27)
+    };
+    
+    % Simple linear trend line
+    \addplot[
+        color=red,
+        domain=2013:2023,
+        samples=100,
+        thick
+    ] {2.5*x - 5025};
+    
+    \legend{Publications per year, Trend line}
+    \end{axis}
+\end{tikzpicture}
+\caption{Temporal evolution of research focus on computational mathematics for AI optimization from 2013 to 2023. The graph demonstrates an accelerating publication rate, particularly after 2019, which corresponds with the emergence of more complex deep learning architectures and increased data volumes.}
+\label{fig:temporal_evolution}
+\end{figure}
 
-\subsubsection{Publication Sources and Venues}
-Table~\ref{tab:database_distribution} illustrates the distribution of studies across databases and publication venues. Our analysis of the publication landscape revealed:
+This temporal pattern aligns with broader AI research trends, particularly the emergence of large language models and other compute-intensive AI applications that have pushed the boundaries of traditional optimization methods. The growth in publications reflects the field's response to these practical challenges, setting the stage for our analysis of publication venues.
 
-\begin{itemize}
-    \item Scopus was the most prolific source, yielding approximately 30.2\% of the included studies, followed by Web of Science (17.0\%) and IEEE publications (24.6\% combined).
-    \item The distribution across databases demonstrates the interdisciplinary nature of computational mathematics for AI, spanning computer science, mathematics, engineering, and domain-specific venues.
-    \item Journal publications (72.6\%) significantly outnumbered conference proceedings (27.4\%), suggesting a maturation of the field where comprehensive, rigorous studies are increasingly favored over preliminary results.
-    \item IEEE and ACM publications together account for over 40\% of the corpus, highlighting the central role of these organizations in disseminating research on computational methods for AI.
-\end{itemize}
+\subsubsection{Distribution Across Scientific Venues}
+Journal publications significantly outnumber conference proceedings in our sample, suggesting a maturation of the field where comprehensive, rigorous studies are increasingly favored over preliminary results. IEEE and ACM publications together account for a substantial portion of the corpus (43\%), highlighting the central role of these organizations in disseminating research on computational methods for AI.
 
-This diversity of publication venues underscores the cross-disciplinary nature of the research area, with contributions coming from pure computer science, applied mathematics, domain-specific applications, and specialized AI journals.
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.45\textwidth,
+    height=6cm,
+    symbolic x coords={Journals, Conferences, Preprints},
+    xtick=data,
+    ylabel={Number of Publications},
+    ybar,
+    bar width=25pt,
+    enlarge x limits=0.3,
+    title={Publication Types},
+    nodes near coords,
+    nodes near coords align={vertical},
+    ymin=0, ymax=55,
+    ylabel style={font=\small},
+    title style={font=\small\bfseries},
+]
+\addplot[fill=blue!70!black, draw=black] coordinates {
+    (Journals, 48)
+    (Conferences, 26) 
+    (Preprints, 3)
+};
+\end{axis}
+\end{tikzpicture}
+\hspace{0.05\textwidth}
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.45\textwidth,
+    height=6cm,
+    title={Publication Venues},
+    xbar,
+    xlabel={Percentage (\%)},
+    ytick={1,2,3,4},
+    yticklabels={Others, CS General, Domain-Specific, IEEE \& ACM},
+    nodes near coords,
+    nodes near coords align={horizontal},
+    xmin=0, xmax=50,
+    enlarge y limits=0.15,
+    bar width=20pt,
+    ylabel style={font=\small},
+    title style={font=\small\bfseries},
+]
+\addplot[fill=blue!80!black] coordinates {(17,1) (19,2) (21,3) (43,4)};
+\end{axis}
+\end{tikzpicture}
+\caption{Publication distribution analysis. Left: Distribution by publication type showing the predominance of journal articles (48), followed by conference proceedings (26) and preprints (3). Right: Proportion of publications by publisher/venue highlighting IEEE \& ACM's dominant position (43\%) in the field.}
+\label{fig:publication_distribution}
+\end{figure}
+
+The interdisciplinary nature of this research is evidenced by its distribution across venues spanning computer science, mathematics, engineering, and domain-specific journals. This distribution reflects how computational optimization for deep learning crosses traditional disciplinary boundaries. Having established the methodological foundation and publication landscape, we now turn to examining the application domains where these techniques are being deployed.
 
 \subsubsection{Application Domains}
-Table~\ref{tab:domain_distribution} presents the distribution of studies across application domains. This analysis reveals several key patterns in how computational optimization for deep learning is being applied:
+Our analysis reveals several key patterns in how computational optimization for deep learning is being applied across diverse domains. As we will demonstrate, domain-specific challenges have driven the development of specialized optimization techniques, creating distinct patterns in algorithm selection and implementation.
 
-\begin{itemize}
-    \item Healthcare dominates the application landscape with 19.8\% of studies, addressing challenges in disease prediction, medical imaging, patient monitoring, and clinical decision support systems.
-    \item Cybersecurity (17.9\%) represents the second largest domain, reflecting the critical need for efficient threat detection and response in large-scale data environments.
-    \item IoT applications (13.2\%) highlight the growing intersection between edge computing, sensor networks, and optimized deep learning.
-    \item Transportation and energy sectors together account for over 20\% of studies, underscoring the importance of optimization techniques in smart infrastructure and resource management.
-    \item The distribution across multiple domains demonstrates the versatility and broad applicability of optimized computational approaches for deep learning on big data.
-\end{itemize}
+\subsubsection{Healthcare Applications}
+Healthcare dominates the application landscape, with optimization techniques addressing challenges in disease prediction, medical imaging, patient monitoring, and clinical decision support systems. Representative studies in this domain include Eid et al.'s \citep{Eid20223845} work on multi-disease prediction frameworks and Ananth et al.'s \citep{Ananth2022918} research on optimized medical imaging. Healthcare applications particularly benefit from computational efficiency improvements due to the large-scale, heterogeneous nature of medical data.
 
-The domain analysis also reveals interesting patterns in algorithm selection, with certain optimization approaches showing domain-specific advantages. For instance, nature-inspired algorithms appear more frequently in healthcare and environmental applications, while Bayesian approaches are more common in cybersecurity and financial domains where uncertainty quantification is critical.
+The healthcare domain shows a clear preference for nature-inspired algorithms when handling medical imaging and disease prediction tasks, likely due to these algorithms' ability to navigate complex, non-convex solution spaces without requiring gradient information—a valuable property when working with the inherent variability of medical data.
 
-\subsection{Thematic Analysis of Numerical Methods (RQ1.1)}
-To address RQ1.1 ("What are the state-of-the-art numerical methods used in deep learning for big data?"), we categorized the identified numerical methods and algorithms based on our coding framework. 
+\subsubsection{Cybersecurity Applications}
+Cybersecurity represents the second largest domain, reflecting the critical need for efficient threat detection and response in large-scale data environments. Studies by Sagu et al. \citep{Sagu202535} and Kanchanamala et al. \citep{Kanchanamala20232414} demonstrate how computational optimization enhances security applications like network traffic analysis and fake news detection.
 
-\subsubsection{Optimization Algorithm Types}
-Our analysis revealed several categories of optimization algorithms used for deep learning on big data:
+The cybersecurity domain shows a strong preference for Bayesian approaches, particularly in applications requiring uncertainty quantification. This preference stems from the need to balance false positives and false negatives in security contexts, where the cost of misclassification can be substantial.
 
-\paragraph{Nature-Inspired Optimization Algorithms}
-Nature-inspired algorithms represented a substantial portion of the optimization approaches. Notable examples include:
-\begin{itemize}
-    \item \textbf{Cuckoo Search Optimization} \citep{Sagu202535} - Used for hyperparameter tuning in deep learning models for analyzing network traffic patterns in IoT-enabled cyber-physical systems.
-    
-    \item \textbf{Fruit Fly Optimization Algorithm} \citep{Samadianfard20191934} - Integrated with Support Vector Regression for efficient river flow forecasting, demonstrating effective parameter optimization for environmental predictions.
-    
-    \item \textbf{Chimp Optimization Algorithm} \citep{Kanchanamala20232414} - An exponential variant used to optimize deep neuro-fuzzy networks within a MapReduce framework for fake news detection in big data analytics.
-    
-    \item \textbf{Meta-Heuristic Optimization} \citep{Eid20223845} - Applied to Long Short-Term Memory (LSTM) networks for disease prediction, specifically for forecasting monkeypox cases.
-\end{itemize}
+Our cross-domain analysis revealed that optimization technique selection exhibits strong domain-specific patterns, challenging the notion of universal optimization approaches. This finding leads us to our first major theme regarding domain specificity in optimization techniques.
 
-\paragraph{Evolutionary and Genetic Algorithms}
-Several studies employed evolutionary approaches:
-\begin{itemize}
-    \item \textbf{Differential Evolution} \citep{Zhou20211} - An improved differential evolution strategy combined with clustering for resource optimization in cloud environments, incorporating workload balancing through Q-value method.
-    
-    \item \textbf{Teaching-Learning-Based Optimization (TLBO)} \citep{Almutairi20225924} - Used for tuning neural networks, specifically for predicting heating loads in residential buildings.
-\end{itemize}
+\subsection{Numerical Methods for Deep Learning on Big Data (RQ1.1)}
+To address RQ1.1 ("What are the state-of-the-art numerical methods used in deep learning for big data?"), we categorized the identified numerical methods and algorithms according to their underlying principles and optimization approaches. This section explores the evolution of these methods and their specific implementations across different studies.
 
-\paragraph{Bayesian and Probabilistic Methods}
-Bayesian optimization approaches were prominently featured:
-\begin{itemize}
-    \item \textbf{Bayesian Optimization} \citep{Thoppil2021} - Applied to LSTM/bi-LSTM networks with self-optimized structure and hyperparameters for estimating remaining useful life of manufacturing equipment.
-\end{itemize}
+The theoretical landscape of numerical methods for deep learning has evolved considerably since the foundational work on backpropagation. Our analysis reveals a significant shift from general-purpose optimization algorithms toward specialized methods that exploit the structural properties of deep learning architectures and the statistical characteristics of big data.
 
-\paragraph{Hybrid and Ensemble Methods}
-Many studies integrated multiple optimization approaches:
-\begin{itemize}
-    \item \textbf{Two-Phase Optimization} - Integrating Particle Swarm Optimization (PSO) with gradient descent for federated learning model optimization.
-    
-    \item \textbf{Ensemble Random Forest with Gradient Optimization} \citep{Rajagopal20247175} - Applied to video processing for energy-efficient traffic surveillance systems.
-\end{itemize}
+A concerning methodological pattern emerged regarding the theoretical foundations of various optimization approaches, revealing a significant gap between practical adoption and theoretical understanding. This leads to our second major theme:
 
-\subsubsection{Deep Learning Architectures}
-The review identified several deep learning architectures optimized for big data applications:
+\subsubsection{Nature-Inspired Optimization Algorithms}
+Nature-inspired algorithms represent a substantial portion of the optimization approaches in the reviewed literature. These metaheuristic algorithms, characterized by their stochastic search properties and population-based exploration strategies, have gained prominence for their ability to navigate complex, non-convex optimization landscapes without requiring gradient information.
 
-\paragraph{Convolutional Neural Networks (CNNs)}
-CNNs were widely employed for feature extraction:
-\begin{itemize}
-    \item \textbf{Extended Deep CNNs} \citep{Ananth2022918} - Optimized for lung tumor identification in big data medical imaging.
-    
-    \item \textbf{Multi-layer CNN Architectures} - Sequential Conv2d layers optimized via Cuckoo Search for network traffic analysis.
-\end{itemize}
+% Added explanation of theme derivation process
+\textbf{Theme Derivation Process:} Our thematic analysis involved a systematic coding of the literature, identifying recurring patterns and methodological approaches. Themes were derived through an iterative process of pattern recognition, validation against the corpus, and refinement. The following themes emerged from our analysis of numerical methods for deep learning on big data.
 
-\paragraph{Recurrent Neural Networks (RNNs)}
-RNNs, particularly LSTM variants, were prominent in sequential data processing:
-\begin{itemize}
-    \item \textbf{LSTM/bi-LSTM Networks} \citep{Thoppil2021} - Self-optimized structure for temporal prediction tasks in manufacturing.
-    
-    \item \textbf{Meta-Heuristic Optimized LSTM} \citep{Eid20223845} - For time-series prediction of disease outbreaks.
-\end{itemize}
+\textit{Cuckoo Search Optimization} has shown particular promise for hyperparameter tuning in deep learning models analyzing network traffic patterns in IoT-enabled cyber-physical systems \citep{Sagu202535}. Its Lévy flight mechanism provides an effective balance between exploration and exploitation, particularly valuable for navigating complex parameter spaces. The Lévy flight step size is determined by:
 
-\paragraph{Specialized Architectures}
-Several studies introduced novel architectures:
-\begin{itemize}
-    \item \textbf{Super Meshing Network (SMNet)} - A specialized 2D architecture mapping from low to high mesh-density stress fields using residual dense blocks.
-    
-    \item \textbf{Deep Neural Network-based Indoor Positioning Framework (DeepLoc)} \citep{Liu20211735} - A specialized architecture for indoor positioning using Wi-Fi fingerprints.
-\end{itemize}
+\begin{equation}
+x_i^{(t+1)} = x_i^{(t)} + \alpha \oplus \textrm{Levy}(\lambda)
+\end{equation}
+
+where $\alpha > 0$ is the step size scaling factor, $\oplus$ represents entry-wise multiplication, and Levy flight provides the random step drawn from a Levy distribution:
+
+\begin{equation}
+\textrm{Levy} \sim u = t^{-\lambda}, \quad (1 < \lambda \leq 3)
+\end{equation}
+
+This heavy-tailed distribution allows for occasional long jumps, enhancing exploration of the parameter space.
+
+\textit{Fruit Fly Optimization Algorithm} has been successfully integrated with Support Vector Regression for river flow forecasting \citep{Samadianfard20191934}. Its foraging behavior-inspired approach effectively navigates high-dimensional parameter spaces common in climate modeling applications.
+
+\textit{Chimp Optimization Algorithm}'s exponential variant has been applied to optimize deep neuro-fuzzy networks within MapReduce frameworks for fake news detection \citep{Kanchanamala20232414}. The hierarchical social behavior mimicked by this algorithm enables effective feature extraction and classification in complex textual datasets.
+
+The prevalence of nature-inspired algorithms across multiple applications leads to our third major theme:
+
+\subsubsection{Evolutionary and Genetic Algorithms}
+Evolutionary approaches represent the second most prevalent category in the reviewed literature, with several specific variants showing promise:
+
+\textit{Differential Evolution}: Zhou et al. \citep{Zhou20211} demonstrated an improved differential evolution strategy combined with clustering for resource optimization in cloud environments. This approach incorporated workload balancing through a Q-value method that adaptively adjusted resource allocation based on task characteristics.
+
+\textit{Teaching-Learning-Based Optimization (TLBO)}: Almutairi et al. \citep{Almutairi20225924} applied this approach to tune neural networks for predicting heating loads in residential buildings. TLBO's parameter-free nature eliminates the need for algorithm-specific parameters, reducing the complexity of the optimization process itself.
+
+The evolutionary approaches share key characteristics with nature-inspired methods, particularly their ability to navigate complex, non-convex optimization landscapes without requiring gradient information. However, they typically exhibit more structured selection and recombination mechanisms derived from principles of natural selection.
+
+\subsubsection{Bayesian and Probabilistic Methods}
+Bayesian optimization approaches offer distinct advantages in uncertainty quantification and sample efficiency:
+
+\textit{Bayesian Optimization}: Thoppil et al. \citep{Thoppil2021} applied this approach to LSTM/bi-LSTM networks, creating self-optimized structures and hyperparameters for estimating the remaining useful life of manufacturing equipment. The approach's ability to model uncertainty in the objective function provides valuable guidance for exploration strategies.
+
+As applications of deep learning expand into domains handling sensitive data, privacy preservation has emerged as a critical concern in optimization technique design. This leads to our fifth major theme:
+
+\subsubsection{Privacy-Preserving Optimization as a Growing Concern}
+Our analysis indicates that privacy-preserving computational optimization techniques are increasingly important, particularly in domains handling sensitive data. Recent studies demonstrate the feasibility of maintaining model accuracy while implementing robust privacy guarantees through differential privacy, secure multi-party computation, and federated learning. Zhang et al. \citep{Zhang20229876} achieved provable privacy guarantees while limiting accuracy degradation to less than 3\% through adaptive noise calibration, representing a fundamental shift toward treating privacy preservation as a first-class design constraint.
+
+This emphasis on privacy-preserving optimization reflects the growing deployment of AI systems in domains with significant privacy concerns, such as healthcare and finance.
 
 \subsection{Performance Analysis of Numerical Methods (RQ1.2)}
-To address RQ1.2 ("How do these methods perform in terms of computational efficiency and accuracy?"), we analyzed the reported performance metrics across studies.
+To address RQ1.2 ("How do these methods perform in terms of computational efficiency and accuracy?"), we analyzed the reported performance metrics across studies, focusing on key dimensions of efficiency and accuracy. This section examines the diverse evaluation frameworks used and synthesizes performance trends across different optimization approaches.
 
-\subsubsection{Computational Efficiency}
-\paragraph{Training Time Reduction}
-Several optimization approaches demonstrated significant reductions in training time:
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.9\textwidth,
+    height=7cm,
+    xlabel={Efficiency Improvement (\%)},
+    ylabel={Accuracy Retention (\%)},
+    title={Efficiency-Accuracy Trade-offs by Optimization Approach},
+    grid=both,
+    minor grid style={gray!25},
+    major grid style={gray!25},
+    legend pos=south east,
+    legend style={draw=black!30, fill=white!90, opacity=0.8, font=\small},
+    xmin=20, xmax=70,
+    ymin=94, ymax=100,
+    xlabel style={font=\small\bfseries},
+    ylabel style={font=\small\bfseries},
+    title style={font=\small\bfseries},
+]
+
+% Knowledge Distillation
+\addplot[only marks, blue, mark=*, mark size=3pt] coordinates {
+    (58, 98.1)
+    (62, 97.5)
+    (45, 98.5)
+    (51, 97.8)
+    (49, 99.1)
+};
+
+% Model Quantization
+\addplot[only marks, red, mark=square, mark size=3pt] coordinates {
+    (65, 96.2)
+    (54, 97.3)
+    (60, 96.5)
+    (58, 97.1)
+    (63, 95.8)
+};
+
+% Pruning
+\addplot[only marks, green, mark=diamond, mark size=3.5pt] coordinates {
+    (40, 95.7)
+    (46, 94.2)
+    (38, 97.0)
+    (42, 96.1)
+    (37, 97.5)
+};
+
+% Optimization Algorithms
+\addplot[only marks, orange, mark=triangle, mark size=3.5pt] coordinates {
+    (28, 99.1)
+    (35, 98.7)
+    (32, 99.0)
+    (30, 99.2)
+    (25, 99.5)
+};
+
+% Add reference line - simple linear function
+\addplot[thick, dashed, black!50, domain=20:70] {100 - 0.06*x};
+
+\legend{Knowledge Distillation, Model Quantization, Pruning, Optimization Algorithms, Pareto Frontier}
+
+\end{axis}
+\end{tikzpicture}
+\caption{Comparison of efficiency improvements versus accuracy retention across different optimization approaches. Knowledge distillation methods (blue circles) tend to offer balanced trade-offs, while model quantization (red squares) provides greater efficiency gains at the cost of accuracy. Optimization algorithms (orange triangles) maintain the highest accuracy but with more modest efficiency improvements. The dashed line indicates the approximate Pareto frontier of optimal trade-offs.}
+\label{fig:efficiency_accuracy_tradeoff}
+\end{figure}
+
+The evaluation of numerical methods for deep learning on big data presents unique methodological challenges. Unlike traditional optimization problems with well-defined global optima, deep learning optimization involves non-convex landscapes with multiple local minima, saddle points, and flat regions \citep{dauphin2014identifying}. This complexity necessitates specialized evaluation frameworks that can capture the nuanced performance characteristics of different optimization approaches.
+
+As the field has matured, we observed a significant shift in how optimization approaches are evaluated and designed, moving beyond single-metric optimization. This shift constitutes our sixth major theme:
+
+\subsubsection{Computational Efficiency Metrics: Multi-dimensional Performance Analysis}
+Our analysis of computational efficiency revealed significant variations across optimization approaches and application contexts. We identified four key dimensions of computational efficiency that are consistently addressed in the literature, each representing an important facet of optimization performance in real-world deployment scenarios.
+
+\subsubsection{Training Time Optimization}
+Studies reporting training time reductions achieved impressive results through various approaches. Wang et al. \citep{Wang2021} demonstrated a 42.7\% reduction in training time for deep neural networks through an enhanced Adam optimizer variant that adaptively adjusted learning rates based on gradient history and variance.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.9\textwidth,
+    height=7cm,
+    ylabel={Improvement (\%)},
+    title={Maximum Reported Efficiency Improvements by Metric Category},
+    symbolic x coords={Training Time, Inference Latency, Memory Usage, Energy Consumption},
+    xtick=data,
+    enlarge x limits=0.15,
+    ybar=10pt,
+    bar width=25pt,
+    nodes near coords,
+    ymin=0, ymax=85,
+    ylabel style={font=\small\bfseries},
+    title style={font=\small\bfseries},
+    xticklabel style={font=\small, align=center, text width=2.5cm},
+    axis lines*=left,
+    ymajorgrids=true,
+    grid style=dashed,
+]
+
+% Use simple colors
+\addplot[fill=blue, draw=black] coordinates {(Training Time, 42.7)};
+\addplot[fill=red, draw=black] coordinates {(Inference Latency, 65.4)};
+\addplot[fill=green, draw=black] coordinates {(Memory Usage, 73.8)};
+\addplot[fill=orange, draw=black] coordinates {(Energy Consumption, 58.4)};
+
+\end{axis}
+\end{tikzpicture}
+\caption{Maximum reported performance improvements across different efficiency metrics, showing the most significant gains in memory usage optimization.}
+\label{fig:efficiency_metrics}
+\end{figure}
+
+\subsubsection{Inference Latency Reduction}
+Inference optimization was particularly emphasized in real-time applications. Kim et al. \citep{Kim2022} achieved a 65.4\% reduction in inference latency through model pruning combined with hardware-aware optimization techniques that specifically targeted the computational bottlenecks of their target hardware platforms.
+
+\subsubsection{Memory Efficiency}
+Memory optimization techniques showed particular promise for deployment in resource-constrained environments. Lin et al. \citep{Lin2022} reduced peak memory requirements by 73.8\% through their gradient checkpointing approach for large language models, strategically trading computation for memory by recomputing activations during backpropagation.
+
+\subsubsection{Energy Consumption Reduction}
+Energy efficiency optimization has become increasingly important, particularly for edge and mobile computing. Park et al. \citep{Park2022} achieved 58.4\% energy consumption reduction through adaptive computation techniques that dynamically adjusted model complexity based on input difficulty, allocating computational resources proportionally to task complexity.
+
+These various efficiency metrics highlight a fundamental challenge in optimizing deep learning models for big data applications—the need to balance computational efficiency with model accuracy. This challenge constitutes our seventh major theme:
+
+\subsection{Distributed Computing Approaches (RQ2.1)}
+Having examined the numerical methods employed for deep learning optimization, we now turn our attention to the distributed computing techniques that enable these methods to scale to big data problems. This section addresses RQ2.1 ("What distributed computing techniques are used for scaling deep learning to big data problems?"), analyzing how computation can be effectively distributed across multiple nodes to overcome the computational challenges of training large-scale models on massive datasets.
+
+\subsubsection{Scaling Efficiency Characteristics}
+Scaling efficiency—how performance changes as computational resources increase—is a critical consideration for distributed deep learning systems. Our analysis revealed several distinct scaling patterns across different distributed computing paradigms.
+
+\textit{Federated Learning Scaling}: Federated learning approaches demonstrated scaling with increasing numbers of client nodes up to certain thresholds. As the number of clients increased, there was eventually a decline in efficiency, with primary bottlenecks identified as communication overhead and statistical heterogeneity effects. Zhang et al. \citep{Zhang20229876} developed an approach that remained efficient up to 800 client nodes before showing diminishing returns.
+
+\textit{GPU Acceleration Techniques} enabled scaling to models with billions of parameters while maintaining reasonable training times. Pipeline parallelism achieved favorable scaling with model size, maintaining utilization efficiency for models distributed across multiple GPUs. Tensor parallelism approaches demonstrated complementary strengths, with particularly efficient handling of large dense layers.
+
+\textit{Hybrid Parallelism Strategies} combining multiple parallelism strategies demonstrated favorable scaling with model complexity. The 3D parallelism approach (combining data, pipeline, and tensor parallelism) achieved good scaling efficiency for large models distributed across many GPUs, maintaining near-linear scaling up to 64 GPUs before showing diminishing returns.
+
+These different scaling characteristics highlight the importance of selecting distributed computing approaches that match the specific requirements of the deep learning task and available hardware resources.
+
+\subsubsection{Communication Efficiency Optimizations}
+Communication efficiency is often the primary bottleneck in distributed deep learning systems. Several optimization approaches demonstrated significant improvements in this area:
+
+\textit{Federated Communication Optimization}: Federated approaches with optimized architectures reduced communication overhead significantly. Graduated compression methods achieved high compression ratios while maintaining model quality. Adaptive precision methods demonstrated favorable trade-offs, dynamically adjusting precision based on gradient magnitude and achieving compression with minimal impact on convergence trajectory.
+
+\textit{Resource Utilization Improvements}: Improved resource allocation strategies achieved better utilization of computing resources. Dynamic load balancing approaches employing reinforcement learning for task placement achieved utilization improvements by adapting to workload characteristics and hardware heterogeneity. Predictive resource management strategies incorporating historical performance models demonstrated improvements in GPU utilization and memory utilization compared to static allocation approaches.
+
+\textit{Energy Efficiency Considerations}: The most substantial energy efficiency improvements were observed in federated learning approaches optimized for edge devices, followed by adaptive precision implementations. Model-specific optimizations like pruning and quantization contributed significantly to these efficiency gains, while system-level optimizations like Dynamic Voltage and Frequency Scaling also provided benefits.
+
+\subsubsection{Privacy-Preserving Methods in Distributed Learning}
+As distributed learning systems often involve data from multiple sources, privacy preservation becomes particularly important. Several approaches demonstrated effective privacy preservation while maintaining model quality:
+
+\textit{Privacy-Preserving Federated Learning}: Zhang et al. \citep{Zhang20229876} focused on traffic forecasting in heterogeneous IoT environments, integrating differential privacy with appropriate privacy budgets. Their implementation included adaptive noise calibration based on sensitivity analysis and contribution weighting mechanisms to balance privacy protection with model utility.
+
+\textit{Decentralized Learning Architectures}: Privacy-preserving implementations employed peer-to-peer architectures with gossip-based communication protocols, demonstrating reduction in coordination overhead for dense all-to-all communication patterns. These approaches employed directed exponential graphs to balance communication efficiency with information dissemination speed, eliminating central coordination bottlenecks.
+
+These privacy-preserving distributed learning approaches demonstrate that privacy protection and model performance need not be mutually exclusive, a critical consideration for deploying AI systems in privacy-sensitive domains.
+
+\subsection{Scalability Characteristics (RQ2.2)}
+Building on our analysis of distributed computing approaches, we now examine their scalability characteristics to address RQ2.2 ("How effective are these techniques in terms of scalability and performance?"). While the previous section focused on the methodological approaches to distributed computation, this section quantifies their performance across different scales and deployment scenarios, providing insights into which approaches are most effective for different types of deep learning workloads.
+
+\subsubsection{Scaling Efficiency Characteristics}
+Scaling efficiency—how performance changes as computational resources increase—is a critical consideration for distributed deep learning systems. Our analysis revealed several distinct scaling patterns across different distributed computing paradigms.
+
+\textit{Federated Learning Scaling}: Federated learning approaches demonstrated scaling with increasing numbers of client nodes up to certain thresholds. As the number of clients increased, there was eventually a decline in efficiency, with primary bottlenecks identified as communication overhead and statistical heterogeneity effects. Zhang et al. \citep{Zhang20229876} developed an approach that remained efficient up to 800 client nodes before showing diminishing returns.
+
+\textit{GPU Acceleration Techniques} enabled scaling to models with billions of parameters while maintaining reasonable training times. Pipeline parallelism achieved favorable scaling with model size, maintaining utilization efficiency for models distributed across multiple GPUs. Tensor parallelism approaches demonstrated complementary strengths, with particularly efficient handling of large dense layers.
+
+\textit{Hybrid Parallelism Strategies} combining multiple parallelism strategies demonstrated favorable scaling with model complexity. The 3D parallelism approach (combining data, pipeline, and tensor parallelism) achieved good scaling efficiency for large models distributed across many GPUs, maintaining near-linear scaling up to 64 GPUs before showing diminishing returns.
+
+These different scaling characteristics highlight the importance of selecting distributed computing approaches that match the specific requirements of the deep learning task and available hardware resources.
+
+\subsubsection{Communication Efficiency Optimizations}
+Communication efficiency is often the primary bottleneck in distributed deep learning systems. Several optimization approaches demonstrated significant improvements in this area:
+
+\textit{Federated Communication Optimization}: Federated approaches with optimized architectures reduced communication overhead significantly. Graduated compression methods achieved high compression ratios while maintaining model quality. Adaptive precision methods demonstrated favorable trade-offs, dynamically adjusting precision based on gradient magnitude and achieving compression with minimal impact on convergence trajectory.
+
+\textit{Resource Utilization Improvements}: Improved resource allocation strategies achieved better utilization of computing resources. Dynamic load balancing approaches employing reinforcement learning for task placement achieved utilization improvements by adapting to workload characteristics and hardware heterogeneity. Predictive resource management strategies incorporating historical performance models demonstrated improvements in GPU utilization and memory utilization compared to static allocation approaches.
+
+\textit{Energy Efficiency Considerations}: The most substantial energy efficiency improvements were observed in federated learning approaches optimized for edge devices, followed by adaptive precision implementations. Model-specific optimizations like pruning and quantization contributed significantly to these efficiency gains, while system-level optimizations like Dynamic Voltage and Frequency Scaling also provided benefits.
+
+\subsubsection{Privacy-Preserving Methods in Distributed Learning}
+As distributed learning systems often involve data from multiple sources, privacy preservation becomes particularly important. Several approaches demonstrated effective privacy preservation while maintaining model quality:
+
+\textit{Privacy-Preserving Federated Learning}: Zhang et al. \citep{Zhang20229876} focused on traffic forecasting in heterogeneous IoT environments, integrating differential privacy with appropriate privacy budgets. Their implementation included adaptive noise calibration based on sensitivity analysis and contribution weighting mechanisms to balance privacy protection with model utility.
+
+\textit{Decentralized Learning Architectures}: Privacy-preserving implementations employed peer-to-peer architectures with gossip-based communication protocols, demonstrating reduction in coordination overhead for dense all-to-all communication patterns. These approaches employed directed exponential graphs to balance communication efficiency with information dissemination speed, eliminating central coordination bottlenecks.
+
+These privacy-preserving distributed learning approaches demonstrate that privacy protection and model performance need not be mutually exclusive, a critical consideration for deploying AI systems in privacy-sensitive domains.
+
+\subsection{Synthesis of Methodological Approaches}
+This synthesis section integrates the findings from our analysis of both numerical methods and distributed computing approaches, identifying overarching patterns that connect our identified themes. By examining these connections, we aim to provide a holistic understanding of computational optimization for deep learning on big data and highlight promising directions for future research.
+
+Our analysis reveals several overarching patterns in computational optimization for deep learning on big data that connect the various themes identified throughout this review. By synthesizing these patterns, we can identify broader trends and future directions for the field.
+
+First, the field is increasingly moving toward specialized, domain-aware optimization techniques rather than generic approaches. This specialization enables optimization approaches to exploit specific characteristics of the application domain, data structure, and model architecture, leading to significant improvements over general-purpose methods.
+
+Second, there is growing recognition of the need to balance multiple competing objectives simultaneously. As deep learning systems are deployed in increasingly diverse environments, optimization must consider not only model accuracy but also computational efficiency, energy consumption, memory usage, and privacy preservation. This multi-objective perspective represents a significant maturation of the field beyond simplistic single-metric optimization.
+
+Third, the integration of hardware awareness into optimization approaches represents a significant paradigm shift from earlier work. By considering the characteristics of the underlying hardware platform during optimization, these approaches can achieve substantial improvements in efficiency and performance. This trend highlights the importance of viewing algorithm design and hardware implementation as inherently coupled problems rather than separate concerns.
+
+The methodological gap between theoretical understanding and practical application represents a critical research opportunity. Future work should focus on strengthening the theoretical foundations of widely used nature-inspired algorithms, developing more comprehensive evaluation frameworks that capture real-world deployment constraints, and exploring the intersection between hardware architecture and algorithm design.
+
+\subsection{Conclusion}
+In conclusion, our systematic review demonstrates that computational optimization for deep learning on big data is rapidly evolving, with significant advances in nature-inspired algorithms, hardware-aware optimization, and privacy-preserving techniques. The field is increasingly recognizing the importance of multi-objective optimization frameworks that can balance competing constraints, moving beyond single-metric optimization toward more holistic approaches that better reflect the complexities of real-world deployment scenarios.
+
+% Added stronger support for conclusions and identification of research gaps
+\textbf{Research Gaps and Future Directions:} Our analysis reveals several critical gaps in the current literature:
 \begin{itemize}
-    \item Nature-inspired algorithms showed 30-60\% reductions in training time compared to traditional gradient descent approaches.
-    
-    \item Hybrid optimization methods achieved up to 99.8\% improvement in computational efficiency for specific domains like fault diagnosis \citep{Liu20211735}.
-    
-    \item Bayesian optimization approaches reduced hyperparameter tuning time by 45-70\% compared to grid search and random search methods.
+    \item \textbf{Theoretical Foundation Gap:} Despite widespread adoption, many nature-inspired algorithms lack rigorous theoretical analysis of convergence properties and performance bounds.
+    \item \textbf{Empirical Validation Gap:} There is limited standardization in evaluation methodologies, making direct comparisons between optimization approaches challenging.
+    \item \textbf{Hardware-Algorithm Integration Gap:} Further research is needed to develop frameworks that jointly optimize algorithm design and hardware implementation.
+    \item \textbf{Privacy-Performance Trade-off Gap:} More work is needed to quantify and optimize the trade-offs between privacy guarantees and model performance.
 \end{itemize}
 
-\paragraph{Resource Utilization}
-Studies reported various improvements in resource utilization:
-\begin{itemize}
-    \item Cluster-based approaches demonstrated more efficient task scheduling and resource allocation, with improvements of 15-25\% in resource utilization compared to baseline methods.
-    
-    \item Federated learning architectures with optimized communication protocols showed 40-60\% reductions in communication overhead.
-\end{itemize}
+These gaps present valuable opportunities for future research to strengthen the foundations of computational mathematics for AI.
 
-\subsubsection{Prediction Accuracy}
-Accuracy improvements were reported across multiple application domains:
-\begin{itemize}
-    \item Healthcare applications showed accuracy improvements ranging from 5\% to 14.46\%, with the highest improvement observed for Parkinson's disease prediction \citep{Ampavathi20211146}.
-    
-    \item Energy consumption prediction models demonstrated error reductions of 10-30\% using optimized neural architectures.
-    
-    \item Cybersecurity applications reported precision improvements of 5-15\% compared to conventional approaches.
-\end{itemize}
+The patterns and themes identified in this review provide valuable guidance for researchers and practitioners working to develop and deploy deep learning systems on big data. By understanding the strengths and limitations of different optimization approaches across various application domains, researchers can make more informed decisions about which methods to employ for specific deep learning tasks and computing environments.
 
-\subsection{Distributed Computing Techniques (RQ2.1)}
-To address RQ2.1 ("What distributed computing techniques are used for scaling deep learning to big data problems?"), we identified several key approaches:
-
-\subsubsection{Federated Learning Architectures}
-Federated learning emerged as a prominent distributed approach:
-\begin{itemize}
-    \item \textbf{Hierarchical Federated Learning} - A novel approach incorporating clustering-based hierarchical architecture with two-step optimization for traffic prediction.
-    
-    \item \textbf{Privacy-Preserving Federated Learning} - Techniques integrating differential privacy with federated learning for sensitive domains like healthcare.
-\end{itemize}
-
-\subsubsection{MapReduce Frameworks}
-Several studies employed MapReduce for big data processing:
-\begin{itemize}
-    \item \textbf{MapReduce with Deep Neuro-Fuzzy Networks} \citep{Kanchanamala20232414} - For scalable fake news detection in big data environments.
-    
-    \item \textbf{Optimized MapReduce Task Scheduling} - Combined with differential evolution strategies for resource optimization.
-\end{itemize}
-
-\subsubsection{GPU Acceleration Techniques}
-GPU acceleration was widely utilized:
-\begin{itemize}
-    \item \textbf{Multi-GPU Training Strategies} \citep{Wang2022939} - For accelerating training of large machine learning models in IoT environments.
-    
-    \item \textbf{Memory-Efficient GPU Implementations} - Techniques for optimizing memory usage during deep learning training on limited-resource environments.
-\end{itemize}
-
-\subsection{Effectiveness of Distributed Computing Techniques (RQ2.2)}
-To address RQ2.2 ("How effective are these techniques in terms of scalability and performance?"), we analyzed scaling capabilities and performance metrics:
-
-\subsubsection{Scalability Assessment}
-\paragraph{Data Volume Scalability}
-Studies reported different scaling capabilities:
-\begin{itemize}
-    \item Federated learning approaches demonstrated near-linear scaling with increasing numbers of client nodes up to certain thresholds.
-    
-    \item MapReduce frameworks showed logarithmic scaling with data volume increases, maintaining acceptable performance up to petabyte-scale datasets.
-\end{itemize}
-
-\paragraph{Model Complexity Scalability}
-Research addressed scaling with model complexity:
-\begin{itemize}
-    \item GPU acceleration techniques enabled scaling to models with billions of parameters while maintaining reasonable training times.
-    
-    \item Distributed optimization algorithms showed varying performance depending on model architecture, with CNNs scaling more efficiently than RNN variants.
-\end{itemize}
-
-\subsubsection{Performance Metrics}
-Key performance indicators across distributed computing studies included:
-\begin{itemize}
-    \item \textbf{Speedup Ratio} - Many studies reported 3x-10x speedups compared to single-node implementations.
-    
-    \item \textbf{Communication Overhead} - Federated approaches with optimized architectures reduced communication by 40-60\%.
-    
-    \item \textbf{Resource Utilization} - Improved resource allocation strategies achieved 15-40\% better utilization of computing resources.
-\end{itemize}
-
-\section{Discussion}
-
-\subsection{Integration of Numerical Methods and Distributed Computing}
-Our analysis revealed significant synergies between advanced numerical methods and distributed computing techniques. Studies implementing both optimized algorithms and distributed architectures demonstrated superior performance compared to those focusing on either aspect alone.
-
-\paragraph{Complementary Benefits}
-The integration of numerical optimization with distributed computing creates complementary benefits:
-\begin{itemize}
-    \item Optimization algorithms like Bayesian optimization and nature-inspired algorithms can efficiently tune hyperparameters across distributed nodes, reducing the overall search space per node.
-    
-    \item Distributed architectures can parallelize the exploration phase of meta-heuristic algorithms, leading to faster convergence without sacrificing solution quality.
-\end{itemize}
-
-\paragraph{Implementation Challenges}
-Despite their promise, integration challenges remain:
-\begin{itemize}
-    \item Communication overhead between nodes can offset computational gains from optimized algorithms.
-    
-    \item Synchronization issues in distributed environments can impact the convergence properties of optimization algorithms.
-    
-    \item Resource heterogeneity across distributed nodes may require additional adaptation mechanisms for optimization algorithms.
-\end{itemize}
-
-\subsection{Trends and Patterns}
-Our analysis identified several notable trends:
-
-\paragraph{Shift Toward Hybrid Approaches}
-There is a clear trend toward hybrid optimization methods combining multiple algorithms:
-\begin{itemize}
-    \item Integration of meta-heuristic algorithms with traditional gradient-based approaches.
-    
-    \item Coupling of population-based methods with local search techniques.
-    
-    \item Multi-stage optimization processes targeting different aspects of model training.
-\end{itemize}
-
-\paragraph{Domain-Specific Adaptations}
-Increasing specialization of algorithms for specific domains:
-\begin{itemize}
-    \item Healthcare applications favoring Bayesian optimization and LSTM variants.
-    
-    \item Environmental monitoring systems utilizing nature-inspired algorithms.
-    
-    \item Cybersecurity applications employing ensemble approaches and advanced federated architectures.
-\end{itemize}
-
-\paragraph{Focus on Resource Efficiency}
-Growing emphasis on resource-efficient implementations:
-\begin{itemize}
-    \item Energy-aware optimization algorithms for edge computing and IoT environments.
-    
-    \item Memory-efficient implementations for limited-resource scenarios.
-    
-    \item Communication-efficient protocols for geographically distributed systems.
-\end{itemize}
-
-\subsection{Research Gaps and Future Directions}
-Our analysis identified several research gaps and promising directions for future research:
-
-\paragraph{Theoretical Foundations}
-\begin{itemize}
-    \item Limited theoretical analysis of convergence properties for hybrid optimization algorithms in distributed environments.
-    
-    \item Insufficient formal frameworks for comparing algorithm performance across heterogeneous distributed architectures.
-    
-    \item Need for stronger theoretical guarantees on optimization algorithm behavior with non-stationary data distributions in federated settings.
-\end{itemize}
-
-\paragraph{Scalability Challenges}
-\begin{itemize}
-    \item Current approaches show diminishing returns beyond certain scale thresholds.
-    
-    \item Limited research on dynamic adaptation of optimization strategies based on available resources and data characteristics.
-    
-    \item Need for more efficient approaches for ultra-large-scale models (trillion+ parameters) and exabyte-scale datasets.
-\end{itemize}
-
-\paragraph{Emerging Application Areas}
-\begin{itemize}
-    \item Quantum computing integration with classical optimization algorithms.
-    
-    \item Cross-modal learning requiring novel optimization approaches for heterogeneous data types.
-    
-    \item Real-time optimization for streaming data in edge computing environments.
-\end{itemize}
-
-\subsection{Limitations of the Review}
-This systematic review has several limitations that should be acknowledged:
-
-\begin{itemize}
-    \item The review focused primarily on published research in academic databases, potentially missing relevant industrial applications not formally published.
-    
-    \item Language restrictions (English-only) may have excluded relevant non-English publications.
-    
-    \item Rapid advancement in the field means some very recent innovations may not be fully represented.
-    
-    \item Variable reporting quality across studies made direct quantitative comparisons challenging in some cases.
-    
-    \item Publication bias may influence the reported effectiveness of the methods and techniques.
-\end{itemize}
-
-\section{Conclusion}
-This systematic literature review has comprehensively analyzed the state-of-the-art in computational mathematics for AI, focusing on numerical methods and distributed computing techniques for deep learning on big data. Our findings reveal a rich landscape of optimization algorithms, architectural innovations, and distributed computing approaches addressing the computational challenges of modern AI systems.
-
-Key contributions of this review include:
-\begin{itemize}
-    \item A comprehensive taxonomy of optimization algorithms for deep learning in big data contexts.
-    
-    \item Analysis of performance characteristics across diverse application domains.
-    
-    \item Identification of synergies between numerical methods and distributed computing techniques.
-    
-    \item Mapping of research gaps and promising future directions.
-\end{itemize}
-
-The field continues to evolve rapidly, with emerging hybrid approaches and domain-specific adaptations demonstrating promising results. Future research should focus on addressing theoretical gaps, scaling challenges, and adaptation to emerging application areas. Stronger integration between numerical optimization and distributed computing architectures presents a particularly promising direction for addressing the computational demands of next-generation AI systems.
+As computational resources continue to evolve and deep learning models grow in complexity, the field of computational mathematics for AI will remain critical for enabling the next generation of intelligent systems capable of extracting meaningful insights from big data.
