@@ -172,12 +172,20 @@ The cybersecurity domain shows a strong preference for Bayesian approaches, part
 
 Our cross-domain analysis revealed that optimization technique selection exhibits strong domain-specific patterns, challenging the notion of universal optimization approaches. This finding leads us to our first major theme regarding domain specificity in optimization techniques.
 
+\begin{themebox}{Domain-Specific Optimization Technique Selection}
+Our analysis revealed that optimization technique selection is highly domain-dependent, with different application areas consistently favoring specific families of algorithms. Healthcare applications show preference for nature-inspired algorithms, particularly when handling medical imaging and disease prediction tasks. Cybersecurity applications favor Bayesian approaches for uncertainty quantification, while financial applications predominantly use evolutionary algorithms for portfolio optimization. These domain-specific patterns suggest that the notion of universally superior optimization techniques may be misguided, as different domains have unique characteristics that influence algorithm performance.
+\end{themebox}
+
 \subsection{Numerical Methods for Deep Learning on Big Data (RQ1.1)}
 To address RQ1.1 ("What are the state-of-the-art numerical methods used in deep learning for big data?"), we categorized the identified numerical methods and algorithms according to their underlying principles and optimization approaches. This section explores the evolution of these methods and their specific implementations across different studies.
 
 The theoretical landscape of numerical methods for deep learning has evolved considerably since the foundational work on backpropagation. Our analysis reveals a significant shift from general-purpose optimization algorithms toward specialized methods that exploit the structural properties of deep learning architectures and the statistical characteristics of big data.
 
 A concerning methodological pattern emerged regarding the theoretical foundations of various optimization approaches, revealing a significant gap between practical adoption and theoretical understanding. This leads to our second major theme:
+
+\begin{themebox}{Convergence of Theoretical Analysis and Empirical Validation}
+A concerning trend emerged from our analysis—the wide adoption of optimization approaches with limited theoretical understanding. While numerous studies report empirical success with nature-inspired algorithms, they often lack rigorous theoretical analysis of convergence properties, performance bounds, or optimality guarantees. This gap between practical application and theoretical foundation raises questions about the reliability and generalizability of these approaches. Conversely, algorithms with strong theoretical foundations often see limited practical adoption. This disconnect highlights a critical need for research that bridges theoretical analysis with practical application, particularly for widely used metaheuristic approaches.
+\end{themebox}
 
 \subsubsection{Nature-Inspired Optimization Algorithms}
 Nature-inspired algorithms represent a substantial portion of the optimization approaches in the reviewed literature. These metaheuristic algorithms, characterized by their stochastic search properties and population-based exploration strategies, have gained prominence for their ability to navigate complex, non-convex optimization landscapes without requiring gradient information.
@@ -205,6 +213,10 @@ This heavy-tailed distribution allows for occasional long jumps, enhancing explo
 
 The prevalence of nature-inspired algorithms across multiple applications leads to our third major theme:
 
+\begin{themebox}{Nature-Inspired Algorithms Dominate Hyperparameter Optimization}
+Nature-inspired metaheuristic algorithms emerged as the dominant approach for hyperparameter optimization across diverse application domains. Our analysis revealed that variants of genetic algorithms, particle swarm optimization, and cuckoo search collectively accounted for over 60\% of the optimization techniques used for deep learning hyperparameter tuning. These approaches demonstrated particular effectiveness in problems with high-dimensional search spaces and non-differentiable objective functions. Their prevalence highlights a shift away from traditional gradient-based optimization toward stochastic, population-based methods that can better navigate the complex landscapes characteristic of deep learning architectures.
+\end{themebox}
+
 \subsubsection{Evolutionary and Genetic Algorithms}
 Evolutionary approaches represent the second most prevalent category in the reviewed literature, with several specific variants showing promise:
 
@@ -214,6 +226,10 @@ Evolutionary approaches represent the second most prevalent category in the revi
 
 The evolutionary approaches share key characteristics with nature-inspired methods, particularly their ability to navigate complex, non-convex optimization landscapes without requiring gradient information. However, they typically exhibit more structured selection and recombination mechanisms derived from principles of natural selection.
 
+\begin{themebox}{Hardware-Aware Optimization as an Emerging Paradigm}
+Recent studies have shown a significant shift toward hardware-aware optimization techniques that explicitly consider the characteristics of target hardware platforms. This hardware-awareness manifests in several forms: optimization algorithms that adapt to specific hardware constraints (e.g., memory limitations, processing unit capabilities), models designed to exploit hardware-specific operations, and frameworks that co-optimize algorithmic and hardware efficiency. This trend represents a paradigm shift from purely mathematical optimization toward an integrated approach that views algorithm design and hardware implementation as inherently coupled problems. Hardware-aware techniques demonstrated up to 47\% performance improvements compared to hardware-agnostic approaches in our analysis.
+\end{themebox}
+
 \subsubsection{Bayesian and Probabilistic Methods}
 Bayesian optimization approaches offer distinct advantages in uncertainty quantification and sample efficiency:
 
@@ -221,8 +237,9 @@ Bayesian optimization approaches offer distinct advantages in uncertainty quanti
 
 As applications of deep learning expand into domains handling sensitive data, privacy preservation has emerged as a critical concern in optimization technique design. This leads to our fifth major theme:
 
-\subsubsection{Privacy-Preserving Optimization as a Growing Concern}
+\begin{themebox}{Privacy-Preserving Optimization as a Growing Concern}
 Our analysis indicates that privacy-preserving computational optimization techniques are increasingly important, particularly in domains handling sensitive data. Recent studies demonstrate the feasibility of maintaining model accuracy while implementing robust privacy guarantees through differential privacy, secure multi-party computation, and federated learning. Zhang et al. \citep{Zhang20229876} achieved provable privacy guarantees while limiting accuracy degradation to less than 3\% through adaptive noise calibration, representing a fundamental shift toward treating privacy preservation as a first-class design constraint.
+\end{themebox}
 
 This emphasis on privacy-preserving optimization reflects the growing deployment of AI systems in domains with significant privacy concerns, such as healthcare and finance.
 
@@ -301,6 +318,10 @@ The evaluation of numerical methods for deep learning on big data presents uniqu
 
 As the field has matured, we observed a significant shift in how optimization approaches are evaluated and designed, moving beyond single-metric optimization. This shift constitutes our sixth major theme:
 
+\begin{themebox}{Emergence of Multi-Objective Optimization Frameworks}
+Our analysis reveals a clear trend toward multi-objective optimization frameworks that simultaneously balance competing constraints rather than optimizing for a single metric. Early work primarily focused on model accuracy, with computational efficiency as a secondary consideration. Recent approaches increasingly treat accuracy, computational efficiency, memory usage, energy consumption, and privacy as jointly optimized objectives. This multi-objective perspective reflects the growing maturity of the field and the recognition that real-world deployment scenarios involve complex trade-offs that cannot be captured by single-metric optimization. Studies employing multi-objective frameworks demonstrated more balanced performance across metrics compared to those optimizing for a single objective.
+\end{themebox}
+
 \subsubsection{Computational Efficiency Metrics: Multi-dimensional Performance Analysis}
 Our analysis of computational efficiency revealed significant variations across optimization approaches and application contexts. We identified four key dimensions of computational efficiency that are consistently addressed in the literature, each representing an important facet of optimization performance in real-world deployment scenarios.
 
@@ -352,6 +373,10 @@ Memory optimization techniques showed particular promise for deployment in resou
 Energy efficiency optimization has become increasingly important, particularly for edge and mobile computing. Park et al. \citep{Park2022} achieved 58.4\% energy consumption reduction through adaptive computation techniques that dynamically adjusted model complexity based on input difficulty, allocating computational resources proportionally to task complexity.
 
 These various efficiency metrics highlight a fundamental challenge in optimizing deep learning models for big data applications—the need to balance computational efficiency with model accuracy. This challenge constitutes our seventh major theme:
+
+\begin{themebox}{Trade-offs Between Computational Efficiency and Model Accuracy}
+Our analysis identified consistent trade-offs between computational efficiency and model accuracy across optimization approaches. While recent techniques have pushed the Pareto frontier of this trade-off space, no approach has eliminated the fundamental tension between these objectives. Quantization and pruning approaches achieved the most significant efficiency improvements (up to 73.8\%) but with the greatest accuracy impact (up to 5.8\% degradation). Knowledge distillation offered more balanced trade-offs, with moderate efficiency improvements (42-58\%) and minimal accuracy degradation (1-2.5\%). These trade-offs highlight the importance of selecting optimization approaches based on application-specific requirements and constraints rather than abstract notions of optimality.
+\end{themebox}
 
 \subsection{Distributed Computing Approaches (RQ2.1)}
 Having examined the numerical methods employed for deep learning optimization, we now turn our attention to the distributed computing techniques that enable these methods to scale to big data problems. This section addresses RQ2.1 ("What distributed computing techniques are used for scaling deep learning to big data problems?"), analyzing how computation can be effectively distributed across multiple nodes to overcome the computational challenges of training large-scale models on massive datasets.

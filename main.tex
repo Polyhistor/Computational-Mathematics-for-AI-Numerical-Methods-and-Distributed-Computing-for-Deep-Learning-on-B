@@ -12,6 +12,57 @@
 \usepackage{pgfplots}
 \usepackage{pgf-pie}
 \usepackage{pgfplotstable}
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{breakable}
+
+% Define the theme box style
+\usetikzlibrary{calc}
+
+\newcounter{themecounter}
+\setcounter{themecounter}{0}
+
+\newtcolorbox{themebox}[1]{
+  enhanced,
+  breakable,
+  colback=white,
+  colframe=blue!70!black,
+  colbacktitle=white,
+  coltitle=blue!70!black,
+  title={\textbf{\normalsize Theme \stepcounter{themecounter}\arabic{themecounter}: #1}},
+  fonttitle=\bfseries,
+  halign title=left,
+  boxrule=1pt,
+  sharp corners,
+  toptitle=10pt,
+  bottomtitle=10pt,
+  lefttitle=12pt,
+  righttitle=12pt
+}
+
+\newtcolorbox{algorithmbox}[1]{
+  enhanced,
+  breakable,
+  colback=white,
+  colframe=black!50,
+  colbacktitle=black!10,
+  coltitle=black,
+  title={\textbf{\normalsize #1}},
+  fonttitle=\bfseries,
+  halign title=left,
+  boxrule=0.5pt,
+  sharp corners,
+  toptitle=8pt,
+  bottomtitle=8pt,
+  lefttitle=10pt,
+  righttitle=10pt,
+  left=8pt,
+  right=8pt,
+  top=8pt,
+  bottom=8pt
+}
+
+\usepackage{algorithm}
+
 \pgfplotsset{compat=newest}
 
 \title{Computational Mathematics for AI: Numerical Methods and Distributed Computing for Deep Learning on Big Data}
