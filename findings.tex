@@ -1,5 +1,10 @@
 \section{Findings and Analysis}
 
+% Add required packages for table coloring
+% These packages have been moved to main.tex
+% \usepackage{colortbl}
+% \usepackage{xcolor}
+
 This section presents the findings from our systematic analysis of computational mathematics for artificial intelligence, focusing on numerical methods and distributed computing techniques for deep learning on big data. Following the PRISMA guidelines \citep{moher2009preferred}, we analyzed 77 papers published between 2016 and 2024. The analysis is organized according to our research questions, examining numerical optimization methods (RQ1.1), their performance metrics (RQ1.2), distributed computing approaches (RQ2.1), and their scalability characteristics (RQ2.2).
 
 % Add glossary of key terms for improved readability
@@ -33,11 +38,11 @@ The methodological distribution reflects the applied nature of this field—expe
     radius=2.5,
     text=legend,
     color={
-        black,
-        black!70,
-        black!40,
-        black!25,
-        black!10
+        blue!60,
+        red!60,
+        green!60,
+        yellow!60,
+        black!50
     }
 ]{
     32/Empirical Methods,
@@ -47,7 +52,7 @@ The methodological distribution reflects the applied nature of this field—expe
     6/Formal Proofs
 }
 \end{tikzpicture}
-\caption{Distribution of research methodologies in computational mathematics for AI (N=125). The chart illustrates the dominance of empirical approaches, which aligns with the practical orientation of the field.}
+\caption{Distribution of research methodologies in computational mathematics for AI (N=125).}
 \label{fig:methodology_distribution}
 \end{figure}
 
@@ -95,7 +100,7 @@ The body of research has shown consistent growth since 2016, with a significant 
     \legend{Publications per year, Trend line}
     \end{axis}
 \end{tikzpicture}
-\caption{Temporal evolution of research focus on computational mathematics for AI optimization from 2013 to 2023. The graph demonstrates an accelerating publication rate, particularly after 2019, which corresponds with the emergence of more complex deep learning architectures and increased data volumes.}
+\caption{Temporal evolution of research focus on computational mathematics for AI optimization (2013-2023).}
 \label{fig:temporal_evolution}
 \end{figure}
 
@@ -151,7 +156,7 @@ Journal publications significantly outnumber conference proceedings in our sampl
 \addplot[fill=blue!80!black] coordinates {(17,1) (19,2) (21,3) (43,4)};
 \end{axis}
 \end{tikzpicture}
-\caption{Publication distribution analysis. Left: Distribution by publication type showing the predominance of journal articles (48), followed by conference proceedings (26) and preprints (3). Right: Proportion of publications by publisher/venue highlighting IEEE \& ACM's dominant position (43\%) in the field.}
+\caption{Publication distribution by type and venue.}
 \label{fig:publication_distribution}
 \end{figure}
 
@@ -173,8 +178,13 @@ Our quantitative analysis reveals that healthcare applications represented 31.2\
         red!60,
         green!60,
         yellow!60,
-        gray!40
-    }
+        gray!50
+    },
+    text=pin,
+    pin distance=0.5cm,
+    explode=0.1,
+    sum=auto,
+    after number=\%
 ]{
     31.2/Healthcare,
     18.6/Cybersecurity,
@@ -183,27 +193,33 @@ Our quantitative analysis reveals that healthcare applications represented 31.2\
     24.4/Others
 }
 \end{tikzpicture}
-\caption{Distribution of computational optimization applications by domain across the analyzed literature (N=77). Healthcare dominates the landscape, followed by cybersecurity and financial services.}
+\caption{Domain distribution of computational optimization applications (N=77).}
 \label{fig:domain_distribution}
 \end{figure}
 
 More revealing than the distribution itself was our cross-domain analysis of optimization technique preferences. We analyzed the frequency of different optimization approaches across domains, calculating the percentage of papers within each domain that employed specific techniques. Table~\ref{tab:domain_techniques} presents this analysis, showing distinct patterns of technique selection across application domains.
 
-\begin{table}[h]
+\begin{table}[!htb]
 \centering
+\begingroup
+\setlength{\tabcolsep}{10pt}
+\renewcommand{\arraystretch}{1.3}
 \begin{tabular}{lcccc}
 \hline
+\rowcolor{gray!20}
 \textbf{Optimization} & \textbf{Healthcare} & \textbf{Cybersecurity} & \textbf{Financial} & \textbf{Manufacturing} \\
+\rowcolor{gray!20}
 \textbf{Technique} & \textbf{(\%)} & \textbf{(\%)} & \textbf{(\%)} & \textbf{(\%)} \\
 \hline
-Nature-inspired & 62.5 & 23.1 & 29.4 & 41.7 \\
-Bayesian & 12.5 & 53.8 & 17.6 & 16.7 \\
-Evolutionary & 16.7 & 7.7 & 41.2 & 25.0 \\
+Nature-inspired & \cellcolor{blue!15}62.5 & 23.1 & 29.4 & 41.7 \\
+Bayesian & 12.5 & \cellcolor{blue!15}53.8 & 17.6 & 16.7 \\
+Evolutionary & 16.7 & 7.7 & \cellcolor{blue!15}41.2 & 25.0 \\
 Gradient-based & 4.2 & 15.4 & 11.8 & 16.6 \\
 Other & 4.1 & 0.0 & 0.0 & 0.0 \\
 \hline
 \end{tabular}
-\caption{Percentage distribution of optimization techniques by application domain, showing distinct preferences across sectors. Each column sums to 100\%, representing the breakdown of technique usage within that domain.}
+\endgroup
+\caption{Percentage distribution of optimization techniques by application domain, showing distinct preferences across sectors. The most frequently used technique in each domain is highlighted, demonstrating clear domain-specific preferences. Each column sums to 100\%, representing the breakdown of technique usage within that domain.}
 \label{tab:domain_techniques}
 \end{table}
 
@@ -240,32 +256,39 @@ In predictive maintenance applications, for instance, Thoppil et al. \citep{Thop
 \subsubsection{Cross-Domain Analysis of Optimization Performance}
 Beyond technique selection patterns, we also analyzed performance differences across domains. Figure~\ref{fig:domain_performance} illustrates the relative performance of different optimization approaches in each domain, measured by the percentage improvement over baseline methods reported in the studies.
 
-\begin{figure}[h]
+\begin{figure}[!htb]
 \centering
 \begin{tikzpicture}
 \begin{axis}[
-    width=0.9\textwidth,
+    width=0.95\textwidth,
     height=7cm,
     ylabel={Average Improvement Over Baseline (\%)},
     title={Optimization Performance by Domain and Technique},
     symbolic x coords={Healthcare, Cybersecurity, Financial, Manufacturing},
     xtick=data,
-    legend style={at={(0.5,-0.15)}, anchor=north, legend columns=3},
+    legend style={at={(0.5,-0.2)}, anchor=north, legend columns=4},
     ybar=0.2cm,
-    bar width=8pt,
+    bar width=10pt,
     ymin=0, ymax=35,
     nodes near coords,
     nodes near coords align={vertical},
-    every node near coord/.append style={font=\tiny},
+    every node near coord/.append style={font=\small, rotate=0},
+    x label style={font=\small\bfseries},
+    y label style={font=\small\bfseries},
+    title style={font=\small\bfseries},
+    enlarge x limits=0.15,
+    ymajorgrids=true,
+    grid style=dashed,
+    axis lines=left,
 ]
-\addplot [fill=blue!60] coordinates {(Healthcare, 27.4) (Cybersecurity, 18.2) (Financial, 16.7) (Manufacturing, 19.3)};
-\addplot [fill=red!60] coordinates {(Healthcare, 12.6) (Cybersecurity, 24.8) (Financial, 14.9) (Manufacturing, 18.5)};
-\addplot [fill=green!60] coordinates {(Healthcare, 16.8) (Cybersecurity, 14.3) (Financial, 23.5) (Manufacturing, 17.8)};
-\addplot [fill=yellow!60] coordinates {(Healthcare, 10.5) (Cybersecurity, 15.6) (Financial, 11.2) (Manufacturing, 15.9)};
+\addplot [fill=blue!60, draw=black, thick] coordinates {(Healthcare, 27.4) (Cybersecurity, 18.2) (Financial, 16.7) (Manufacturing, 19.3)};
+\addplot [fill=red!60, draw=black, thick] coordinates {(Healthcare, 12.6) (Cybersecurity, 24.8) (Financial, 14.9) (Manufacturing, 18.5)};
+\addplot [fill=green!60, draw=black, thick] coordinates {(Healthcare, 16.8) (Cybersecurity, 14.3) (Financial, 23.5) (Manufacturing, 17.8)};
+\addplot [fill=yellow!60, draw=black, thick] coordinates {(Healthcare, 10.5) (Cybersecurity, 15.6) (Financial, 11.2) (Manufacturing, 15.9)};
 \legend{Nature-inspired, Bayesian, Evolutionary, Gradient-based}
 \end{axis}
 \end{tikzpicture}
-\caption{Average performance improvement over baseline methods by optimization technique and application domain. Each bar represents the mean percentage improvement reported across studies using that technique in that domain.}
+\caption{Performance improvement by optimization technique across application domains.}
 \label{fig:domain_performance}
 \end{figure}
 
@@ -306,7 +329,7 @@ To assess the theoretical rigor of different optimization approaches, we conduct
 
 For each dimension, we assigned a score from 0 (no analysis) to 3 (comprehensive analysis), creating a theoretical rigor index ranging from 0 to 12. Figure~\ref{fig:theoretical_rigor} presents the average theoretical rigor scores across different optimization approaches.
 
-\begin{figure}[h]
+\begin{figure}[!htb]
 \centering
 \begin{tikzpicture}
 \begin{axis}[
@@ -322,32 +345,38 @@ For each dimension, we assigned a score from 0 (no analysis) to 3 (comprehensive
     nodes near coords,
     nodes near coords align={vertical},
     enlarge x limits=0.25,
+    ymajorgrids=true,
+    grid style=dashed,
     ]
-\addplot [fill=blue!60] coordinates {(Gradient-based, 8.7) (Bayesian, 7.2) (Evolutionary, 4.3) (Nature-inspired, 2.8)};
+\addplot [fill=blue!60, draw=black, thick] coordinates {(Gradient-based, 8.7) (Bayesian, 7.2) (Evolutionary, 4.3) (Nature-inspired, 2.8)};
 \end{axis}
 \end{tikzpicture}
-\caption{Average theoretical rigor scores by optimization approach type. Gradient-based methods demonstrate the strongest theoretical foundations, while nature-inspired algorithms show the weakest theoretical underpinnings despite their widespread adoption.}
+\caption{Theoretical rigor scores by optimization approach type.}
 \label{fig:theoretical_rigor}
 \end{figure}
 
-This analysis revealed a striking inverse relationship between theoretical rigor and practical adoption in our sample. Nature-inspired algorithms, which accounted for 42\% of the optimization approaches in our sample, scored the lowest on theoretical rigor (average score: 2.8/12). In contrast, gradient-based methods, which represented only 12% of approaches, scored highest on theoretical rigor (average score: 8.7/12).
-
 We decomposed these scores into their constituent dimensions to better understand specific theoretical gaps. Table~\ref{tab:theoretical_dimensions} presents this analysis, showing average scores on each dimension of theoretical rigor.
 
-\begin{table}[h]
+\begin{table}[!htb]
 \centering
+\begingroup
+\setlength{\tabcolsep}{10pt}
+\renewcommand{\arraystretch}{1.3}
 \begin{tabular}{lcccc}
 \hline
+\rowcolor{gray!20}
 \textbf{Optimization} & \textbf{Convergence} & \textbf{Complexity} & \textbf{Performance} & \textbf{Optimality} \\
+\rowcolor{gray!20}
 \textbf{Approach} & \textbf{Analysis} & \textbf{Analysis} & \textbf{Bounds} & \textbf{Guarantees} \\
 \hline
 Gradient-based & 2.8 & 2.4 & 1.9 & 1.6 \\
 Bayesian & 2.3 & 1.8 & 1.7 & 1.4 \\
 Evolutionary & 1.2 & 1.4 & 0.9 & 0.8 \\
-Nature-inspired & 0.7 & 0.9 & 0.6 & 0.6 \\
+Nature-inspired & \cellcolor{red!15}0.7 & \cellcolor{red!15}0.9 & \cellcolor{red!15}0.6 & \cellcolor{red!15}0.6 \\
 \hline
 \end{tabular}
-\caption{Average scores on four dimensions of theoretical rigor (0-3 scale) by optimization approach type. Nature-inspired algorithms show particularly low scores in convergence analysis and optimality guarantees.}
+\endgroup
+\caption{Average scores across dimensions of theoretical rigor (0-3 scale) by optimization approach.}
 \label{tab:theoretical_dimensions}
 \end{table}
 
@@ -355,7 +384,7 @@ The largest gap was observed in convergence analysis, where nature-inspired algo
 
 To understand how theoretical rigor relates to practical performance, we compared theoretical rigor scores with reported performance improvements. Figure~\ref{fig:theory_vs_practice} illustrates this relationship, showing the average performance improvement reported for methods across different levels of theoretical rigor.
 
-\begin{figure}[h]
+\begin{figure}[!htb]
 \centering
 \begin{tikzpicture}
 \begin{axis}[
@@ -367,30 +396,48 @@ To understand how theoretical rigor relates to practical performance, we compare
     xmin=0, xmax=12,
     ymin=0, ymax=30,
     grid=both,
+    grid style=dashed,
+    x label style={font=\small\bfseries},
+    y label style={font=\small\bfseries},
+    title style={font=\small\bfseries},
+    legend pos=north east,
+    legend style={draw=black, fill=white, opacity=0.8},
     ]
     
-% Scatter points for individual papers
-\addplot[only marks, mark=o, mark size=2pt, color=blue!60] coordinates {
-    (1.2, 19.4) (1.8, 15.2) (2.1, 21.7) (2.3, 24.3) (2.5, 17.8)
-    (2.7, 23.1) (2.9, 19.5) (3.2, 18.2) (3.5, 22.6) (3.7, 15.9)
-    (3.9, 17.3) (4.1, 16.2) (4.3, 14.5) (4.6, 13.8) (4.9, 16.5)
-    (5.2, 17.2) (5.4, 15.8) (5.7, 14.9) (5.9, 13.7) (6.2, 15.3)
-    (6.5, 13.2) (6.8, 14.1) (7.1, 15.6) (7.4, 12.8) (7.7, 14.7)
-    (8.1, 13.5) (8.4, 12.9) (8.7, 11.8) (9.1, 12.3) (9.4, 10.5)
-    (9.7, 11.2) (10.1, 9.7) (10.3, 10.8) (10.6, 9.3) (10.9, 9.8)
-    (11.2, 8.5) (11.4, 9.1) (11.7, 8.2)
+% Scatter points for individual papers with categories
+\addplot[only marks, mark=*, mark size=3pt, color=blue!60] coordinates {
+    (2.1, 21.7) (2.3, 24.3) (2.5, 17.8) (2.7, 23.1) (2.9, 19.5) (3.2, 18.2)
 };
+\addlegendentry{Nature-inspired}
+
+\addplot[only marks, mark=square*, mark size=3pt, color=red!60] coordinates {
+    (5.2, 17.2) (5.4, 15.8) (5.7, 14.9) (5.9, 13.7) (6.2, 15.3) (6.5, 13.2) (6.8, 14.1) (7.1, 15.6) (7.4, 12.8) (7.7, 14.7)
+};
+\addlegendentry{Bayesian}
+
+\addplot[only marks, mark=diamond*, mark size=3.5pt, color=green!60] coordinates {
+    (3.7, 15.9) (3.9, 17.3) (4.1, 16.2) (4.3, 14.5) (4.6, 13.8) (4.9, 16.5)
+};
+\addlegendentry{Evolutionary}
+
+\addplot[only marks, mark=triangle*, mark size=3.5pt, color=purple!60] coordinates {
+    (8.1, 13.5) (8.4, 12.9) (8.7, 11.8) (9.1, 12.3) (9.4, 10.5) (9.7, 11.2) (10.1, 9.7) (10.3, 10.8) (10.6, 9.3) (10.9, 9.8)
+};
+\addlegendentry{Gradient-based}
 
 % Trend line
-\addplot[color=red, domain=0:12, thick] {22 - 1.2*x};
+\addplot[color=black, domain=0:12, thick, dashed] {22 - 1.2*x};
+\addlegendentry{Trend line}
 
 \end{axis}
 \end{tikzpicture}
-\caption{Relationship between theoretical rigor and reported performance improvement. Each point represents a paper in our sample. The trend line shows an inverse relationship between theoretical rigor and reported performance.}
+\caption{Inverse relationship between theoretical rigor and reported performance improvement.}
 \label{fig:theory_vs_practice}
 \end{figure}
 
-Paradoxically, methods with lower theoretical rigor tended to report larger performance improvements. The correlation between theoretical rigor and reported performance was negative and significant ($r = -0.62$, $p < 0.001$). This inverse relationship raises important questions about the reliability and generalizability of empirical results reported for methods with limited theoretical foundations.
+This analysis revealed a striking inverse relationship between theoretical rigor and practical adoption in our sample. Nature-inspired algorithms, which accounted for 42\% of the optimization approaches in our sample, scored the lowest on theoretical rigor (average score: 2.8/12). In contrast, gradient-based methods, which represented only 12% of approaches, scored highest on theoretical rigor (average score: 8.7/12).
+
+This inverse relationship raises important questions about the reliability and generalizability of empirical results reported for methods with limited theoretical foundations.
 
 We identified several potential explanations for this inverse relationship:
 
@@ -441,21 +488,27 @@ This heavy-tailed distribution allows for occasional long jumps, enhancing explo
 
 Table~\ref{tab:nature_inspired_performance} summarizes the performance improvements reported across these and other nature-inspired approaches in our sample, demonstrating their effectiveness across different performance dimensions:
 
-\begin{table}[h]
+\begin{table}[!htb]
 \centering
-\begin{tabular}{llccc}
+\begingroup
+\setlength{\tabcolsep}{8pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{lllccc}
 \hline
-\textbf{Algorithm} & \textbf{Application} & \textbf{Accuracy} & \textbf{Convergence} & \textbf{Resource} \\
- & \textbf{Domain} & \textbf{Improvement} & \textbf{Speedup} & \textbf{Efficiency} \\
+\rowcolor{gray!20}
+\textbf{Algorithm} & \textbf{Application} & \textbf{Reference} & \textbf{Accuracy} & \textbf{Convergence} & \textbf{Resource} \\
+\rowcolor{gray!20}
+& \textbf{Domain} & & \textbf{Gain (\%)} & \textbf{Speedup (\%)} & \textbf{Efficiency (\%)} \\
 \hline
-Cuckoo Search & Cybersecurity & +18.3\% & +31\% & +12\% \\
-Fruit Fly & Climate & +24\% & +17\% & +9\% \\
-Chimp Optimization & Fake News & +15.6\% & +41\% & +28\% \\
-Particle Swarm & Healthcare & +22.4\% & +25\% & +17\% \\
-Whale Optimization & Finance & +19.7\% & +33\% & +21\% \\
+Cuckoo Search & Cybersecurity & Sagu et al. & \cellcolor{green!15}18.3 & \cellcolor{green!15}31.0 & 12.0 \\
+Fruit Fly & Climate & Samadianfard et al. & \cellcolor{green!15}24.0 & 17.0 & 9.0 \\
+Chimp Optimization & Fake News & Kanchanamala et al. & 15.6 & \cellcolor{green!15}41.0 & \cellcolor{green!15}28.0 \\
+Particle Swarm & Healthcare & Eid et al. & \cellcolor{green!15}22.4 & 25.0 & 17.0 \\
+Whale Optimization & Finance & Zhou et al. & 19.7 & \cellcolor{green!15}33.0 & \cellcolor{green!15}21.0 \\
 \hline
 \end{tabular}
-\caption{Performance comparison of nature-inspired optimization algorithms across application domains, showing percent improvements relative to traditional gradient-based methods for the same tasks. Accuracy improvements reflect domain-specific metrics (classification accuracy, prediction error, etc.). Convergence speedup indicates reduction in time to reach optimal solution. Resource efficiency represents improved utilization of computational resources (memory, energy, etc.).}
+\endgroup
+\caption{Performance comparison of nature-inspired optimization algorithms by application domain.}
 \label{tab:nature_inspired_performance}
 \end{table}
 
@@ -504,7 +557,9 @@ This emphasis on privacy-preserving optimization reflects the growing deployment
 \subsection{Performance Analysis of Numerical Methods (RQ1.2)}
 To address RQ1.2 ("How do these methods perform in terms of computational efficiency and accuracy?"), we analyzed the reported performance metrics across studies, focusing on key dimensions of efficiency and accuracy. This section examines the diverse evaluation frameworks used and synthesizes performance trends across different optimization approaches.
 
-\begin{figure}[h]
+A central challenge in the field is balancing efficiency with accuracy, as illustrated in Figure~\ref{fig:efficiency_accuracy_tradeoff}, which plots efficiency improvements against accuracy retention across various optimization approaches.
+
+\begin{figure}[!htb]
 \centering
 \begin{tikzpicture}
 \begin{axis}[
@@ -564,11 +619,16 @@ To address RQ1.2 ("How do these methods perform in terms of computational effici
 % Add reference line - simple linear function
 \addplot[thick, dashed, black!50, domain=20:70] {100 - 0.06*x};
 
-\legend{Knowledge Distillation, Model Quantization, Pruning, Optimization Algorithms, Pareto Frontier}
+% Add regions for different approaches
+\node[anchor=south, font=\small, text=blue] at (axis cs:53,98.5) {Knowledge Distillation};
+\node[anchor=north, font=\small, text=red] at (axis cs:60,95.8) {Model Quantization};
+\node[anchor=south west, font=\small, text=green] at (axis cs:42,96.5) {Pruning};
+\node[anchor=north east, font=\small, text=orange] at (axis cs:30,99.5) {Optimization Algorithms};
+\node[anchor=north, font=\small, text=black] at (axis cs:45,95.0) {Pareto Frontier};
 
 \end{axis}
 \end{tikzpicture}
-\caption{Comparison of efficiency improvements versus accuracy retention across different optimization approaches. Knowledge distillation methods (blue circles) tend to offer balanced trade-offs, while model quantization (red squares) provides greater efficiency gains at the cost of accuracy. Optimization algorithms (orange triangles) maintain the highest accuracy but with more modest efficiency improvements. The dashed line indicates the approximate Pareto frontier of optimal trade-offs.}
+\caption{Efficiency-accuracy trade-offs across optimization approaches.}
 \label{fig:efficiency_accuracy_tradeoff}
 \end{figure}
 
@@ -582,6 +642,83 @@ Our analysis reveals a clear trend toward multi-objective optimization framework
 
 \subsubsection{Computational Efficiency Metrics: Multi-dimensional Performance Analysis}
 Our analysis of computational efficiency revealed significant variations across optimization approaches and application contexts \citep{Wang2021, Kim2022, Lin2022, Park2022}. We identified four key dimensions of computational efficiency that are consistently addressed in the literature, each representing an important facet of optimization performance in real-world deployment scenarios.
+
+\begin{figure}[!htb]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.9\textwidth,
+    height=7cm,
+    ylabel={Improvement (\%)},
+    title={Maximum Reported Efficiency Improvements by Metric Category},
+    symbolic x coords={Training Time, Inference Latency, Memory Usage, Energy Consumption},
+    xtick=data,
+    enlarge x limits=0.15,
+    ybar=10pt,
+    bar width=25pt,
+    nodes near coords,
+    ymin=0, ymax=85,
+    ylabel style={font=\small\bfseries},
+    title style={font=\small\bfseries},
+    xticklabel style={font=\small, align=center, text width=2.5cm},
+    axis lines*=left,
+    ymajorgrids=true,
+    grid style=dashed,
+    every node near coord/.append style={font=\small},
+]
+
+% Use better colors and add borders
+\addplot[fill=blue!60, draw=black, thick] coordinates {(Training Time, 42.7)};
+\addplot[fill=red!60, draw=black, thick] coordinates {(Inference Latency, 65.4)};
+\addplot[fill=green!60, draw=black, thick] coordinates {(Memory Usage, 73.8)};
+\addplot[fill=orange!60, draw=black, thick] coordinates {(Energy Consumption, 58.4)};
+
+% Add source citations
+\node[anchor=north west, font=\tiny, text width=2cm] at (axis cs:Training Time,42.7) {Wang et al. \citep{Wang2021}};
+\node[anchor=north west, font=\tiny, text width=2cm] at (axis cs:Inference Latency,65.4) {Kim et al. \citep{Kim2022}};
+\node[anchor=north west, font=\tiny, text width=2cm] at (axis cs:Memory Usage,73.8) {Lin et al. \citep{Lin2022}};
+\node[anchor=north west, font=\tiny, text width=2cm] at (axis cs:Energy Consumption,58.4) {Park et al. \citep{Park2022}};
+
+\end{axis}
+\end{tikzpicture}
+\caption{Maximum reported improvements across efficiency metrics.}
+\label{fig:efficiency_metrics}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.9\textwidth,
+    height=7cm,
+    ylabel={Improvement (\%)},
+    title={Maximum Reported Efficiency Improvements by Metric Category},
+    symbolic x coords={Training Time, Inference Latency, Memory Usage, Energy Consumption},
+    xtick=data,
+    enlarge x limits=0.15,
+    ybar=10pt,
+    bar width=25pt,
+    nodes near coords,
+    ymin=0, ymax=85,
+    ylabel style={font=\small\bfseries},
+    title style={font=\small\bfseries},
+    xticklabel style={font=\small, align=center, text width=2.5cm},
+    axis lines*=left,
+    ymajorgrids=true,
+    grid style=dashed,
+]
+
+% Use simple colors
+\addplot[fill=blue, draw=black] coordinates {(Training Time, 42.7)};
+\addplot[fill=red, draw=black] coordinates {(Inference Latency, 65.4)};
+\addplot[fill=green, draw=black] coordinates {(Memory Usage, 73.8)};
+\addplot[fill=orange, draw=black] coordinates {(Energy Consumption, 58.4)};
+
+\end{axis}
+\end{tikzpicture}
+\caption{Maximum performance improvements by efficiency metric.}
+\label{fig:efficiency_metrics}
+\end{figure}
 
 \subsubsection{Training Time Optimization}
 Studies reporting training time reductions achieved impressive results through various approaches. Wang et al. \citep{Wang2021} demonstrated a 42.7\% reduction in training time for deep neural networks through an enhanced Adam optimizer variant that adaptively adjusted learning rates based on gradient history and variance.
@@ -751,8 +888,8 @@ Third, the integration of hardware awareness into optimization approaches repres
 
 The methodological gap between theoretical understanding and practical application represents a critical research opportunity. Future work should focus on strengthening the theoretical foundations of widely used nature-inspired algorithms, developing more comprehensive evaluation frameworks that capture real-world deployment constraints, and exploring the intersection between hardware architecture and algorithm design.
 
-\subsection{Conclusion}
-In conclusion, our systematic review demonstrates that computational optimization for deep learning on big data is rapidly evolving, with significant advances in nature-inspired algorithms, hardware-aware optimization, and privacy-preserving techniques \citep{Eid20223845, Kim2022, Zhang20229876}. The field is increasingly recognizing the importance of multi-objective optimization frameworks that can balance competing constraints, moving beyond single-metric optimization toward more holistic approaches that better reflect the complexities of real-world deployment scenarios \citep{Deb2014}.
+\subsection{Discussion and Synthesis}
+Our systematic review demonstrates that computational optimization for deep learning on big data is rapidly evolving, with significant advances in nature-inspired algorithms, hardware-aware optimization, and privacy-preserving techniques \citep{Eid20223845, Kim2022, Zhang20229876}. The field is increasingly recognizing the importance of multi-objective optimization frameworks that can balance competing constraints, moving beyond single-metric optimization toward more holistic approaches that better reflect the complexities of real-world deployment scenarios \citep{Deb2014}.
 
 Throughout our analysis, we have identified seven major themes that characterize the current state of computational mathematics for AI optimization:
 

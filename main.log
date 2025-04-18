@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.3.30)  17 APR 2025 21:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.3.30)  18 APR 2025 15:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -469,27 +469,32 @@ Package: pgf-pie 2022/06/14 v0.7 Some LaTeX macros for pie chart by using PGF/Ti
 \pgfpie@sliceLength=\count323
 )) (/usr/share/texmf-dist/tex/latex/pgfplots/pgfplotstable.sty (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
 Package: pgfplotstable 2021/05/15 v1.18.1 Table typesetting and Pretty-printing (1.18.1)
- (/usr/share/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstable.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstable.coltype.code.tex))) (/usr/share/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+ (/usr/share/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstable.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstable.coltype.code.tex))) (/usr/share/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2024/07/06 v1.0i Color table columns (DPC)
+\everycr=\toks42
+\minrowclearance=\skip60
+\rownum=\count324
+) (/usr/share/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
 Package: tcolorbox 2024/10/22 version 6.4.1 text color boxes
  (/usr/share/texmf-dist/tex/latex/tools/verbatim.sty
 Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks42
-\verbatim@line=\toks43
+\every@verbatim=\toks43
+\verbatim@line=\toks44
 \verbatim@in@stream=\read3
 ) (/usr/share/texmf-dist/tex/latex/environ/environ.sty
 Package: environ 2014/05/04 v0.3 A new way to define environments
  (/usr/share/texmf-dist/tex/latex/trimspaces/trimspaces.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 )
-\@envbody=\toks44
+\@envbody=\toks45
 )
 \tcb@titlebox=\box71
 \tcb@upperbox=\box72
 \tcb@lowerbox=\box73
 \tcb@phantombox=\box74
-\c@tcbbreakpart=\count324
-\c@tcblayer=\count325
-\c@tcolorbox@number=\count326
+\c@tcbbreakpart=\count325
+\c@tcblayer=\count326
+\c@tcolorbox@number=\count327
 \l__tcobox_tmpa_box=\box75
 \l__tcobox_tmpa_dim=\dimen290
 \tcb@temp=\box76
@@ -498,10 +503,10 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 \tcb@temp=\box79
  (/usr/share/texmf-dist/tex/latex/tcolorbox/tcbraster.code.tex
 Library (tcolorbox): 'tcbraster.code.tex' version '6.4.1'
-\c@tcbrastercolumn=\count327
-\c@tcbrasterrow=\count328
-\c@tcbrasternum=\count329
-\c@tcbraster=\count330
+\c@tcbrastercolumn=\count328
+\c@tcbrasterrow=\count329
+\c@tcbrasternum=\count330
+\c@tcbraster=\count331
 ) (/usr/share/texmf-dist/tex/latex/tcolorbox/tcbskins.code.tex
 Library (tcolorbox): 'tcbskins.code.tex' version '6.4.1'
 (/usr/share/texmf-dist/tex/latex/tikzfill/tikzfill.image.sty
@@ -528,14 +533,14 @@ Library (tcolorbox): 'tcbhooks.code.tex' version '6.4.1'
 Library (tcolorbox): 'tcbtheorems.code.tex' version '6.4.1'
 (/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2024/11/05 v2.17t AMS math features
-\@mathmargin=\skip60
+\@mathmargin=\skip61
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2021/08/26 v2.01 AMS text
  (/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks45
+\@emptytoks=\toks46
 \ex@=\dimen291
 )) (/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
@@ -543,14 +548,14 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 ) (/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count331
+\inf@bad=\count332
 LaTeX Info: Redefining \frac on input line 233.
-\uproot@=\count332
-\leftroot@=\count333
+\uproot@=\count333
+\leftroot@=\count334
 LaTeX Info: Redefining \overline on input line 398.
 LaTeX Info: Redefining \colon on input line 409.
-\classnum@=\count334
-\DOTSCASE@=\count335
+\classnum@=\count335
+\DOTSCASE@=\count336
 LaTeX Info: Redefining \ldots on input line 495.
 LaTeX Info: Redefining \dots on input line 498.
 LaTeX Info: Redefining \cdots on input line 619.
@@ -563,31 +568,31 @@ LaTeX Info: Redefining \Bigg on input line 724.
 \big@size=\dimen293
 LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
-\macc@depth=\count336
+\macc@depth=\count337
 LaTeX Info: Redefining \bmod on input line 904.
 LaTeX Info: Redefining \pmod on input line 909.
 LaTeX Info: Redefining \smash on input line 939.
 LaTeX Info: Redefining \relbar on input line 969.
 LaTeX Info: Redefining \Relbar on input line 970.
-\c@MaxMatrixCols=\count337
+\c@MaxMatrixCols=\count338
 \dotsspace@=\muskip18
-\c@parentequation=\count338
-\dspbrk@lvl=\count339
-\tag@help=\toks46
-\row@=\count340
-\column@=\count341
-\maxfields@=\count342
-\andhelp@=\toks47
+\c@parentequation=\count339
+\dspbrk@lvl=\count340
+\tag@help=\toks47
+\row@=\count341
+\column@=\count342
+\maxfields@=\count343
+\andhelp@=\toks48
 \eqnshift@=\dimen294
 \alignsep@=\dimen295
 \tagshift@=\dimen296
 \tagwidth@=\dimen297
 \totwidth@=\dimen298
 \lineht@=\dimen299
-\@envbody=\toks48
-\multlinegap=\skip61
-\multlinetaggap=\skip62
-\mathdisplay@stack=\toks49
+\@envbody=\toks49
+\multlinegap=\skip62
+\multlinetaggap=\skip63
+\mathdisplay@stack=\toks50
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
 )) (/usr/share/texmf-dist/tex/latex/tcolorbox/tcbfitting.code.tex
@@ -595,30 +600,30 @@ Library (tcolorbox): 'tcbfitting.code.tex' version '6.4.1'
 \tcbfitdim=\dimen300
 \tcb@lowerfitdim=\dimen301
 \tcb@upperfitdim=\dimen302
-\tcb@cur@hbadness=\count343
+\tcb@cur@hbadness=\count344
 ) (/usr/share/texmf-dist/tex/latex/tcolorbox/tcblistingsutf8.code.tex
 Library (tcolorbox): 'tcblistingsutf8.code.tex' version '6.4.1'
 (/usr/share/texmf-dist/tex/latex/tcolorbox/tcblistings.code.tex
 Library (tcolorbox): 'tcblistings.code.tex' version '6.4.1'
 (/usr/share/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count344
+\lst@mode=\count345
 \lst@gtempboxa=\box86
-\lst@token=\toks50
-\lst@length=\count345
+\lst@token=\toks51
+\lst@length=\count346
 \lst@currlwidth=\dimen303
-\lst@column=\count346
-\lst@pos=\count347
+\lst@column=\count347
+\lst@pos=\count348
 \lst@lostspace=\dimen304
 \lst@width=\dimen305
-\lst@newlines=\count348
-\lst@lineno=\count349
+\lst@newlines=\count349
+\lst@lineno=\count350
 \lst@maxwidth=\dimen306
  (/usr/share/texmf-dist/tex/latex/listings/lstpatch.sty
 File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
 ) (/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
-\c@lstnumber=\count350
-\lst@skipnumbers=\count351
+\c@lstnumber=\count351
+\lst@skipnumbers=\count352
 \lst@framebox=\box87
 ) (/usr/share/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2024/09/23 1.10c listings configuration
@@ -629,7 +634,7 @@ Library (tcolorbox): 'tcblistingscore.code.tex' version '6.4.1'
 (/usr/share/texmf-dist/tex/latex/tcolorbox/tcbprocessing.code.tex
 Library (tcolorbox): 'tcbprocessing.code.tex' version '6.4.1'
 )
-\c@tcblisting=\count352
+\c@tcblisting=\count353
 )) (/usr/share/texmf-dist/tex/latex/listingsutf8/listingsutf8.sty
 Package: listingsutf8 2019-12-10 v1.5 Allow UTF-8 in listings input (HO)
 )) (/usr/share/texmf-dist/tex/latex/tcolorbox/tcbexternal.code.tex
@@ -647,66 +652,73 @@ Library (tcolorbox): 'tcbposter.code.tex' version '6.4.1'
 )) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
 File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-\c@themecounter=\count353
+\c@themecounter=\count354
  (/usr/share/texmf-dist/tex/latex/algorithms/algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating environment
  (/usr/share/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count354
-\float@exts=\toks51
+\c@float@type=\count355
+\float@exts=\toks52
 \float@box=\box88
-\@float@everytoks=\toks52
+\@float@everytoks=\toks53
 \@floatcapt=\box89
 ) (/usr/share/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 )
-\@float@every@algorithm=\toks53
-\c@algorithm=\count355
+\@float@every@algorithm=\toks54
+\c@algorithm=\count356
 ) (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count356
+\l__color_backend_stack_int=\count357
 \l__pdf_internal_box=\box90
-) (./main.aux (./background.aux) (./related.aux) (./findings.aux))
+) (./main.aux (./background.aux) (./related.aux) (./findings.aux
+
+LaTeX Warning: Label `fig:efficiency_metrics' multiply defined.
+
+
+LaTeX Warning: Label `fig:efficiency_metrics' multiply defined.
+
+))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count357
+\scratchcounter=\count358
 \scratchdimen=\dimen307
 \scratchbox=\box91
-\nofMPsegments=\count358
-\nofMParguments=\count359
-\everyMPshowfont=\toks54
-\MPscratchCnt=\count360
+\nofMPsegments=\count359
+\nofMParguments=\count360
+\everyMPshowfont=\toks55
+\MPscratchCnt=\count361
 \MPscratchDim=\dimen308
-\MPnumerator=\count361
-\makeMPintoPDFobject=\count362
-\everyMPtoPDFconversion=\toks55
+\MPnumerator=\count362
+\makeMPintoPDFobject=\count363
+\everyMPtoPDFconversion=\toks56
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 72.
+Package hyperref Info: Link coloring OFF on input line 74.
  (./main.out) (./main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
@@ -714,7 +726,7 @@ Package hyperref Info: Link coloring OFF on input line 72.
 
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
-\c@lstlisting=\count363
+\c@lstlisting=\count364
 
 
 [1
@@ -753,7 +765,7 @@ Package natbib Warning: Citation `dehghani2023distributed' on page 2 undefined o
 pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.137     \item S
+l.139     \item S
                  ystematically categorize the nature and scope of each study]
 
 [7{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
@@ -764,10 +776,10 @@ l.137     \item S
 <media/Company Structure.png, id=460, 1571.8725pt x 1798.72pt>
 File: media/Company Structure.png Graphic file (type png)
 <use media/Company Structure.png>
-Package pdftex.def Info: media/Company Structure.png  used on input line 268.
+Package pdftex.def Info: media/Company Structure.png  used on input line 270.
 (pdftex.def)             Requested size: 426.79134pt x 488.37807pt.
 
-Overfull \hbox (36.79134pt too wide) in paragraph at lines 268--269
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 270--271
  [][] 
  []
 
@@ -779,7 +791,7 @@ Overfull \hbox (36.79134pt too wide) in paragraph at lines 268--269
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.290     \end{itemize}
+l.292     \end{itemize}
                         <./media/Company Structure.png>]
 
 [12]
@@ -856,7 +868,7 @@ Underfull \hbox (badness 2119) in paragraph at lines 168--168
 ] [21] [22] [23] [24] [25]
 
 [26])
-Overfull \hbox (59.62866pt too wide) in paragraph at lines 26--27
+Overfull \hbox (59.62866pt too wide) in paragraph at lines 31--32
 []\OT1/cmr/m/n/12 The method-olog-i-cal dis-tri-bu-tion re-flects the ap-plied na-ture of this field|experimental
  []
 
@@ -871,9 +883,9 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.103 
+l.108 
       ]
-Package pgfplots info on input line 125: Using 'lua backend=false' for axis: x coord trafo unsupported.
+Package pgfplots info on input line 130: Using 'lua backend=false' for axis: x coord trafo unsupported.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -884,301 +896,309 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.162 
+l.167 
       ]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (37.89236pt too wide) in paragraph at lines 194--206
+
+[29
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.201 
+      ]
+Overfull \hbox (77.89229pt too wide) in paragraph at lines 207--222
  [][] 
  []
 
 
 
-[29
+[30
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.227 
+      
 pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.214 
+l.227 
       ]
 
-[30]
-Overfull \hbox (14.52219pt too wide) in paragraph at lines 228--229
+[31]
+Overfull \hbox (14.52219pt too wide) in paragraph at lines 244--245
 \OT1/cmr/m/n/12 abil-ity to quan-tify un-cer-tainty and adapt to chang-ing threat land-scapes|critical
  []
 
 
-Overfull \hbox (3.49036pt too wide) in paragraph at lines 236--237
+Overfull \hbox (3.49036pt too wide) in paragraph at lines 252--253
 \OT1/cmr/m/n/12 dis-tri-bu-tion of op-ti-miza-tion tech-niques, with nature-inspired meth-ods (41.7%)
- []
-
-
-Overfull \hbox (1.54964pt too wide) in paragraph at lines 238--239
-[]\OT1/cmr/m/n/12 In pre-dic-tive main-te-nance ap-pli-ca-tions, for in-stance, Thop-pil et al. ([]Thop-
- []
-
-
-
-[31]
-Package pgfplots info on input line 260: Using 'lua backend=false' for axis: x coord trafo unsupported.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Overfull \hbox (0.91803pt too wide) in paragraph at lines 277--278
-[]\OT1/cmr/bx/n/12 Data char-ac-ter-is-tics\OT1/cmr/m/n/12 : Do-mains with high-dimensional, het-ero-ge-neous
- []
-
-
-Overfull \hbox (21.01518pt too wide) in paragraph at lines 279--280
-\OT1/cmr/m/n/12 quan-tifi-ca-tion (like cy-ber-se-cu-rity) show su-pe-rior per-for-mance with Bayesian
  []
 
 
 
 [32]
-Overfull \hbox (1.11467pt too wide) in paragraph at lines 292--292
+Overfull \hbox (1.54964pt too wide) in paragraph at lines 254--255
+[]\OT1/cmr/m/n/12 In pre-dic-tive main-te-nance ap-pli-ca-tions, for in-stance, Thop-pil et al. ([]Thop-
+ []
+
+Package pgfplots info on input line 283: Using 'lua backend=false' for axis: x coord trafo unsupported.
+
+Overfull \hbox (18.00758pt too wide) in paragraph at lines 290--291
+ [][] 
+ []
+
+
+
+[33
+pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.296 
+      ]
+Overfull \hbox (0.91803pt too wide) in paragraph at lines 300--301
+[]\OT1/cmr/bx/n/12 Data char-ac-ter-is-tics\OT1/cmr/m/n/12 : Do-mains with high-dimensional, het-ero-ge-neous
+ []
+
+
+Overfull \hbox (21.01518pt too wide) in paragraph at lines 302--303
+\OT1/cmr/m/n/12 quan-tifi-ca-tion (like cy-ber-se-cu-rity) show su-pe-rior per-for-mance with Bayesian
+ []
+
+
+
+[34]
+Overfull \hbox (1.11467pt too wide) in paragraph at lines 315--315
 []\OT1/cmr/bx/n/14.4 Numerical Meth-ods for Deep Learn-ing on Big Data
  []
 
 
 
-[33]
-Package pgfplots info on input line 325: Using 'lua backend=false' for axis: x coord trafo unsupported.
+[35]
+Package pgfplots info on input line 350: Using 'lua backend=false' for axis: x coord trafo unsupported.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Overfull \hbox (34.01729pt too wide) in paragraph at lines 339--350
+Overfull \hbox (74.01721pt too wide) in paragraph at lines 365--379
  [][] 
  []
 
 
 
-[34
+[36
+pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.385 T
+       o understand how theoretical rigor relates to practical performance, ...
 pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.356 T
+l.385 T
        o understand how theoretical rigor relates to practical performance, ...]
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Overfull \hbox (0.51817pt too wide) in paragraph at lines 393--394
-[]\OT1/cmr/m/n/12 Paradoxically, meth-ods with lower the-o-ret-i-cal rigor tended to re-port larger
- []
-
-
-Overfull \hbox (6.42783pt too wide) in paragraph at lines 404--405
+[37
+pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.449     \item \textbf
+                       {Application domains}: Nature-inspired algorithms may...]
+Overfull \hbox (6.42783pt too wide) in paragraph at lines 451--452
 \OT1/cmr/m/n/12 per-for-mance im-prove-ments in spe-cific ap-pli-ca-tions but po-ten-tially poorer
  []
 
 
-Package natbib Warning: Citation `Yang2019' on page 35 undefined on input line 411.
+Package natbib Warning: Citation `Yang2019' on page 38 undefined on input line 458.
 
 
 
-[35]
+[38]
 
-Package natbib Warning: Citation `Yang2019' on page 36 undefined on input line 418.
+Package natbib Warning: Citation `Yang2019' on page 39 undefined on input line 465.
 
 
 
-[36]
-
-[37]
-Overfull \hbox (57.43155pt too wide) in paragraph at lines 446--458
+[39]
+Overfull \hbox (204.11371pt too wide) in paragraph at lines 496--511
  [][] 
  []
 
 
-Overfull \hbox (3.49036pt too wide) in paragraph at lines 462--463
+Overfull \hbox (3.49036pt too wide) in paragraph at lines 515--516
 []\OT1/cmr/m/n/12 Cross-validation across mul-ti-ple stud-ies demon-strated that nature-inspired
  []
 
 
-Package natbib Warning: Citation `Yang2019' on page 38 undefined on input line 475.
 
-
-
-[38
+[40
 pdfTeX warning (ext4): destination with the same identifier (name{table.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.476 \end{themebox}
-                    ]
+l.516 \begin{itemize}
+                     ]
 
-Package natbib Warning: Citation `Yang2019' on page 39 undefined on input line 485.
+Package natbib Warning: Citation `Yang2019' on page 41 undefined on input line 528.
 
 
-Overfull \hbox (3.9473pt too wide) in paragraph at lines 485--486
+
+[41]
+
+Package natbib Warning: Citation `Yang2019' on page 42 undefined on input line 538.
+
+
+Overfull \hbox (3.9473pt too wide) in paragraph at lines 538--539
 []\OT1/cmr/m/n/12 The evo-lu-tion-ary ap-proaches share key char-ac-ter-is-tics with nature-inspired
  []
 
 
 
-[39]
-
-[40]
-Overfull \hbox (18.99464pt too wide) in paragraph at lines 504--504
+[42]
+Overfull \hbox (18.99464pt too wide) in paragraph at lines 557--557
 []\OT1/cmr/bx/n/14.4 Performance Anal-y-sis of Nu-mer-i-cal Meth-ods (RQ1.2) 
  []
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+Package natbib Warning: Citation `Goodfellow2016' on page 43 undefined on input line 635.
 
 
-Package natbib Warning: Citation `Goodfellow2016' on page 41 undefined on input line 575.
+Package natbib Warning: Citation `Goodfellow2016' on page 43 undefined on input line 635.
 
 
-Package natbib Warning: Citation `Goodfellow2016' on page 41 undefined on input line 575.
-
-
-Overfull \hbox (3.16397pt too wide) in paragraph at lines 575--576
+Overfull \hbox (3.16397pt too wide) in paragraph at lines 635--636
 []\OT1/cmr/m/n/12 The eval-u-a-tion of nu-mer-i-cal meth-ods for deep learn-ing on big data presents
  []
 
 
-Package natbib Warning: Citation `Deb2014' on page 41 undefined on input line 577.
+
+[43]
+
+Package natbib Warning: Citation `Deb2014' on page 44 undefined on input line 637.
 
 
-Package natbib Warning: Citation `Deb2014' on page 41 undefined on input line 580.
+Package natbib Warning: Citation `Deb2014' on page 44 undefined on input line 640.
 
 
 
-[41]
-Overfull \hbox (2.05426pt too wide) in paragraph at lines 587--588
+[44
+pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.645 
+      ]
+Package pgfplots info on input line 668: Using 'lua backend=false' for axis: x coord trafo unsupported.
+Package pgfplots info on input line 709: Using 'lua backend=false' for axis: x coord trafo unsupported.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (2.05426pt too wide) in paragraph at lines 724--725
 \OT1/cmr/m/n/12 Studies re-port-ing train-ing time re-duc-tions achieved im-pres-sive re-sults through
  []
 
-Package pgfplots info on input line 610: Using 'lua backend=false' for axis: x coord trafo unsupported.
+Package pgfplots info on input line 747: Using 'lua backend=false' for axis: x coord trafo unsupported.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 
-[42]
+[45
+pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.768 
+      ]
 
-[43]
+[46
+pdfTeX warning (ext4): destination with the same identifier (name{figure.11}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.781 
+      ]
 
-Package natbib Warning: Citation `Deb2014' on page 44 undefined on input line 672.
+[47
+pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.792 
+      ]
 
-
-
-[44]
-Overfull \hbox (4.07785pt too wide) in paragraph at lines 681--682
-\OT1/cmr/m/n/12 crease|is a crit-i-cal con-sid-er-a-tion for dis-tributed deep learn-ing sys-tems ([]Zhang
- []
-
-
-
-[45]
-
-[46]
-Overfull \hbox (3.11078pt too wide) in paragraph at lines 705--706
-[]\OT1/cmr/m/it/12 Decentralized Learn-ing Ar-chi-tec-tures\OT1/cmr/m/n/12 : Privacy-preserving im-ple-men-ta-tions
- []
-
-
-Overfull \hbox (4.07785pt too wide) in paragraph at lines 713--714
-\OT1/cmr/m/n/12 crease|is a crit-i-cal con-sid-er-a-tion for dis-tributed deep learn-ing sys-tems ([]Zhang
- []
+Package natbib Warning: Citation `Deb2014' on page 48 undefined on input line 809.
 
 
-
-[47]
 
 [48]
-Overfull \hbox (3.11078pt too wide) in paragraph at lines 737--738
-[]\OT1/cmr/m/it/12 Decentralized Learn-ing Ar-chi-tec-tures\OT1/cmr/m/n/12 : Privacy-preserving im-ple-men-ta-tions
+Overfull \hbox (4.07785pt too wide) in paragraph at lines 818--819
+\OT1/cmr/m/n/12 crease|is a crit-i-cal con-sid-er-a-tion for dis-tributed deep learn-ing sys-tems ([]Zhang
  []
 
 
 
 [49]
-Overfull \hbox (1.79315pt too wide) in paragraph at lines 750--751
-[]\OT1/cmr/m/n/12 Third, the in-te-gra-tion of hard-ware aware-ness into op-ti-miza-tion ap-proaches
+
+[50]
+Overfull \hbox (3.11078pt too wide) in paragraph at lines 842--843
+[]\OT1/cmr/m/it/12 Decentralized Learn-ing Ar-chi-tec-tures\OT1/cmr/m/n/12 : Privacy-preserving im-ple-men-ta-tions
  []
 
 
-Package natbib Warning: Citation `Deb2014' on page 50 undefined on input line 755.
-
-
-
-[50]
-Overfull \hbox (4.93025pt too wide) in paragraph at lines 764--765
-[]\OT1/cmr/bx/n/12 Nature-Inspired Al-go-rithm Dom-i-nance\OT1/cmr/m/n/12 : We doc-u-mented the grow-
+Overfull \hbox (4.07785pt too wide) in paragraph at lines 850--851
+\OT1/cmr/m/n/12 crease|is a crit-i-cal con-sid-er-a-tion for dis-tributed deep learn-ing sys-tems ([]Zhang
  []
 
 
 
 [51]
-Overfull \hbox (1.85785pt too wide) in paragraph at lines 788--789
+
+[52]
+Overfull \hbox (3.11078pt too wide) in paragraph at lines 874--875
+[]\OT1/cmr/m/it/12 Decentralized Learn-ing Ar-chi-tec-tures\OT1/cmr/m/n/12 : Privacy-preserving im-ple-men-ta-tions
+ []
+
+
+
+[53]
+Overfull \hbox (1.79315pt too wide) in paragraph at lines 887--888
+[]\OT1/cmr/m/n/12 Third, the in-te-gra-tion of hard-ware aware-ness into op-ti-miza-tion ap-proaches
+ []
+
+
+Package natbib Warning: Citation `Deb2014' on page 54 undefined on input line 892.
+
+
+Overfull \hbox (20.00546pt too wide) in paragraph at lines 892--893
+\OT1/cmr/m/n/12 nature-inspired al-go-rithms, hardware-aware op-ti-miza-tion, and privacy-preserving
+ []
+
+
+
+[54]
+Overfull \hbox (4.93025pt too wide) in paragraph at lines 901--902
+[]\OT1/cmr/bx/n/12 Nature-Inspired Al-go-rithm Dom-i-nance\OT1/cmr/m/n/12 : We doc-u-mented the grow-
+ []
+
+
+
+[55]
+Overfull \hbox (1.85785pt too wide) in paragraph at lines 925--926
 []\OT1/cmr/bx/n/12 Privacy-Performance Trade-off Gap: \OT1/cmr/m/n/12 More work is needed to quan-
  []
 
 
-Overfull \hbox (9.5758pt too wide) in paragraph at lines 790--791
+Overfull \hbox (9.5758pt too wide) in paragraph at lines 927--928
 []\OT1/cmr/bx/n/12 Cross-Domain Knowl-edge Trans-fer: \OT1/cmr/m/n/12 Our find-ings on domain-specific
  []
 
 
-Overfull \hbox (2.70703pt too wide) in paragraph at lines 793--794
+
+[56]
+Overfull \hbox (2.70703pt too wide) in paragraph at lines 930--931
 []\OT1/cmr/m/n/12 These gaps present valu-able op-por-tu-ni-ties for fu-ture re-search to strengthen
  []
 
+)
 
-
-[52])
-
-[53]
-
-[54
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.561 \include{findings}
-                        ]
-
-[55
-pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.561 \include{findings}
-                        
-pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.561 \include{findings}
-                        ]
-
-[56
-pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.561 \include{findings}
-                        
-pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.561 \include{findings}
-                        ]
-
-[57
-pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.561 \include{findings}
-                        
-pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.561 \include{findings}
-                        ] (./main.bbl
+[57] (./main.bbl
 
 [58
 
@@ -1198,22 +1218,26 @@ Package natbib Warning: There were undefined citations.
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 8D394805FBFA9E10EA6CE21FA5F2B1E4;15858.
+(rerunfilecheck)             Checksum: 83FFF2975888EC85ECB6D83A82305FE1;15934.
  ) 
 Here is how much of TeX's memory you used:
- 39231 strings out of 475095
- 939120 string characters out of 5765553
- 1585480 words of memory out of 5000000
- 61362 multiletter control sequences out of 15000+600000
- 567126 words of font info for 65 fonts, out of 8000000 for 9000
+ 39438 strings out of 475095
+ 942887 string characters out of 5765553
+ 1565731 words of memory out of 5000000
+ 61563 multiletter control sequences out of 15000+600000
+ 567739 words of font info for 67 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 86i,19n,98p,985b,2326s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on main.pdf (61 pages, 551788 bytes).
+ 86i,19n,98p,985b,2381s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on main.pdf (61 pages, 557310 bytes).
 PDF statistics:
- 1084 PDF objects out of 1200 (max. 8388607)
- 955 compressed objects within 10 object streams
- 251 named destinations out of 1000 (max. 500000)
+ 1100 PDF objects out of 1200 (max. 8388607)
+ 971 compressed objects within 10 object streams
+ 253 named destinations out of 1000 (max. 500000)
  778 words of extra memory for PDF output out of 10000 (max. 10000000)
 
