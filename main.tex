@@ -117,7 +117,7 @@ For SLR 2 (Distributed Computing Techniques):
 \subsubsection{Literature Review Classification Framework}
 We will use Cooper's taxonomy \citep{cooper1988} to classify the literature in both SLRs:
 
-\begin{table}[h]
+\begin{table}[ht]
 \caption{Adaptation of Cooper's Literature Review Taxonomy}
 \begin{tabularx}{\textwidth}{lX}
 \toprule
@@ -151,11 +151,11 @@ PICO-based search strings for each SLR:
 SLR 1 (TITLE AND ABSTRACT SEARCH) :
 \begin{verbatim}
 ("deep learning"
-AND 
-("numerical method*" 
-OR "computational mathematics" 
+AND
+("numerical method*"
+OR "computational mathematics"
 OR "optimization algorithm*")
-AND 
+AND
 ("big data"))
 \end{verbatim}
 
@@ -180,15 +180,15 @@ AND
 
 SLR 2:
 \begin{verbatim}
-(("deep learning" OR "neural network*") AND 
-("distributed computing" OR "parallel processing" OR 
-"GPU acceleration" OR "federated learning") AND 
-("big data" OR "large-scale") AND 
+(("deep learning" OR "neural network*") AND
+("distributed computing" OR "parallel processing" OR
+"GPU acceleration" OR "federated learning") AND
+("big data" OR "large-scale") AND
 (scalability OR performance))
 \end{verbatim}
 
 \subsubsection{Information Sources}
-IEEE Xplore, ACM Digital Library, SpringerLink, Scopus, Web of Science, JSTOR, AIS 
+IEEE Xplore, ACM Digital Library, SpringerLink, Scopus, Web of Science, JSTOR, AIS
 
 \subsubsection{Eligibility Criteria}
 Inclusion criteria for SLR 1:
@@ -230,7 +230,7 @@ Exclusion criteria for SLR 1:
 \begin{enumerate}
     \item Initial screening of titles and abstracts
     \item Following low inter-rater reliability (Krippendorff's a = 0.4), implemented Modified Delphi Protocol based on RAND/UCLA methodology \citep{fitch2001rand} and Dalkey's classical Delphi framework \citep{dalkey1969delphi}:
-    
+
     \paragraph{Round 1: Anonymous Individual Assessment}
     \begin{itemize}
         \item Each reviewer independently screens 50 randomly selected papers
@@ -238,7 +238,7 @@ Exclusion criteria for SLR 1:
         \item Responses collected via standardized electronic form
         \item Statistical analysis of agreement levels using methods described by \citet{diamond2014results}
     \end{itemize}
-    
+
     \paragraph{Round 2: Controlled Feedback}
     \begin{itemize}
         \item Anonymous compilation of Round 1 decisions and rationales
@@ -246,7 +246,7 @@ Exclusion criteria for SLR 1:
         \item Identification of areas of agreement and disagreement
         \item Written feedback from each reviewer on points of disagreement
     \end{itemize}
-    
+
     \paragraph{Round 3: Consensus Development}
     \begin{itemize}
         \item Structured meeting following nominal group technique \citep{delbecq1975group}
@@ -282,7 +282,7 @@ Based on consensus deliberation, the following sequential decision gates were es
         \item Clear numerical methods component
         \item Verifiable technical implementation or application
     \end{itemize}
-    
+
     \item \textbf{Big Data Aspects Evaluation}
     \begin{itemize}
         \item Volume: Significant data scale as defined by \cite{laney2001data}
@@ -290,7 +290,7 @@ Based on consensus deliberation, the following sequential decision gates were es
         \item Variety: Heterogeneous data types
         \item Processing: Computational complexity requirements
     \end{itemize}
-    
+
     \item \textbf{Contribution Type Classification}
     \begin{itemize}
         \item Implementation focus: Technical deployment emphasis
@@ -328,14 +328,14 @@ The consensus established specific protocols for border cases:
         \item Classify based on primary contribution
         \item Document dual-nature considerations
     \end{itemize}
-    
+
     \item \textbf{Ambiguous Cases}
     \begin{itemize}
         \item Require third reviewer evaluation
         \item Apply decision framework strictly
         \item Document specific points of ambiguity
     \end{itemize}
-    
+
     \item \textbf{Novel Approaches}
     \begin{itemize}
         \item Evaluate against established criteria
@@ -363,14 +363,14 @@ The classification framework was validated through:
         \item Inter-rater reliability assessment
         \item Process refinement based on results
     \end{itemize}
-    
+
     \item \textbf{Expert Review}
     \begin{itemize}
         \item Independent expert evaluation
         \item Framework refinement feedback
         \item Documentation of edge cases
     \end{itemize}
-    
+
     \item \textbf{Statistical Validation}
     \begin{itemize}
         \item Agreement rate analysis
@@ -382,7 +382,7 @@ The classification framework was validated through:
 
 
 
-    
+
     \paragraph{Round 4: Validation}
     \begin{itemize}
         \item Re-screening of original 50 papers using new criteria
@@ -473,21 +473,21 @@ Following the systematic review methodology of \cite{kitchenham2007guidelines}, 
         \item Implementation approach [M-02]
         \item Validation technique [M-03]
     \end{itemize}
-    
+
     \item \textbf{Context [CODE: C]}
     \begin{itemize}
         \item Problem domain [C-01]
         \item Dataset characteristics [C-02]
         \item Computing environment [C-03]
     \end{itemize}
-    
+
     \item \textbf{Results [CODE: R]}
     \begin{itemize}
         \item Performance metrics [R-01]
         \item Comparative analysis [R-02]
         \item Statistical significance [R-03]
     \end{itemize}
-    
+
     \item \textbf{Findings [CODE: F]}
     \begin{itemize}
         \item Key contributions [F-01]
@@ -569,7 +569,7 @@ This systematic review will provide a comprehensive overview of the current stat
 
 \section{Notes}
 
-There was a challenge among researchers to detect big data or what constitutes big data. While some studies did run their numerical method against a large set of data, it was not always clear if it was big data. 
+There was a challenge among researchers to detect big data or what constitutes big data. While some studies did run their numerical method against a large set of data, it was not always clear if it was big data.
 
 For instance one paper discussed fault prediction with a large amount of data, but it did not occur naturally to us that this data could be big data. It was only clarified during the discussion phase that the data was indeed big data.
 

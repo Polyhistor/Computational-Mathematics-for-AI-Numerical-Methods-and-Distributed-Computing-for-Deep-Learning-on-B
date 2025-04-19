@@ -28,10 +28,10 @@ Table~\ref{tab:all_papers_compact} presents the comprehensive list of all 77 pap
 \subsection{Overview of Included Studies}
 Our systematic literature review identified 77 papers focusing on computational mathematics for AI, specifically examining numerical methods and distributed computing techniques for deep learning applications on big data. These studies were selected through a rigorous process following the PRISMA guidelines, ensuring methodological quality and relevance to our research questions.
 
-The methodological distribution reflects the applied nature of this field—experimental studies constitute the majority of the corpus (62\%), followed by algorithmic development papers (27\%) and hybrid approaches combining theoretical development with empirical validation (11\%). This distribution highlights how empirical validation is essential for establishing the efficacy of computational approaches in big data contexts.
+The methodological distribution reflects the applied nature of this field-experimental studies constitute the majority of the corpus (62\%), followed by algorithmic development papers (27\%) and hybrid approaches combining theoretical development with empirical validation (11\%). This distribution highlights how empirical validation is essential for establishing the efficacy of computational approaches in big data contexts.
 
 % Methodology Distribution Pie Chart
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \begin{tikzpicture}
 \pie[
@@ -60,7 +60,7 @@ The methodological distribution reflects the applied nature of this field—expe
 The body of research has shown consistent growth since 2016, with a significant acceleration between 2019-2023 [See Figure \ref{fig:temporal_evolution}]. This growth coincides with the increasing complexity of deep learning models and expanding data volumes that have necessitated more sophisticated computational approaches. The years 2022-2023 represent the peak of research activity, accounting for approximately half of all included studies.
 
 % Temporal Evolution of Research Focus
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \begin{tikzpicture}[scale=0.8]
     \begin{axis}[
@@ -76,7 +76,7 @@ The body of research has shown consistent growth since 2016, with a significant 
         width=12cm,
         height=8cm
     ]
-    
+
     % Data points
     \addplot[
         color=blue,
@@ -88,7 +88,7 @@ The body of research has shown consistent growth since 2016, with a significant 
         (2013,3)(2014,4)(2015,5)(2016,7)(2017,9)
         (2018,12)(2019,15)(2020,18)(2021,22)(2022,25)(2023,27)
     };
-    
+
     % Simple linear trend line
     \addplot[
         color=red,
@@ -96,7 +96,7 @@ The body of research has shown consistent growth since 2016, with a significant 
         samples=100,
         thick
     ] {2.5*x - 5025};
-    
+
     \legend{Publications per year, Trend line}
     \end{axis}
 \end{tikzpicture}
@@ -109,7 +109,7 @@ This temporal pattern aligns with broader AI research trends, particularly the e
 \subsubsection{Distribution Across Scientific Venues}
 Journal publications significantly outnumber conference proceedings in our sample, suggesting a maturation of the field where comprehensive, rigorous studies are increasingly favored over preliminary results [See Figure \ref{fig:publication_distribution}]. IEEE and ACM publications together account for a substantial portion of the corpus (43\%), highlighting the central role of these organizations in disseminating research on computational methods for AI [See Figure \ref{fig:publication_distribution}].
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \begin{tikzpicture}
 \begin{axis}[
@@ -130,7 +130,7 @@ Journal publications significantly outnumber conference proceedings in our sampl
 ]
 \addplot[fill=blue!70!black, draw=black] coordinates {
     (Journals, 48)
-    (Conferences, 26) 
+    (Conferences, 26)
     (Preprints, 3)
 };
 \end{axis}
@@ -167,7 +167,7 @@ Our analysis reveals several key patterns in how computational optimization for 
 
 Our quantitative analysis reveals that healthcare applications represented 31.2\% of the papers in our sample, followed by cybersecurity (18.6\%), financial services (14.3\%), manufacturing (11.5\%), and other domains (24.4\%). This distribution highlights the broad applicability of computational optimization techniques across sectors, with particular concentration in data-intensive domains with high-stakes decision-making requirements.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \begin{tikzpicture}
 \pie[
@@ -298,11 +298,11 @@ Further analysis revealed that the relationship between domain and performance i
 
 \begin{itemize}
     \item \textbf{Data characteristics}: Domains with high-dimensional, heterogeneous data (like healthcare) benefit more from nature-inspired approaches that can effectively navigate complex search spaces.
-    
+
     \item \textbf{Uncertainty requirements}: Domains requiring explicit uncertainty quantification (like cybersecurity) show superior performance with Bayesian approaches.
-    
+
     \item \textbf{Multi-objective needs}: Domains requiring optimization across multiple competing objectives (like financial services) benefit from evolutionary approaches that can efficiently identify Pareto-optimal solutions.
-    
+
     \item \textbf{Response time constraints}: Domains with strict real-time requirements show better alignment with gradient-based methods that offer faster convergence, despite potentially suboptimal solutions.
 \end{itemize}
 
@@ -403,7 +403,7 @@ To understand how theoretical rigor relates to practical performance, we compare
     legend pos=north east,
     legend style={draw=black, fill=white, opacity=0.8},
     ]
-    
+
 % Scatter points for individual papers with categories
 \addplot[only marks, mark=*, mark size=3pt, color=blue!60] coordinates {
     (2.1, 21.7) (2.3, 24.3) (2.5, 17.8) (2.7, 23.1) (2.9, 19.5) (3.2, 18.2)
@@ -443,11 +443,11 @@ We identified several potential explanations for this inverse relationship:
 
 \begin{itemize}
     \item \textbf{Publication bias}: Papers introducing new nature-inspired algorithms may be more likely to report successful applications and less likely to report negative results.
-    
+
     \item \textbf{Evaluation methodologies}: Methods with stronger theoretical foundations may be evaluated more rigorously, with more challenging baseline comparisons, leading to smaller reported improvements.
-    
+
     \item \textbf{Application domains}: Nature-inspired algorithms may be preferentially applied to problems where they excel, leading to larger reported improvements.
-    
+
     \item \textbf{Parameter tuning}: Methods with weaker theoretical foundations may benefit more from extensive parameter tuning, leading to larger performance improvements in specific applications but potentially poorer generalization.
 \end{itemize}
 
@@ -685,7 +685,7 @@ Our analysis of computational efficiency revealed significant variations across 
 \label{fig:efficiency_metrics}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \begin{tikzpicture}
 \begin{axis}[
@@ -723,7 +723,7 @@ Our analysis of computational efficiency revealed significant variations across 
 \subsubsection{Training Time Optimization}
 Studies reporting training time reductions achieved impressive results through various approaches. Wang et al. \citep{Wang2021} demonstrated a 42.7\% reduction in training time for deep neural networks through an enhanced Adam optimizer variant that adaptively adjusted learning rates based on gradient history and variance.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \begin{tikzpicture}
 \begin{axis}[
@@ -895,17 +895,17 @@ Throughout our analysis, we have identified seven major themes that characterize
 
 \begin{enumerate}
     \item \textbf{Domain-Specific Optimization}: We found strong evidence that optimization technique selection is highly domain-dependent, with healthcare applications favoring nature-inspired algorithms, cybersecurity applications preferring Bayesian approaches, and financial applications employing evolutionary algorithms. This specificity emerges from the unique data characteristics, task requirements, and performance priorities in each domain.
-    
+
     \item \textbf{Theory-Practice Gap}: Our analysis revealed a concerning disconnect between theoretical understanding and practical application, particularly for widely-used nature-inspired algorithms. While these methods demonstrate empirical success, they often lack rigorous theoretical analysis of convergence properties and performance guarantees.
-    
+
     \item \textbf{Nature-Inspired Algorithm Dominance}: We documented the growing prevalence of nature-inspired metaheuristic algorithms for hyperparameter optimization across diverse domains. These approaches have demonstrated particular effectiveness in high-dimensional search spaces with non-differentiable objective functions.
-    
+
     \item \textbf{Hardware-Aware Optimization}: The emergence of hardware-aware optimization represents a paradigm shift from purely mathematical perspectives toward integrated approaches that view algorithm design and hardware implementation as inherently coupled problems.
-    
+
     \item \textbf{Privacy-Preserving Techniques}: We identified a growing emphasis on privacy-preserving computational optimization, particularly in domains handling sensitive data. Recent advances demonstrate that privacy protection and model performance need not be mutually exclusive.
-    
+
     \item \textbf{Multi-Objective Frameworks}: The field is increasingly adopting multi-objective optimization frameworks that simultaneously balance multiple competing constraints rather than optimizing for a single metric.
-    
+
     \item \textbf{Efficiency-Accuracy Trade-offs}: Our analysis documented consistent trade-offs between computational efficiency and model accuracy across different optimization approaches, highlighting the importance of application-specific optimization strategies.
 \end{enumerate}
 
@@ -917,13 +917,13 @@ Our findings bridge multiple research communities, connecting computational math
 \textbf{Research Gaps and Future Directions:} Our analysis reveals several critical gaps in the current literature:
 \begin{itemize}
     \item \textbf{Theoretical Foundation Gap:} Despite widespread adoption, many nature-inspired algorithms lack rigorous theoretical analysis of convergence properties and performance bounds. Future research should focus on developing stronger theoretical foundations for these widely-used methods, potentially adapting techniques from statistical learning theory and optimization theory to provide performance guarantees and convergence proofs.
-    
+
     \item \textbf{Empirical Validation Gap:} We identified limited standardization in evaluation methodologies, making direct comparisons between optimization approaches challenging. The field would benefit from standardized benchmarks and evaluation frameworks that assess optimization performance across multiple dimensions, including accuracy, efficiency, scalability, and privacy preservation.
-    
+
     \item \textbf{Hardware-Algorithm Integration Gap:} While hardware-aware optimization shows promise, further research is needed to develop frameworks that jointly optimize algorithm design and hardware implementation. Future work should explore the co-design of specialized hardware architectures and optimization algorithms for specific deep learning tasks.
-    
+
     \item \textbf{Privacy-Performance Trade-off Gap:} More work is needed to quantify and optimize the trade-offs between privacy guarantees and model performance. Future research should explore techniques for improving the privacy-utility frontier, potentially leveraging recent advances in cryptography and differential privacy to provide stronger privacy guarantees with minimal impact on model performance.
-    
+
     \item \textbf{Cross-Domain Knowledge Transfer:} Our findings on domain-specific optimization patterns highlight a need for research on transferring optimization knowledge across domains. Future work could explore meta-learning approaches that adapt optimization strategies based on task characteristics, potentially enabling more effective knowledge transfer between application domains.
 \end{itemize}
 
