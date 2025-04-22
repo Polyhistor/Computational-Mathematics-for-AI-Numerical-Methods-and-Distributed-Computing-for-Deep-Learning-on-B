@@ -1,5 +1,9 @@
 \section{Findings and Analysis}
 
+% (NB Remove when finalising)
+% Suppress \hbox warnings
+\sloppy
+
 % Add required packages for table coloring
 % These packages have been moved to main.tex
 % \usepackage{colortbl}
@@ -20,7 +24,7 @@ To ensure clarity throughout this analysis, we define the following key technica
 \end{itemize}
 
 \subsection{List of Included Papers}
-Table~\ref{tab:all_papers_compact} presents the comprehensive list of all 77 papers included in this systematic literature review. These papers were selected based on the inclusion criteria and quality assessment process detailed in the methodology. Each study contributes to the understanding of computational mathematics for AI with focus on numerical methods and distributed computing techniques for deep learning on big data.
+\Cref{tab:all_papers_compact} presents the comprehensive list of all 77 papers included in this systematic literature review. These papers were selected based on the inclusion criteria and quality assessment process detailed in the methodology. Each study contributes to the understanding of computational mathematics for AI with focus on numerical methods and distributed computing techniques for deep learning on big data.
 
 % Simplified table format with only essential information (ID, Title, Author)
 \input{all_papers_table_compact}
@@ -28,10 +32,10 @@ Table~\ref{tab:all_papers_compact} presents the comprehensive list of all 77 pap
 \subsection{Overview of Included Studies}
 Our systematic literature review identified 77 papers focusing on computational mathematics for AI, specifically examining numerical methods and distributed computing techniques for deep learning applications on big data. These studies were selected through a rigorous process following the PRISMA guidelines, ensuring methodological quality and relevance to our research questions.
 
-The methodological distribution reflects the applied nature of this field—experimental studies constitute the majority of the corpus (62\%), followed by algorithmic development papers (27\%) and hybrid approaches combining theoretical development with empirical validation (11\%). This distribution highlights how empirical validation is essential for establishing the efficacy of computational approaches in big data contexts.
+The methodological distribution reflects the applied nature of this field-experimental studies constitute the majority of the corpus (62\%), followed by algorithmic development papers (27\%) and hybrid approaches combining theoretical development with empirical validation (11\%). This distribution highlights how empirical validation is essential for establishing the efficacy of computational approaches in big data contexts.
 
 % Methodology Distribution Pie Chart
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \begin{tikzpicture}
 \pie[
@@ -57,10 +61,10 @@ The methodological distribution reflects the applied nature of this field—expe
 \end{figure}
 
 \subsubsection{Temporal Evolution of Research (2016-2024)}
-The body of research has shown consistent growth since 2016, with a significant acceleration between 2019-2023 [See Figure \ref{fig:temporal_evolution}]. This growth coincides with the increasing complexity of deep learning models and expanding data volumes that have necessitated more sophisticated computational approaches. The years 2022-2023 represent the peak of research activity, accounting for approximately half of all included studies.
+The body of research has shown consistent growth since 2016, with a significant acceleration between 2019-2023 [see \cref{fig:temporal_evolution}]. This growth coincides with the increasing complexity of deep learning models and expanding data volumes that have necessitated more sophisticated computational approaches. The years 2022-2023 represent the peak of research activity, accounting for approximately half of all included studies.
 
 % Temporal Evolution of Research Focus
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \begin{tikzpicture}[scale=0.8]
     \begin{axis}[
@@ -76,7 +80,7 @@ The body of research has shown consistent growth since 2016, with a significant 
         width=12cm,
         height=8cm
     ]
-    
+
     % Data points
     \addplot[
         color=blue,
@@ -88,7 +92,7 @@ The body of research has shown consistent growth since 2016, with a significant 
         (2013,3)(2014,4)(2015,5)(2016,7)(2017,9)
         (2018,12)(2019,15)(2020,18)(2021,22)(2022,25)(2023,27)
     };
-    
+
     % Simple linear trend line
     \addplot[
         color=red,
@@ -96,7 +100,7 @@ The body of research has shown consistent growth since 2016, with a significant 
         samples=100,
         thick
     ] {2.5*x - 5025};
-    
+
     \legend{Publications per year, Trend line}
     \end{axis}
 \end{tikzpicture}
@@ -104,12 +108,12 @@ The body of research has shown consistent growth since 2016, with a significant 
 \label{fig:temporal_evolution}
 \end{figure}
 
-This temporal pattern aligns with broader AI research trends, particularly the emergence of large language models and other compute-intensive AI applications that have pushed the boundaries of traditional optimization methods \cite{ataei2024filtering}. The growth in publications reflects the field's response to these practical challenges, setting the stage for our analysis of publication venues.
+This temporal pattern aligns with broader AI research trends, particularly the emergence of large language models and other compute-intensive AI applications that have pushed the boundaries of traditional optimization methods \citep{ataei2024filtering}. The growth in publications reflects the field's response to these practical challenges, setting the stage for our analysis of publication venues.
 
 \subsubsection{Distribution Across Scientific Venues}
-Journal publications significantly outnumber conference proceedings in our sample, suggesting a maturation of the field where comprehensive, rigorous studies are increasingly favored over preliminary results [See Figure \ref{fig:publication_distribution}]. IEEE and ACM publications together account for a substantial portion of the corpus (43\%), highlighting the central role of these organizations in disseminating research on computational methods for AI [See Figure \ref{fig:publication_distribution}].
+Journal publications significantly outnumber conference proceedings in our sample, suggesting a maturation of the field where comprehensive, rigorous studies are increasingly favored over preliminary results [see \cref{fig:publication_distribution}]. IEEE and ACM publications together account for a substantial portion of the corpus (43\%), highlighting the central role of these organizations in disseminating research on computational methods for AI [see \cref{fig:publication_distribution}].
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \begin{tikzpicture}
 \begin{axis}[
@@ -130,7 +134,7 @@ Journal publications significantly outnumber conference proceedings in our sampl
 ]
 \addplot[fill=blue!70!black, draw=black] coordinates {
     (Journals, 48)
-    (Conferences, 26) 
+    (Conferences, 26)
     (Preprints, 3)
 };
 \end{axis}
@@ -167,7 +171,7 @@ Our analysis reveals several key patterns in how computational optimization for 
 
 Our quantitative analysis reveals that healthcare applications represented 31.2\% of the papers in our sample, followed by cybersecurity (18.6\%), financial services (14.3\%), manufacturing (11.5\%), and other domains (24.4\%). This distribution highlights the broad applicability of computational optimization techniques across sectors, with particular concentration in data-intensive domains with high-stakes decision-making requirements.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \begin{tikzpicture}
 \pie[
@@ -197,7 +201,7 @@ Our quantitative analysis reveals that healthcare applications represented 31.2\
 \label{fig:domain_distribution}
 \end{figure}
 
-More revealing than the distribution itself was our cross-domain analysis of optimization technique preferences. We analyzed the frequency of different optimization approaches across domains, calculating the percentage of papers within each domain that employed specific techniques. Table~\ref{tab:domain_techniques} presents this analysis, showing distinct patterns of technique selection across application domains.
+More revealing than the distribution itself was our cross-domain analysis of optimization technique preferences. We analyzed the frequency of different optimization approaches across domains, calculating the percentage of papers within each domain that employed specific techniques. \Cref{tab:domain_techniques} presents this analysis, showing distinct patterns of technique selection across application domains.
 
 \begin{table}[!htb]
 \centering
@@ -254,7 +258,7 @@ Manufacturing applications (11.5\% of our sample) showed a more balanced distrib
 In predictive maintenance applications, for instance, Thoppil et al. \citep{Thoppil2021} employed Bayesian optimization to tune LSTM networks for equipment failure prediction, achieving a 22.3\% reduction in false alarms while maintaining high recall (93.7\%) for actual failures. This balanced performance is crucial in manufacturing contexts where both downtime and unnecessary maintenance are costly.
 
 \subsubsection{Cross-Domain Analysis of Optimization Performance}
-Beyond technique selection patterns, we also analyzed performance differences across domains. Figure~\ref{fig:domain_performance} illustrates the relative performance of different optimization approaches in each domain, measured by the percentage improvement over baseline methods reported in the studies.
+Beyond technique selection patterns, we also analyzed performance differences across domains. \Cref{fig:domain_performance} illustrates the relative performance of different optimization approaches in each domain, measured by the percentage improvement over baseline methods reported in the studies.
 
 \begin{figure}[!htb]
 \centering
@@ -298,11 +302,11 @@ Further analysis revealed that the relationship between domain and performance i
 
 \begin{itemize}
     \item \textbf{Data characteristics}: Domains with high-dimensional, heterogeneous data (like healthcare) benefit more from nature-inspired approaches that can effectively navigate complex search spaces.
-    
+
     \item \textbf{Uncertainty requirements}: Domains requiring explicit uncertainty quantification (like cybersecurity) show superior performance with Bayesian approaches.
-    
+
     \item \textbf{Multi-objective needs}: Domains requiring optimization across multiple competing objectives (like financial services) benefit from evolutionary approaches that can efficiently identify Pareto-optimal solutions.
-    
+
     \item \textbf{Response time constraints}: Domains with strict real-time requirements show better alignment with gradient-based methods that offer faster convergence, despite potentially suboptimal solutions.
 \end{itemize}
 
@@ -313,7 +317,7 @@ Our analysis revealed that optimization technique selection is highly domain-dep
 \end{themebox}
 
 \subsection{Numerical Methods for Deep Learning on Big Data (RQ1.1)}
-To address RQ1.1 ("What are the state-of-the-art numerical methods used in deep learning for big data?"), we categorized the identified numerical methods and algorithms according to their underlying principles and optimization approaches. This section explores the evolution of these methods and their specific implementations across different studies.
+To address RQ1.1 (``What are the state-of-the-art numerical methods used in deep learning for big data?"), we categorized the identified numerical methods and algorithms according to their underlying principles and optimization approaches. This section explores the evolution of these methods and their specific implementations across different studies.
 
 The theoretical landscape of numerical methods for deep learning has evolved considerably since the foundational work on backpropagation \citep{LeCun2015}. Our analysis reveals a significant shift from general-purpose optimization algorithms toward specialized methods that exploit the structural properties of deep learning architectures and the statistical characteristics of big data.
 
@@ -327,7 +331,7 @@ To assess the theoretical rigor of different optimization approaches, we conduct
     \item \textbf{Optimality guarantees}: Whether the paper provided guarantees about the optimality of the solutions (global optimum, local optimum, etc.)
 \end{enumerate}
 
-For each dimension, we assigned a score from 0 (no analysis) to 3 (comprehensive analysis), creating a theoretical rigor index ranging from 0 to 12. Figure~\ref{fig:theoretical_rigor} presents the average theoretical rigor scores across different optimization approaches.
+For each dimension, we assigned a score from 0 (no analysis) to 3 (comprehensive analysis), creating a theoretical rigor index ranging from 0 to 12. \Cref{fig:theoretical_rigor} presents the average theoretical rigor scores across different optimization approaches.
 
 \begin{figure}[!htb]
 \centering
@@ -355,7 +359,7 @@ For each dimension, we assigned a score from 0 (no analysis) to 3 (comprehensive
 \label{fig:theoretical_rigor}
 \end{figure}
 
-We decomposed these scores into their constituent dimensions to better understand specific theoretical gaps. Table~\ref{tab:theoretical_dimensions} presents this analysis, showing average scores on each dimension of theoretical rigor.
+We decomposed these scores into their constituent dimensions to better understand specific theoretical gaps. \Cref{tab:theoretical_dimensions} presents this analysis, showing average scores on each dimension of theoretical rigor.
 
 \begin{table}[!htb]
 \centering
@@ -382,7 +386,7 @@ Nature-inspired & \cellcolor{red!15}0.7 & \cellcolor{red!15}0.9 & \cellcolor{red
 
 The largest gap was observed in convergence analysis, where nature-inspired algorithms scored an average of 0.7/3 compared to 2.8/3 for gradient-based methods. This gap reflects a fundamental challenge in analyzing the convergence properties of stochastic, population-based algorithms that rely on heuristic rules rather than gradient information.
 
-To understand how theoretical rigor relates to practical performance, we compared theoretical rigor scores with reported performance improvements. Figure~\ref{fig:theory_vs_practice} illustrates this relationship, showing the average performance improvement reported for methods across different levels of theoretical rigor.
+To understand how theoretical rigor relates to practical performance, we compared theoretical rigor scores with reported performance improvements. \Cref{fig:theory_vs_practice} illustrates this relationship, showing the average performance improvement reported for methods across different levels of theoretical rigor.
 
 \begin{figure}[!htb]
 \centering
@@ -403,7 +407,7 @@ To understand how theoretical rigor relates to practical performance, we compare
     legend pos=north east,
     legend style={draw=black, fill=white, opacity=0.8},
     ]
-    
+
 % Scatter points for individual papers with categories
 \addplot[only marks, mark=*, mark size=3pt, color=blue!60] coordinates {
     (2.1, 21.7) (2.3, 24.3) (2.5, 17.8) (2.7, 23.1) (2.9, 19.5) (3.2, 18.2)
@@ -443,11 +447,11 @@ We identified several potential explanations for this inverse relationship:
 
 \begin{itemize}
     \item \textbf{Publication bias}: Papers introducing new nature-inspired algorithms may be more likely to report successful applications and less likely to report negative results.
-    
+
     \item \textbf{Evaluation methodologies}: Methods with stronger theoretical foundations may be evaluated more rigorously, with more challenging baseline comparisons, leading to smaller reported improvements.
-    
+
     \item \textbf{Application domains}: Nature-inspired algorithms may be preferentially applied to problems where they excel, leading to larger reported improvements.
-    
+
     \item \textbf{Parameter tuning}: Methods with weaker theoretical foundations may benefit more from extensive parameter tuning, leading to larger performance improvements in specific applications but potentially poorer generalization.
 \end{itemize}
 
@@ -464,7 +468,7 @@ A concerning trend emerged from our analysis—the wide adoption of optimization
 \subsubsection{Nature-Inspired Optimization Algorithms}
 Nature-inspired algorithms represent a substantial portion of the optimization approaches in the reviewed literature \citep{Sagu202535, Samadianfard20191934}. These metaheuristic algorithms, characterized by their stochastic search properties and population-based exploration strategies, have gained prominence for their ability to navigate complex, non-convex optimization landscapes without requiring gradient information \citep{Yang2019}.
 
-Our quantitative analysis of the literature reveals that nature-inspired algorithms accounted for 42\% of all optimization approaches in the studied papers, with significant variation across application domains. Figure~\ref{fig:efficiency_accuracy_tradeoff} demonstrates their performance profile relative to other optimization approaches. Their prevalence has increased steadily since 2019, growing from 27\% of methods in 2019 to 48\% in 2023, indicating increasing adoption as model complexity and data scale have grown.
+Our quantitative analysis of the literature reveals that nature-inspired algorithms accounted for 42\% of all optimization approaches in the studied papers, with significant variation across application domains. \Cref{fig:efficiency_accuracy_tradeoff} demonstrates their performance profile relative to other optimization approaches. Their prevalence has increased steadily since 2019, growing from 27\% of methods in 2019 to 48\% in 2023, indicating increasing adoption as model complexity and data scale have grown.
 
 We identified several distinct subcategories within nature-inspired approaches, each with specific strengths in different application contexts:
 
@@ -486,7 +490,7 @@ This heavy-tailed distribution allows for occasional long jumps, enhancing explo
 
 \textit{Chimp Optimization Algorithm}'s exponential variant has been applied to optimize deep neuro-fuzzy networks within MapReduce frameworks for fake news detection \citep{Kanchanamala20232414}. The hierarchical social behavior mimicked by this algorithm enables effective feature extraction and classification in complex textual datasets. Kanchanamala et al. demonstrated a 15.6\% improvement in classification accuracy and 41\% reduction in convergence time compared to traditional optimization approaches. Their adaptation introduced a dynamic hierarchy factor that evolved throughout the optimization process, providing enhanced exploration during early iterations and exploitation in later stages.
 
-Table~\ref{tab:nature_inspired_performance} summarizes the performance improvements reported across these and other nature-inspired approaches in our sample, demonstrating their effectiveness across different performance dimensions:
+\Cref{tab:nature_inspired_performance} summarizes the performance improvements reported across these and other nature-inspired approaches in our sample, demonstrating their effectiveness across different performance dimensions:
 
 \begin{table}[!htb]
 \centering
@@ -555,9 +559,9 @@ Our analysis indicates that privacy-preserving computational optimization techni
 This emphasis on privacy-preserving optimization reflects the growing deployment of AI systems in domains with significant privacy concerns, such as healthcare and finance.
 
 \subsection{Performance Analysis of Numerical Methods (RQ1.2)}
-To address RQ1.2 ("How do these methods perform in terms of computational efficiency and accuracy?"), we analyzed the reported performance metrics across studies, focusing on key dimensions of efficiency and accuracy. This section examines the diverse evaluation frameworks used and synthesizes performance trends across different optimization approaches.
+To address RQ1.2 (``How do these methods perform in terms of computational efficiency and accuracy?"), we analyzed the reported performance metrics across studies, focusing on key dimensions of efficiency and accuracy. This section examines the diverse evaluation frameworks used and synthesizes performance trends across different optimization approaches.
 
-A central challenge in the field is balancing efficiency with accuracy, as illustrated in Figure~\ref{fig:efficiency_accuracy_tradeoff}, which plots efficiency improvements against accuracy retention across various optimization approaches.
+A central challenge in the field is balancing efficiency with accuracy, as illustrated in \cref{fig:efficiency_accuracy_tradeoff}, which plots efficiency improvements against accuracy retention across various optimization approaches.
 
 \begin{figure}[!htb]
 \centering
@@ -632,7 +636,7 @@ A central challenge in the field is balancing efficiency with accuracy, as illus
 \label{fig:efficiency_accuracy_tradeoff}
 \end{figure}
 
-The evaluation of numerical methods for deep learning on big data presents unique methodological challenges \citep{Goodfellow2016}. Unlike traditional optimization problems with well-defined global optima, deep learning optimization involves non-convex landscapes with multiple local minima, saddle points, and flat regions \citep{dauphin2014identifying}. This complexity necessitates specialized evaluation frameworks that can capture the nuanced performance characteristics of different optimization approaches \citep{Goodfellow2016}.
+The evaluation of numerical methods for deep learning on big data presents unique methodological challenges \citep{goodfellow2016deep}. Unlike traditional optimization problems with well-defined global optima, deep learning optimization involves non-convex landscapes with multiple local minima, saddle points, and flat regions \citep{dauphin2014identifying}. This complexity necessitates specialized evaluation frameworks that can capture the nuanced performance characteristics of different optimization approaches \citep{goodfellow2016deep}.
 
 As the field has matured, we observed a significant shift in how optimization approaches are evaluated and designed, moving beyond single-metric optimization \citep{Deb2014}. This shift constitutes our sixth major theme:
 
@@ -682,10 +686,10 @@ Our analysis of computational efficiency revealed significant variations across 
 \end{axis}
 \end{tikzpicture}
 \caption{Maximum reported improvements across efficiency metrics.}
-\label{fig:efficiency_metrics}
+\label{fig:efficiency_metrics:1}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \begin{tikzpicture}
 \begin{axis}[
@@ -717,13 +721,13 @@ Our analysis of computational efficiency revealed significant variations across 
 \end{axis}
 \end{tikzpicture}
 \caption{Maximum performance improvements by efficiency metric.}
-\label{fig:efficiency_metrics}
+\label{fig:efficiency_metrics:2}
 \end{figure}
 
 \subsubsection{Training Time Optimization}
 Studies reporting training time reductions achieved impressive results through various approaches. Wang et al. \citep{Wang2021} demonstrated a 42.7\% reduction in training time for deep neural networks through an enhanced Adam optimizer variant that adaptively adjusted learning rates based on gradient history and variance.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \begin{tikzpicture}
 \begin{axis}[
@@ -755,7 +759,7 @@ Studies reporting training time reductions achieved impressive results through v
 \end{axis}
 \end{tikzpicture}
 \caption{Maximum reported performance improvements across different efficiency metrics, showing the most significant gains in memory usage optimization.}
-\label{fig:efficiency_metrics}
+\label{fig:efficiency_metrics:3}
 \end{figure}
 
 The training time optimization approach proposed by Wang et al. \citep{Wang2021} incorporates a sophisticated momentum-tuning mechanism that dynamically adjusts based on gradient variance. Their method introduces an adaptive momentum coefficient $\beta_t$ calculated as:
@@ -801,7 +805,7 @@ E_{\text{total}} = \alpha \cdot E_{\text{compute}} + \beta \cdot E_{\text{memory
 
 where $\alpha$ and $\beta$ are architecture-specific coefficients. By dynamically adjusting model width and depth based on input complexity, their system achieved a 58.4\% energy reduction on a benchmark dataset while maintaining 98.7\% of baseline accuracy. The most significant energy savings were observed for inputs with low to moderate complexity, where up to 70\% of model components could be deactivated without affecting accuracy.
 
-These detailed investigations across multiple efficiency dimensions highlight a fundamental challenge in optimizing deep learning models for big data applications—the need to balance computational efficiency with model accuracy. Our comparative analysis of these approaches is summarized in Figure \ref{fig:efficiency_accuracy_tradeoff}, which plots efficiency improvements against accuracy retention across various optimization strategies.
+These detailed investigations across multiple efficiency dimensions highlight a fundamental challenge in optimizing deep learning models for big data applications—the need to balance computational efficiency with model accuracy. Our comparative analysis of these approaches is summarized in \cref{fig:efficiency_accuracy_tradeoff}, which plots efficiency improvements against accuracy retention across various optimization strategies.
 
 This comprehensive analysis across multiple efficiency dimensions and optimization approaches leads to our seventh major theme:
 
@@ -812,7 +816,7 @@ Our analysis identified consistent trade-offs between computational efficiency a
 The identification of these trade-offs has significant implications for how optimization approaches should be selected and deployed in practice. Rather than seeking a universally superior optimization method, researchers and practitioners should carefully consider the specific requirements and constraints of their application domain to select the most appropriate approach for their use case.
 
 \subsection{Distributed Computing Approaches (RQ2.1)}
-Having examined the numerical methods employed for deep learning optimization, we now turn our attention to the distributed computing techniques that enable these methods to scale to big data problems. This section addresses RQ2.1 ("What distributed computing techniques are used for scaling deep learning to big data problems?"), analyzing how computation can be effectively distributed across multiple nodes to overcome the computational challenges of training large-scale models on massive datasets.
+Having examined the numerical methods employed for deep learning optimization, we now turn our attention to the distributed computing techniques that enable these methods to scale to big data problems. This section addresses RQ2.1 (``What distributed computing techniques are used for scaling deep learning to big data problems?"), analyzing how computation can be effectively distributed across multiple nodes to overcome the computational challenges of training large-scale models on massive datasets.
 
 \subsubsection{Scaling Efficiency Characteristics}
 Scaling efficiency—how performance changes as computational resources increase—is a critical consideration for distributed deep learning systems \citep{Zhang20229876}. Our analysis revealed several distinct scaling patterns across different distributed computing paradigms.
@@ -844,7 +848,7 @@ As distributed learning systems often involve data from multiple sources, privac
 These privacy-preserving distributed learning approaches demonstrate that privacy protection and model performance need not be mutually exclusive, a critical consideration for deploying AI systems in privacy-sensitive domains.
 
 \subsection{Scalability Characteristics (RQ2.2)}
-Building on our analysis of distributed computing approaches, we now examine their scalability characteristics to address RQ2.2 ("How effective are these techniques in terms of scalability and performance?"). While the previous section focused on the methodological approaches to distributed computation, this section quantifies their performance across different scales and deployment scenarios, providing insights into which approaches are most effective for different types of deep learning workloads.
+Building on our analysis of distributed computing approaches, we now examine their scalability characteristics to address RQ2.2 (``How effective are these techniques in terms of scalability and performance?"). While the previous section focused on the methodological approaches to distributed computation, this section quantifies their performance across different scales and deployment scenarios, providing insights into which approaches are most effective for different types of deep learning workloads.
 
 \subsubsection{Scaling Efficiency Characteristics}
 Scaling efficiency—how performance changes as computational resources increase—is a critical consideration for distributed deep learning systems \citep{Zhang20229876}. Our analysis revealed several distinct scaling patterns across different distributed computing paradigms.
@@ -895,17 +899,17 @@ Throughout our analysis, we have identified seven major themes that characterize
 
 \begin{enumerate}
     \item \textbf{Domain-Specific Optimization}: We found strong evidence that optimization technique selection is highly domain-dependent, with healthcare applications favoring nature-inspired algorithms, cybersecurity applications preferring Bayesian approaches, and financial applications employing evolutionary algorithms. This specificity emerges from the unique data characteristics, task requirements, and performance priorities in each domain.
-    
+
     \item \textbf{Theory-Practice Gap}: Our analysis revealed a concerning disconnect between theoretical understanding and practical application, particularly for widely-used nature-inspired algorithms. While these methods demonstrate empirical success, they often lack rigorous theoretical analysis of convergence properties and performance guarantees.
-    
+
     \item \textbf{Nature-Inspired Algorithm Dominance}: We documented the growing prevalence of nature-inspired metaheuristic algorithms for hyperparameter optimization across diverse domains. These approaches have demonstrated particular effectiveness in high-dimensional search spaces with non-differentiable objective functions.
-    
+
     \item \textbf{Hardware-Aware Optimization}: The emergence of hardware-aware optimization represents a paradigm shift from purely mathematical perspectives toward integrated approaches that view algorithm design and hardware implementation as inherently coupled problems.
-    
+
     \item \textbf{Privacy-Preserving Techniques}: We identified a growing emphasis on privacy-preserving computational optimization, particularly in domains handling sensitive data. Recent advances demonstrate that privacy protection and model performance need not be mutually exclusive.
-    
+
     \item \textbf{Multi-Objective Frameworks}: The field is increasingly adopting multi-objective optimization frameworks that simultaneously balance multiple competing constraints rather than optimizing for a single metric.
-    
+
     \item \textbf{Efficiency-Accuracy Trade-offs}: Our analysis documented consistent trade-offs between computational efficiency and model accuracy across different optimization approaches, highlighting the importance of application-specific optimization strategies.
 \end{enumerate}
 
@@ -917,13 +921,13 @@ Our findings bridge multiple research communities, connecting computational math
 \textbf{Research Gaps and Future Directions:} Our analysis reveals several critical gaps in the current literature:
 \begin{itemize}
     \item \textbf{Theoretical Foundation Gap:} Despite widespread adoption, many nature-inspired algorithms lack rigorous theoretical analysis of convergence properties and performance bounds. Future research should focus on developing stronger theoretical foundations for these widely-used methods, potentially adapting techniques from statistical learning theory and optimization theory to provide performance guarantees and convergence proofs.
-    
+
     \item \textbf{Empirical Validation Gap:} We identified limited standardization in evaluation methodologies, making direct comparisons between optimization approaches challenging. The field would benefit from standardized benchmarks and evaluation frameworks that assess optimization performance across multiple dimensions, including accuracy, efficiency, scalability, and privacy preservation.
-    
+
     \item \textbf{Hardware-Algorithm Integration Gap:} While hardware-aware optimization shows promise, further research is needed to develop frameworks that jointly optimize algorithm design and hardware implementation. Future work should explore the co-design of specialized hardware architectures and optimization algorithms for specific deep learning tasks.
-    
+
     \item \textbf{Privacy-Performance Trade-off Gap:} More work is needed to quantify and optimize the trade-offs between privacy guarantees and model performance. Future research should explore techniques for improving the privacy-utility frontier, potentially leveraging recent advances in cryptography and differential privacy to provide stronger privacy guarantees with minimal impact on model performance.
-    
+
     \item \textbf{Cross-Domain Knowledge Transfer:} Our findings on domain-specific optimization patterns highlight a need for research on transferring optimization knowledge across domains. Future work could explore meta-learning approaches that adapt optimization strategies based on task characteristics, potentially enabling more effective knowledge transfer between application domains.
 \end{itemize}
 

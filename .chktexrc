@@ -1,0 +1,4 @@
+WarningSuppression
+{
+    13    # Suppress warnings about intersentence spacing
+}
