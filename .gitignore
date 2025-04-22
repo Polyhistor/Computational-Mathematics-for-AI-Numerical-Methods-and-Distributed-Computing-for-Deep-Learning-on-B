@@ -57,3 +57,6 @@ latexmkrc
 .DS_Store
 
 .env
+
+# Windows WSL
+**/*:Zone.Identifier
