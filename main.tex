@@ -86,6 +86,28 @@ This document outlines the protocol for a systematic literature review (SLR) on 
 
 
 \section{Background}\label{sec:background}
+
+% Add glossary of key terms for improved readability
+\subsection{Terminology and Definitions}\label{subsec:terminology-and-definitions}
+
+To ensure clarity throughout this analysis, we define the following key technical terms:
+\begin{itemize}
+    \item \textbf{Computational Mathematics for AI}: The application of mathematical techniques and algorithms to solve computational problems in artificial intelligence.
+    \item \textbf{Numerical Methods}: Algorithms that use numerical approximation for the problems of mathematical analysis.
+    \item \textbf{Optimization}: The selection of the best element from a set of available alternatives according to some criteria.
+    \item \textbf{Nature-Inspired Algorithms}: A class of metaheuristic optimization algorithms inspired by natural phenomena, such as biological evolution, animal behavior, or ecological processes, used to solve complex, non-convex optimization problems.
+    \item \textbf{Bayesian Optimization}: An optimization technique that builds a probabilistic model of the objective function and uses it to select the most promising points to evaluate, aiming to find the global optimum with a minimal number of evaluations.
+    \item \textbf{Multi-Objective Optimization}: An optimization framework where two or more conflicting objectives are optimized simultaneously, resulting in a set of trade-off solutions known as the Pareto front.
+    \item \textbf{Hardware-Aware Optimization}: An approach to optimization that explicitly considers the computational characteristics and constraints of the target hardware platform, aiming to maximize performance, efficiency, or resource utilization.
+    \item \textbf{Distributed Computing}: A computing paradigm where multiple computers work together to solve computational problems across a network.
+    \item \textbf{Federated Learning}: A decentralized machine learning approach where multiple devices collaboratively train a shared model without exchanging raw data, thereby preserving privacy and reducing data transfer requirements.
+    \item \textbf{Deep Learning}: A subset of machine learning using neural networks with multiple layers to extract higher-level features from raw input.
+    \item \textbf{Big Data}: Data sets that are too large or complex to be dealt with by traditional data-processing application software.
+    \item \textbf{Systematic Literature Review (SLR)}: A structured and methodical approach to identifying, evaluating, and synthesizing existing research studies on a specific topic, following predefined protocols to ensure transparency, repeatability, and minimization of bias.
+    \item \textbf{PRISMA (Preferred Reporting Items for Systematic Reviews and Meta-Analyses)}: A set of evidence-based guidelines and a reporting framework designed to enhance the quality and transparency of systematic reviews and meta-analyses.
+    \item \textbf{Meta-Analysis}: A statistical technique for combining results from multiple independent studies to identify patterns, derive general conclusions, or estimate the overall effect size with greater precision.
+\end{itemize}
+
 \subsection{Rationale}\label{subsec:rationale}
 Deep learning has revolutionized a wide spectrum of big data applications by providing state-of-the-art performance across domains.
 However, the increasing complexity of deep neural networks and the growing scale of datasets demand a deeper investigation into
@@ -593,17 +615,6 @@ This phased approach ensures a systematic and comprehensive review of computatio
 \section{Findings and Analysis}\label{sec:findings-and-analysis}
 This section presents the findings from our systematic analysis of computational mathematics for artificial intelligence, focusing on numerical methods and distributed computing techniques for deep learning on big data. Following the PRISMA guidelines \citep{moher2009preferred}, we analyzed 77 papers published between 2016 and 2024. The analysis is organized according to our research questions, examining numerical optimization methods (RQ1.1), their performance metrics (RQ1.2), distributed computing approaches (RQ2.1), and their scalability characteristics (RQ2.2).
 
-% Add glossary of key terms for improved readability
-\subsection{Terminology and Definitions}\label{subsec:terminology-and-definitions}
-To ensure clarity throughout this analysis, we define the following key technical terms:
-\begin{itemize}
-    \item \textbf{Computational Mathematics for AI}: The application of mathematical techniques and algorithms to solve computational problems in artificial intelligence.
-    \item \textbf{Numerical Methods}: Algorithms that use numerical approximation for the problems of mathematical analysis.
-    \item \textbf{Distributed Computing}: A computing paradigm where multiple computers work together to solve computational problems across a network.
-    \item \textbf{Deep Learning}: A subset of machine learning using neural networks with multiple layers to extract higher-level features from raw input.
-    \item \textbf{Big Data}: Data sets that are too large or complex to be dealt with by traditional data-processing application software.
-    \item \textbf{Optimization}: The selection of the best element from a set of available alternatives according to some criteria.
-\end{itemize}
 
 \subsection{List of Included Papers}\label{subsec:list-of-included-papers}
 \Cref{tab:all_papers_compact} presents the comprehensive list of all 77 papers included in this systematic literature review. These papers were selected based on the inclusion criteria and quality assessment process detailed in the methodology. Each study contributes to the understanding of computational mathematics for AI with focus on numerical methods and distributed computing techniques for deep learning on big data.
