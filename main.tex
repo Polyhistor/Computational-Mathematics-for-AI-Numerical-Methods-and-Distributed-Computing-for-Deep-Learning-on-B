@@ -1,4 +1,4 @@
-\documentclass[format=acmsmall, natbib=true, citestyle=acmauthoryear]{acmart}
+\documentclass[acmsmall]{acmart}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
@@ -16,6 +16,7 @@
 \usepackage{xcolor}
 \usepackage[most]{tcolorbox}
 \usepackage{cleveref}
+\usepackage{listings}
 
 
 \tcbuselibrary{breakable}
@@ -70,6 +71,14 @@
 
 \pgfplotsset{compat=newest}
 
+\lstset{
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    float=tp,
+    captionpos=t
+}
+
 \title{Computational Mathematics for AI: Numerical Methods and Distributed Computing for Deep Learning on Big Data}
 \author{Pouya Ataei}
 \date{\today}
@@ -80,7 +89,6 @@
 
 \section{Introduction}\label{sec:introduction}
 This document outlines the protocol for a systematic literature review (SLR) on computational mathematics for AI, focusing on numerical methods and distributed computing techniques for deep learning on big data. The review will follow the PRISMA guidelines \citep{moher2009preferred} and Kitchenham's methodology for SLRs in software engineering \citep{kitchenham2007guidelines}.
-
 
 \section{Background}\label{sec:background}
 
@@ -217,43 +225,34 @@ PICO-based search strings for each SLR:
 
 SLR 1 (TITLE AND ABSTRACT SEARCH) :
 
-\begin{verbatim}
-            ("deep learning"
-            AND
-            ("numerical method*"
-            OR "computational mathematics"
-            OR "optimization algorithm*")
-            AND
-            ("big data"))
-            \end{verbatim}
+\begin{lstlisting}[caption={General Search String},label={lst:general_search}]
+    ("deep learning" AND ("numerical method*" OR "computational mathematics" OR "optimization algorithm*") AND ("big data"))
+\end{lstlisting}
 
+\begin{lstlisting}[caption={IEEE Explore Search String},label={lst:iee_explore}]
+    ("deep learning" AND ("numerical method*" OR "computational mathematics" OR "optimization algorithm*") AND ("big data"))
+\end{lstlisting}
 
-\emph{IEEE Explore Search String:}
+\begin{lstlisting}[caption={Scopus Search String},label={lst:scopus}]
+    (TITLE-ABS("deep learning") AND (TITLE-ABS("numerical method*" OR "computational mathematics" OR "optimization algorithm*")) AND TITLE-ABS("big data"))
+\end{lstlisting}
 
-((``deep learning" AND (``numerical method*" OR ``computational mathematics" OR ``optimization algorithm*") AND (``big data")))
+\begin{lstlisting}[caption={Aisel Search String},label={lst:aisel}]
+    ([[Title:"deep learning"] AND [Title: "numerical method*"]] OR [Title: "computational mathematics"] OR [[Title: "optimization algorithm*"] AND [Title: "big data"])
+\end{lstlisting}
 
-\emph{Scopus Search String:}
+\begin{lstlisting}[caption={ACM Search String},label={lst:acm}]
+    ([[[Title: "deep learning"] AND [Title: "numerical method*"]] OR [Title: "computational mathematics"] OR [[Title: "optimization algorithm*"] AND [Title: "big data"]]] AND [[Abstract: "deep learning"] OR [Abstract: "numerical method*"] OR [Abstract: "computational mathematics"] OR [Abstract: "optimization algorithm*"] OR [Abstract: "big data"]])
+\end{lstlisting}
 
-( TITLE-ABS ( ``deep learning" ) AND ( TITLE-ABS ( ``numerical method*" OR ``computational mathematics" OR ``optimization algorithm*" ) ) AND TITLE-ABS ( ``big data" ) )
-
-\emph{Aisel Search String:}
-([[Title:``deep learning"] AND [Title: ``numerical method*"]] OR [Title: ``computational mathematics"] OR [[Title: ``optimization algorithm*"] AND [Title: ``big data"])
-
-\emph{ACM Search String:}
-([[[Title: ``deep learning"] AND [Title: ``numerical method*"]] OR [Title: ``computational mathematics"] OR [[Title: ``optimization algorithm*"] AND [Title: ``big data"]]] AND [[Abstract: ``deep learning"] OR [Abstract: ``numerical method*"] OR [Abstract: ``computational mathematics"] OR [Abstract: ``optimization algorithm*"] OR [Abstract: ``big data"]])
-\emph{Springer Search String:}
-( TITLE-ABS ( ``deep learning" ) AND ( TITLE-ABS ( ``numerical method*" OR ``computational mathematics" OR ``optimization algorithm*" ) ) AND TITLE-ABS ( ``big data" ) )
-
-\vline
+\begin{lstlisting}[caption={Springer Search String},label={lst:springer}]
+    ( TITLE-ABS ( "deep learning" ) AND ( TITLE-ABS ( "numerical method*" OR "computational mathematics" OR "optimization algorithm*" ) ) AND TITLE-ABS ( "big data" ) )
+\end{lstlisting}
 
 SLR 2:
-\begin{verbatim}
-            (("deep learning" OR "neural network*") AND
-            ("distributed computing" OR "parallel processing" OR
-            "GPU acceleration" OR "federated learning") AND
-            ("big data" OR "large-scale") AND
-            (scalability OR performance))
-            \end{verbatim}
+\begin{lstlisting}[caption={SLR 2},label={lst:slr_2}]
+    (("deep learning" OR "neural network*") AND ("distributed computing" OR "parallel processing" OR "GPU acceleration" OR "federated learning") AND ("big data" OR "large-scale") AND (scalability OR performance))
+\end{lstlisting}
 
 \subsubsection{Information Sources}\label{subsubsec:phase-1-planning-and-protocol-development:information-sources}
 IEEE Xplore, ACM Digital Library, SpringerLink, Scopus, Web of Science, JSTOR, AIS
@@ -883,6 +882,7 @@ Beyond technique selection patterns, we also analyzed performance differences ac
         \end{axis}
     \end{tikzpicture}
     \caption{Performance improvement by optimization technique across application domains.}
+    \Description[Performance over Application Domains]{Performance improvement by optimization technique across application domains}
     \label{fig:domain_performance}
 \end{figure}
 
