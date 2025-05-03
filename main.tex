@@ -1,4 +1,17 @@
+%% Commands for TeXCount
+%TC:macro \cite [option:text,text]
+%TC:macro \citep [option:text,text]
+%TC:macro \citet [option:text,text]
+%TC:envir table 0 1
+%TC:envir table* 0 1
+%TC:envir tabular [ignore] word
+%TC:envir displaymath 0 word
+%TC:envir math 0 word
+%TC:envir comment 0 0
+
 \documentclass[acmsmall]{acmart}
+
+%% ------ Packages & Setup Starts ------
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
@@ -6,6 +19,7 @@
 \usepackage{url}
 \usepackage{tabularx}
 \usepackage{booktabs}
+\usepackage{natbib}
 \usepackage{longtable}
 \usepackage{pdflscape}
 \usepackage{tikz}
@@ -17,7 +31,11 @@
 \usepackage[most]{tcolorbox}
 \usepackage{cleveref}
 \usepackage{listings}
+\usepackage{textalpha}
+\usepackage{rotating}
+\usepackage{algorithm}
 
+\citestyle{acmnumeric}
 
 \tcbuselibrary{breakable}
 
@@ -67,8 +85,6 @@
   bottom=8pt
 }
 
-\usepackage{algorithm}
-
 \pgfplotsset{compat=newest}
 
 \lstset{
@@ -79,16 +95,189 @@
     captionpos=t
 }
 
-\title{Computational Mathematics for AI: Numerical Methods and Distributed Computing for Deep Learning on Big Data}
-\author{Pouya Ataei}
-\date{\today}
+\newcommand{\ATM}[1]{\textcolor{red}{#1}}
+
+%% ------ Packages & Setup Ends ------
+
+%% ----- Front Matters Starts -----
+
+%% Rights management information.  This information is sent to you
+%% when you complete the rights form.  These commands have SAMPLE
+%% values in them; it is your responsibility as an author to replace
+%% the commands and values with those provided to you when you
+%% complete the rights form.
+\setcopyright{acmlicensed}
+\copyrightyear{2025}
+\acmYear{2025}
+\acmDOI{XXXXXXX.XXXXXXX}
+
+%% These commands are for a JOURNAL article.
+\acmJournal{JACM}
+\acmVolume{00}
+\acmNumber{0}
+\acmArticle{000}
+\acmMonth{13}
+
+%% Submission ID.
+%% Use this when submitting an article to a sponsored event. You'll
+%% receive a unique submission ID from the organizers
+%% of the event, and this ID should be used as the parameter to this command.
+%%\acmSubmissionID{123-A56-BU3}
+
+%% ----- Front Matters Ends -----
 
 \begin{document}
 
+%% ----- Title Page Setup Starts -----
+
+%% The "title" command has an optional parameter,
+%% allowing the author to define a "short title" to be used in page headers.
+\title{Computational Mathematics for AI: Numerical Methods and Distributed Computing for Deep Learning on Big Data}
+
+%%
+%% The "author" command and its associated commands are used to define
+%% the authors and their affiliations.
+%% Of note is the shared affiliation of the first two authors, and the
+%% "authornote" and "authornotemark" commands
+%% used to denote shared contribution to the research.
+\author{Ben Trovato}
+\authornote{Both authors are people.}
+\email{trovato@corporation.com}
+\orcid{1234-5678-9012}
+\author{G.K.M. Tobin}
+\authornotemark[1]
+\email{webmaster@marysville-ohio.com}
+\affiliation{%
+    \institution{Institute for Clarity in Documentation}
+    \city{Dublin}
+    \state{Ohio}
+    \country{USA}
+}
+
+\author{Lars Th{\o}rv{\"a}ld}
+\affiliation{%
+\institution{The Th{\o}rv{\"a}ld Group}
+\city{Hekla}
+\country{Iceland}}
+\email{larst@affiliation.org}
+
+\author{Valerie B\'eranger}
+\affiliation{%
+    \institution{Inria Paris-Rocquencourt}
+    \city{Rocquencourt}
+    \country{France}
+}
+
+\author{Aparna Patel}
+\affiliation{%
+    \institution{Rajiv Gandhi University}
+    \city{Doimukh}
+    \state{Arunachal Pradesh}
+    \country{India}}
+
+\author{Huifen Chan}
+\affiliation{%
+    \institution{Tsinghua University}
+    \city{Haidian Qu}
+    \state{Beijing Shi}
+    \country{China}}
+
+\author{Charles Palmer}
+\affiliation{%
+    \institution{Palmer Research Laboratories}
+    \city{San Antonio}
+    \state{Texas}
+    \country{USA}}
+\email{cpalmer@prl.com}
+
+\author{John Smith}
+\affiliation{%
+\institution{The Th{\o}rv{\"a}ld Group}
+\city{Hekla}
+\country{Iceland}}
+\email{jsmith@affiliation.org}
+
+\author{Julius P. Kumquat}
+\affiliation{%
+    \institution{The Kumquat Consortium}
+    \city{New York}
+    \country{USA}}
+\email{jpkumquat@consortium.net}
+
+%%
+%% By default, the full list of authors will be used in the page
+%% headers. Often, this list is too long, and will overlap
+%% other information printed in the page headers. This command allows
+%% the author to define a more concise list
+%% of authors' names for this purpose.
+\renewcommand{\shortauthors}{Trovato et al.}
+
+%%
+%% The abstract is a short summary of the work to be presented in the
+%% article.
+\begin{abstract}
+    A clear and well-documented \LaTeX\ document is presented as an
+    article formatted for publication by ACM in a conference proceedings
+    or journal publication. Based on the ``acmart'' document class, this
+    article presents and explains many of the common variations, as well
+    as many of the formatting elements an author may use in the
+    preparation of the documentation of their work.
+\end{abstract}
+
+%%
+%% The code below is generated by the tool at http://dl.acm.org/ccs.cfm.
+%% Please copy and paste the code instead of the example below.
+%%
+\begin{CCSXML}
+    <ccs2012>
+    <concept>
+    <concept_id>00000000.0000000.0000000</concept_id>
+    <concept_desc>Do Not Use This Code, Generate the Correct Terms for Your Paper</concept_desc>
+    <concept_significance>500</concept_significance>
+    </concept>
+    <concept>
+    <concept_id>00000000.00000000.00000000</concept_id>
+    <concept_desc>Do Not Use This Code, Generate the Correct Terms for Your Paper</concept_desc>
+    <concept_significance>300</concept_significance>
+    </concept>
+    <concept>
+    <concept_id>00000000.00000000.00000000</concept_id>
+    <concept_desc>Do Not Use This Code, Generate the Correct Terms for Your Paper</concept_desc>
+    <concept_significance>100</concept_significance>
+    </concept>
+    <concept>
+    <concept_id>00000000.00000000.00000000</concept_id>
+    <concept_desc>Do Not Use This Code, Generate the Correct Terms for Your Paper</concept_desc>
+    <concept_significance>100</concept_significance>
+    </concept>
+    </ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Do Not Use This Code~Generate the Correct Terms for Your Paper}
+\ccsdesc[300]{Do Not Use This Code~Generate the Correct Terms for Your Paper}
+\ccsdesc{Do Not Use This Code~Generate the Correct Terms for Your Paper}
+\ccsdesc[100]{Do Not Use This Code~Generate the Correct Terms for Your Paper}
+
+%%
+%% Keywords. The author(s) should pick words that accurately describe
+%% the work being presented. Separate the keywords with commas.
+\keywords{Do, Not, Us, This, Code, Put, the, Correct, Terms, for, Your, Paper}
+
+\received{20 February 1997}
+\received[revised]{12 March 2009}
+\received[accepted]{5 June 2009}
+
+%%
+%% This command processes the author and affiliation and title
+%% information and builds the first part of the formatted document.
 \maketitle
 
+%% ----- Title Page Setup Ends -----
+
+%% ----- Document Contents Starts -----
+
 \section{Introduction}\label{sec:introduction}
-This document outlines the protocol for a systematic literature review (SLR) on computational mathematics for AI, focusing on numerical methods and distributed computing techniques for deep learning on big data. The review will follow the PRISMA guidelines \citep{moher2009preferred} and Kitchenham's methodology for SLRs in software engineering \citep{kitchenham2007guidelines}.
+This document outlines the protocol for a \emph{systematic literature review} (SLR) on computational mathematics for AI, focusing on numerical methods and distributed computing techniques for deep learning on big data. The review will follow the PRISMA guidelines \citep{moher2009preferred} and Kitchenham's methodology for SLRs in software engineering \citep{kitchenham2007guidelines}.
 
 \section{Background}\label{sec:background}
 
@@ -138,7 +327,7 @@ This review synthesizes the current body of knowledge at the intersection of com
 providing a structured assessment of the most impactful methods in this space.
 
 \subsection{Objectives}\label{subsec:objectives}
-The core objectives of this \emph{systematic literature review} (SLR) are as follows:
+The core objectives of this SLR are as follows:
 
 \begin{enumerate}
     \item To identify and categorize cutting-edge numerical methods applied in deep learning for big data applications.
@@ -170,6 +359,95 @@ and \citet{dean2012large} introduced GPU and distributed training at scale, form
 through architectural and optimization innovations.
 
 Overall, the related work in this domain underscores the interplay between numerical optimization techniques and distributed computing as fundamental enablers of scalable deep learning. These works collectively highlight the importance of computational efficiency, scalability, and the need for continued research to address the complexities of big data-driven deep learning.
+
+\section{Systematic Literature Review Approach}\label{sec:systematic-literature-review-approach}
+This research adopts a dual SLR framework to rigorously explore two complementary yet distinct domains within the field of deep learning for big data: (SLR1) numerical methods and (SLR2) distributed computing techniques. The methodology employs a comprehensive seven-phase approach combining systematic reviews with subsequent meta-analysis and network analysis, ensuring thorough coverage of both technical and performance aspects.
+The SLR methodology is informed by the procedural guidelines outlined by \citet{kitchenham2004procedures} and builds upon empirical software engineering traditions, ensuring methodological transparency, repeatability, and reliability. Both reviews are constructed around well-formulated research questions that guide the scope and structure of the inquiry:
+
+For SLR1 (Numerical Methods):
+\begin{itemize}
+    \item RQ1.1: What are the state-of-the-art numerical methods used in deep learning for big data?
+    \item RQ1.2: How do these methods perform in terms of computational efficiency and accuracy?
+\end{itemize}
+For SLR2 (Distributed Computing Techniques):
+\begin{itemize}
+    \item RQ2.1: What distributed computing techniques are used for scaling deep learning to big data problems?
+    \item RQ2.2: How effective are these techniques in terms of scalability and performance?
+\end{itemize}
+
+The research questions were carefully structured to address both technical implementation (RQ1.1, RQ2.1) and performance characteristics (RQ1.2, RQ2.2). For SLR1, we specifically examine computational efficiency (measured in FLOPS/operation) and accuracy (typically reported as percentage improvement over baselines). SLR2 evaluates scalability (measured through speedup ratios and weak/strong scaling efficiency) and overall system performance (including throughput and latency metrics). This dual focus on what methods exist and how they perform provides both breadth and depth of understanding.
+To ensure methodological consistency across all coauthors, we adapted Cooper's taxonomy of literature reviews \cite{cooper1988organizing} as our classification framework (\cref{fig:decision-flow}). This framework examines studies across six dimensions:
+\begin{itemize}
+    \item Focus: Research outcomes, methods, theories, or applications
+    \item Goal: Integration, criticism, or identification of central issues
+    \item Perspective: Neutral representation or espousal of position
+    \item Coverage: Exhaustive, representative, or pivotal studies
+    \item Organization: Historical, conceptual, or methodological
+    \item Audience: Specialized scholars, practitioners, or general public
+\end{itemize}
+This multidimensional classification serves several critical purposes:
+\begin{itemize}
+    \item Systematically categorizing the nature and scope of each study
+    \item Identifying patterns and trends in the literature
+    \item Ensuring balanced representation of different research types
+    \item Tailoring findings to diverse audience needs
+    \item Guiding analysis and synthesis of the literature
+\end{itemize}
+The classification results are valuable in \ATM{Phase 6 (Study Classification and Bias Assessment)}, where they provided essential context for interpreting findings and identifying gaps in the current research landscape. The dual-SLR approach enables comprehensive analysis of both the algorithmic foundations (SLR1) and implementation architectures (SLR2) that together enable effective deep learning applications for big data. This combined perspective offers unique insights into how numerical innovations interact with distributed computing paradigms to advance the field.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{media/Company Structure.png}
+    \caption{Paper Classification Decision Framework}
+    \Description{Paper Classification Decision Framework}
+    \label{fig:decision-flow}
+\end{figure}
+
+\section{Methodology}\label{sec:methodology}
+\subsection{Systematic Literature Review Approach}\label{subsec:systematic-literature-review-approach}
+This research adopts a dual SLR framework to rigorously explore two complementary yet distinct domains within the field of deep learning for big data: (SLR1) numerical methods and (SLR2) distributed computing techniques. The SLR methodology is informed by the procedural guidelines outlined by \citet{kitchenham2004procedures} and builds upon empirical software engineering traditions, ensuring methodological transparency, repeatability, and reliability. Both reviews are constructed around well-formulated research questions that guide the scope and structure of the inquiry. For SLR1, the focus is on identifying and evaluating the numerical algorithms used within deep learning models designed to operate on big data. These include optimization algorithms, computational mathematics techniques, and other numerical strategies whose efficacy is assessed in terms of computational efficiency and predictive accuracy. SLR2, by contrast, investigates how distributed and parallel computing frameworks; including but not limited to GPU acceleration and parallelization strategies which enable the scalability of deep learning applications.
+
+The research questions shown in \ATM{insert this table ??} were carefully structured to address both technical implementation (RQ1.1, RQ2.1) and performance characteristics (RQ1.2, RQ2.2). For SLR1, we specifically examine computational efficiency (measured in FLOPS/operation) and accuracy (typically reported as percentage improvement over baselines).  SLR2 evaluates scalability (measured through speedup ratios and weak/strong scaling efficiency) and overall system performance (including throughput and latency metrics). This dual focus on what methods exist and how they perform provides both breadth and depth of understanding.
+
+To ensure methodological consistency across both reviews, we adapted Cooper's taxonomy of literature reviews \citep{cooper1988organizing} as our classification \ATM{framework (see \cref{fig:decision-flow})}. This framework examines studies across six dimensions: focus (research outcomes vs. methods), goal (integration vs. criticism), perspective (neutral vs. position-based), coverage (exhaustive vs. representative), organization (historical vs. methodological), and intended audience. This multidimensional classification enables analysis of the literature while maintaining systematic rigor in our review methodology.
+
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=\textwidth]{media/prisma1.png}
+%     \caption{Paper Classification Decision Framework}
+%     \Description{Paper Classification Decision Framework}
+%     \label{fig:decision-flow2}
+% \end{figure}
+
+\subsection{Search Strategy and Study Selection}\label{subsec:search-strategy-and-study-selection}
+The search strategy is systematically constructed using the elements of PICO (Population, Intervention, Comparison, Outcome) and implemented in \ATM{check this: seven major academic databases (IEEE Xplore, ACM Digital Library, SpringerLink, Scopus, Web of Science, JSTOR, AIS)}. Database-specific search strings were created to account for platform variations while maintaining conceptual consistency. For SLR1, the core search combined ``deep learning" with numerical method terms (``numerical method", ``computational mathematics", ``optimization algorithm") and "big data". SLR2 used similar structure but focused on distributed computing terms (``distributed computing", ``parallel processing", ``GPU acceleration") and scalability/performance metrics.
+
+Upon retrieval, all records are consolidated into a unified CSV format where duplicated papers across the database are removed. Initial screenings of titles and abstracts are conducted independently by the coauthors, and the results revealed significant inter-rater disagreement (Krippendorff's $\alpha = 0.4$), prompting implementation of a modified Delphi protocol with four iterative rounds. In Round 1, coauthors independently assessed \ATM{to be inserted, we did all these : XX} papers, achieving only moderate agreement $\ATM{to be inserted, we did all these :(mean= , Standardeviation=)}$. Round 2's controlled feedback process identified key disagreement areas, particularly around technical implementation details \ATM{how many percent of the cases? (XX\% of cases) and big data relevance (XX\% of cases)}. Round 3's consensus development established \ATM{provide the number: N1} explicit decision nodes and \ATM{provide the number: N2} specific exemplars, resulting in significantly improved reliability \ATM{provide the number:$(\alpha = 0.85)$}. The final validation round confirmed protocol effectiveness with \ATM{provide the number: NN\% agreement on the original XX papers.}
+
+\subsection{Quality Assessment and Synthesis}\label{subsec:quality-assessment-and-synthesis}
+The quality assessment framework incorporates seven criteria adapted from Critical Appraisal Skills Programme cite{singh2013critical}  and Kitchenham's guidelines organized into two phases. The first phase applies a minimum quality threshold, requiring clear articulation of objectives, a description of systematic data collection, and contextual clarity. Only studies that satisfy these basic conditions progress to the second phase, which evaluates methodological rigor, the credibility of findings, and their relevance to practice or theory.
+
+Each criterion is scored on a binary scale (yes/no), and studies must achieve at least 75\% positive responses across all dimensions to be included in the synthesis phase. Moreover, coauthors independently assess each study, and the process includes statistical validation through inter-rater reliability using Krippendorff’s $\alpha$, with a threshold of $0.8$ or higher to ensure consistency. In cases of persistent disagreement, a another coauthor who was not involved in the process of assessing the paper is engaged to resolve discrepancies, maintaining objectivity throughout the process.
+
+\subsection{Consensus Protocol Development}\label{subsec:consensus-protocol-development}
+Given the complexity and multidisciplinary nature of the included studies, a consensus protocol was critical to ensure alignment between coauthors and consistency in applying inclusion criteria.
+The consensus protocol was designed following Dalkey's experimental framework \citep{dalkey1963experimental} and Kitchenham's systematic review guidelines. The protocol implemented a structured consensus-building approach resulting in a formalized hierarchical decision framework for paper classification.
+
+In this work, the consensus process established three primary sequential decision gates. First, the Deep Learning and Numerical Methods Verification gate evaluated papers for explicit use of deep learning techniques, clear numerical methods components, and verifiable technical implementation or application. Second, the Big Data Aspects Evaluation gate assessed studies on volume (significant data scale as defined by \citet{diebold2012origin} and \citet{kitchin2016makes}, e.g. velocity (real-time or streaming data considerations), variety (heterogeneous data types), and processing (computational complexity requirements). Third, the Contribution Type Classification gate categorized papers according to Empirical Methods, Theoretical Analysis, Comparative Studies and Hybrid Approaches.
+The consensus-based classification process involved initial screening with independent evaluation against primary decision gates, followed by detailed evaluation of passing papers against either implementation criteria \ATM{check:(minimum 2 of 3 required)} or application criteria \ATM{check: (minimum 2 of 3 required)}. Border case resolution protocols were established for hybrid contributions, ambiguous cases, and novel approaches. Inter-rater reliability requirements were defined based on Krippendorff's recommendations, with thresholds set at $\alpha > 0.8$ for initial screening, \ATM{check:85\%} agreement minimum for detailed evaluation, and unanimous consensus for border cases.
+
+\subsection{Methodological Integration and Validation}\label{subsec:methodological-integration-and-validation}
+The complete methodology integrates these components through a stage-gate process with multiple validation checkpoints. The classification framework was statistically validated by applying to all articles, demonstrating consistent categorization (\ATM{X\% agreement}) and reliable identification of key characteristics of the study. Big data evaluation applied \citep{diebold2012origin} and \citep{kitchin2016makes}. For border cases, the protocol requires another coauthor adjudication with comprehensive documentation. The entire process was designed to maintain \ATM{check: 85\%} agreement during detailed evaluation while requiring unanimous consensus for all border cases. Final inclusion follows PRISMA standards as shown in \cref{fig:prisma-standards}, with \ATM{check:  X\%} papers meeting all quality and relevance criteria.
+
+\begin{landscape}
+    \begin{figure}
+        \centering
+        \includegraphics[height=0.9\textwidth]{media/flow-diagram.png}
+        \caption{PRISMA standards followed}
+        \Description{PRISMA standards followed}
+        \label{fig:prisma-standards}
+    \end{figure}
+\end{landscape}
 
 \section{Research Methodology}\label{sec:research-methodology}
 This study employs a comprehensive approach combining two SLRs with subsequent meta-analysis and network analysis. The methodology is structured into seven distinct phases:
@@ -337,13 +615,6 @@ Following the Delphi-based consensus methodology outlined by \citet{dalkey1963ex
 \subsection{Decision Framework Overview}\label{subsec:decision-framework-overview}
 The consensus process established a hierarchical decision framework for paper classification, illustrated in \cref{fig:decision-flow}. The framework implements a stage-gate approach with sequential evaluation criteria.
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.75\textwidth]{media/Syslit Diagram.png}
-    \caption{Paper Classification Decision Framework}
-    \label{fig:decision-flow}
-\end{figure}
-
 \subsection{Primary Decision Gates}\label{subsec:primary-decision-gates}
 Based on consensus deliberation, the following sequential decision gates were established:
 
@@ -418,7 +689,7 @@ The consensus established specific protocols for border cases:
 Based on \citet{krippendorff2004reliability}, the following reliability thresholds were established:
 
 \begin{itemize}
-    \item Initial screening: Krippendorff's a > 0.8
+    \item Initial screening: Krippendorff's $a > 0.8$
     \item Detailed evaluation: 85\% agreement minimum
     \item Border cases: Unanimous consensus required
 \end{itemize}
@@ -498,7 +769,7 @@ The criteria test literature on 4 major areas:
     \item reviewers will independently assess each study.
     \item Each criterion will be scored as either 'yes' or 'no'.
     \item A study passes the quality assessment if it receives positive responses for at least 75\% of the criteria.
-    \item Inter-rater reliability will be assessed using Krippendorff's alpha, aiming for q > 0.8.
+    \item Inter-rater reliability will be assessed using Krippendorff's alpha, aiming for $q > 0.8$.
     \item Disagreements will be resolved through discussion. If consensus cannot be reached, a third reviewer will be consulted.
 \end{enumerate}
 
@@ -512,7 +783,7 @@ To be included in the final analysis, a study must:
 
 This quality assessment framework will ensure that only studies meeting a minimum standard of methodological rigour and relevance are included in our analysis, thereby enhancing the reliability and validity of our findings.
 
-Quality threshold: 75\% positive responses, 75\% inter-rater reliability (Krippendorff's q > 0.8)
+Quality threshold: 75\% positive responses, 75\% inter-rater reliability (Krippendorff's $q > 0.8$)
 
 \subsection{Phase 4: Data Extraction}\label{subsec:phase-4-data-extraction}
 \subsubsection{Data Extraction}\label{subsubsec:phase-4-data-extraction:data-extraction}
@@ -645,7 +916,8 @@ The methodological distribution reflects the applied nature of this field-experi
             6/Formal Proofs
         }
     \end{tikzpicture}
-    \caption{Distribution of research methodologies in computational mathematics for AI (N=125).}
+    \caption{Distribution of research methodologies in computational mathematics for AI ($N=125$).}
+    \Description{Distribution of research methodologies in computational mathematics for AI ($N=125$).}
     \label{fig:methodology_distribution}
 \end{figure}
 
@@ -694,6 +966,7 @@ The body of research has shown consistent growth since 2016, with a significant 
         \end{axis}
     \end{tikzpicture}
     \caption{Temporal evolution of research focus on computational mathematics for AI optimization (2013-2023).}
+    \Description{Temporal evolution of research focus on computational mathematics for AI optimization (2013-2023).}
     \label{fig:temporal_evolution}
 \end{figure}
 
@@ -750,6 +1023,7 @@ Journal publications significantly outnumber conference proceedings in our sampl
         \end{axis}
     \end{tikzpicture}
     \caption{Publication distribution by type and venue.}
+    \Description{Publication distribution by type and venue.}
     \label{fig:publication_distribution}
 \end{figure}
 
@@ -786,8 +1060,9 @@ Our quantitative analysis reveals that healthcare applications represented 31.2\
             24.4/Others
         }
     \end{tikzpicture}
-    \caption{Domain distribution of computational optimization applications (N=77).}
-    \label{fig:domain_distribution}
+    \caption{Domain distribution of computational optimization applications ($N=77$).}
+    \Description{Domain distribution of computational optimization applications ($N=77$).}
+    \label{fig:domain-distribution}
 \end{figure}
 
 More revealing than the distribution itself was our cross-domain analysis of optimization technique preferences. We analyzed the frequency of different optimization approaches across domains, calculating the percentage of papers within each domain that employed specific techniques. \Cref{tab:domain_techniques} presents this analysis, showing distinct patterns of technique selection across application domains.
@@ -853,36 +1128,47 @@ Beyond technique selection patterns, we also analyzed performance differences ac
     \centering
     \begin{tikzpicture}
         \begin{axis}[
-                width=0.95\textwidth,
+                width=\textwidth,
                 height=7cm,
                 ylabel={Average Improvement Over Baseline (\%)},
                 title={Optimization Performance by Domain and Technique},
-                symbolic x coords={Healthcare, Cybersecurity, Financial, Manufacturing},
+                symbolic x coords={0, Healthcare, Cybersecurity, Financial, Manufacturing},
                 xtick=data,
-                legend style={at={(0.5,-0.2)}, anchor=north, legend columns=4},
-                ybar=0.2cm,
+                xmin={[normalized]0.5},
+                xmax={[normalized]5},
+                % xtickmax={[normalized]5},
+                xtick distance=1,
+                % x=3cm,
+                legend style={
+                        at={(0.5,-0.2)},
+                        anchor=north,
+                        legend columns=4,
+                        font=\footnotesize,
+                        column sep=0.2cm,
+                    },
+                ybar=0.15cm,
                 bar width=10pt,
                 ymin=0, ymax=35,
                 nodes near coords,
                 nodes near coords align={vertical},
-                every node near coord/.append style={font=\small, rotate=0},
+                every node near coord/.append style={font=\footnotesize},
                 x label style={font=\small\bfseries},
                 y label style={font=\small\bfseries},
                 title style={font=\small\bfseries},
-                enlarge x limits=0.15,
                 ymajorgrids=true,
                 grid style=dashed,
                 axis lines=left,
+                x tick label style={font=\footnotesize, rotate=0, anchor=north, yshift=-2pt},
             ]
-            \addplot [fill=blue!60, draw=black, thick] coordinates {(Healthcare, 27.4) (Cybersecurity, 18.2) (Financial, 16.7) (Manufacturing, 19.3)};
-            \addplot [fill=red!60, draw=black, thick] coordinates {(Healthcare, 12.6) (Cybersecurity, 24.8) (Financial, 14.9) (Manufacturing, 18.5)};
-            \addplot [fill=green!60, draw=black, thick] coordinates {(Healthcare, 16.8) (Cybersecurity, 14.3) (Financial, 23.5) (Manufacturing, 17.8)};
-            \addplot [fill=yellow!60, draw=black, thick] coordinates {(Healthcare, 10.5) (Cybersecurity, 15.6) (Financial, 11.2) (Manufacturing, 15.9)};
+            \addplot[fill=blue!60, draw=black, thick] coordinates {(Healthcare, 27.4) (Cybersecurity, 18.2) (Financial, 16.7) (Manufacturing, 19.3)};
+            \addplot[fill=red!60, draw=black, thick] coordinates {(Healthcare, 12.6) (Cybersecurity, 24.8) (Financial, 14.9) (Manufacturing, 18.5)};
+            \addplot[fill=green!60, draw=black, thick] coordinates {(Healthcare, 16.8) (Cybersecurity, 14.3) (Financial, 23.5) (Manufacturing, 17.8)};
+            \addplot[fill=yellow!60, draw=black, thick] coordinates {(Healthcare, 10.5) (Cybersecurity, 15.6) (Financial, 11.2) (Manufacturing, 15.9)};
             \legend{Nature-inspired, Bayesian, Evolutionary, Gradient-based}
         \end{axis}
     \end{tikzpicture}
-    \caption{Performance improvement by optimization technique across application domains.}
-    \Description[Performance over Application Domains]{Performance improvement by optimization technique across application domains}
+    \caption{Performance improvement by optimization technique across application domains}
+    \Description{Performance improvement by optimization technique across application domains}
     \label{fig:domain_performance}
 \end{figure}
 
@@ -946,6 +1232,7 @@ For each dimension, we assigned a score from 0 (no analysis) to 3 (comprehensive
         \end{axis}
     \end{tikzpicture}
     \caption{Theoretical rigor scores by optimization approach type.}
+    \Description{Theoretical rigor scores by optimization approach type.}
     \label{fig:theoretical_rigor}
 \end{figure}
 
@@ -1026,6 +1313,7 @@ To understand how theoretical rigor relates to practical performance, we compare
         \end{axis}
     \end{tikzpicture}
     \caption{Inverse relationship between theoretical rigor and reported performance improvement.}
+    \Description{Inverse relationship between theoretical rigor and reported performance improvement.}
     \label{fig:theory_vs_practice}
 \end{figure}
 
@@ -1224,6 +1512,7 @@ A central challenge in the field is balancing efficiency with accuracy, as illus
         \end{axis}
     \end{tikzpicture}
     \caption{Efficiency-accuracy trade-offs across optimization approaches.}
+    \Description{Efficiency-accuracy trade-offs across optimization approaches.}
     \label{fig:efficiency_accuracy_tradeoff}
 \end{figure}
 
@@ -1277,6 +1566,7 @@ Our analysis of computational efficiency revealed significant variations across 
         \end{axis}
     \end{tikzpicture}
     \caption{Maximum reported improvements across efficiency metrics.}
+    \Description{Maximum reported improvements across efficiency metrics.}
     \label{fig:efficiency_metrics:1}
 \end{figure}
 
@@ -1312,6 +1602,7 @@ Our analysis of computational efficiency revealed significant variations across 
         \end{axis}
     \end{tikzpicture}
     \caption{Maximum performance improvements by efficiency metric.}
+    \Description{Maximum performance improvements by efficiency metric.}
     \label{fig:efficiency_metrics:2}
 \end{figure}
 
@@ -1350,6 +1641,7 @@ Studies reporting training time reductions achieved impressive results through v
         \end{axis}
     \end{tikzpicture}
     \caption{Maximum reported performance improvements across different efficiency metrics, showing the most significant gains in memory usage optimization.}
+    \Description{Maximum reported performance improvements across different efficiency metrics, showing the most significant gains in memory usage optimization.}
     \label{fig:efficiency_metrics:3}
 \end{figure}
 
@@ -1540,7 +1832,6 @@ As computational resources continue to evolve and deep learning models grow in c
 
 \section{Discussion}\label{sec:discussion}
 This systematic review will provide a comprehensive overview of the current state of numerical methods and distributed computing techniques for deep learning on big data. The findings will be interpreted considering the strength of evidence, applicability, and generalizability. Limitations of the review and the included studies will be discussed, and implications for future research will be outlined.
-
 
 \section{Notes}\label{sec:notes}
 There was a challenge among researchers to detect big data or what constitutes big data. While some studies did run their numerical method against a large set of data, it was not always clear if it was big data.
