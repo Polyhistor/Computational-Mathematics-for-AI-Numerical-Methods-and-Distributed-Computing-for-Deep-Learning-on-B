@@ -281,7 +281,44 @@
 %% ----- Document Contents Starts -----
 
 \section{Introduction}\label{sec:introduction}
-This document outlines the protocol for a \emph{systematic literature review} (SLR) on computational mathematics for AI, focusing on numerical methods and distributed computing techniques for deep learning on big data. The review will follow the PRISMA guidelines \citep{moher2009preferred} and Kitchenham's methodology for SLRs in software engineering \citep{kitchenham2007guidelines}.
+
+
+The exponential growth of data and the rising complexity of deep learning models have made computational efficiency a critical concern in 
+artificial intelligence (AI). As a result, the convergence of \emph{computational mathematics} and scalable AI systems has emerged as a strategic research area. 
+In particular, the use of advanced numerical methods and distributed computing techniques is essential for training and deploying deep learning models on big data.
+ This systematic literature review (SLR) investigates the state of the art at this intersection, focusing on two complementary pillars: numerical optimization 
+ techniques (SLR1) and distributed computing strategies (SLR2) that support scalable deep learning systems.
+
+While previous systematic reviews have explored aspects of deep learning and big data, most have adopted a narrow focus. 
+For example, Najafabadi et al.~\citep{najafabadi2015deep} provided a high-level survey on the challenges of applying deep learning to big data, 
+emphasizing the limitations of traditional computing infrastructure. Similarly, Zhang et al.~\citep{zhang2021distributed} conducted a review of distributed 
+deep learning frameworks but without integrating the perspective of computational mathematics or explicitly analyzing the underlying numerical methods used. 
+These works underscore the importance of scalability and performance in deep learning, but they do not offer a comprehensive synthesis of the mathematical 
+foundations and infrastructural techniques in tandem.
+
+This review aims to bridge that gap by offering a dual-SLR framework that systematically evaluates both algorithmic and architectural components enabling deep 
+learning at scale. The contribution of this work is threefold. First, it provides a structured taxonomy of numerical methods specifically tailored to big data 
+deep learning contexts, with performance metrics such as computational efficiency and convergence behavior. Second, it evaluates distributed 
+computing techniques (including federated learning, GPU acceleration, and parallel processing) in terms of scalability and system throughput. 
+Third, it integrates findings across both domains to surface synergies, trade-offs, and research gaps that are often overlooked when these topics are studied 
+in isolation.
+
+To ensure transparency, rigor, and reproducibility, the review methodology adheres to the PRISMA guidelines for 
+systematic reviews \citep{moher2009preferred} and draws on Kitchenham’s methodological framework for software 
+engineering reviews \citep{kitchenham2007guidelines}. It incorporates a seven-phase review process, including meta-analysis, network analysis, 
+and a Delphi-based consensus protocol for paper inclusion and quality assessment.
+
+In addition to synthesizing current knowledge, this work aims to guide future research by identifying methodological trends, emerging optimization paradigms, 
+and key challenges that must be addressed to build efficient and scalable AI systems.
+
+
+The paper is structured as follows: Section~\ref{sec:background} introduces key terminology and presents the rationale and objectives of the review. 
+Section~\ref{sec:related-work} surveys prior literature on numerical methods and distributed frameworks for deep learning at scale. 
+Section~\ref{sec:methodology} details the systematic literature review methodology, including research questions, search strategy, inclusion/exclusion criteria,
+ and quality assessment protocols. 
+Section~\ref{sec:findings-and-analysis} presents the results and analysis of the selected studies for both SLR1 and SLR2. 
+Section~\ref{sec:conclusion} concludes the paper with a summary of contributions and recommendations for advancing computational mathematics for AI.
+
 
 \section{Background}\label{sec:background}
 
