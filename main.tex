@@ -366,16 +366,16 @@ foundations and empirical deployment.
  As datasets grow in volume, velocity, and variety—as articulated in the “3V” model of big data by Laney [30]—traditional single-node processing becomes 
  infeasible. Distributed computing addresses this by enabling parallelism across GPU clusters, edge devices, or federated learning environments. 
  Techniques such as federated learning allow model training without centralized data storage, improving privacy while maintaining 
- performance:contentReference[oaicite:3]{index=3}.
+ performance% :contentReference[oaicite:3]{index=3}.
 
 In recent years, there has been an increasing trend toward hardware-aware optimization, where algorithm design explicitly considers the computational
- constraints of the deployment environment:contentReference[oaicite:4]{index=4}. This shift acknowledges that optimal performance cannot be achieved 
+ constraints of the deployment environment (citation). This shift acknowledges that optimal performance cannot be achieved 
  by algorithm design alone—it requires co-optimization with the underlying system architecture.
 
 Previous reviews, such as Najafabadi et al. [36], have discussed the challenges of applying deep learning to big data, but lacked an integrated 
 computational mathematics perspective. Similarly, Zhang et al. [48] offered a broad overview of distributed deep learning frameworks without deeply 
 analyzing the numerical optimization strategies involved. This highlights a gap in the literature: while scalability and infrastructure 
-have been discussed, the mathematical techniques enabling efficient learning have often been overlooked:contentReference[oaicite:5]{index=5}.
+have been discussed, the mathematical techniques enabling efficient learning have often been overlooked %:contentReference[oaicite:5]{index=5}.
 
 This review addresses this gap by conducting a dual systematic literature review (SLR) of numerical methods and distributed computing techniques 
 in deep learning for big data. The study applies rigorous methodologies based on PRISMA guidelines [35] and Kitchenham’s framework for systematic 
@@ -413,7 +413,9 @@ holistic foundation for advancing scalable AI systems.
 \section{Related Work}
 \label{sec\:related-work}
 
-Deep learning has significantly advanced a wide array of big data applications, delivering state-of-the-art performance across numerous domains. However, as neural networks become deeper and datasets more voluminous, they pose considerable challenges in terms of computational scalability and efficiency. To meet these demands, the research community has increasingly focused on two foundational domains: numerical optimization and distributed computing. Together, they constitute the computational substrate for scalable deep learning systems.
+Deep learning has significantly advanced a wide array of big data applications, delivering state-of-the-art performance across numerous domains~\citet{najafabadi2015deep,furht2016deep,choudhary2022recent}. 
+However, as neural networks become deeper and datasets more voluminous, they pose considerable challenges in terms of 
+computational scalability and efficiency~\citet{thompson2020computational,mayer2020scalable,capra2020hardware}. To meet these demands, the research community has increasingly focused on two foundational domains: numerical optimization and distributed computing. Together, they constitute the computational substrate for scalable deep learning systems.
 
 \textbf{Numerical methods}, especially optimization algorithms, are indispensable for training deep models. They govern the convergence behavior, learning speed, and stability of training processes. \citet{najafabadi2015deep} provide a seminal overview of deep learning in big data analytics, highlighting the computational bottlenecks and emphasizing the necessity for efficient numerical approaches to cope with high-dimensional and heterogeneous data. In response, various optimization paradigms have emerged—from gradient-based to nature-inspired and Bayesian methods—each designed to handle different objective functions and learning constraints.
 
@@ -449,7 +451,7 @@ For SLR2 (Distributed Computing Techniques):
 \end{itemize}
 
 The research questions were carefully structured to address both technical implementation (RQ1.1, RQ2.1) and performance characteristics (RQ1.2, RQ2.2). For SLR1, we specifically examine computational efficiency (measured in FLOPS/operation) and accuracy (typically reported as percentage improvement over baselines). SLR2 evaluates scalability (measured through speedup ratios and weak/strong scaling efficiency) and overall system performance (including throughput and latency metrics). This dual focus on what methods exist and how they perform provides both breadth and depth of understanding.
-To ensure methodological consistency across all coauthors, we adapted Cooper's taxonomy of literature reviews \cite{cooper1988organizing} as our classification framework (\cref{fig:decision-flow}). This framework examines studies across six dimensions:
+To ensure methodological consistency across all coauthors, we adapted Cooper's taxonomy of literature reviews \citet{cooper1988organizing} as our classification framework (\cref{fig:decision-flow}). This framework examines studies across six dimensions:
 \begin{itemize}
     \item Focus: Research outcomes, methods, theories, or applications
     \item Goal: Integration, criticism, or identification of central issues
