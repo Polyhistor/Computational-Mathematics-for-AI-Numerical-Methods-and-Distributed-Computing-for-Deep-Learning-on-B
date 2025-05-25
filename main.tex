@@ -320,68 +320,76 @@ Section~\ref{sec:findings-and-analysis} presents the results and analysis of the
 Section~\ref{sec:conclusion} concludes the paper with a summary of contributions and recommendations for advancing computational mathematics for AI.
 
 
-\section{Background}\label{sec:background}
 
-% Add glossary of key terms for improved readability
-\subsection{Terminology and Definitions}\label{subsec:terminology-and-definitions}
+
+\section{Background}
+\label{sec:background}
+
+%\subsection{Conceptual Background}
+%\label{subsec:conceptual-background}
+
+The convergence of computational mathematics and artificial intelligence has become increasingly important as deep learning models grow in complexity and are 
+applied to massive datasets~\citet{thompson2020computational, najafabadi2015deep}. Foundational techniques in numerical optimization and scalable infrastructure have emerged as the
+ enabling pillars for performance at scale~\citet{lecun2015deep,goodfellow2016deep,dean2012large}.
+
+\paragraph{Historical Foundations.}
+The use of numerical methods in machine learning can be traced back to the development of backpropagation and gradient descent, which enabled efficient training of 
+deep neural networks~\citet{rumelhart1986learning}. Subsequent work introduced adaptive gradient methods (e.g., Adam~\citet{diederik2014adam}) and second-order optimizers~\citet{martens2010deep} 
+to improve convergence and generalization. In parallel, distributed computing frameworks such as MapReduce~\citet{dean2012largemapreduce} and later Apache Spark~\citet{zaharia2010spark} enabled 
+large-scale data processing by abstracting fault tolerance and parallelism.
+
+\paragraph{Numerical Optimization.}
+Modern deep learning relies heavily on numerical optimization to train models efficiently. Optimization strategies such as stochastic gradient descent (SGD), Adam, 
+and RMSProp dominate practical applications~\citet{ruder2016overview}. However, their effectiveness often degrades in high-dimensional or non-convex settings. 
+This has led to growing interest in alternative paradigms such as nature-inspired metaheuristics~\citet{Fong2023, Chen2016331, idrissi2016genetic}, which have been shown to perform well in 
+healthcare and environmental modeling, and Bayesian optimization~\citet{snoek2012practical, klein2017fast}, which is particularly suited for hyperparameter tuning under uncertainty. 
+Yet, several studies note that while nature-inspired algorithms offer practical success, they lack rigorous convergence guarantees~\citet{yang2020nature, zhou2021heuristic}, suggesting a need for more 
+robust theoretical frameworks to support their deployment.
+
+\paragraph{Distributed and Federated Computing.}
+The challenge of scaling optimization algorithms to big data settings necessitates parallel and distributed processing architectures. Distributed training frameworks, 
+such as Google's DistBelief~\citet{dean2012large} and Horovod~\citet{sergeev2018horovod}, have demonstrated substantial speedups by splitting workloads across GPU clusters. 
+In privacy-sensitive domains, federated learning has emerged as an effective alternative to centralized training~\citet{mcmahan2017communication}. 
+These techniques allow training across devices while preserving data locality—critical in healthcare and finance.
+
+\paragraph{Hardware-Aware and Co-Optimized Design.}
+Recent research has emphasized hardware-aware optimization, where algorithm design is tailored to constraints such as memory usage, throughput, and energy efficiency~\citet{capra2020hardware}. 
+For example, sparsity-aware training and quantization methods have enabled neural networks to be deployed on edge devices~\citet{han2015deep}. 
+This shift reflects an increasing consensus that software and hardware co-design is essential for maximizing performance on heterogeneous systems.
+
+\paragraph{Critical Gaps in Prior Reviews.}
+While previous surveys such as Najafabadi et al.~\citet{najafabadi2015deep} highlighted the scalability challenges of deep learning, they did not investigate the mathematical principles underlying optimization. 
+Similarly, Zhang et al.~\citet{zhang2019deep} presented a review of distributed deep learning architectures but failed to evaluate the performance trade-offs introduced by different optimization algorithms. 
+More recent works~\citet{Thompson2020} have focused on environmental and cost implications but did not propose integrated technical strategies. As a result, there remains a disconnect 
+between infrastructure-level scalability and algorithmic efficiency.
+
+\paragraph{Rationale for This Review.}
+This review aims to address the fragmentation in the literature by offering a dual-perspective systematic literature review (SLR). 
+It investigates numerical optimization techniques (SLR1) and distributed computing strategies (SLR2) as complementary components of scalable deep learning systems. 
+The review follows PRISMA guidelines~\citet{moher2009preferred} and leverages Kitchenham's framework~\citet{kitchenham2007guidelines} to ensure methodological rigor. 
+By synthesizing these two domains—optimization and infrastructure—this work provides a coherent foundation for understanding and designing efficient AI systems in big data contexts.
+
+\subsection{Terminology and Definitions}
+\label{subsec:terminology-and-definitions}
 
 To ensure clarity throughout this analysis, we define the following key technical terms:
 \begin{itemize}
     \item \textbf{Computational Mathematics for AI}: The application of mathematical techniques and algorithms to solve computational problems in artificial intelligence.
-    \item \textbf{Numerical Methods}: Algorithms that use numerical approximation for the problems of mathematical analysis.
-    \item \textbf{Optimization}: The selection of the best element from a set of available alternatives according to some criteria.
-    \item \textbf{Nature-Inspired Algorithms}: A class of metaheuristic optimization algorithms inspired by natural phenomena, such as biological evolution, animal behavior, or ecological processes, used to solve complex, non-convex optimization problems.
-    \item \textbf{Bayesian Optimization}: An optimization technique that builds a probabilistic model of the objective function and uses it to select the most promising points to evaluate, aiming to find the global optimum with a minimal number of evaluations.
-    \item \textbf{Multi-Objective Optimization}: An optimization framework where two or more conflicting objectives are optimized simultaneously, resulting in a set of trade-off solutions known as the Pareto front.
-    \item \textbf{Hardware-Aware Optimization}: An approach to optimization that explicitly considers the computational characteristics and constraints of the target hardware platform, aiming to maximize performance, efficiency, or resource utilization.
-    \item \textbf{Distributed Computing}: A computing paradigm where multiple computers work together to solve computational problems across a network.
-    \item \textbf{Federated Learning}: A decentralized machine learning approach where multiple devices collaboratively train a shared model without exchanging raw data, thereby preserving privacy and reducing data transfer requirements.
-    \item \textbf{Deep Learning}: A subset of machine learning using neural networks with multiple layers to extract higher-level features from raw input.
-    \item \textbf{Big Data}: Data sets that are too large or complex to be dealt with by traditional data-processing application software.
-    \item \textbf{Systematic Literature Review (SLR)}: A structured and methodical approach to identifying, evaluating, and synthesizing existing research studies on a specific topic, following predefined protocols to ensure transparency, repeatability, and minimization of bias.
-    \item \textbf{PRISMA (Preferred Reporting Items for Systematic Reviews and Meta-Analyses)}: A set of evidence-based guidelines and a reporting framework designed to enhance the quality and transparency of systematic reviews and meta-analyses.
-    \item \textbf{Meta-Analysis}: A statistical technique for combining results from multiple independent studies to identify patterns, derive general conclusions, or estimate the overall effect size with greater precision.
+    \item \textbf{Numerical Methods}: Algorithms that use numerical approximation to solve problems arising in mathematical analysis, often used in training and optimization of AI systems.
+    \item \textbf{Optimization}: The process of selecting the best configuration from a set of alternatives based on defined criteria.
+    \item \textbf{Nature-Inspired Algorithms}: Metaheuristic optimization techniques inspired by natural phenomena, such as genetic algorithms and particle swarm optimization, often applied to non-convex problems.
+    \item \textbf{Bayesian Optimization}: A sample-efficient optimization strategy that builds a probabilistic surrogate model of the objective function to guide exploration.
+    \item \textbf{Multi-Objective Optimization}: Optimization methods that address multiple, often conflicting, objectives simultaneously, producing trade-off solutions known as Pareto-optimal sets.
+    \item \textbf{Hardware-Aware Optimization}: A class of optimization techniques that explicitly account for hardware constraints (e.g., memory, parallelization, latency) in model training or deployment.
+    \item \textbf{Distributed Computing}: A computational model that leverages multiple networked computers to collaboratively execute large-scale algorithms.
+    \item \textbf{Federated Learning}: A decentralized machine learning paradigm where models are trained locally on devices and aggregated centrally without sharing raw data.
+    \item \textbf{Deep Learning}: A subfield of machine learning involving multi-layer neural networks capable of extracting complex features from raw data.
+    \item \textbf{Big Data}: Large and complex datasets that exceed the capabilities of traditional data-processing tools.
+    \item \textbf{Systematic Literature Review (SLR)}: A reproducible and protocol-based methodology for identifying, evaluating, and synthesizing existing literature on a defined topic.
+    \item \textbf{PRISMA}: A standard for reporting systematic reviews, aimed at improving transparency, completeness, and reproducibility.
+    \item \textbf{Meta-Analysis}: A quantitative technique for aggregating the findings of multiple studies to draw generalizable conclusions.
 \end{itemize}
 
-\subsection{Conceptual Background}
-
-The intersection of computational mathematics and artificial intelligence has become a critical research domain due to the growing 
-complexity of deep learning models and the massive scale of data they process. As deep learning expands across applications in healthcare, 
-cybersecurity, finance, and beyond, ensuring computational efficiency, scalability, and reliability has become essential. 
-This has intensified interest in two foundational pillars: numerical optimization methods and distributed computing architectures.
-
-\textbf{Numerical methods} are central to the training and tuning of deep learning models. Optimization algorithms such as gradient descent, 
-Bayesian optimization, and evolutionary strategies form the backbone of neural network learning. The evolution from general-purpose optimization 
-algorithms toward domain-specific techniques is well-documented in the literature. For example, nature-inspired algorithms have shown strong performance 
-in healthcare applications, particularly for medical imaging and disease prediction tasks~\citet{Ampavathi20211146}, while Bayesian methods dominate in cybersecurity due 
-to their capacity for uncertainty quantification~\citet{Thoppil2021,Sagu202535,Kanchanamala20232414IJACS}. Foundational work on backpropagation has been extended 
-through rigorous studies analyzing convergence, complexity, and performance bounds of modern optimization techniques:contentReference[oaicite:1]{index=1}.
-
-Despite the empirical success of many such methods, the review highlights a disconnect between theoretical rigor and practical adoption. 
-Algorithms with weaker theoretical foundations, such as certain nature-inspired approaches, are widely used but often lack convergence 
-guarantees:contentReference[oaicite:2]{index=2}. This gap indicates a need for more robust analysis frameworks that can bridge mathematical 
-foundations and empirical deployment.
-
-\textbf{Distributed computing}, in parallel, provides the infrastructure needed to execute these computationally intensive algorithms at scale.
- As datasets grow in volume, velocity, and variety—as articulated in the “3V” model of big data by Laney [30]—traditional single-node processing becomes 
- infeasible. Distributed computing addresses this by enabling parallelism across GPU clusters, edge devices, or federated learning environments. 
- Techniques such as federated learning allow model training without centralized data storage, improving privacy while maintaining 
- performance% :contentReference[oaicite:3]{index=3}.
-
-In recent years, there has been an increasing trend toward hardware-aware optimization, where algorithm design explicitly considers the computational
- constraints of the deployment environment (citation). This shift acknowledges that optimal performance cannot be achieved 
- by algorithm design alone—it requires co-optimization with the underlying system architecture.
-
-Previous reviews, such as Najafabadi et al. [36], have discussed the challenges of applying deep learning to big data, but lacked an integrated 
-computational mathematics perspective. Similarly, Zhang et al. [48] offered a broad overview of distributed deep learning frameworks without deeply 
-analyzing the numerical optimization strategies involved. This highlights a gap in the literature: while scalability and infrastructure 
-have been discussed, the mathematical techniques enabling efficient learning have often been overlooked %:contentReference[oaicite:5]{index=5}.
-
-This review addresses this gap by conducting a dual systematic literature review (SLR) of numerical methods and distributed computing techniques 
-in deep learning for big data. The study applies rigorous methodologies based on PRISMA guidelines [35] and Kitchenham’s framework for systematic 
-software engineering reviews [25], incorporating meta-analysis, network analysis, and a Delphi-based consensus protocol for inclusion and quality 
-assessment:contentReference[oaicite:6]{index=6}. By synthesizing research across algorithmic and infrastructural domains, this review offers a 
-holistic foundation for advancing scalable AI systems.
 
 
 
@@ -457,7 +465,9 @@ Adding a broader perspective, Thompson et al.~\cite{thompson2020computational} r
 
 Despite this extensive body of work, most prior reviews have addressed either optimization algorithms or distributed system frameworks in isolation. For example, Li et al.~\cite{li2020survey} presented a comprehensive survey of scalable deep learning architectures but offered limited discussion on the numerical optimization techniques critical for training. Our review addresses this fragmentation by adopting a dual systematic literature review (SLR) methodology that examines both numerical and computational enablers of deep learning at scale.
 
-By integrating these complementary domains through a structured review protocol grounded in PRISMA guidelines, our work reveals cross-domain synergies, unresolved trade-offs, and critical research gaps. We argue that only by examining optimization and infrastructure in tandem can the field develop robust, scalable, and efficient deep learning systems suited for complex, high-stakes applications in healthcare, cybersecurity, and beyond.
+By integrating these complementary domains through a structured review protocol grounded in PRISMA guidelines~\citet{moher2009preferred}, 
+our work reveals cross-domain synergies, unresolved trade-offs, and critical research gaps. We argue that only by examining optimization and infrastructure in tandem can 
+the field develop robust, scalable, and efficient deep learning systems suited for complex, high-stakes applications in healthcare, cybersecurity, and beyond.
 
 
 \section{Systematic Literature Review Approach}\label{sec:systematic-literature-review-approach}
@@ -991,7 +1001,7 @@ Classify all studies according to Cooper's taxonomy:
 This phased approach ensures a systematic and comprehensive review of computational mathematics for AI in big data contexts, combining insights from numerical methods and distributed computing techniques.
 
 \section{Findings and Analysis}\label{sec:findings-and-analysis}
-This section presents the findings from our systematic analysis of computational mathematics for artificial intelligence, focusing on numerical methods and distributed computing techniques for deep learning on big data. Following the PRISMA guidelines \citep{moher2009preferred}, we analyzed 77 papers published between 2016 and 2024. The analysis is organized according to our research questions, examining numerical optimization methods (RQ1.1), their performance metrics (RQ1.2), distributed computing approaches (RQ2.1), and their scalability characteristics (RQ2.2).
+This section presents the findings from our systematic analysis of computational mathematics for artificial intelligence, focusing on numerical methods and distributed computing techniques for deep learning on big data. Following the PRISMA guidelines \citet{moher2009preferred}, we analyzed 77 papers published between 2016 and 2024. The analysis is organized according to our research questions, examining numerical optimization methods (RQ1.1), their performance metrics (RQ1.2), distributed computing approaches (RQ2.1), and their scalability characteristics (RQ2.2).
 
 
 \subsection{Overview of Included Studies}\label{subsec:overview-of-included-studies}
