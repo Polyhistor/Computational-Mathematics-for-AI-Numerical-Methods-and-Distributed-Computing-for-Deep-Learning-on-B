@@ -283,41 +283,41 @@
 \section{Introduction}\label{sec:introduction}
 
 
-The exponential growth of data and the rising complexity of deep learning models have made computational efficiency a critical concern in 
-artificial intelligence (AI). As a result, the convergence of \emph{computational mathematics} and scalable AI systems has emerged as a strategic research area. 
+The exponential growth of data and the rising complexity of deep learning models have made computational efficiency a critical concern in
+artificial intelligence (AI). As a result, the convergence of \emph{computational mathematics} and scalable AI systems has emerged as a strategic research area.
 In particular, the use of advanced numerical methods and distributed computing techniques is essential for training and deploying deep learning models on big data.
- This systematic literature review (SLR) investigates the state of the art at this intersection, focusing on two complementary pillars: numerical optimization 
- techniques (SLR1) and distributed computing strategies (SLR2) that support scalable deep learning systems.
+This systematic literature review (SLR) investigates the state of the art at this intersection, focusing on two complementary pillars: numerical optimization
+techniques (SLR1) and distributed computing strategies (SLR2) that support scalable deep learning systems.
 
-While previous systematic reviews have explored aspects of deep learning and big data, most have adopted a narrow focus. 
-For example, Najafabadi et al.~\citep{najafabadi2015deep} provided a high-level survey on the challenges of applying deep learning to big data, 
-emphasizing the limitations of traditional computing infrastructure. Similarly, Zhang et al.~\citep{zhang2021distributed} conducted a review of distributed 
-deep learning frameworks but without integrating the perspective of computational mathematics or explicitly analyzing the underlying numerical methods used. 
-These works underscore the importance of scalability and performance in deep learning, but they do not offer a comprehensive synthesis of the mathematical 
+While previous systematic reviews have explored aspects of deep learning and big data, most have adopted a narrow focus.
+For example, \citet{najafabadi2015deep} provided a high-level survey on the challenges of applying deep learning to big data,
+emphasizing the limitations of traditional computing infrastructure. Similarly, \citet{zhang2021distributed} conducted a review of distributed
+deep learning frameworks but without integrating the perspective of computational mathematics or explicitly analyzing the underlying numerical methods used.
+These works underscore the importance of scalability and performance in deep learning, but they do not offer a comprehensive synthesis of the mathematical
 foundations and infrastructural techniques in tandem.
 
-This review aims to bridge that gap by offering a dual-SLR framework that systematically evaluates both algorithmic and architectural components enabling deep 
-learning at scale. The contribution of this work is threefold. First, it provides a structured taxonomy of numerical methods specifically tailored to big data 
-deep learning contexts, with performance metrics such as computational efficiency and convergence behavior. Second, it evaluates distributed 
-computing techniques (including federated learning, GPU acceleration, and parallel processing) in terms of scalability and system throughput. 
-Third, it integrates findings across both domains to surface synergies, trade-offs, and research gaps that are often overlooked when these topics are studied 
+This review aims to bridge that gap by offering a dual-SLR framework that systematically evaluates both algorithmic and architectural components enabling deep
+learning at scale. The contribution of this work is threefold. First, it provides a structured taxonomy of numerical methods specifically tailored to big data
+deep learning contexts, with performance metrics such as computational efficiency and convergence behavior. Second, it evaluates distributed
+computing techniques (including federated learning, GPU acceleration, and parallel processing) in terms of scalability and system throughput.
+Third, it integrates findings across both domains to surface synergies, trade-offs, and research gaps that are often overlooked when these topics are studied
 in isolation.
 
-To ensure transparency, rigor, and reproducibility, the review methodology adheres to the PRISMA guidelines for 
-systematic reviews \citep{moher2009preferred} and draws on Kitchenham's methodological framework for software 
-engineering reviews \citep{kitchenham2007guidelines}. It incorporates a seven-phase review process, including meta-analysis, network analysis, 
+To ensure transparency, rigor, and reproducibility, the review methodology adheres to the PRISMA guidelines for
+systematic reviews \citep{moher2009preferred} and draws on Kitchenham's methodological framework for software
+engineering reviews \citep{kitchenham2007guidelines}. It incorporates a seven-phase review process, including meta-analysis, network analysis,
 and a Delphi-based consensus protocol for paper inclusion and quality assessment.
 
-In addition to synthesizing current knowledge, this work aims to guide future research by identifying methodological trends, emerging optimization paradigms, 
+In addition to synthesizing current knowledge, this work aims to guide future research by identifying methodological trends, emerging optimization paradigms,
 and key challenges that must be addressed to build efficient and scalable AI systems.
 
 
-The paper is structured as follows: Section~\ref{sec:background} introduces key terminology and presents the rationale and objectives of the review. 
-Section~\ref{sec:related-work} surveys prior literature on numerical methods and distributed frameworks for deep learning at scale. 
-Section~\ref{sec:methodology} details the systematic literature review methodology, including research questions, search strategy, inclusion/exclusion criteria,
- and quality assessment protocols. 
-Section~\ref{sec:findings-and-analysis} presents the results and analysis of the selected studies for both SLR1 and SLR2. 
-Section~\ref{sec:conclusion} concludes the paper with a summary of contributions and recommendations for advancing computational mathematics for AI.
+The paper is structured as follows: \Cref{sec:background} introduces key terminology and presents the rationale and objectives of the review.
+\Cref{sec:related-work} surveys prior literature on numerical methods and distributed frameworks for deep learning at scale.
+\Cref{sec:methodology} details the SLR methodology, including research questions, search strategy, inclusion/exclusion criteria,
+and quality assessment protocols.
+\Cref{sec:findings-and-analysis} presents the results and analysis of the selected studies for both SLR1 and SLR2.
+\Cref{sec:conclusion} concludes the paper with a summary of contributions and recommendations for advancing computational mathematics for AI.
 
 
 
@@ -328,45 +328,45 @@ Section~\ref{sec:conclusion} concludes the paper with a summary of contributions
 %\subsection{Conceptual Background}
 %\label{subsec:conceptual-background}
 
-The convergence of computational mathematics and artificial intelligence has become increasingly important as deep learning models grow in complexity and are 
-applied to massive datasets~\citet{thompson2020computational, najafabadi2015deep}. Foundational techniques in numerical optimization and scalable infrastructure have emerged as the
- enabling pillars for performance at scale~\citet{lecun2015deep,goodfellow2016deep,dean2012large}.
+The convergence of computational mathematics and artificial intelligence has become increasingly important as deep learning models grow in complexity and are
+applied to massive datasets \citep{thompson2020computational, najafabadi2015deep}. Foundational techniques in numerical optimization and scalable infrastructure have emerged as the
+enabling pillars for performance at scale \citep{lecun2015deep,goodfellow2016deep,dean2012large}.
 
 \paragraph{Historical Foundations.}
-The use of numerical methods in machine learning can be traced back to the development of backpropagation and gradient descent, which enabled efficient training of 
-deep neural networks~\citet{rumelhart1986learning}. Subsequent work introduced adaptive gradient methods (e.g., Adam~\citet{diederik2014adam}) and second-order optimizers~\citet{martens2010deep} 
-to improve convergence and generalization. In parallel, distributed computing frameworks such as MapReduce~\citet{dean2012largemapreduce} and later Apache Spark~\citet{zaharia2010spark} enabled 
+The use of numerical methods in machine learning can be traced back to the development of backpropagation and gradient descent, which enabled efficient training of
+deep neural networks \citep{rumelhart1986learning}. Subsequent work introduced adaptive gradient methods (e.g., Adam \citep{diederik2014adam}) and second-order optimizers \citep{martens2010deep}
+to improve convergence and generalization. In parallel, distributed computing frameworks such as MapReduce \citep{dean2012largemapreduce} and later Apache Spark \citep{zaharia2010spark} enabled
 large-scale data processing by abstracting fault tolerance and parallelism.
 
 \paragraph{Numerical Optimization.}
-Modern deep learning relies heavily on numerical optimization to train models efficiently. Optimization strategies such as stochastic gradient descent (SGD), Adam, 
-and RMSProp dominate practical applications~\citet{ruder2016overview}. However, their effectiveness often degrades in high-dimensional or non-convex settings. 
-This has led to growing interest in alternative paradigms such as nature-inspired metaheuristics~\citet{Fong2023, Chen2016331, idrissi2016genetic}, which have been shown to perform well in 
-healthcare and environmental modeling, and Bayesian optimization~\citet{snoek2012practical, klein2017fast}, which is particularly suited for hyperparameter tuning under uncertainty. 
-Yet, several studies note that while nature-inspired algorithms offer practical success, they lack rigorous convergence guarantees~\citet{yang2020nature, zhou2021heuristic}, suggesting a need for more 
+Modern deep learning relies heavily on numerical optimization to train models efficiently. Optimization strategies such as stochastic gradient descent (SGD), Adam,
+and RMSProp dominate practical applications \citep{ruder2016overview}. However, their effectiveness often degrades in high-dimensional or non-convex settings.
+This has led to growing interest in alternative paradigms such as nature-inspired metaheuristics \citep{Fong2023, Chen2016331, idrissi2016genetic}, which have been shown to perform well in
+healthcare and environmental modeling, and Bayesian optimization \citep{snoek2012practical, klein2017fast}, which is particularly suited for hyperparameter tuning under uncertainty.
+Yet, several studies note that while nature-inspired algorithms offer practical success, they lack rigorous convergence guarantees \citep{yang2020nature, zhou2021heuristic}, suggesting a need for more
 robust theoretical frameworks to support their deployment.
 
 \paragraph{Distributed and Federated Computing.}
-The challenge of scaling optimization algorithms to big data settings necessitates parallel and distributed processing architectures. Distributed training frameworks, 
-such as Google's DistBelief~\citet{dean2012large} and Horovod~\citet{sergeev2018horovod}, have demonstrated substantial speedups by splitting workloads across GPU clusters. 
-In privacy-sensitive domains, federated learning has emerged as an effective alternative to centralized training~\citet{mcmahan2017communication}. 
+The challenge of scaling optimization algorithms to big data settings necessitates parallel and distributed processing architectures. Distributed training frameworks,
+such as Google's DistBelief \citep{dean2012large} and Horovod \citep{sergeev2018horovod}, have demonstrated substantial speedups by splitting workloads across GPU clusters.
+In privacy-sensitive domains, federated learning has emerged as an effective alternative to centralized training \citep{mcmahan2017communication}.
 These techniques allow training across devices while preserving data locality—critical in healthcare and finance.
 
 \paragraph{Hardware-Aware and Co-Optimized Design.}
-Recent research has emphasized hardware-aware optimization, where algorithm design is tailored to constraints such as memory usage, throughput, and energy efficiency~\citet{capra2020hardware}. 
-For example, sparsity-aware training and quantization methods have enabled neural networks to be deployed on edge devices~\citet{han2015deep}. 
+Recent research has emphasized hardware-aware optimization, where algorithm design is tailored to constraints such as memory usage, throughput, and energy efficiency \citep{capra2020hardware}.
+For example, sparsity-aware training and quantization methods have enabled neural networks to be deployed on edge devices \citep{han2015deep}.
 This shift reflects an increasing consensus that software and hardware co-design is essential for maximizing performance on heterogeneous systems.
 
 \paragraph{Critical Gaps in Prior Reviews.}
-While previous surveys such as Najafabadi et al.~\citet{najafabadi2015deep} highlighted the scalability challenges of deep learning, they did not investigate the mathematical principles underlying optimization. 
-Similarly, Zhang et al.~\citet{zhang2019deep} presented a review of distributed deep learning architectures but failed to evaluate the performance trade-offs introduced by different optimization algorithms. 
-More recent works~\citet{Thompson2020} have focused on environmental and cost implications but did not propose integrated technical strategies. As a result, there remains a disconnect 
+While previous surveys such as \citet{najafabadi2015deep} highlighted the scalability challenges of deep learning, they did not investigate the mathematical principles underlying optimization.
+Similarly, \citet{zhang2019deep} presented a review of distributed deep learning architectures but failed to evaluate the performance trade-offs introduced by different optimization algorithms.
+More recent works \citet{thompson2020computational} have focused on environmental and cost implications but did not propose integrated technical strategies. As a result, there remains a disconnect
 between infrastructure-level scalability and algorithmic efficiency.
 
 \paragraph{Rationale for This Review.}
-This review aims to address the fragmentation in the literature by offering a dual-perspective systematic literature review (SLR). 
-It investigates numerical optimization techniques (SLR1) and distributed computing strategies (SLR2) as complementary components of scalable deep learning systems. 
-The review follows PRISMA guidelines~\citet{moher2009preferred} and leverages Kitchenham's framework~\citet{kitchenham2007guidelines} to ensure methodological rigor. 
+This review aims to address the fragmentation in the literature by offering a dual-perspective SLR.
+It investigates numerical optimization techniques (SLR1) and distributed computing strategies (SLR2) as complementary components of scalable deep learning systems.
+The review follows PRISMA guidelines \citep{moher2009preferred} and leverages Kitchenham's framework \citep{kitchenham2007guidelines} to ensure methodological rigor.
 By synthesizing these two domains—optimization and infrastructure—this work provides a coherent foundation for understanding and designing efficient AI systems in big data contexts.
 
 \subsection{Terminology and Definitions}
@@ -418,8 +418,8 @@ To ensure clarity throughout this analysis, we define the following key technica
 % providing a structured assessment of the most impactful methods in this space.
 
 
-% Deep learning has significantly advanced a wide array of big data applications, delivering state-of-the-art performance across numerous domains~\citet{najafabadi2015deep,furht2016deep,choudhary2022recent}. 
-% However, as neural networks become deeper and datasets more voluminous, they pose considerable challenges in terms of 
+% Deep learning has significantly advanced a wide array of big data applications, delivering state-of-the-art performance across numerous domains~\citet{najafabadi2015deep,furht2016deep,choudhary2022recent}.
+% However, as neural networks become deeper and datasets more voluminous, they pose considerable challenges in terms of
 % computational scalability and efficiency~\citet{thompson2020computational,mayer2020scalable,capra2020hardware}. To meet these demands, the research community has increasingly focused on two foundational domains: numerical optimization and distributed computing. Together, they constitute the computational substrate for scalable deep learning systems.
 
 % \textbf{Numerical methods}, especially optimization algorithms, are indispensable for training deep models. They govern the convergence behavior, learning speed, and stability of training processes. \citet{najafabadi2015deep} provide a seminal overview of deep learning in big data analytics, highlighting the computational bottlenecks and emphasizing the necessity for efficient numerical approaches to cope with high-dimensional and heterogeneous data. In response, various optimization paradigms have emerged—from gradient-based to nature-inspired and Bayesian methods—each designed to handle different objective functions and learning constraints.
@@ -444,29 +444,29 @@ To ensure clarity throughout this analysis, we define the following key technica
 \section{Related Work}
 \label{sec:related-work}
 
-The evolution of deep learning has been marked by significant milestones in both algorithmic development and computational infrastructure~\citet{thompson2020computational,mayer2020scalable,capra2020hardware}. 
+The evolution of deep learning has been marked by significant milestones in both algorithmic development and computational infrastructure \citet{thompson2020computational,mayer2020scalable,capra2020hardware}.
 This section presents a chronological overview of key contributions, critically analyzing their impact on scalable deep learning in big data contexts.
 
-One of the earliest comprehensive overviews in this space was offered by Najafabadi et al.~\cite{najafabadi2015deep}, who reviewed the potential of deep learning for handling high-volume, high-velocity, and high-variety data in big data analytics. They identified core challenges such as data heterogeneity, model scalability, and integration with real-time processing systems. While their work provided valuable conceptual framing, it lacked a deeper examination of optimization strategies and underlying computational systems required for deployment at scale.
+One of the earliest comprehensive overviews in this space was offered by \citet{najafabadi2015deep}, who reviewed the potential of deep learning for handling high-volume, high-velocity, and high-variety data in big data analytics. They identified core challenges such as data heterogeneity, model scalability, and integration with real-time processing systems. While their work provided valuable conceptual framing, it lacked a deeper examination of optimization strategies and underlying computational systems required for deployment at scale.
 
-A major shift occurred in 2012 with two pivotal contributions. First, Krizhevsky et al.~\cite{krizhevsky2012imagenet} introduced a GPU-accelerated deep convolutional neural network that achieved breakthrough results on the ImageNet benchmark, emphasizing the role of hardware in scaling model performance. Shortly thereafter, Dean et al.~\cite{dean2012large} introduced the DistBelief framework, enabling distributed training of deep networks across clusters of commodity machines. Together, these works demonstrated both the necessity and feasibility of scaling deep learning through hardware and distributed system innovations.
+A major shift occurred in 2012 with two pivotal contributions. First, \citet{krizhevsky2012imagenet} introduced a GPU-accelerated deep convolutional neural network that achieved breakthrough results on the ImageNet benchmark, emphasizing the role of hardware in scaling model performance. Shortly thereafter, \citet{dean2012large} introduced the DistBelief framework, enabling distributed training of deep networks across clusters of commodity machines. Together, these works demonstrated both the necessity and feasibility of scaling deep learning through hardware and distributed system innovations.
 
-Building on the momentum from these breakthroughs, Bengio~\cite{bengio2012practical} published guidelines later in the same year that addressed common challenges in training deep architectures, including vanishing gradients and unstable convergence. His work laid the groundwork for practical training strategies that remain influential in both research and industry applications.
+Building on the momentum from these breakthroughs, \citet{bengio2012practical} published guidelines later in the same year that addressed common challenges in training deep architectures, including vanishing gradients and unstable convergence. His work laid the groundwork for practical training strategies that remain influential in both research and industry applications.
 
-As the field matured, more systematic evaluations of optimization techniques began to emerge. For instance, Ben and Waller~\cite{ben2019demystifying} provided a comprehensive comparison of optimization algorithms tailored to big data scenarios. They observed that while nature-inspired methods such as genetic algorithms and particle swarm optimization performed well empirically, they often lacked theoretical convergence guarantees and posed challenges for reproducibility—underscoring a tension between empirical success and theoretical rigor.
+As the field matured, more systematic evaluations of optimization techniques began to emerge. For instance, \citet{ben2019demystifying} provided a comprehensive comparison of optimization algorithms tailored to big data scenarios. They observed that while nature-inspired methods such as genetic algorithms and particle swarm optimization performed well empirically, they often lacked theoretical convergence guarantees and posed challenges for reproducibility—underscoring a tension between empirical success and theoretical rigor.
 
-A parallel line of research focused on Bayesian optimization as a method for hyperparameter tuning. Thoppil et al.~\cite{thoppil2022bayesian} applied Bayesian strategies to train LSTM and bi-LSTM models in predictive maintenance contexts, reporting gains in efficiency and accuracy. However, they also noted that the computational demands of Bayesian methods could hinder their scalability when applied to large, high-dimensional spaces.
+A parallel line of research focused on Bayesian optimization as a method for hyperparameter tuning. \citet{thoppil2022bayesian} applied Bayesian strategies to train LSTM and bi-LSTM models in predictive maintenance contexts, reporting gains in efficiency and accuracy. However, they also noted that the computational demands of Bayesian methods could hinder their scalability when applied to large, high-dimensional spaces.
 
-The need to align algorithm design with hardware realities became more pronounced in subsequent years. Capra et al.~\cite{capra2020hardware} argued for hardware-aware algorithmic design, reviewing approaches that integrate sparsity, quantization, and memory optimization to improve training efficiency across deep networks. Their survey emphasized that scalable deep learning must consider hardware constraints as a first-class concern.
+The need to align algorithm design with hardware realities became more pronounced in subsequent years. \citet{capra2020hardware} argued for hardware-aware algorithmic design, reviewing approaches that integrate sparsity, quantization, and memory optimization to improve training efficiency across deep networks. Their survey emphasized that scalable deep learning must consider hardware constraints as a first-class concern.
 
-Beyond algorithmic strategies, several studies have explored distributed computing frameworks that support deep learning at scale. Mayer and Jacobsen~\cite{mayer2020scalable} synthesized various engineering approaches for distributed training, including model parallelism, asynchronous updates, and fault tolerance mechanisms. Their review laid the foundation for evaluating trade-offs in distributed system design. Extending this work, Yan~\cite{yan2023computational} examined computational frameworks in edge and federated learning scenarios, highlighting new opportunities for decentralization while noting the scarcity of systematic benchmarking. Further refinement came from Zhang et al.~\cite{zhang2023distributed}, who compared distributed deep learning systems based on resource allocation, fault recovery, and training latency—though their work did not engage deeply with optimization techniques at the algorithmic level.
+Beyond algorithmic strategies, several studies have explored distributed computing frameworks that support deep learning at scale. \citet{mayer2020scalable} synthesized various engineering approaches for distributed training, including model parallelism, asynchronous updates, and fault tolerance mechanisms. Their review laid the foundation for evaluating trade-offs in distributed system design. Extending this work, \citet{yan2023computational} examined computational frameworks in edge and federated learning scenarios, highlighting new opportunities for decentralization while noting the scarcity of systematic benchmarking. Further refinement came from \citet{zhang2023distributed}, who compared distributed deep learning systems based on resource allocation, fault recovery, and training latency—though their work did not engage deeply with optimization techniques at the algorithmic level.
 
-Adding a broader perspective, Thompson et al.~\cite{thompson2020computational} raised concerns about the economic and environmental costs associated with large-scale deep learning. Their empirical study quantified the exponential growth in compute resources needed to achieve incremental performance gains and called for a research agenda centered on efficiency-aware models.
+Adding a broader perspective, \citet{thompson2020computational} raised concerns about the economic and environmental costs associated with large-scale deep learning. Their empirical study quantified the exponential growth in compute resources needed to achieve incremental performance gains and called for a research agenda centered on efficiency-aware models.
 
-Despite this extensive body of work, most prior reviews have addressed either optimization algorithms or distributed system frameworks in isolation. For example, Li et al.~\cite{li2020survey} presented a comprehensive survey of scalable deep learning architectures but offered limited discussion on the numerical optimization techniques critical for training. Our review addresses this fragmentation by adopting a dual systematic literature review (SLR) methodology that examines both numerical and computational enablers of deep learning at scale.
+Despite this extensive body of work, most prior reviews have addressed either optimization algorithms or distributed system frameworks in isolation. For example, \citet{li2020survey} presented a comprehensive survey of scalable deep learning architectures but offered limited discussion on the numerical optimization techniques critical for training. Our review addresses this fragmentation by adopting a dual SLR methodology that examines both numerical and computational enablers of deep learning at scale.
 
-By integrating these complementary domains through a structured review protocol grounded in PRISMA guidelines~\citet{moher2009preferred}, 
-our work reveals cross-domain synergies, unresolved trade-offs, and critical research gaps. We argue that only by examining optimization and infrastructure in tandem can 
+By integrating these complementary domains through a structured review protocol grounded in PRISMA guidelines \citep{moher2009preferred},
+our work reveals cross-domain synergies, unresolved trade-offs, and critical research gaps. We argue that only by examining optimization and infrastructure in tandem can
 the field develop robust, scalable, and efficient deep learning systems suited for complex, high-stakes applications in healthcare, cybersecurity, and beyond.
 
 
@@ -1005,7 +1005,7 @@ This section presents the findings from our systematic analysis of computational
 
 
 \subsection{Overview of Included Studies}\label{subsec:overview-of-included-studies}
-Our systematic literature review identified 77 papers focusing on computational mathematics for AI, specifically examining numerical methods and distributed computing techniques for deep learning applications on big data. These studies were selected through a rigorous process following the PRISMA guidelines, ensuring methodological quality and relevance to our research questions [see \cref{app:list-of-included-papers}].
+Our SLR identified 77 papers focusing on computational mathematics for AI, specifically examining numerical methods and distributed computing techniques for deep learning applications on big data. These studies were selected through a rigorous process following the PRISMA guidelines, ensuring methodological quality and relevance to our research questions [see \cref{app:list-of-included-papers}].
 
 The methodological distribution reflects the applied nature of this field-experimental studies constitute the majority of the corpus (62\%), followed by algorithmic development papers (27\%) and hybrid approaches combining theoretical development with empirical validation (11\%). This distribution highlights how empirical validation is essential for establishing the efficacy of computational approaches in big data contexts.
 
@@ -1893,7 +1893,7 @@ For instance one paper discussed fault prediction with a large amount of data, b
 
 \appendix
 \section{List of Included Papers}\label{app:list-of-included-papers}
-\Cref{tab:all_papers_compact} presents the comprehensive list of all 77 papers included in this systematic literature review. These papers were selected based on the inclusion criteria and quality assessment process detailed in the methodology. Each study contributes to the understanding of computational mathematics for AI with focus on numerical methods and distributed computing techniques for deep learning on big data.
+\Cref{tab:all_papers_compact} presents the comprehensive list of all 77 papers included in this SLR. These papers were selected based on the inclusion criteria and quality assessment process detailed in the methodology. Each study contributes to the understanding of computational mathematics for AI with focus on numerical methods and distributed computing techniques for deep learning on big data.
 
 % Simplified table format with only essential information (ID, Title, Author)
 \input{all_papers_table_compact}
