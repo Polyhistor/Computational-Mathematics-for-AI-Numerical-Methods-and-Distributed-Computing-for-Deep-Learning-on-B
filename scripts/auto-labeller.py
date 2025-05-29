@@ -31,7 +31,7 @@ def process_lines(lines):
     n = len(lines)
 
     # Regex to detect old sectioning labels only
-    old_label_re = re.compile(r"^\s*\\label\s*\{(?:sec|subsec|subsubsec):.*\}")
+    old_label_re = re.compile(r"^\s*\\label\s*\{(?:sec|subsec|subsubsec|app):.*\}")
 
     while i < n:
         line = lines[i]

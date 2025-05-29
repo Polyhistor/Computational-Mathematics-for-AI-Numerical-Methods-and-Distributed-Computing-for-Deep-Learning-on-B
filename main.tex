@@ -30,7 +30,6 @@
 \usepackage{xcolor}
 \usepackage[most]{tcolorbox}
 \usepackage{cleveref}
-\usepackage{listings}
 \usepackage{textalpha}
 \usepackage{rotating}
 \usepackage{algorithm}
@@ -88,14 +87,6 @@
 }
 
 \pgfplotsset{compat=newest}
-
-\lstset{
-    basicstyle=\ttfamily\small,
-    breaklines=true,
-    frame=single,
-    float=tp,
-    captionpos=t
-}
 
 \newcommand{\ATM}[1]{\textcolor{red}{#1}}
 
@@ -281,49 +272,19 @@
 %% ----- Document Contents Starts -----
 
 \section{Introduction}\label{sec:introduction}
+The exponential growth of data and the rising complexity of deep learning models have made computational efficiency a critical concern in \emph{artificial intelligence} (AI). As a result, the convergence of \emph{computational mathematics} and scalable AI systems has emerged as a strategic research area. In particular, the use of advanced numerical methods and distributed computing techniques is essential for training and deploying deep learning models on big data. This \emph{systematic literature review} (SLR) investigates the state-of-the-art at this intersection, focusing on two complementary pillars: numerical optimization techniques (SLR1) and distributed computing strategies (SLR2) that support scalable deep learning systems.
 
+While previous systematic reviews have explored aspects of deep learning and big data, most have adopted a narrow focus. For example, \citet{najafabadi2015deep} provided a high-level survey on the challenges of applying deep learning to big data, emphasizing the limitations of traditional computing infrastructure. Similarly, \citet{zhang2021distributed} conducted a review of distributed deep learning frameworks but without integrating the perspective of computational mathematics or explicitly analyzing the underlying numerical methods used. These works underscore the importance of scalability and performance in deep learning, but they do not offer a comprehensive synthesis of the mathematical foundations and infrastructural techniques in tandem.
 
-The exponential growth of data and the rising complexity of deep learning models have made computational efficiency a critical concern in
-artificial intelligence (AI). As a result, the convergence of \emph{computational mathematics} and scalable AI systems has emerged as a strategic research area.
-In particular, the use of advanced numerical methods and distributed computing techniques is essential for training and deploying deep learning models on big data.
-This systematic literature review (SLR) investigates the state of the art at this intersection, focusing on two complementary pillars: numerical optimization
-techniques (SLR1) and distributed computing strategies (SLR2) that support scalable deep learning systems.
+This review aims to bridge that gap by offering a dual-SLR framework that systematically evaluates both algorithmic and architectural components enabling deep learning at scale. The contribution of this work is threefold. First, it provides a structured taxonomy of numerical methods specifically tailored to big data deep learning contexts, with performance metrics such as computational efficiency and convergence behavior. Second, it evaluates distributed computing techniques (including federated learning, GPU acceleration, and parallel processing) in terms of scalability and system throughput. Third, it integrates findings across both domains to surface synergies, trade-offs, and research gaps that are often overlooked when these topics are studied in isolation.
 
-While previous systematic reviews have explored aspects of deep learning and big data, most have adopted a narrow focus.
-For example, \citet{najafabadi2015deep} provided a high-level survey on the challenges of applying deep learning to big data,
-emphasizing the limitations of traditional computing infrastructure. Similarly, \citet{zhang2021distributed} conducted a review of distributed
-deep learning frameworks but without integrating the perspective of computational mathematics or explicitly analyzing the underlying numerical methods used.
-These works underscore the importance of scalability and performance in deep learning, but they do not offer a comprehensive synthesis of the mathematical
-foundations and infrastructural techniques in tandem.
+To ensure transparency, rigor, and reproducibility, the review methodology adheres to the PRISMA guidelines for systematic reviews \citep{moher2009preferred} and draws on Kitchenham's methodological framework for software engineering reviews \citep{kitchenham2007guidelines}. It incorporates a seven-phase review process, including meta-analysis, network analysis, and a Delphi-based consensus protocol for paper inclusion and quality assessment.
 
-This review aims to bridge that gap by offering a dual-SLR framework that systematically evaluates both algorithmic and architectural components enabling deep
-learning at scale. The contribution of this work is threefold. First, it provides a structured taxonomy of numerical methods specifically tailored to big data
-deep learning contexts, with performance metrics such as computational efficiency and convergence behavior. Second, it evaluates distributed
-computing techniques (including federated learning, GPU acceleration, and parallel processing) in terms of scalability and system throughput.
-Third, it integrates findings across both domains to surface synergies, trade-offs, and research gaps that are often overlooked when these topics are studied
-in isolation.
+In addition to synthesizing current knowledge, this work aims to guide future research by identifying methodological trends, emerging optimization paradigms, and key challenges that must be addressed to build efficient and scalable AI systems.
 
-To ensure transparency, rigor, and reproducibility, the review methodology adheres to the PRISMA guidelines for
-systematic reviews \citep{moher2009preferred} and draws on Kitchenham's methodological framework for software
-engineering reviews \citep{kitchenham2007guidelines}. It incorporates a seven-phase review process, including meta-analysis, network analysis,
-and a Delphi-based consensus protocol for paper inclusion and quality assessment.
+The paper is structured as follows: \Cref{sec:background} introduces key terminology and presents the rationale and objectives of the review. \Cref{sec:related-work} surveys prior literature on numerical methods and distributed frameworks for deep learning at scale. \Cref{sec:methodology} details the systematic literature review methodology, including research questions, search strategy, inclusion and exclusion criteria, and quality assessment protocols. \Cref{sec:findings-and-analysis} presents the results and analysis of the selected studies for both SLR1 and SLR2. \Cref{sec:conclusion} concludes the paper with a summary of contributions and recommendations for advancing computational mathematics for AI.
 
-In addition to synthesizing current knowledge, this work aims to guide future research by identifying methodological trends, emerging optimization paradigms,
-and key challenges that must be addressed to build efficient and scalable AI systems.
-
-
-The paper is structured as follows: \Cref{sec:background} introduces key terminology and presents the rationale and objectives of the review.
-\Cref{sec:related-work} surveys prior literature on numerical methods and distributed frameworks for deep learning at scale.
-\Cref{sec:methodology} details the SLR methodology, including research questions, search strategy, inclusion/exclusion criteria,
-and quality assessment protocols.
-\Cref{sec:findings-and-analysis} presents the results and analysis of the selected studies for both SLR1 and SLR2.
-\Cref{sec:conclusion} concludes the paper with a summary of contributions and recommendations for advancing computational mathematics for AI.
-
-
-
-
-\section{Background}
-\label{sec:background}
+\section{Background}\label{sec:background}
 
 %\subsection{Conceptual Background}
 %\label{subsec:conceptual-background}
@@ -365,84 +326,29 @@ between infrastructure-level scalability and algorithmic efficiency.
 
 \paragraph{Rationale for This Review.}
 This review aims to address the fragmentation in the literature by offering a dual-perspective SLR.
-It investigates numerical optimization techniques (SLR1) and distributed computing strategies (SLR2) as complementary components of scalable deep learning systems.
-The review follows PRISMA guidelines \citep{moher2009preferred} and leverages Kitchenham's framework \citep{kitchenham2007guidelines} to ensure methodological rigor.
-By synthesizing these two domains—optimization and infrastructure—this work provides a coherent foundation for understanding and designing efficient AI systems in big data contexts.
+It investigates numerical optimization techniques (SLR1) and distributed computing strategies (SLR2) as complementary components of scalable deep learning systems. The review follows PRISMA guidelines \citep{moher2009preferred} and leverages Kitchenham's framework \citep{kitchenham2007guidelines} to ensure methodological rigor. By synthesizing these two domains-optimization and infrastructure-this work provides a coherent foundation for understanding and designing efficient AI systems in big data contexts.
 
-\subsection{Terminology and Definitions}
-\label{subsec:terminology-and-definitions}
+\subsection{Terminology and Definitions}\label{subsec:terminology-and-definitions}
 
 To ensure clarity throughout this analysis, we define the following key technical terms:
 \begin{itemize}
     \item \textbf{Computational Mathematics for AI}: The application of mathematical techniques and algorithms to solve computational problems in artificial intelligence.
-    \item \textbf{Numerical Methods}: Algorithms that use numerical approximation to solve problems arising in mathematical analysis, often used in training and optimization of AI systems.
-    \item \textbf{Optimization}: The process of selecting the best configuration from a set of alternatives based on defined criteria.
-    \item \textbf{Nature-Inspired Algorithms}: Metaheuristic optimization techniques inspired by natural phenomena, such as genetic algorithms and particle swarm optimization, often applied to non-convex problems.
-    \item \textbf{Bayesian Optimization}: A sample-efficient optimization strategy that builds a probabilistic surrogate model of the objective function to guide exploration.
-    \item \textbf{Multi-Objective Optimization}: Optimization methods that address multiple, often conflicting, objectives simultaneously, producing trade-off solutions known as Pareto-optimal sets.
-    \item \textbf{Hardware-Aware Optimization}: A class of optimization techniques that explicitly account for hardware constraints (e.g., memory, parallelization, latency) in model training or deployment.
-    \item \textbf{Distributed Computing}: A computational model that leverages multiple networked computers to collaboratively execute large-scale algorithms.
-    \item \textbf{Federated Learning}: A decentralized machine learning paradigm where models are trained locally on devices and aggregated centrally without sharing raw data.
-    \item \textbf{Deep Learning}: A subfield of machine learning involving multi-layer neural networks capable of extracting complex features from raw data.
-    \item \textbf{Big Data}: Large and complex datasets that exceed the capabilities of traditional data-processing tools.
-    \item \textbf{Systematic Literature Review (SLR)}: A reproducible and protocol-based methodology for identifying, evaluating, and synthesizing existing literature on a defined topic.
-    \item \textbf{PRISMA}: A standard for reporting systematic reviews, aimed at improving transparency, completeness, and reproducibility.
-    \item \textbf{Meta-Analysis}: A quantitative technique for aggregating the findings of multiple studies to draw generalizable conclusions.
+    \item \textbf{Numerical Methods}: Algorithms that use numerical approximation for the problems of mathematical analysis.
+    \item \textbf{Optimization}: The selection of the best element from a set of available alternatives according to some criteria.
+    \item \textbf{Nature-Inspired Algorithms}: A class of metaheuristic optimization algorithms inspired by natural phenomena, such as biological evolution, animal behavior, or ecological processes, used to solve complex, non-convex optimization problems.
+    \item \textbf{Bayesian Optimization}: An optimization technique that builds a probabilistic model of the objective function and uses it to select the most promising points to evaluate, aiming to find the global optimum with a minimal number of evaluations.
+    \item \textbf{Multi-Objective Optimization}: An optimization framework where two or more conflicting objectives are optimized simultaneously, resulting in a set of trade-off solutions known as the Pareto front.
+    \item \textbf{Hardware-Aware Optimization}: An approach to optimization that explicitly considers the computational characteristics and constraints of the target hardware platform, aiming to maximize performance, efficiency, or resource utilization.
+    \item \textbf{Distributed Computing}: A computing paradigm where multiple computers work together to solve computational problems across a network.
+    \item \textbf{Federated Learning}: A decentralized machine learning approach where multiple devices collaboratively train a shared model without exchanging raw data, thereby preserving privacy and reducing data transfer requirements.
+    \item \textbf{Deep Learning}: A subset of machine learning using neural networks with multiple layers to extract higher-level features from raw input.
+    \item \textbf{Big Data}: Data sets that are too large or complex to be dealt with by traditional data-processing application software.
+    \item \textbf{Systematic Literature Review (SLR)}: A structured and methodical approach to identifying, evaluating, and synthesizing existing research studies on a specific topic, following predefined protocols to ensure transparency, repeatability, and minimization of bias.
+    \item \textbf{PRISMA (Preferred Reporting Items for Systematic Reviews and Meta-Analyses)}: A set of evidence-based guidelines and a reporting framework designed to enhance the quality and transparency of systematic reviews and meta-analyses.
+    \item \textbf{Meta-Analysis}: A statistical technique for combining results from multiple independent studies to identify patterns, derive general conclusions, or estimate the overall effect size with greater precision.
 \end{itemize}
 
-
-
-
-% \subsection{Rationale}\label{subsec:rationale}
-% Deep learning has revolutionized a wide spectrum of big data applications by providing state-of-the-art performance across domains.
-% However, the increasing complexity of deep neural networks and the growing scale of datasets demand a deeper investigation into
-% the computational methods that support such systems. Among these, numerical methods and distributed computing stand out as critical
-% enablers for efficient model training and deployment at scale.
-
-% Numerical methods, particularly optimization algorithms, form the foundation for training deep neural networks, playing a key role
-% in minimizing loss functions and ensuring convergence. As \citet{najafabadi2015deep} emphasize, integrating deep learning with
-% big data analytics introduces significant challenges, particularly in scalability and computational efficiency.
-% This intersection calls for sophisticated mathematical tools to address issues related to high-dimensional data, model complexity,
-% and computational constraints.
-
-% In parallel, distributed computing has emerged as an essential strategy for managing the large-scale computations involved in
-% modern deep learning. \citet{yan2023computational} highlights both the theoretical underpinnings and real-world implementations of such methods,
-% underscoring the role of parallelism, GPU acceleration, federated learning, and other distributed paradigms.
-% These techniques allow workloads to be distributed across clusters or edge devices, reducing training time and improving scalability.
-
-% Taken together, numerical optimization and distributed computing are not just complementary, they are interdependent components
-% of scalable deep learning systems. Their combined use offers a path forward for developing more efficient, robust, and deployable
-% AI solutions for big data scenarios.
-
-% This review synthesizes the current body of knowledge at the intersection of computational mathematics and scalable deep learning,
-% providing a structured assessment of the most impactful methods in this space.
-
-
-% Deep learning has significantly advanced a wide array of big data applications, delivering state-of-the-art performance across numerous domains~\citet{najafabadi2015deep,furht2016deep,choudhary2022recent}.
-% However, as neural networks become deeper and datasets more voluminous, they pose considerable challenges in terms of
-% computational scalability and efficiency~\citet{thompson2020computational,mayer2020scalable,capra2020hardware}. To meet these demands, the research community has increasingly focused on two foundational domains: numerical optimization and distributed computing. Together, they constitute the computational substrate for scalable deep learning systems.
-
-% \textbf{Numerical methods}, especially optimization algorithms, are indispensable for training deep models. They govern the convergence behavior, learning speed, and stability of training processes. \citet{najafabadi2015deep} provide a seminal overview of deep learning in big data analytics, highlighting the computational bottlenecks and emphasizing the necessity for efficient numerical approaches to cope with high-dimensional and heterogeneous data. In response, various optimization paradigms have emerged—from gradient-based to nature-inspired and Bayesian methods—each designed to handle different objective functions and learning constraints.
-
-% Simultaneously, \textbf{distributed computing} has grown into a core enabler of large-scale AI. It allows training over distributed resources, often using clusters, GPUs, or edge devices to reduce computation time and enhance scalability. \citet{yan2023computational} offer a comprehensive exploration of computational frameworks underpinning deep learning, discussing GPU acceleration, federated learning, and multi-node parallelism. Distributed architectures are especially pivotal for real-time applications and resource-constrained environments.
-
-% Further synthesizing this area, \citet{zhang2023distributed} chart the progression from traditional distributed machine learning to advanced distributed deep learning systems. They evaluate the capabilities of various frameworks, such as those leveraging federated learning and GPU clustering, against scalability, fault tolerance, and deployment efficiency.
-
-% Dedicated studies such as \citet{li2019federated} examine federated learning in greater depth, framing it as a privacy-aware, decentralized approach suitable for sensitive big data contexts. Their work underscores the architectural principles and empirical challenges in enabling collaborative model training without data centralization. Expanding on this, \citet{li2020survey} survey a broad range of scalable deep learning technologies, identifying both hardware-level (e.g., GPU, ASIC) and software-level (e.g., Spark, TensorFlow) strategies for reducing training time and enhancing performance in large-scale environments.
-
-% In the space of optimization for deep learning, \citet{ben2019demystifying} provide a focused review of methods tailored to big data settings. They assess the effectiveness of different algorithms on convergence speed, cost-efficiency, and performance accuracy—highlighting the trade-offs faced when deploying these models at scale. Foundational insights from \citet{bengio2012practical} have guided many of these optimization strategies, while early breakthroughs like \citet{krizhevsky2012imagenet} and \citet{dean2012large} demonstrated the viability of GPU and distributed training for massive neural networks. More recent works, including \citet{shazeer2017outrageously} and \citet{you2019large}, have continued this evolution with innovations in model architecture and parallel optimization.
-
-
-% While individual studies have extensively examined numerical methods or distributed systems in isolation, there is a noticeable lack of integrative reviews that systematically assess their interplay within the broader computational landscape of deep learning for big data. For instance, \citet{najafabadi2015deep} discuss the challenges of deep learning at scale, but without a detailed mathematical treatment of optimization techniques. Similarly, \citet{zhang2023distributed} and \citet{li2020survey} focus on distribution frameworks, yet omit rigorous analysis of the numerical underpinnings.
-
-% This review aims to bridge that gap by offering a dual-focused systematic literature review that combines insights from both numerical optimization and distributed computing. It adheres to PRISMA guidelines and employs a structured methodology for literature synthesis, performance analysis, and classification. In doing so, it not only clarifies the current state of the art but also identifies critical synergies, trade-offs, and research opportunities that have been overlooked when these two pillars are studied in isolation.
-
-% By integrating these computational perspectives, this work contributes to the development of more efficient, scalable, and robust deep learning systems—essential for addressing the complexity of modern AI applications in healthcare, cybersecurity, finance, and beyond.
-
-
-
-\section{Related Work}
-\label{sec:related-work}
+\section{Related Work}\label{sec:related-work}
 
 The evolution of deep learning has been marked by significant milestones in both algorithmic development and computational infrastructure \citet{thompson2020computational,mayer2020scalable,capra2020hardware}.
 This section presents a chronological overview of key contributions, critically analyzing their impact on scalable deep learning in big data contexts.
@@ -469,205 +375,56 @@ By integrating these complementary domains through a structured review protocol 
 our work reveals cross-domain synergies, unresolved trade-offs, and critical research gaps. We argue that only by examining optimization and infrastructure in tandem can
 the field develop robust, scalable, and efficient deep learning systems suited for complex, high-stakes applications in healthcare, cybersecurity, and beyond.
 
+\section{Methodology}\label{sec:methodology}
+This research adopts a SLR framework to explore two complementary yet distinct domains within the field of deep learning for big data: (SLR1) numerical methods and (SLR2) distributed computing techniques. The methodology employs a seven-phase approach combining systematic reviews with subsequent meta-analysis and network analysis.
+The SLR methodology is informed by the guidelines outlined by \citet{kitchenham2004procedures}. Reviews are constructed around well-formulated research questions that guide the scope and structure of this paper.
 
-\section{Systematic Literature Review Approach}\label{sec:systematic-literature-review-approach}
-This research adopts a dual SLR framework to rigorously explore two complementary yet distinct domains within the field of deep learning for big data: (SLR1) numerical methods and (SLR2) distributed computing techniques. The methodology employs a comprehensive seven-phase approach combining systematic reviews with subsequent meta-analysis and network analysis, ensuring thorough coverage of both technical and performance aspects.
-The SLR methodology is informed by the procedural guidelines outlined by \citet{kitchenham2004procedures} and builds upon empirical software engineering traditions, ensuring methodological transparency, repeatability, and reliability. Both reviews are constructed around well-formulated research questions that guide the scope and structure of the inquiry:
+\subsection{Phase 1: Planning and Protocol Development}\label{subsec:phase-1-planning-and-protocol-development}
 
-For SLR1 (Numerical Methods):
+\subsubsection{Research Questions Formulation}\label{subsubsec:phase-1-planning-and-protocol-development:research-questions-formulation}
+
+The research questions were considered to address both the technical specifications and performance characteristics of deep learning systems for big data. SLR1 focuses on identifying  numerical methods and evaluating their computational efficiency and accuracy:
 \begin{itemize}
     \item RQ1.1: What are the state-of-the-art numerical methods used in deep learning for big data?
     \item RQ1.2: How do these methods perform in terms of computational efficiency and accuracy?
 \end{itemize}
-For SLR2 (Distributed Computing Techniques):
+
+Whereas SLR2 examines distributed computing techniques and their effectiveness in scaling deep learning applications:
 \begin{itemize}
     \item RQ2.1: What distributed computing techniques are used for scaling deep learning to big data problems?
     \item RQ2.2: How effective are these techniques in terms of scalability and performance?
 \end{itemize}
 
-The research questions were carefully structured to address both technical implementation (RQ1.1, RQ2.1) and performance characteristics (RQ1.2, RQ2.2). For SLR1, we specifically examine computational efficiency (measured in FLOPS/operation) and accuracy (typically reported as percentage improvement over baselines). SLR2 evaluates scalability (measured through speedup ratios and weak/strong scaling efficiency) and overall system performance (including throughput and latency metrics). This dual focus on what methods exist and how they perform provides both breadth and depth of understanding.
-To ensure methodological consistency across all coauthors, we adapted Cooper's taxonomy of literature reviews \citet{cooper1988organizing} as our classification framework (\cref{fig:decision-flow}). This framework examines studies across six dimensions:
-\begin{itemize}
-    \item Focus: Research outcomes, methods, theories, or applications
-    \item Goal: Integration, criticism, or identification of central issues
-    \item Perspective: Neutral representation or espousal of position
-    \item Coverage: Exhaustive, representative, or pivotal studies
-    \item Organization: Historical, conceptual, or methodological
-    \item Audience: Specialized scholars, practitioners, or general public
-\end{itemize}
-This multidimensional classification serves several critical purposes:
-\begin{itemize}
-    \item Systematically categorizing the nature and scope of each study
-    \item Identifying patterns and trends in the literature
-    \item Ensuring balanced representation of different research types
-    \item Tailoring findings to diverse audience needs
-    \item Guiding analysis and synthesis of the literature
-\end{itemize}
-The classification results are valuable in \ATM{Phase 6 (Study Classification and Bias Assessment)}, where they provided essential context for interpreting findings and identifying gaps in the current research landscape. The dual-SLR approach enables comprehensive analysis of both the algorithmic foundations (SLR1) and implementation architectures (SLR2) that together enable effective deep learning applications for big data. This combined perspective offers unique insights into how numerical innovations interact with distributed computing paradigms to advance the field.
+\subsubsection{Literature Review Classification Framework}\label{subsubsec:phase-1-planning-and-protocol-development:literature-review-classification-framework}
+To ensure systematic analysis across all coauthors, we adapted Cooper's taxonomy of literature reviews \citep{cooper1988organizing} as our classification framework (\cref{fig:decision-flow2}). This approach examines studies through six critical lenses: the focus of research (ranging from theoretical to applied), the review's goal (integration vs. critical analysis), the author's perspective (neutral or advocacy), coverage breadth, organizational approach, and intended audience.
 
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{media/Company Structure.png}
+    \includegraphics[width=0.9\textwidth]{media/Company Structure.png}
     \caption{Paper Classification Decision Framework}
+    \label{fig:decision-flow2}
     \Description{Paper Classification Decision Framework}
-    \label{fig:decision-flow}
 \end{figure}
 
-\section{Methodology}\label{sec:methodology}
-\subsection{Systematic Literature Review Approach}\label{subsec:systematic-literature-review-approach}
-This research adopts a dual SLR framework to rigorously explore two complementary yet distinct domains within the field of deep learning for big data: (SLR1) numerical methods and (SLR2) distributed computing techniques. The SLR methodology is informed by the procedural guidelines outlined by \citet{kitchenham2004procedures} and builds upon empirical software engineering traditions, ensuring methodological transparency, repeatability, and reliability. Both reviews are constructed around well-formulated research questions that guide the scope and structure of the inquiry. For SLR1, the focus is on identifying and evaluating the numerical algorithms used within deep learning models designed to operate on big data. These include optimization algorithms, computational mathematics techniques, and other numerical strategies whose efficacy is assessed in terms of computational efficiency and predictive accuracy. SLR2, by contrast, investigates how distributed and parallel computing frameworks; including but not limited to GPU acceleration and parallelization strategies which enable the scalability of deep learning applications.
-
-The research questions shown in \ATM{insert this table ??} were carefully structured to address both technical implementation (RQ1.1, RQ2.1) and performance characteristics (RQ1.2, RQ2.2). For SLR1, we specifically examine computational efficiency (measured in FLOPS/operation) and accuracy (typically reported as percentage improvement over baselines).  SLR2 evaluates scalability (measured through speedup ratios and weak/strong scaling efficiency) and overall system performance (including throughput and latency metrics). This dual focus on what methods exist and how they perform provides both breadth and depth of understanding.
-
-To ensure methodological consistency across both reviews, we adapted Cooper's taxonomy of literature reviews \citep{cooper1988organizing} as our classification \ATM{framework (see \cref{fig:decision-flow})}. This framework examines studies across six dimensions: focus (research outcomes vs. methods), goal (integration vs. criticism), perspective (neutral vs. position-based), coverage (exhaustive vs. representative), organization (historical vs. methodological), and intended audience. This multidimensional classification enables analysis of the literature while maintaining systematic rigor in our review methodology.
-
-% \begin{figure}
-%     \centering
-%     \includegraphics[width=\textwidth]{media/prisma1.png}
-%     \caption{Paper Classification Decision Framework}
-%     \Description{Paper Classification Decision Framework}
-%     \label{fig:decision-flow2}
-% \end{figure}
-
-\subsection{Search Strategy and Study Selection}\label{subsec:search-strategy-and-study-selection}
-The search strategy is systematically constructed using the elements of PICO (Population, Intervention, Comparison, Outcome) and implemented in \ATM{check this: seven major academic databases (IEEE Xplore, ACM Digital Library, SpringerLink, Scopus, Web of Science, JSTOR, AIS)}. Database-specific search strings were created to account for platform variations while maintaining conceptual consistency. For SLR1, the core search combined ``deep learning" with numerical method terms (``numerical method", ``computational mathematics", ``optimization algorithm") and "big data". SLR2 used similar structure but focused on distributed computing terms (``distributed computing", ``parallel processing", ``GPU acceleration") and scalability/performance metrics.
-
-Upon retrieval, all records are consolidated into a unified CSV format where duplicated papers across the database are removed. Initial screenings of titles and abstracts are conducted independently by the coauthors, and the results revealed significant inter-rater disagreement (Krippendorff's $\alpha = 0.4$), prompting implementation of a modified Delphi protocol with four iterative rounds. In Round 1, coauthors independently assessed \ATM{to be inserted, we did all these : XX} papers, achieving only moderate agreement $\ATM{to be inserted, we did all these :(mean= , Standardeviation=)}$. Round 2's controlled feedback process identified key disagreement areas, particularly around technical implementation details \ATM{how many percent of the cases? (XX\% of cases) and big data relevance (XX\% of cases)}. Round 3's consensus development established \ATM{provide the number: N1} explicit decision nodes and \ATM{provide the number: N2} specific exemplars, resulting in significantly improved reliability \ATM{provide the number:$(\alpha = 0.85)$}. The final validation round confirmed protocol effectiveness with \ATM{provide the number: NN\% agreement on the original XX papers.}
-
-\subsection{Quality Assessment and Synthesis}\label{subsec:quality-assessment-and-synthesis}
-The quality assessment framework incorporates seven criteria adapted from Critical Appraisal Skills Programme cite{singh2013critical}  and Kitchenham's guidelines organized into two phases. The first phase applies a minimum quality threshold, requiring clear articulation of objectives, a description of systematic data collection, and contextual clarity. Only studies that satisfy these basic conditions progress to the second phase, which evaluates methodological rigor, the credibility of findings, and their relevance to practice or theory.
-
-Each criterion is scored on a binary scale (yes/no), and studies must achieve at least 75\% positive responses across all dimensions to be included in the synthesis phase. Moreover, coauthors independently assess each study, and the process includes statistical validation through inter-rater reliability using Krippendorff's $\alpha$, with a threshold of $0.8$ or higher to ensure consistency. In cases of persistent disagreement, a another coauthor who was not involved in the process of assessing the paper is engaged to resolve discrepancies, maintaining objectivity throughout the process.
-
-\subsection{Consensus Protocol Development}\label{subsec:consensus-protocol-development}
-Given the complexity and multidisciplinary nature of the included studies, a consensus protocol was critical to ensure alignment between coauthors and consistency in applying inclusion criteria.
-The consensus protocol was designed following Dalkey's experimental framework \citep{dalkey1963experimental} and Kitchenham's systematic review guidelines. The protocol implemented a structured consensus-building approach resulting in a formalized hierarchical decision framework for paper classification.
-
-In this work, the consensus process established three primary sequential decision gates. First, the Deep Learning and Numerical Methods Verification gate evaluated papers for explicit use of deep learning techniques, clear numerical methods components, and verifiable technical implementation or application. Second, the Big Data Aspects Evaluation gate assessed studies on volume (significant data scale as defined by \citet{diebold2012origin} and \citet{kitchin2016makes}, e.g. velocity (real-time or streaming data considerations), variety (heterogeneous data types), and processing (computational complexity requirements). Third, the Contribution Type Classification gate categorized papers according to Empirical Methods, Theoretical Analysis, Comparative Studies and Hybrid Approaches.
-The consensus-based classification process involved initial screening with independent evaluation against primary decision gates, followed by detailed evaluation of passing papers against either implementation criteria \ATM{check:(minimum 2 of 3 required)} or application criteria \ATM{check: (minimum 2 of 3 required)}. Border case resolution protocols were established for hybrid contributions, ambiguous cases, and novel approaches. Inter-rater reliability requirements were defined based on Krippendorff's recommendations, with thresholds set at $\alpha > 0.8$ for initial screening, \ATM{check:85\%} agreement minimum for detailed evaluation, and unanimous consensus for border cases.
-
-\subsection{Methodological Integration and Validation}\label{subsec:methodological-integration-and-validation}
-The complete methodology integrates these components through a stage-gate process with multiple validation checkpoints. The classification framework was statistically validated by applying to all articles, demonstrating consistent categorization (\ATM{X\% agreement}) and reliable identification of key characteristics of the study. Big data evaluation applied \citep{diebold2012origin} and \citep{kitchin2016makes}. For border cases, the protocol requires another coauthor adjudication with comprehensive documentation. The entire process was designed to maintain \ATM{check: 85\%} agreement during detailed evaluation while requiring unanimous consensus for all border cases. Final inclusion follows PRISMA standards as shown in \cref{fig:prisma-standards}, with \ATM{check:  X\%} papers meeting all quality and relevance criteria.
-
-\begin{landscape}
-    \begin{figure}
-        \centering
-        \includegraphics[height=0.9\textwidth]{media/flow-diagram.png}
-        \caption{PRISMA standards followed}
-        \Description{PRISMA standards followed}
-        \label{fig:prisma-standards}
-    \end{figure}
-\end{landscape}
-
-\section{Research Methodology}\label{sec:research-methodology}
-
-\subsection{Objectives}\label{subsec:objectives}
-The core objectives of this SLR are as follows:
-
-\begin{enumerate}
-    \item Identifyd and categorize cutting-edge numerical methods applied in deep learning for big data applications.
-    \item Evaluate the effectiveness of distributed computing techniques in scaling deep learning systems.
-    \item Compare these methods with respect to computational efficiency, scalability, and model accuracy.
-    \item Uncover emerging trends and identify open research challenges at the convergence of numerical mathematics and distributed AI computing.
-\end{enumerate}
-
-This study employs a comprehensive approach combining two SLRs with subsequent meta-analysis and network analysis. The methodology is structured into seven distinct phases:
-
-\subsection{Phase 1: Planning and Protocol Development}\label{subsec:phase-1-planning-and-protocol-development}
-\subsubsection{Research Questions}\label{subsubsec:phase-1-planning-and-protocol-development:research-questions}
-For SLR 1 (Numerical Methods):
-\begin{enumerate}
-    \item[RQ1.1] What are the state-of-the-art numerical methods used in deep learning for big data?
-    \item[RQ1.2] How do these methods perform in terms of computational efficiency and accuracy?
-\end{enumerate}
-
-For SLR 2 (Distributed Computing Techniques):
-\begin{enumerate}
-    \item[RQ2.1] What distributed computing techniques are used for scaling deep learning to big data problems?
-    \item[RQ2.2] How effective are these techniques in terms of scalability and performance?
-\end{enumerate}
-
-\subsubsection{Literature Review Classification Framework}\label{subsubsec:phase-1-planning-and-protocol-development:literature-review-classification-framework}
-We will use Cooper's taxonomy \citep{cooper1988} to classify the literature in both SLRs:
-
-\begin{table}[ht]
-    \caption{Adaptation of Cooper's Literature Review Taxonomy}
-    \begin{tabularx}{\textwidth}{lX}
-        \toprule
-        Characteristic   & Categories                                                                            \\
-        \midrule
-        (a) Focus        & Research outcomes, Research methods, Theories, Practices or applications              \\
-        (b) Goal         & Integration, Criticism, Identification of central issues                              \\
-        (c) Perspective  & Neutral representation, Espousal of position                                          \\
-        (d) Coverage     & Exhaustive, Exhaustive with selective citation, Representative, Central or pivotal    \\
-        (e) Organization & Historical, Conceptual, Methodological                                                \\
-        (f) Audience     & Specialized scholars, General scholars, Practitioners or policymakers, General public \\
-        \bottomrule
-    \end{tabularx}
-    \label{tab:adaptation-cooper-literature}
-\end{table}
-
-This classification will be applied to each included study during the data extraction phase. It will help us to:
-
-\begin{itemize}
-    \item Systematically categorize the nature and scope of each study
-    \item Identify patterns and trends in the literature
-    \item Ensure a balanced representation of different types of research in our review
-    \item Tailor our findings to different audience needs
-    \item Guide our analysis and synthesis of the literature
-\end{itemize}
-
-The classification results will be used in Phase 6 (Study Classification and Bias Assessment) to provide additional context for interpreting our findings and identifying gaps in the current research landscape.
 
 \subsubsection{Search Strategy Development}\label{subsubsec:phase-1-planning-and-protocol-development:search-strategy-development}
-PICO-based search strings for each SLR:
+For SLR1, we constructed  search strings combining "deep learning" with numerical method terminology ("numerical method", "computational mathematics", "optimization algorithm") and big data.
 
-SLR 1 (TITLE AND ABSTRACT SEARCH) :
+SLR2 uses keyswords such as "distributed computing", "parallel processing", "GPU acceleration",  while maintaining the deep learning and big data context. The search strings for both SLR1 and SLR2 were adapted for each database's syntax requirements.
 
-\begin{lstlisting}[caption={General Search String},label={lst:general_search}]
-    ("deep learning" AND ("numerical method*" OR "computational mathematics" OR "optimization algorithm*") AND ("big data"))
-\end{lstlisting}
+\subsubsection{Information Sources and Eligibility Criteria}\label{subsubsec:phase-1-planning-and-protocol-development:information-sources-and-eligibility-criteria}
+Our search spans seven major academic databases (IEEE Xplore, ACM Digital Library, SpringerLink, Scopus, Web of Science, JSTOR, AIS) to ensure broad coverage of both computer science and applied mathematics literature.
 
-\begin{lstlisting}[caption={IEEE Explore Search String},label={lst:iee_explore}]
-    ("deep learning" AND ("numerical method*" OR "computational mathematics" OR "optimization algorithm*") AND ("big data"))
-\end{lstlisting}
-
-\begin{lstlisting}[caption={Scopus Search String},label={lst:scopus}]
-    (TITLE-ABS("deep learning") AND (TITLE-ABS("numerical method*" OR "computational mathematics" OR "optimization algorithm*")) AND TITLE-ABS("big data"))
-\end{lstlisting}
-
-\begin{lstlisting}[caption={Aisel Search String},label={lst:aisel}]
-    ([[Title:"deep learning"] AND [Title: "numerical method*"]] OR [Title: "computational mathematics"] OR [[Title: "optimization algorithm*"] AND [Title: "big data"])
-\end{lstlisting}
-
-\begin{lstlisting}[caption={ACM Search String},label={lst:acm}]
-    ([[[Title: "deep learning"] AND [Title: "numerical method*"]] OR [Title: "computational mathematics"] OR [[Title: "optimization algorithm*"] AND [Title: "big data"]]] AND [[Abstract: "deep learning"] OR [Abstract: "numerical method*"] OR [Abstract: "computational mathematics"] OR [Abstract: "optimization algorithm*"] OR [Abstract: "big data"]])
-\end{lstlisting}
-
-\begin{lstlisting}[caption={Springer Search String},label={lst:springer}]
-    ( TITLE-ABS ( "deep learning" ) AND ( TITLE-ABS ( "numerical method*" OR "computational mathematics" OR "optimization algorithm*" ) ) AND TITLE-ABS ( "big data" ) )
-\end{lstlisting}
-
-SLR 2:
-\begin{lstlisting}[caption={SLR 2},label={lst:slr_2}]
-    (("deep learning" OR "neural network*") AND ("distributed computing" OR "parallel processing" OR "GPU acceleration" OR "federated learning") AND ("big data" OR "large-scale") AND (scalability OR performance))
-\end{lstlisting}
-
-\subsubsection{Information Sources}\label{subsubsec:phase-1-planning-and-protocol-development:information-sources}
-IEEE Xplore, ACM Digital Library, SpringerLink, Scopus, Web of Science, JSTOR, AIS
-
-\subsubsection{Eligibility Criteria}\label{subsubsec:phase-1-planning-and-protocol-development:eligibility-criteria}
-Inclusion criteria for SLR 1:
+Inclusion criteria:
 \begin{itemize}
     \item Studies published between January 1, 2014 and September 21, 2024
     \item Peer-reviewed journal articles and full conference papers
     \item English language publications
     \item Studies focusing on numerical methods for deep learning in big data contexts
     \item Research explicitly addressing computational efficiency or accuracy of numerical methods
-    \item Studies providing quantitative, qualitative results or comparative analyses of numerical methods
+    \item Studies providing quantitative, qualitative results or comparative analyses of numerical methods.
 \end{itemize}
-
-Exclusion criteria for SLR 1:
+Exclusion criteria:
 \begin{itemize}
     \item Studies not explicitly addressing big data characteristics
     \item Publications without clear details on the numerical methods used
@@ -676,329 +433,116 @@ Exclusion criteria for SLR 1:
     \item Duplicate studies or multiple publications of the same research
 \end{itemize}
 
+
 \subsection{Phase 2: Literature Search and Study Selection}\label{subsec:phase-2-literature-search-and-study-selection}
-\subsubsection{Search Execution}\label{subsubsec:phase-2-literature-search-and-study-selection:search-execution}
-\begin{enumerate}
-    \item Execute search strategy on selected databases
-    \item Import results to a unified CSV file
-\end{enumerate}
+\subsubsection{Search Execution and Initial Processing}\label{subsubsec:phase-2-literature-search-and-study-selection:search-execution-and-initial-processing}
+The query results of each of the seven databases were exported to CSV format. \ATM{The initial search yielded approximately 12,000 papers across all the seven databases.}
 
-\subsubsection{Deduplication}\label{subsubsec:phase-2-literature-search-and-study-selection:deduplication}
+The CSV format was then uploaded to Baserow software [??], where duplicate papers were removed. This process eliminated nearly 30\% of initial results, highlighting the substantial overlap across the seven databases.
 
-\begin{enumerate}
-    \item Remove duplicates
-\end{enumerate}
+\subsubsection{Refining Screening Through Delphi Consensus}\label{subsubsec:phase-2-literature-search-and-study-selection:refining-screening-through-delphi-consensus}
+The screening was carried out by the coauthors of this paper, and the initial screening phase revealed unexpected challenges in inter-rater reliability with Krippendorff's alpha measuring only 0.4 across coauthor teams. This low agreement prompted the implementation of a modified Delphi protocol, based on RAND/UCLA methodology \citep{fitch2001rand} and Dalkey's classical Delphi framework \citep{dalkey1969delphi}.
 
-\subsubsection{Initial Screening}\label{subsubsec:phase-2-literature-search-and-study-selection:initial-screening}
+In Round 1, each coauthor independently assessed 50 randomly selected papers, documenting detailed rationales for inclusion/exclusion decisions. The anonymous compilation of these assessments revealed three primary areas of disagreement: interpretation of "big data" characteristics, assessment of methodological rigor, and classification of hybrid numerical-distributed approaches. Round 2 provided controlled feedback, presenting coauthors with statistical summaries of group responses alongside anonymized rationales for divergent assessments and written feedback from each coauthor on points of disagreement. Round 3 employed nominal group techniques \citep{delbecq1971group} to transform these insights into operational criteria. Through structured discussion, we developed explicit screening guidelines addressing each major point of disagreement, including: Operational definitions of big data characteristics (volume, velocity requirements), minimum methodological reporting standards for numerical methods and decision rules for classifying hybrid approaches. These criteria were codified in a  decision flowchart (\cref{fig:decision-flow2}).
 
-\begin{enumerate}
-    \item Initial screening of titles and abstracts
-    \item Following low inter-rater reliability (Krippendorff's $a = 0.4$), implemented Modified Delphi Protocol based on RAND/UCLA methodology \citep{fitch2001rand} and Dalkey's classical Delphi framework \citep{dalkey1969delphi}:
+Following the initial screening rounds, Round 4 served as a validation phase to verify inter-rater reliability. The decision to proceed was determined by Krippendorff's $\alpha$ coefficient:  If $\alpha \geq  0.8$, indicating sufficient agreement, then the study progressed to full screening.  If $\alpha < 0.8$, the coauthors reverted to Round 3 procedures, implementing focused discussions to resolve persistent discrepancies before re-evaluating reliability.
 
-          \paragraph{Round 1: Anonymous Individual Assessment}
-          \begin{itemize}
-              \item Each reviewer independently screens 50 randomly selected papers
-              \item Reviewers document detailed rationale for inclusion/exclusion decisions
-              \item Responses collected via standardized electronic form
-              \item Statistical analysis of agreement levels using methods described by \citet{diamond2014results}
-          \end{itemize}
+\subsubsection{Hierarchical Decision Framework}\label{subsubsec:phase-2-literature-search-and-study-selection:hierarchical-decision-framework}
+Following the Delphi-based consensus methodology outlined by \citet{dalkey1969delphi} and the
+systematic review guidelines of \citet{kitchenham2004procedures}, we conducted a structured consensus meeting to
+establish classification criteria. The meeting employed the Nominal Group Technique as described
+by \citet{delbecq1971group}, resulting in a formalized decision framework.
 
-          \paragraph{Round 2: Controlled Feedback}
-          \begin{itemize}
-              \item Anonymous compilation of Round 1 decisions and rationales
-              \item Distribution of statistical summary showing group response
-              \item Identification of areas of agreement and disagreement
-              \item Written feedback from each reviewer on points of disagreement
-          \end{itemize}
+\paragraph{Technical Foundation Verification:} The first gate confirmed each paper's relevance to our core technical domains, requiring explicit evidence of deep learning implementation coupled with either numerical methods or distributed computing approaches.
 
-          \paragraph{Round 3: Consensus Development}
-          \begin{itemize}
-              \item Structured meeting following nominal group technique \citep{delbecq1975group}
-              \item Development of explicit screening criteria
-              \item Documentation of specific examples for each criterion
-              \item Creation of decision flowchart for ambiguous cases
-          \end{itemize}
+\paragraph{Big Data Context Assessment:} We required papers to demonstrate  engagement with the four big data characteristics: substantial data volume, real-time processing requirements, heterogeneous data integration, or specialized computational infrastructure.
 
-          \paragraph{Consensus Results}
+\paragraph{Contribution Typology Classification:} The final gate classified the articles by their primary research contribution type, application-oriented, or hybrid.
 
-          \paragraph{Round 4: Validation}
-          \begin{itemize}
-              \item Re-screening of original 50 papers using new criteria
-              \item Calculation of new inter-rater reliability
-              \item If Krippendorff's $a > 0.8$, proceed to full screening
-              \item If $a < 0.8$, repeat Round 3 with focused discussion on remaining issues
-          \end{itemize}
-\end{enumerate}
+\subsubsection{Border Case Resolution and Validation}\label{subsubsec:phase-2-literature-search-and-study-selection:border-case-resolution-and-validation}
+For hybrid contributions, we implemented a primary contribution analysis that weighted methodological innovation against domain application. Novel approaches that challenged existing classification schemes underwent third-coauthor evaluation and potential framework adaptation, with all such cases documented for transparency.
 
-\subsection{Methodological Background}\label{subsec:methodological-background}
-Following the Delphi-based consensus methodology outlined by \citet{dalkey1963experimental} and the systematic review guidelines of \citet{kitchenham2004procedures}, we conducted a structured consensus meeting to establish classification criteria. The meeting employed the Nominal Group Technique as described by \citet{delbecq1971group}, resulting in a formalized decision framework.
-
-\subsection{Decision Framework Overview}\label{subsec:decision-framework-overview}
-The consensus process established a hierarchical decision framework for paper classification, illustrated in \cref{fig:decision-flow}. The framework implements a stage-gate approach with sequential evaluation criteria.
-
-\subsection{Primary Decision Gates}\label{subsec:primary-decision-gates}
-Based on consensus deliberation, the following sequential decision gates were established:
-
-\begin{enumerate}
-    \item \textbf{Deep Learning and Numerical Methods Verification}
-          \begin{itemize}
-              \item Explicit use of deep learning techniques
-              \item Clear numerical methods component
-              \item Verifiable technical implementation or application
-          \end{itemize}
-
-    \item \textbf{Big Data Aspects Evaluation}
-          \begin{itemize}
-              \item Volume: Significant data scale as defined by \citet{laney2001data}
-              \item Velocity: Real-time or streaming data considerations
-              \item Variety: Heterogeneous data types
-              \item Processing: Computational complexity requirements
-          \end{itemize}
-
-    \item \textbf{Contribution Type Classification}
-          \begin{itemize}
-              \item Implementation focus: Technical deployment emphasis
-              \item Application focus: Domain adaptation emphasis
-              \item Hybrid approaches: Primary contribution determination
-          \end{itemize}
-\end{enumerate}
-
-\subsection{Consensus-Based Classification Process}\label{subsec:consensus-based-classification-process}
-The consensus meeting established the following process requirements:
-
-\subsubsection{Initial Screening}\label{subsubsec:consensus-based-classification-process:initial-screening}
-\begin{itemize}
-    \item Independent evaluation of papers
-    \item Application of primary decision gates
-    \item Documentation of decision rationale
-\end{itemize}
-
-\subsubsection{Detailed Evaluation}\label{subsubsec:consensus-based-classification-process:detailed-evaluation}
-Papers passing initial screening undergo detailed evaluation against either:
-\begin{itemize}
-    \item Implementation criteria (minimum 2 of 3 required)
-    \item Application criteria (minimum 2 of 3 required)
-\end{itemize}
-
-\subsubsection{Border Case Resolution}\label{subsubsec:consensus-based-classification-process:border-case-resolution}
-The consensus established specific protocols for border cases:
-
-\begin{enumerate}
-    \item \textbf{Hybrid Contributions}
-          \begin{itemize}
-              \item Evaluate against both criteria sets
-              \item Classify based on primary contribution
-              \item Document dual-nature considerations
-          \end{itemize}
-
-    \item \textbf{Ambiguous Cases}
-          \begin{itemize}
-              \item Require third reviewer evaluation
-              \item Apply decision framework strictly
-              \item Document specific points of ambiguity
-          \end{itemize}
-
-    \item \textbf{Novel Approaches}
-          \begin{itemize}
-              \item Evaluate against established criteria
-              \item Consider potential framework adaptation
-              \item Document precedent-setting decisions
-          \end{itemize}
-\end{enumerate}
-
-\subsection{Inter-Rater Reliability Requirements}\label{subsec:inter-rater-reliability-requirements}
-Based on \citet{krippendorff2004reliability}, the following reliability thresholds were established:
-
-\begin{itemize}
-    \item Initial screening: Krippendorff's $a > 0.8$
-    \item Detailed evaluation: 85\% agreement minimum
-    \item Border cases: Unanimous consensus required
-\end{itemize}
-
-\subsection{Framework Validation}\label{subsec:framework-validation}
-The classification framework was validated through:
-
-\begin{enumerate}
-    \item \textbf{Pilot Testing}
-          \begin{itemize}
-              \item Application to 50 sample papers
-              \item Inter-rater reliability assessment
-              \item Process refinement based on results
-          \end{itemize}
-
-    \item \textbf{Expert Review}
-          \begin{itemize}
-              \item Independent expert evaluation
-              \item Framework refinement feedback
-              \item Documentation of edge cases
-          \end{itemize}
-
-    \item \textbf{Statistical Validation}
-          \begin{itemize}
-              \item Agreement rate analysis
-              \item Decision consistency evaluation
-              \item Process efficiency metrics
-          \end{itemize}
-\end{enumerate}
-
-
-\subsubsection{Deeper Screening}\label{subsubsec:framework-validation:deeper-screening}
-
-\begin{enumerate}
-    \item Full-text assessment of potentially eligible studies
-\end{enumerate}
-
-Document selection process should be done using PRISMA flow diagram.
-
+Validation occurred through three complementary mechanisms. Pilot testing on 50 sample papers confirmed the framework's  effectiveness while identifying cases for refinement. Another coauthor provided external validation of our classification logic, particularly for edge cases. Finally, statistical validation demonstrated strong agreement rates ($>85\%$ overall) and consistency of decision across the coauthors.
 
 \subsection{Phase 3: Quality Assessment}\label{subsec:phase-3-quality-assessment}
-The quality of individual studies will be assessed using a criteria made up of 7 elements, inspired by the CASP checklist for assessing qualitative research and Kitchenham's guidelines on empirical research in software engineering . This assessment will be applied to studies in both SLRs.
 
-\subsubsection{Quality Assessment Criteria}\label{subsubsec:phase-3-quality-assessment:quality-assessment-criteria}
-The criteria test literature on 4 major areas:
+\subsubsection{Quality Assessment Framework}\label{subsubsec:phase-3-quality-assessment:quality-assessment-framework}
+Our assessment criteria examine four  dimensions of research quality, each addressing distinct aspects of scholarly rigor and practical value. The first  establishes the minimum quality threshold, requiring studies to demonstrate systematic research methodologies rather than anecdotal evidence or untested assertions. Papers must clearly articulate their research objectives and contextual foundations, providing readers with sufficient information to evaluate the study's premises and potential limitations.
 
-\paragraph{1. Minimum quality threshold:}
-\begin{itemize}
-    \item Does the paper present research based on systematic data collection and analysis (e.g., experiments, case studies, surveys) rather than solely reporting experiences or opinions?
-    \item Are the objectives and aims of the study clearly communicated, including the reasoning for why the study was undertaken?
-    \item Does the study provide adequate information regarding the context in which the research was carried out?
-\end{itemize}
+The rigor dimension evaluates the appropriateness and robustness of the research design, examining whether the chosen methodologies align with the stated objectives and whether data collection approaches yield valid, reliable evidence.
 
-\paragraph{2. Rigour:}
-\begin{itemize}
-    \item Is the research design appropriate to address the objectives of the research?
-    \item Is there a data collection method used and is it appropriate?
-\end{itemize}
+Credibility forms our third assessment dimension, focusing on the transparency and objectivity of reported findings. In a field often characterized by competing optimization claims and performance benchmarks, we pay particular attention to whether studies present results comprehensively, acknowledging limitations and potential biases. The final relevance dimension ensures the research contributes meaningfully to either academic knowledge or practical applications.
 
-\paragraph{3. Credibility:}
-\begin{itemize}
-    \item Does the study report findings in a clear and unbiased manner?
-\end{itemize}
+\subsubsection{Assessment Methodology}\label{subsubsec:phase-3-quality-assessment:assessment-methodology}
+The quality assessment process employs a two-phase approach designed to  identify high-quality studies while maintaining rigorous standards. Phase 1 serves as an initial filter, applying only the minimum quality threshold criteria to quickly eliminate studies lacking fundamental methodological soundness.
 
-\paragraph{4. Relevance:}
-\begin{itemize}
-    \item Does the study provide value for practice or research?
-\end{itemize}
+Papers passing Phase 1 advance to comprehensive evaluation in Phase 2, where coauthors assess all remaining quality dimensions. Each criterion receives a binary 'yes/no' assessment, with studies requiring at least 75\% positive evaluations across all criteria to qualify for inclusion.
 
-\subsubsection{Assessment Process}\label{subsubsec:phase-3-quality-assessment:assessment-process}
-\begin{enumerate}
-    \item The assessment will be conducted in two phases:
-          \begin{itemize}
-              \item Phase 1: Assess only the minimum quality threshold criteria.
-              \item Phase 2: If a study passes Phase 1, assess it for rigour, credibility, and relevance.
-          \end{itemize}
-    \item reviewers will independently assess each study.
-    \item Each criterion will be scored as either 'yes' or 'no'.
-    \item A study passes the quality assessment if it receives positive responses for at least 75\% of the criteria.
-    \item Inter-rater reliability will be assessed using Krippendorff's alpha, aiming for $q > 0.8$.
-    \item Disagreements will be resolved through discussion. If consensus cannot be reached, a third reviewer will be consulted.
-\end{enumerate}
+To maintain assessment consistency coauthors independently evaluate each study, with their judgments compared using Krippendorff's $alpha$ coefficient. Our target reliability threshold of $\alpha > 0.8$ reflects an acceptable standards necessary for systematic reviews in technical domains.
 
-\subsubsection{Quality Threshold}\label{subsubsec:phase-3-quality-assessment:quality-threshold}
-To be included in the final analysis, a study must:
-\begin{itemize}
-    \item Pass all criteria in the minimum quality threshold category (Phase 1)
-    \item Receive positive responses for at least 75\% of all criteria (Phase 1 and 2 combined)
-    \item Achieve at least 75\% inter-rater reliability
-\end{itemize}
+\subsubsection{Validation and Threshold Enforcement}\label{subsubsec:phase-3-quality-assessment:validation-and-threshold-enforcement}
 
-This quality assessment framework will ensure that only studies meeting a minimum standard of methodological rigour and relevance are included in our analysis, thereby enhancing the reliability and validity of our findings.
-
-Quality threshold: 75\% positive responses, 75\% inter-rater reliability (Krippendorff's $q > 0.8$)
+Testing on a representative sample of 50 papers allowed to refine assessment criteria and verify scoring consistency.
+Our final inclusion requirements enforce three complementary standards: perfect adherence to minimum quality thresholds, 75\% positive evaluations across all criteria, and maintained inter-rater reliability.
 
 \subsection{Phase 4: Data Extraction}\label{subsec:phase-4-data-extraction}
-\subsubsection{Data Extraction}\label{subsubsec:phase-4-data-extraction:data-extraction}
-Following the systematic review methodology of \citet{kitchenham2007guidelines}, we will use NVivo for data extraction with the following coding framework:
+Our extraction methodology employs NVivo \cite{kitchenham2007guidelines} qualitative analysis software to  code and organize study contents according to a hierarchical framework encompassing four primary dimensions. The Method dimension captures technical specifications, including detailed descriptions of numerical algorithms or distributed computing techniques (M-01), their implementation approaches (M-02), and validation methodologies (M-03). This proves particularly crucial for enabling comparative analysis across studies with varying technical implementations.
 
-\begin{itemize}
-    \item \textbf{Method [CODE: M]}
-          \begin{itemize}
-              \item Numerical method/algorithm description [M-01]
-              \item Implementation approach [M-02]
-              \item Validation technique [M-03]
-          \end{itemize}
+The context dimension documents essential environmental factors that influence research outcomes, including problem domains (C-01), dataset characteristics (C-02), and computing environments (C-03). Capturing these contextual elements allows to properly situate each study's findings within its specific experimental conditions.
 
-    \item \textbf{Context [CODE: C]}
-          \begin{itemize}
-              \item Problem domain [C-01]
-              \item Dataset characteristics [C-02]
-              \item Computing environment [C-03]
-          \end{itemize}
+For the results dimension, we extract quantitative outcomes (R-01) using standardized metrics wherever possible, along with any comparative analyses (R-02) and assessments of statistical significance (R-03). This structured approach to performance data enables meaningful cross-study comparisons despite variations in reporting formats. The Findings dimension then captures higher-level insights, including key contributions (F-01), acknowledged limitations (F-02), and suggested future directions (F-03), which collectively inform our gap analysis and research agenda.
 
-    \item \textbf{Results [CODE: R]}
-          \begin{itemize}
-              \item Performance metrics [R-01]
-              \item Comparative analysis [R-02]
-              \item Statistical significance [R-03]
-          \end{itemize}
+The extraction process follows a systematic workflow in NVivo, beginning with the creation of hierarchical nodes. Coauthors code each paper using this structure, applying both deductive coding based on our predefined categories and inductive coding to capture emergent themes. Matrix coding queries then help identify patterns and relationships across studies, such as correlations between methodological approaches and performance outcomes.
 
-    \item \textbf{Findings [CODE: F]}
-          \begin{itemize}
-              \item Key contributions [F-01]
-              \item Limitations [F-02]
-              \item Future directions [F-03]
-          \end{itemize}
-\end{itemize}
-
-\subsubsection{Data Extraction Process}\label{subsubsec:phase-4-data-extraction:data-extraction-process}
-\begin{enumerate}
-    \item Create hierarchical nodes in NVivo following the coding framework
-    \item Code each paper systematically using the defined nodes
-    \item Use matrix coding queries to identify patterns across studies
-    \item Export coded data to synthesis templates for analysis
-\end{enumerate}
-
-\subsubsection{Quality Assessment}\label{subsubsec:phase-4-data-extraction:quality-assessment}
-
-
-\subsection{Phase 4: Data Synthesis for Individual SLRs}\label{subsec:phase-4-data-synthesis-for-individual-slrs}
-For each SLR:
-\begin{itemize}
-    \item Narrative synthesis of findings
-    \item Categorization of methods/techniques
-    \item Analysis of performance metrics
-\end{itemize}
 
 \subsection{Phase 5: Combined Analysis}\label{subsec:phase-5-combined-analysis}
+This phase employs two complementary analytical approaches; the meta-analysis and network analysis which together provide both quantitative and structural understanding of the research landscape.
 
-\subsubsection{Meta-Analysis}\label{subsubsec:phase-5-combined-analysis:meta-analysis}
-\begin{itemize}
-    \item Random-effects model for common outcome measures
-    \item Forest plots for combined effect sizes
-    \item Subgroup analyses for different categories
-\end{itemize}
+\subsubsection{Meta-Analysis Methodology}\label{subsubsec:phase-5-combined-analysis:meta-analysis-methodology}
 
-\subsubsection{Network Analysis}\label{subsubsec:phase-5-combined-analysis:network-analysis}
-\begin{itemize}
-    \item Comprehensive network graph
-    \item Community detection
-    \item Centrality measure analysis
-\end{itemize}
+Our meta-analytical approach accounts for the inherent heterogeneity across studies in both technical implementations and experimental conditions. The studies may vary between studies due to differences in algorithms, architectures, datasets, and evaluation metrics. For common outcome measures such as computational efficiency and scalability improvements, visualization were done through forest plots, which  serve multiple analytical purposes.
+
+
+\subsubsection{Network Analysis Framework}\label{subsubsec:phase-5-combined-analysis:network-analysis-framework}
+
+\ATM{Network analysis examines interconnected papers through
+    a comprehensive network graph for visualization, community detection identifies clusters of densely connected nodes that are similar; and centrality measure analysis quantifies node importance.}
+
 
 \subsection{Phase 6: Study Classification and Bias Assessment}\label{subsec:phase-6-study-classification-and-bias-assessment}
-\subsubsection{Study Classification}\label{subsubsec:phase-6-study-classification-and-bias-assessment:study-classification}
-Classify all studies according to Cooper's taxonomy:
-\begin{itemize}
-    \item Focus, Goal, Perspective, Coverage, Organization, Audience
-\end{itemize}
 
-\subsubsection{Assessment of Meta-Bias}\label{subsubsec:phase-6-study-classification-and-bias-assessment:assessment-of-meta-bias}
-\begin{itemize}
-    \item Funnel plot examination
-    \item Egger's test for small-study effects
-\end{itemize}
+
+\subsubsection{Multidimensional Study Classification}\label{subsubsec:phase-6-study-classification-and-bias-assessment:multidimensional-study-classification}
+The focus dimension distinguishes between studies emphasizing theoretical foundations, methodological innovations, or practical applications; a particularly important distinction given the varied nature of research in this interdisciplinary field.
+
+The goal dimension reveals important patterns in how studies position themselves within the research landscape. Integration-focused works that synthesize existing knowledge play a different but equally valuable role compared to studies offering pointed criticism of current approaches or those identifying central issues requiring attention.
+
+Perspective classification separates neutral, comprehensive reporting from position papers advocating particular approaches. In a field characterized by competing optimization strategies and architectural paradigms, understanding this dimension helps contextualize reported findings and performance claims. The coverage dimension then examines the breadth of literature considered, distinguishing between exhaustive reviews and more focused examinations of important works.
+
+Organization and audience classifications reveal whether studies adopt conceptual or methodological structures.
+
+\subsubsection{Comprehensive Bias Assessment}\label{subsubsec:phase-6-study-classification-and-bias-assessment:comprehensive-bias-assessment}
+
+Our bias assessment methodology employs both visual and statistical techniques to detect potential distortions in the evidence base. Funnel plot analysis serves as our primary visual tool for identifying publication bias. In the context of deep learning research, we pay particular attention to potential biases against no results or modest improvements, which may be underrepresented in the literature despite their importance for understanding the true landscape of methodological performance.
+
+Egger's test complements this visual analysis with formal statistical testing for small-study effects. This linear regression approach helps quantify funnel plot asymmetries and determine whether smaller studies tend to show systematically different effects than larger, potentially more rigorous investigations.
 
 \subsection{Phase 7: Synthesis and Reporting}\label{subsec:phase-7-synthesis-and-reporting}
-\begin{itemize}
-    \item Compare and contrast findings from both SLRs
-    \item Identify synergies between numerical methods and distributed computing techniques
-    \item Discuss trade-offs between efficiency, scalability, and accuracy
-    \item Highlight emerging trends and future research directions
-    \item Assess confidence in cumulative evidence using GRADE approach
-    \item Prepare final report following PRISMA guidelines
-\end{itemize}
 
-This phased approach ensures a systematic and comprehensive review of computational mathematics for AI in big data contexts, combining insights from numerical methods and distributed computing techniques.
+This final phase integrates findings from both systematic literature reviews through a  comparative analysis. We identify  synergies between numerical methods and distributed computing techniques, revealing how algorithmic choices interact with parallel architectures to impact overall system performance. The analysis highlights fundamental trade-offs between computational efficiency, scalability, and accuracy across different application contexts. Emerging trends are mapped to reveal promising research directions at the intersection of numerical optimization and distributed systems.
+
+This phased approach ensures a systematic and comprehensive review of computational mathematics for AI in big data contexts, combining insights from numerical methods and distributed
+computing techniques
+
+The entire selection process was documented using PRISMA flow diagrams as shown in \cref{fig:PRISMA-standards}, which visually tracked the progression from initial search results to final inclusion in the study.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{media/flow-diagram.pdf}
+    \caption{PRISMA standards followed}
+    \label{fig:PRISMA-standards}
+    \Description{PRISMA standards followed}
+\end{figure}
 
 \section{Findings and Analysis}\label{sec:findings-and-analysis}
 This section presents the findings from our systematic analysis of computational mathematics for artificial intelligence, focusing on numerical methods and distributed computing techniques for deep learning on big data. Following the PRISMA guidelines \citet{moher2009preferred}, we analyzed 77 papers published between 2016 and 2024. The analysis is organized according to our research questions, examining numerical optimization methods (RQ1.1), their performance metrics (RQ1.2), distributed computing approaches (RQ2.1), and their scalability characteristics (RQ2.2).
@@ -1233,7 +777,7 @@ Healthcare dominates the application landscape, with optimization techniques add
 
 The healthcare domain shows a clear preference for nature-inspired algorithms when handling medical imaging and disease prediction tasks, likely due to these algorithms' ability to navigate complex, non-convex solution spaces without requiring gradient information - a valuable property when working with the inherent variability of medical data \citep{Eid20223845, Ananth2022918}.
 
-For example, in multi-disease prediction frameworks, Eid et al. \citep{Eid20223845} employed genetic algorithms to optimize neural network architectures for simultaneous prediction of multiple chronic conditions. Their approach demonstrated a 27\% improvement in prediction accuracy compared to standard gradient-based optimization techniques when applied to heterogeneous patient data containing both structured and unstructured information.
+For example, in multi-disease prediction frameworks, \citet{Eid20223845} employed genetic algorithms to optimize neural network architectures for simultaneous prediction of multiple chronic conditions. Their approach demonstrated a 27\% improvement in prediction accuracy compared to standard gradient-based optimization techniques when applied to heterogeneous patient data containing both structured and unstructured information.
 
 This preference for nature-inspired algorithms in healthcare is consistent across multiple sub-domains. In medical imaging, 68.7\% of studies employed nature-inspired techniques, while in disease prediction the figure was 59.4\%. Electronic health record analysis showed a similar pattern (64.2\%), as did clinical decision support systems (57.1\%). This consistent pattern suggests that the inherent characteristics of healthcare data - high dimensionality, noise, missing values, and complex interdependencies - align particularly well with the exploratory capabilities of nature-inspired optimization approaches.
 
@@ -1242,19 +786,19 @@ Cybersecurity represents the second largest domain, reflecting the critical need
 
 The cybersecurity domain shows a strong preference for Bayesian approaches, particularly in applications requiring uncertainty quantification \citep{Ghahramani2015}. This preference stems from the need to balance false positives and false negatives in security contexts, where the cost of misclassification can be substantial.
 
-In network intrusion detection systems, for instance, Bayesian optimization methods demonstrated superior performance in handling concept drift and adapting to novel attack patterns. For fake news detection, Kanchanamala et al. \citet{Kanchanamala20232414} showed that Chimp Optimization Algorithm variants achieved 18\% higher F1-scores compared to traditional approaches when applied to complex textual data.
+In network intrusion detection systems, for instance, Bayesian optimization methods demonstrated superior performance in handling concept drift and adapting to novel attack patterns. For fake news detection, \citet{Kanchanamala20232414} showed that Chimp Optimization Algorithm variants achieved 18\% higher F1-scores compared to traditional approaches when applied to complex textual data.
 
 Our analysis of cybersecurity applications revealed that 53.8\% employed Bayesian optimization approaches. This preference was particularly pronounced in threat detection (61.5\%) and anomaly detection (58.3\%) sub-domains. The preference for Bayesian methods can be attributed to their ability to quantify uncertainty and adapt to changing threat landscapes - critical capabilities in cybersecurity contexts where adversaries actively evolve their tactics.
 
 \subsubsection{Financial Applications}\label{subsubsec:overview-of-included-studies:financial-applications}
 Financial services applications, representing 14.3\% of our sample, showed a distinct preference for evolutionary algorithms (41.2\%). This pattern was strongest in portfolio optimization (58.3\%) and algorithmic trading (53.8\%) applications. The temporal nature of financial data and the need to balance multiple objectives (risk, return, liquidity, etc.) align well with the capabilities of evolutionary approaches.
 
-For example, Zhou et al. \citet{Zhou20211} employed differential evolution for portfolio optimization, achieving a 14.6\% improvement in risk-adjusted returns compared to traditional methods. Their approach dynamically adjusted the crossover and mutation rates based on market volatility, enabling more aggressive exploration during stable periods and more conservative optimization during volatile markets.
+For example, \citet{Zhou20211} employed differential evolution for portfolio optimization, achieving a 14.6\% improvement in risk-adjusted returns compared to traditional methods. Their approach dynamically adjusted the crossover and mutation rates based on market volatility, enabling more aggressive exploration during stable periods and more conservative optimization during volatile markets.
 
 \subsubsection{Manufacturing Applications}\label{subsubsec:overview-of-included-studies:manufacturing-applications}
 Manufacturing applications (11.5\% of our sample) showed a more balanced distribution of optimization techniques, with nature-inspired methods (41.7\%) and evolutionary approaches (25.0\%) being the most common. This balance may reflect the diverse nature of manufacturing optimization problems, which range from process optimization to quality control and predictive maintenance.
 
-In predictive maintenance applications, for instance, Thoppil et al. \citep{Thoppil2021} employed Bayesian optimization to tune LSTM networks for equipment failure prediction, achieving a 22.3\% reduction in false alarms while maintaining high recall (93.7\%) for actual failures. This balanced performance is crucial in manufacturing contexts where both downtime and unnecessary maintenance are costly.
+In predictive maintenance applications, for instance, \citet{Thoppil2021} employed Bayesian optimization to tune LSTM networks for equipment failure prediction, achieving a 22.3\% reduction in false alarms while maintaining high recall (93.7\%) for actual failures. This balanced performance is crucial in manufacturing contexts where both downtime and unnecessary maintenance are costly.
 
 \subsubsection{Cross-Domain Analysis of Optimization Performance}\label{subsubsec:overview-of-included-studies:cross-domain-analysis-of-optimization-performance}
 Beyond technique selection patterns, we also analyzed performance differences across domains. \Cref{fig:domain_performance} illustrates the relative performance of different optimization approaches in each domain, measured by the percentage improvement over baseline methods reported in the studies.
@@ -1495,11 +1039,11 @@ where $\alpha > 0$ is the step size scaling factor, $\oplus$ represents entry-wi
     \textrm{Levy} \sim u = t^{-\lambda}, \quad (1 < \lambda \leq 3)
 \end{equation}
 
-This heavy-tailed distribution allows for occasional long jumps, enhancing exploration of the parameter space. In Sagu et al.'s implementation \citep{Sagu202535}, the Cuckoo Search algorithm achieved 31\% faster convergence compared to traditional hyperparameter optimization techniques when tuning deep neural networks for network traffic analysis. Their approach dynamically adjusted the abandonment probability based on the progress of the search, enhancing both exploration in early stages and exploitation in later stages.
+This heavy-tailed distribution allows for occasional long jumps, enhancing exploration of the parameter space. In \citeauthor{Sagu202535}'s implementation \citep{Sagu202535}, the Cuckoo Search algorithm achieved 31\% faster convergence compared to traditional hyperparameter optimization techniques when tuning deep neural networks for network traffic analysis. Their approach dynamically adjusted the abandonment probability based on the progress of the search, enhancing both exploration in early stages and exploitation in later stages.
 
-\textit{Fruit Fly Optimization Algorithm} has been successfully integrated with Support Vector Regression for river flow forecasting \citep{Samadianfard20191934}. Its foraging behavior-inspired approach effectively navigates high-dimensional parameter spaces common in climate modeling applications. Samadianfard et al.'s implementation achieved a 24\% reduction in mean absolute error compared to standard gradient-based optimization methods when applied to highly variable temporal data sequences. Their hybrid approach combined the global search capabilities of the fruit fly algorithm with local refinement stages, producing a more robust optimization process for noisy environmental data.
+\textit{Fruit Fly Optimization Algorithm} has been successfully integrated with Support Vector Regression for river flow forecasting \citep{Samadianfard20191934}. Its foraging behavior-inspired approach effectively navigates high-dimensional parameter spaces common in climate modeling applications. \citeauthor{Samadianfard20191934}'s implementation achieved a 24\% reduction in mean absolute error compared to standard gradient-based optimization methods when applied to highly variable temporal data sequences. Their hybrid approach combined the global search capabilities of the fruit fly algorithm with local refinement stages, producing a more robust optimization process for noisy environmental data.
 
-\textit{Chimp Optimization Algorithm}'s exponential variant has been applied to optimize deep neuro-fuzzy networks within MapReduce frameworks for fake news detection \citep{Kanchanamala20232414}. The hierarchical social behavior mimicked by this algorithm enables effective feature extraction and classification in complex textual datasets. Kanchanamala et al. demonstrated a 15.6\% improvement in classification accuracy and 41\% reduction in convergence time compared to traditional optimization approaches. Their adaptation introduced a dynamic hierarchy factor that evolved throughout the optimization process, providing enhanced exploration during early iterations and exploitation in later stages.
+\textit{Chimp Optimization Algorithm}'s exponential variant has been applied to optimize deep neuro-fuzzy networks within MapReduce frameworks for fake news detection \citep{Kanchanamala20232414}. The hierarchical social behavior mimicked by this algorithm enables effective feature extraction and classification in complex textual datasets.\citeauthor{Kanchanamala20232414} demonstrated a 15.6\% improvement in classification accuracy and 41\% reduction in convergence time compared to traditional optimization approaches. Their adaptation introduced a dynamic hierarchy factor that evolved throughout the optimization process, providing enhanced exploration during early iterations and exploitation in later stages.
 
 \Cref{tab:nature_inspired_performance} summarizes the performance improvements reported across these and other nature-inspired approaches in our sample, demonstrating their effectiveness across different performance dimensions:
 
@@ -1668,7 +1212,7 @@ Our analysis of computational efficiency revealed significant variations across 
 
 
 \subsubsection{Training Time Optimization}\label{subsubsec:performance-analysis-of-numerical-methods-rq12:training-time-optimization}
-Studies reporting training time reductions achieved impressive results through various approaches. Wang et al. \citet{Wang2021} demonstrated a 42.7\% reduction in training time for deep neural networks through an enhanced Adam optimizer variant that adaptively adjusted learning rates based on gradient history and variance.
+Studies reporting training time reductions achieved impressive results through various approaches.\citet{Wang2021} demonstrated a 42.7\% reduction in training time for deep neural networks through an enhanced Adam optimizer variant that adaptively adjusted learning rates based on gradient history and variance.
 
 \begin{figure}[ht]
     \centering
@@ -1709,7 +1253,7 @@ where $\beta_{\text{base}}$ is the baseline momentum value, $\gamma$ is a scalin
 \subsubsection{Inference Latency Reduction}\label{subsubsec:performance-analysis-of-numerical-methods-rq12:inference-latency-reduction}
 Inference optimization was particularly emphasized in real-time applications. \citet{Kim2022} achieved a 65.4\% reduction in inference latency through model pruning combined with hardware-aware optimization techniques that specifically targeted the computational bottlenecks of their target hardware platforms.
 
-Kim et al.'s approach \citep{Kim2022} employed a three-stage optimization pipeline that combined structural pruning with hardware-specific kernel optimization:
+\citeauthor{Kim2022}'s approach \citep{Kim2022} employed a three-stage optimization pipeline that combined structural pruning with hardware-specific kernel optimization:
 
 \begin{enumerate}
     \item \textbf{Importance-based pruning:} Removing less critical neurons based on activation patterns
@@ -1722,7 +1266,7 @@ When applied to vision models deployed on mobile GPU platforms, this approach re
 \subsubsection{Memory Efficiency}\label{subsubsec:performance-analysis-of-numerical-methods-rq12:memory-efficiency}
 Memory optimization techniques showed particular promise for deployment in resource-constrained environments. \citet{Lin2022} reduced peak memory requirements by 73.8\% through their gradient checkpointing approach for large language models, strategically trading computation for memory by recomputing activations during backpropagation.
 
-The checkpointing strategy employed by Lin et al. \citep{Lin2022} is particularly noteworthy for its mathematical elegance. Rather than storing all activations during the forward pass, their approach selectively stores activations at logarithmically spaced intervals and recomputes intermediate values during backpropagation. The checkpointing schedule is determined by:
+The checkpointing strategy employed by \citet{Lin2022} is particularly noteworthy for its mathematical elegance. Rather than storing all activations during the forward pass, their approach selectively stores activations at logarithmically spaced intervals and recomputes intermediate values during backpropagation. The checkpointing schedule is determined by:
 
 \begin{equation}\label{eq:checkpointing-schedule}
     C = \{c_i | c_i = \lfloor i \cdot \sqrt{n} \rfloor, i \in [0, \sqrt{n}]\}
@@ -1733,7 +1277,7 @@ where $n$ is the total number of layers and $C$ is the set of layer indices wher
 \subsubsection{Energy Consumption Reduction}\label{subsubsec:performance-analysis-of-numerical-methods-rq12:energy-consumption-reduction}
 Energy efficiency optimization has become increasingly important, particularly for edge and mobile computing. \citet{Park2022} achieved 58.4\% energy consumption reduction through adaptive computation techniques that dynamically adjusted model complexity based on input difficulty, allocating computational resources proportionally to task complexity.
 
-Park et al.'s approach \citep{Park2022} employed a controller network that determined which components of the main network to activate based on input characteristics. Their energy consumption model incorporated both computational costs and memory access patterns:
+\citeauthor{Park2022}'s approach \citep{Park2022} employed a controller network that determined which components of the main network to activate based on input characteristics. Their energy consumption model incorporated both computational costs and memory access patterns:
 
 \begin{equation}\label{eq:energy_consumption_model}
     E_{\text{total}} = \alpha \cdot E_{\text{compute}} + \beta \cdot E_{\text{memory}}
@@ -1809,7 +1353,7 @@ Communication efficiency is often the primary bottleneck in distributed deep lea
 \subsubsection{Privacy-Preserving Methods in Distributed Learning}\label{subsubsec:scalability-characteristics-rq22:privacy-preserving-methods-in-distributed-learning}
 As distributed learning systems often involve data from multiple sources, privacy preservation becomes particularly important. Several approaches demonstrated effective privacy preservation while maintaining model quality:
 
-\textit{Privacy-Preserving Federated Learning}: Zhang et al. \citep{Zhang20229876} focused on traffic forecasting in heterogeneous IoT environments, integrating differential privacy with appropriate privacy budgets. Their implementation included adaptive noise calibration based on sensitivity analysis and contribution weighting mechanisms to balance privacy protection with model utility.
+\textit{Privacy-Preserving Federated Learning}: \citet{Zhang20229876} focused on traffic forecasting in heterogeneous IoT environments, integrating differential privacy with appropriate privacy budgets. Their implementation included adaptive noise calibration based on sensitivity analysis and contribution weighting mechanisms to balance privacy protection with model utility.
 
 \textit{Decentralized Learning Architectures}: Privacy-preserving implementations employed peer-to-peer architectures with gossip-based communication protocols, demonstrating reduction in coordination overhead for dense all-to-all communication patterns. These approaches employed directed exponential graphs to balance communication efficiency with information dissemination speed, eliminating central coordination bottlenecks.
 
@@ -1828,7 +1372,28 @@ Third, the integration of hardware awareness into optimization approaches repres
 
 The methodological gap between theoretical understanding and practical application represents a critical research opportunity. Future work should focus on strengthening the theoretical foundations of widely used nature-inspired algorithms, developing more comprehensive evaluation frameworks that capture real-world deployment constraints, and exploring the intersection between hardware architecture and algorithm design.
 
-\subsection{Discussion}\label{subsec:discussion}
+% \subsection{Discussion}\label{subsec:discussion}
+
+% <<BRIAN>> Not sure which one is newer due to lack of versioning
+
+%The findings of this systematic review reveal several fundamental insights about the current state and future directions of computational optimization for deep learning on big data. Our analysis of 77 studies demonstrates that the field has evolved significantly from its early focus on generic optimization approaches to more sophisticated, domain-aware solutions that account for specific application requirements and hardware constraints. This evolution reflects the growing maturity of deep learning applications across diverse sectors and the increasing complexity of both models and datasets.
+
+%One of the most striking findings is the clear domain-dependence of optimization effectiveness. The healthcare domain's strong preference for nature-inspired algorithms (62.5\% adoption) suggests that these methods are particularly well-suited for handling the high-dimensional, noisy data characteristic of medical applications. The 27.4\% accuracy improvements observed in medical imaging tasks provide compelling evidence for this approach. Similarly, the cybersecurity domain's reliance on Bayesian methods (53.8\% adoption) underscores the importance of uncertainty quantification in security applications, where the cost of false positives and negatives can be substantial. These domain-specific patterns challenge the traditional assumption that optimization techniques can be universally applied, suggesting instead that algorithm selection must consider the fundamental characteristics of both the data and the task.
+
+%The distributed computing findings reveal both significant progress and remaining challenges in scaling deep learning to big data problems. The ability of federated learning systems to maintain efficiency up to 800 client nodes represents a major advancement for distributed training scenarios. However, the subsequent decline in efficiency due to communication overhead and statistical heterogeneity points to fundamental limitations in current approaches. The success of hybrid 3D parallelism in achieving near-linear scaling to 64 GPUs demonstrates the potential of combining multiple parallelism strategies, but also highlights the need for more sophisticated load balancing techniques as model complexity continues to increase.
+
+%A critical tension emerges between theoretical rigor and practical effectiveness in our analysis. The inverse relationship we observed - where the most theoretically sound methods (gradient-based) show limited adoption (12\%) while less theoretically grounded approaches (nature-inspired) dominate practical use (42\%) - raises important questions about research priorities in the field. This disconnect suggests that current theoretical frameworks may not adequately capture the practical considerations that drive algorithm selection in real-world applications. The reproducibility gap, where only 23.5\% of nature-inspired studies provide source code compared to 67.2\% of gradient-based studies, further complicates this issue by making it difficult to validate empirical claims.
+
+%The performance trade-offs we identified have significant implications for system design. The 73.8\% memory reduction achieved by some optimization techniques comes at the cost of up to 5.8\% accuracy degradation, forcing practitioners to make difficult decisions about resource allocation. Similarly, while privacy-preserving techniques can limit accuracy loss to under 3\%, they often require careful parameter tuning and may not be suitable for all applications. These trade-offs underscore the need for multi-objective optimization frameworks that can explicitly balance competing requirements.
+
+%Several important limitations of the current research landscape emerged from our analysis. The lack of standardized benchmarks makes it difficult to compare different optimization approaches directly, while the variability in reporting practices complicates efforts to assess reproducibility. The ambiguity around what constitutes "big data" in many studies suggests the need for more rigorous characterization of dataset scale and complexity. Additionally, the focus on short-term performance metrics in many papers may obscure important considerations about long-term maintainability and adaptability of optimization approaches.
+
+%Looking forward, several key opportunities emerge for advancing the field. Developing theoretical frameworks that better explain the empirical success of nature-inspired algorithms could help bridge the current theory-practice gap. Creating more sophisticated benchmarks that capture real-world deployment constraints would enable more meaningful comparisons between approaches. Investigating the potential of meta-learning techniques to automate optimization strategy selection based on problem characteristics could yield significant productivity improvements. Finally, exploring the intersection of optimization techniques with emerging hardware architectures may unlock new efficiency gains as computing platforms continue to evolve.
+
+%The practical implications of these findings are substantial. For researchers, they suggest the need for more interdisciplinary work that combines mathematical rigor with empirical validation. For practitioners, they provide clear guidance about which optimization approaches are likely to be most effective in different application contexts. Perhaps most importantly, they highlight the growing importance of considering optimization not as an isolated technical challenge, but as an integral part of the broader system design process that must account for domain requirements, hardware constraints, and operational considerations.
+
+%As deep learning continues to advance and datasets grow ever larger, the role of computational optimization will only become more critical. The findings presented here suggest that future progress will depend on our ability to develop more nuanced, context-aware approaches that can balance theoretical soundness with practical effectiveness. By addressing the challenges identified in this review while building on the successes demonstrated across different domains, the field can continue to enable new applications and capabilities in AI.
+
 Our systematic review demonstrates that computational optimization for deep learning on big data is rapidly evolving, with significant advances in nature-inspired algorithms, hardware-aware optimization, and privacy-preserving techniques \citep{Eid20223845, Kim2022, Zhang20229876}. The field is increasingly recognizing the importance of multi-objective optimization frameworks that can balance competing constraints, moving beyond single-metric optimization toward more holistic approaches that better reflect the complexities of real-world deployment scenarios \citep{Deb2014}.
 
 Throughout our analysis, we have identified seven major themes that characterize the current state of computational mathematics for AI optimization:
@@ -1849,7 +1414,7 @@ Throughout our analysis, we have identified seven major themes that characterize
     \item \textbf{Efficiency-Accuracy Trade-offs}: Our analysis documented consistent trade-offs between computational efficiency and model accuracy across different optimization approaches, highlighting the importance of application-specific optimization strategies.
 \end{enumerate}
 
-These themes emerged from our comprehensive analysis of 77 papers spanning multiple domains, techniques, and application contexts. The quantitative evidence we have presented - ranging from the 42.7\% training time reduction achieved by Wang et al. \citep{Wang2021} to the 73.8\% memory efficiency improvement demonstrated by Lin et al. \citep{Lin2022} - illustrates the significant potential of computational optimization approaches to enhance deep learning on big data.
+These themes emerged from our comprehensive analysis of 77 papers spanning multiple domains, techniques, and application contexts. The quantitative evidence we have presented - ranging from the 42.7\% training time reduction achieved by \citet{Wang2021} to the 73.8\% memory efficiency improvement demonstrated by \citet{Lin2022} - illustrates the significant potential of computational optimization approaches to enhance deep learning on big data.
 
 Our findings bridge multiple research communities, connecting computational mathematics with deep learning applications and highlighting opportunities for cross-fertilization of ideas. The domain-specific patterns we identified challenge the notion of universally superior optimization techniques, suggesting instead that researchers and practitioners should select optimization approaches based on the specific requirements and constraints of their application domain.
 
@@ -1883,13 +1448,55 @@ For practitioners, our findings suggest several practical recommendations:
 As computational resources continue to evolve and deep learning models grow in complexity, the field of computational mathematics for AI will remain critical for enabling the next generation of intelligent systems capable of extracting meaningful insights from big data. Our systematic review provides a comprehensive foundation for understanding the current state of this rapidly evolving field and identifying promising directions for future research and development.
 
 
+% \section{Discussion}\label{sec:discussion}
+% This systematic review will provide a comprehensive overview of the current state of numerical methods and distributed computing techniques for deep learning on big data. The findings will be interpreted considering the strength of evidence, applicability, and generalizability. Limitations of the review and the included studies will be discussed, and implications for future research will be outlined.
+
+
+%The findings of this systematic review reveal several fundamental insights about the current state and future directions of computational optimization for deep learning on big data. Our analysis of 77 studies demonstrates that the field has evolved significantly from its early focus on generic optimization approaches to more sophisticated, domain-aware solutions that account for specific application requirements and hardware constraints. This evolution reflects the growing maturity of deep learning applications across diverse sectors and the increasing complexity of both models and datasets.
+
+%One of the most striking findings is the clear domain-dependence of optimization effectiveness. The healthcare domain's strong preference for nature-inspired algorithms (62.5\% adoption) suggests that these methods are particularly well-suited for handling the high-dimensional, noisy data characteristic of medical applications. The 27.4\% accuracy improvements observed in medical imaging tasks provide compelling evidence for this approach. Similarly, the cybersecurity domain's reliance on Bayesian methods (53.8\% adoption) underscores the importance of uncertainty quantification in security applications, where the cost of false positives and negatives can be substantial. These domain-specific patterns challenge the traditional assumption that optimization techniques can be universally applied, suggesting instead that algorithm selection must consider the fundamental characteristics of both the data and the task.
+
+%The distributed computing findings reveal both significant progress and remaining challenges in scaling deep learning to big data problems. The ability of federated learning systems to maintain efficiency up to 800 client nodes represents a major advancement for distributed training scenarios. However, the subsequent decline in efficiency due to communication overhead and statistical heterogeneity points to fundamental limitations in current approaches. The success of hybrid 3D parallelism in achieving near-linear scaling to 64 GPUs demonstrates the potential of combining multiple parallelism strategies, but also highlights the need for more sophisticated load balancing techniques as model complexity continues to increase.
+
+%A critical tension emerges between theoretical rigor and practical effectiveness in our analysis. The inverse relationship we observed - where the most theoretically sound methods (gradient-based) show limited adoption (12\%) while less theoretically grounded approaches (nature-inspired) dominate practical use (42\%) - raises important questions about research priorities in the field. This disconnect suggests that current theoretical frameworks may not adequately capture the practical considerations that drive algorithm selection in real-world applications. The reproducibility gap, where only 23.5\% of nature-inspired studies provide source code compared to 67.2\% of gradient-based studies, further complicates this issue by making it difficult to validate empirical claims.
+
+%The performance trade-offs we identified have significant implications for system design. The 73.8\% memory reduction achieved by some optimization techniques comes at the cost of up to 5.8\% accuracy degradation, forcing practitioners to make difficult decisions about resource allocation. Similarly, while privacy-preserving techniques can limit accuracy loss to under 3\%, they often require careful parameter tuning and may not be suitable for all applications. These trade-offs underscore the need for multi-objective optimization frameworks that can explicitly balance competing requirements.
+
+%Several important limitations of the current research landscape emerged from our analysis. The lack of standardized benchmarks makes it difficult to compare different optimization approaches directly, while the variability in reporting practices complicates efforts to assess reproducibility. The ambiguity around what constitutes "big data" in many studies suggests the need for more rigorous characterization of dataset scale and complexity. Additionally, the focus on short-term performance metrics in many papers may obscure important considerations about long-term maintainability and adaptability of optimization approaches.
+
+%Looking forward, several key opportunities emerge for advancing the field. Developing theoretical frameworks that better explain the empirical success of nature-inspired algorithms could help bridge the current theory-practice gap. Creating more sophisticated benchmarks that capture real-world deployment constraints would enable more meaningful comparisons between approaches. Investigating the potential of meta-learning techniques to automate optimization strategy selection based on problem characteristics could yield significant productivity improvements. Finally, exploring the intersection of optimization techniques with emerging hardware architectures may unlock new efficiency gains as computing platforms continue to evolve.
+
+%The practical implications of these findings are substantial. For researchers, they suggest the need for more interdisciplinary work that combines mathematical rigor with empirical validation. For practitioners, they provide clear guidance about which optimization approaches are likely to be most effective in different application contexts. Perhaps most importantly, they highlight the growing importance of considering optimization not as an isolated technical challenge, but as an integral part of the broader system design process that must account for domain requirements, hardware constraints, and operational considerations.
+
+%As deep learning continues to advance and datasets grow ever larger, the role of computational optimization will only become more critical. The findings presented here suggest that future progress will depend on our ability to develop more nuanced, context-aware approaches that can balance theoretical soundness with practical effectiveness. By addressing the challenges identified in this review while building on the successes demonstrated across different domains, the field can continue to enable new applications and capabilities in AI.
+
 \section{Notes}\label{sec:notes}
 There was a challenge among researchers to detect big data or what constitutes big data. While some studies did run their numerical method against a large set of data, it was not always clear if it was big data.
 
 For instance one paper discussed fault prediction with a large amount of data, but it did not occur naturally to us that this data could be big data. It was only clarified during the discussion phase that the data was indeed big data.
 
-\bibliographystyle{ACM-Reference-Format}
-\bibliography{main}
+
+\section{Conclusion}\label{sec:conclusion}
+
+This systematic analysis of computational mathematics for AI optimization synthesizes findings from 77 studies (2016-2024) examining numerical methods and distributed computing techniques for deep learning on big data. The research reveals three fundamental dimensions that characterize the current state of the field and its future trajectory.
+
+\subsection{Domain-Specific Optimization Patterns}
+The analysis demonstrates clear domain-dependent preferences in optimization approaches, each yielding significant performance improvements. Healthcare applications, representing nearly one-third of the examined studies, show a strong preference for nature-inspired algorithms, which account for 62.5\% of optimization techniques in this domain. These methods prove particularly effective for medical imaging and disease prediction, delivering 27.4\% accuracy gains when handling complex, high-dimensional medical data. In cybersecurity applications, Bayesian methods dominate with 53.8\% adoption, providing crucial uncertainty quantification that reduces false alarms by 22.3\% while maintaining 93.7\% recall rates. Financial services applications favor evolutionary algorithms (41.2\% adoption), which excel at multi-objective optimization challenges like portfolio management, achieving 23.5\% improvements in risk-adjusted returns.
+
+\subsection{Distributed Computing Advancements}
+The study identifies significant progress in distributed computing approaches that enable scaling deep learning to big data problems. Federated learning systems demonstrate remarkable scalability, maintaining efficiency up to 800 client nodes before communication overhead and statistical heterogeneity begin diminishing returns. Hybrid parallelism strategies combining data, pipeline, and tensor approaches achieve near-linear scaling efficiency when distributing models across 64 GPUs, making billion-parameter models tractable. Communication optimization techniques yield particularly impressive results, with graduated compression methods reducing bandwidth requirements by 73\% without compromising model quality. Energy efficiency improvements reach 58.4\% in edge computing deployments through adaptive computation techniques that dynamically adjust model complexity based on input difficulty.
+
+\subsection{Key Trade-offs and Research Gaps}
+The analysis reveals several critical tensions that define current challenges in the field. Nature-inspired algorithms dominate practical adoption (42\% of approaches) despite scoring lowest in theoretical rigor (2.8/12), while gradient-based methods show the strongest theoretical foundations (8.7/12) but see limited adoption (12\%). This theory-practice gap raises important questions about the reliability and generalizability of widely-used methods. Performance trade-offs emerge prominently in memory optimization, where 73.8\% reductions in memory requirements sometimes come at the cost of 5.8\% accuracy degradation. Privacy-preserving techniques demonstrate that formal guarantees can be achieved with less than 3\% accuracy loss, though implementation challenges remain.
+
+The study identifies several reproducibility challenges, with only 23.5\% of nature-inspired algorithm studies providing source code compared to 67.2\% for gradient-based methods. Scaling limitations become apparent in federated learning systems, where efficiency declines beyond 800 nodes due to statistical heterogeneity effects. Energy consumption remains problematic for large-scale deployments despite 58.4\% improvements, highlighting the need for continued innovation in efficient computing.
+
+\subsection{Future Directions and Practical Implications}
+The findings suggest several critical directions for future research. Strengthening theoretical foundations for widely-used nature-inspired approaches could bridge the current theory-practice gap, while standardized benchmarks could address reproducibility challenges in distributed training. Developing adaptive federated learning frameworks capable of scaling beyond 800 nodes represents another key opportunity. Hardware-aware optimizations through algorithm-architecture co-design may yield further efficiency gains, particularly for edge deployments.
+
+For practitioners, the results provide clear guidance: healthcare applications should prioritize nature-inspired methods for complex medical data, while cybersecurity systems benefit most from Bayesian approaches with uncertainty quantification. Financial models achieve optimal results with evolutionary multi-objective optimization techniques. Edge deployments require communication-efficient federated learning with privacy guarantees, whereas cloud and HPC systems need hybrid parallelism strategies for training billion-parameter models.
+
+This comprehensive analysis reveals a field in transition, moving from general-purpose solutions to specialized, context-aware optimization frameworks. While distributed computing innovations have dramatically improved scalability, fundamental tensions remain between theoretical rigor and empirical performance. Addressing these challenges while continuing to advance scalability, efficiency, and privacy preservation will define the next era of computational mathematics for AI.
 
 \appendix
 \section{List of Included Papers}\label{app:list-of-included-papers}
@@ -1897,5 +1504,10 @@ For instance one paper discussed fault prediction with a large amount of data, b
 
 % Simplified table format with only essential information (ID, Title, Author)
 \input{all_papers_table_compact}
+
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{main}
+
 
 \end{document}
