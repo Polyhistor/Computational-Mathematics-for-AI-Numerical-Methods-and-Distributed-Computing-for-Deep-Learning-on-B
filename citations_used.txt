@@ -1,0 +1,88 @@
+ Ananth2022918
+ Chen2016331
+ idrissi2016genetic
+ Kanchanamala20232414
+ Kim2022
+ klein2017fast
+ Lin2022
+ najafabadi2015deep
+ Park2022
+ Sagu202535
+ Samadianfard20191934
+ Zhang20229876
+ zhou2021heuristic
+\cite{kitchenham2007guidelines
+\citep{Alistarh2017
+\citep{ataei2024filtering
+\citep{Back1996
+\citep{capra2020hardware
+\citep{cooper1988organizing
+\citep{dalkey1969delphi
+\citep{dauphin2014identifying
+\citep{dean2012large
+\citep{dean2012largemapreduce
+\citep{Deb2014
+\citep{delbecq1971group
+\citep{diederik2014adam
+\citep{Eid20223845
+\citep{fitch2001rand
+\citep{Fong2023
+\citep{Ghahramani2015
+\citep{goodfellow2016deep
+\citep{han2015deep
+\citep{Hinton2015
+\citep{Kanchanamala20232414
+\citep{Kim2022
+\citep{kitchenham2007guidelines
+\citep{LeCun2015
+\citep{lecun2015deep
+\citep{martens2010deep
+\citep{mcmahan2017communication
+\citep{moher2009preferred
+\citep{Narayanan2021
+\citep{Park2022
+\citep{ruder2016overview
+\citep{rumelhart1986learning
+\citep{Sagu202535
+\citep{Samadianfard20191934
+\citep{sergeev2018horovod
+\citep{snoek2012practical
+\citep{thompson2020computational
+\citep{Wang2021
+\citep{Yang2019
+\citep{yang2020nature
+\citep{zaharia2010spark
+\citep{Zhang20229876
+\citet{Almutairi20225924
+\citet{ben2019demystifying
+\citet{bengio2012practical
+\citet{capra2020hardware
+\citet{dalkey1969delphi
+\citet{dean2012large
+\citet{delbecq1971group
+\citet{Eid20223845
+\citet{Kanchanamala20232414
+\citet{Kim2022
+\citet{kitchenham2004procedures
+\citet{krizhevsky2012imagenet
+\citet{li2020survey
+\citet{Lin2022
+\citet{mayer2020scalable
+\citet{moher2009preferred
+\citet{najafabadi2015deep
+\citet{Park2022
+\citet{Sagu202535
+\citet{thompson2020computational
+\citet{Thoppil2021
+\citet{thoppil2022bayesian
+\citet{Wang2021
+\citet{yan2023computational
+\citet{zhang2019deep
+\citet{zhang2021distributed
+\citet{Zhang20229876
+\citet{zhang2023distributed
+\citet{Zhou20211
+capra2020hardware
+dean2012large
+goodfellow2016deep
+mayer2020scalable
