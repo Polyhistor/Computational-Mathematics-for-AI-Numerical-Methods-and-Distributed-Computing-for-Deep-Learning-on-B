@@ -22,7 +22,7 @@
 # Generated images
 *.eps
 *.pdf
-!latest.pdf
+!main.pdf
 *.svg
 *.dvi
 
