@@ -19,7 +19,6 @@
 \usepackage{url}
 \usepackage{tabularx}
 \usepackage{booktabs}
-\usepackage{natbib}
 \usepackage{longtable}
 \usepackage{pdflscape}
 \usepackage{tikz}
@@ -35,8 +34,7 @@
 \usepackage{algorithm}
 \usepackage{subcaption}
 \usepackage{multirow}
-
-\citestyle{acmnumeric}
+\usepackage{array}
 
 \tcbuselibrary{breakable}
 
@@ -376,28 +374,27 @@ our work reveals cross-domain synergies, unresolved trade-offs, and critical res
 the field develop robust, scalable, and efficient deep learning systems suited for complex, high-stakes applications in healthcare, cybersecurity, and beyond.
 
 \section{Methodology}\label{sec:methodology}
-This research adopts a SLR framework to explore two complementary yet distinct domains within the field of deep learning for big data: (SLR1) numerical methods and (SLR2) distributed computing techniques. The methodology employs a seven-phase approach combining systematic reviews with subsequent meta-analysis and network analysis.
-The SLR methodology is informed by the guidelines outlined by \citet{kitchenham2004procedures}. Reviews are constructed around well-formulated research questions that guide the scope and structure of this paper.
-
+This research adopts a SLR framework to explore two complementary yet distinct domains within the field of deep learning for big data: (SLR1) numerical methods and (SLR2) distributed computing techniques. The SLR methodology is informed by the guidelines outlined by \citet{kitchenham2004procedures}.
 \subsection{Phase 1: Planning and Protocol Development}\label{subsec:phase-1-planning-and-protocol-development}
 
 \subsubsection{Research Questions Formulation}\label{subsubsec:phase-1-planning-and-protocol-development:research-questions-formulation}
 
-The research questions were considered to address both the technical specifications and performance characteristics of deep learning systems for big data. SLR1 focuses on identifying  numerical methods and evaluating their computational efficiency and accuracy:
+The research questions address both the technical specifications and performance characteristics of deep learning systems for big data. SLR1 focuses on identifying numerical methods and evaluating their computational efficiency and accuracy:
+
 \begin{itemize}
-    \item RQ1.1: What are the state-of-the-art numerical methods used in deep learning for big data?
-    \item RQ1.2: How do these methods perform in terms of computational efficiency and accuracy?
+    \item \textbf{RQ1.1}: What are the state-of-the-art numerical methods used in deep learning for big data?
+    \item \textbf{RQ1.2}: How do these methods perform in terms of computational efficiency and accuracy?
 \end{itemize}
 
-Whereas SLR2 examines distributed computing techniques and their effectiveness in scaling deep learning applications:
+SLR2 investigates distributed computing techniques and evaluates their effectiveness in scaling deep learning applications. Specifically, it addresses:
+
 \begin{itemize}
-    \item RQ2.1: What distributed computing techniques are used for scaling deep learning to big data problems?
-    \item RQ2.2: How effective are these techniques in terms of scalability and performance?
+    \item \textbf{RQ2.1}: Which distributed computing techniques enable scaling of deep learning for big data applications?
+    \item \textbf{RQ2.2}: What is the measured effectiveness of these techniques in terms of scalability and performance metrics?
 \end{itemize}
 
 \subsubsection{Literature Review Classification Framework}\label{subsubsec:phase-1-planning-and-protocol-development:literature-review-classification-framework}
-To ensure systematic analysis across all coauthors, we adapted Cooper's taxonomy of literature reviews \citep{cooper1988organizing} as our classification framework (\cref{fig:decision-flow2}). This approach examines studies through six critical lenses: the focus of research (ranging from theoretical to applied), the review's goal (integration vs. critical analysis), the author's perspective (neutral or advocacy), coverage breadth, organizational approach, and intended audience.
-
+We employ Cooper's taxonomy of literature reviews \citep{cooper1988organizing} as our classification framework (\cref{fig:decision-flow2}). This approach examines studies through six critical dimensions: the focus of research (ranging from theoretical to applied), the review's goal (integration vs. critical analysis), the author's perspective (neutral or advocacy), coverage breadth, organizational approach, and intended audience.
 \begin{figure}
     \centering
     \includegraphics[width=0.9\textwidth]{media/Company Structure.png}
@@ -408,110 +405,128 @@ To ensure systematic analysis across all coauthors, we adapted Cooper's taxonomy
 
 
 \subsubsection{Search Strategy Development}\label{subsubsec:phase-1-planning-and-protocol-development:search-strategy-development}
-For SLR1, we constructed  search strings combining "deep learning" with numerical method terminology ("numerical method", "computational mathematics", "optimization algorithm") and big data.
+For SLR1, we construct search strings that combine "deep learning" with numerical method terminology ("numerical method", "computational mathematic", "optimization algorithm") and big data concept.
 
-SLR2 uses keyswords such as "distributed computing", "parallel processing", "GPU acceleration",  while maintaining the deep learning and big data context. The search strings for both SLR1 and SLR2 were adapted for each database's syntax requirements.
+For SLR2, we use keywords including "distributed computing", "parallel processing", and "GPU acceleration" while maintaining the core deep learning and big data context. We adapt all search strings to meet each database's specific syntax requirements.
 
 \subsubsection{Information Sources and Eligibility Criteria}\label{subsubsec:phase-1-planning-and-protocol-development:information-sources-and-eligibility-criteria}
-Our search spans seven major academic databases (IEEE Xplore, ACM Digital Library, SpringerLink, Scopus, Web of Science, JSTOR, AIS) to ensure broad coverage of both computer science and applied mathematics literature.
+We conduct our search across seven major academic databases (IEEE Xplore, ACM Digital Library, SpringerLink, Scopus, Web of Science, JSTOR, AIS) to ensure coverage of both computer science and applied mathematics literature.
 
-Inclusion criteria:
+\noindent\paragraph{Inclusion Criteria:}
 \begin{itemize}
-    \item Studies published between January 1, 2014 and September 21, 2024
-    \item Peer-reviewed journal articles and full conference papers
-    \item English language publications
-    \item Studies focusing on numerical methods for deep learning in big data contexts
-    \item Research explicitly addressing computational efficiency or accuracy of numerical methods
-    \item Studies providing quantitative, qualitative results or comparative analyses of numerical methods.
+    \item Studies published between 2014 and 2024
+    \item Peer-reviewed journal articles and complete conference proceedings
+    \item English-language publications with full text available
+    \item Research focusing specifically on numerical methods in deep learning for big data applications
+    \item Studies that quantitatively evaluate computational efficiency or accuracy metrics
+    \item Papers providing either comparative analyses or empirical validation of numerical approaches
 \end{itemize}
-Exclusion criteria:
+
+\noindent\paragraph{Exclusion Criteria:}
 \begin{itemize}
-    \item Studies not explicitly addressing big data characteristics
-    \item Publications without clear details on the numerical methods used
-    \item Review papers, editorials, or opinion pieces
-    \item Short papers (less than 10 pages), extended abstracts, or posters
-    \item Duplicate studies or multiple publications of the same research
+    \item Research that does not address big data scale challenges
+    \item Publications lacking methodological details about numerical implementations
+    \item Secondary literature (reviews, editorials, or position papers)
+    \item Preliminary works (short papers <10 pages, extended abstracts, or posters)
+    \item Duplicate publications or overlapping studies
 \end{itemize}
 
 
 \subsection{Phase 2: Literature Search and Study Selection}\label{subsec:phase-2-literature-search-and-study-selection}
 \subsubsection{Search Execution and Initial Processing}\label{subsubsec:phase-2-literature-search-and-study-selection:search-execution-and-initial-processing}
-The query results of each of the seven databases were exported to CSV format. \ATM{The initial search yielded approximately 12,000 papers across all the seven databases.}
-
-The CSV format was then uploaded to Baserow software [??], where duplicate papers were removed. This process eliminated nearly 30\% of initial results, highlighting the substantial overlap across the seven databases.
+We export the query results from all seven databases in CSV format. The initial search yields 1,306 papers across the selected databases. After removing duplicates, this eliminates 33.8\% of the papers demonstrating significant overlap across databases. We then upload the 66.2\% of the papers to Baserow software for systematic assessment.
 
 \subsubsection{Refining Screening Through Delphi Consensus}\label{subsubsec:phase-2-literature-search-and-study-selection:refining-screening-through-delphi-consensus}
-The screening was carried out by the coauthors of this paper, and the initial screening phase revealed unexpected challenges in inter-rater reliability with Krippendorff's alpha measuring only 0.4 across coauthor teams. This low agreement prompted the implementation of a modified Delphi protocol, based on RAND/UCLA methodology \citep{fitch2001rand} and Dalkey's classical Delphi framework \citep{dalkey1969delphi}.
+The initial screening phase reveals unexpected challenges in inter-rater reliability, with Krippendorff's alpha measuring only 0.4 across coauthor teams. This low agreement leads to the implementation of  a modified Delphi protocol that combines the RAND/UCLA methodology \citep{fitch2001rand} with Dalkey’s classical Delphi framework \citep{dalkey1969delphi}.
 
-In Round 1, each coauthor independently assessed 50 randomly selected papers, documenting detailed rationales for inclusion/exclusion decisions. The anonymous compilation of these assessments revealed three primary areas of disagreement: interpretation of "big data" characteristics, assessment of methodological rigor, and classification of hybrid numerical-distributed approaches. Round 2 provided controlled feedback, presenting coauthors with statistical summaries of group responses alongside anonymized rationales for divergent assessments and written feedback from each coauthor on points of disagreement. Round 3 employed nominal group techniques \citep{delbecq1971group} to transform these insights into operational criteria. Through structured discussion, we developed explicit screening guidelines addressing each major point of disagreement, including: Operational definitions of big data characteristics (volume, velocity requirements), minimum methodological reporting standards for numerical methods and decision rules for classifying hybrid approaches. These criteria were codified in a  decision flowchart (\cref{fig:decision-flow2}).
+In Round 1, each coauthor independently evaluates 50 randomly selected articles, documenting detailed rationales for inclusion/exclusion decisions. The anonymous compilation of these assessments reveals three primary disagreement areas: (1) interpretation of "big data" characteristics, (2) assessment of methodological rigor, and (3) classification of hybrid numerical-distributed approaches.  Round 2 provides coauthors with statistical summaries of group responses alongside anonymized rationales for divergent evaluations and peer commentary on disagreement points.
 
-Following the initial screening rounds, Round 4 served as a validation phase to verify inter-rater reliability. The decision to proceed was determined by Krippendorff's $\alpha$ coefficient:  If $\alpha \geq  0.8$, indicating sufficient agreement, then the study progressed to full screening.  If $\alpha < 0.8$, the coauthors reverted to Round 3 procedures, implementing focused discussions to resolve persistent discrepancies before re-evaluating reliability.
+Round 3 employs nominal group techniques \citep{delbecq1971group} to operationalize consensus. Through discussion, we develop  screening guidelines that address:  definitions of big data characteristics (volume/velocity thresholds), minimum reporting standards for numerical methods, decision rules for hybrid approach classification.
+
+We codify these criteria in a decision flowchart as shown in \cref{fig:decision-flow2}.  Following the initial screening rounds, Round 4 serves as a validation phase to verify inter-rater reliability. The decision to proceed depends on Krippendorff's $\alpha$ coefficient:   If $\alpha \geq 0.8$ (indicating sufficient agreement), the study progresses to full screening.  If $\alpha  < 0.8$, the coauthors return to Round 3, conducting focused discussions to resolve persistent discrepancies before re-evaluation reliability.
 
 \subsubsection{Hierarchical Decision Framework}\label{subsubsec:phase-2-literature-search-and-study-selection:hierarchical-decision-framework}
-Following the Delphi-based consensus methodology outlined by \citet{dalkey1969delphi} and the
-systematic review guidelines of \citet{kitchenham2004procedures}, we conducted a structured consensus meeting to
-establish classification criteria. The meeting employed the Nominal Group Technique as described
-by \citet{delbecq1971group}, resulting in a formalized decision framework.
+Following the Delphi-based consensus methodology outlined in  \citet{dalkey1969delphi} and the systematic review guidelines in  \citet{kitchenham2004procedures}, we conduct a  consensus meeting to establish classification criteria. The meeting employs the Nominal Group Technique as described in \citet{delbecq1971group}, which yields a formalized decision framework.
 
-\paragraph{Technical Foundation Verification:} The first gate confirmed each paper's relevance to our core technical domains, requiring explicit evidence of deep learning implementation coupled with either numerical methods or distributed computing approaches.
+\paragraph{Technical Foundation Verification:}
+The first verification gate confirms each paper's relevance to our core technical domains by requiring explicit evidence of deep learning implementation coupled with either numerical methods or distributed computing approaches.
 
-\paragraph{Big Data Context Assessment:} We required papers to demonstrate  engagement with the four big data characteristics: substantial data volume, real-time processing requirements, heterogeneous data integration, or specialized computational infrastructure.
+\paragraph{Big Data Context Assessment:}
+The second gate assesses whether papers demonstrate engagement with at least one of the four key big data characteristics: substantial data volume, real-time processing requirements, heterogeneous data integration, or specialized computational infrastructure.
 
-\paragraph{Contribution Typology Classification:} The final gate classified the articles by their primary research contribution type, application-oriented, or hybrid.
+\paragraph{Contribution Typology Classification:}
+The final gate classifies articles by their primary research contribution type, distinguishing between theoretical foundations, methodological innovations, application-oriented implementations, and hybrid approaches that combine multiple contribution types.
 
 \subsubsection{Border Case Resolution and Validation}\label{subsubsec:phase-2-literature-search-and-study-selection:border-case-resolution-and-validation}
-For hybrid contributions, we implemented a primary contribution analysis that weighted methodological innovation against domain application. Novel approaches that challenged existing classification schemes underwent third-coauthor evaluation and potential framework adaptation, with all such cases documented for transparency.
+For hybrid contributions, we implement a primary contribution analysis that weights methodological innovation against domain application. When novel approaches challenge existing classification schemes, they undergo third-coauthor evaluation and potential framework adaptation, with all such cases thoroughly documented to ensure transparency.
 
-Validation occurred through three complementary mechanisms. Pilot testing on 50 sample papers confirmed the framework's  effectiveness while identifying cases for refinement. Another coauthor provided external validation of our classification logic, particularly for edge cases. Finally, statistical validation demonstrated strong agreement rates ($>85\%$ overall) and consistency of decision across the coauthors.
+
+We validate the framework through three complementary approaches. First, pilot testing on all sample papers verifies the framework's effectiveness while revealing opportunities for refinement. Second, an independent coauthor conducts external validation of our classification logic, with particular focus on edge cases. Finally, statistical validation demonstrates strong agreement rates (>85\% overall) and consistent decision patterns across all coauthors.
 
 \subsection{Phase 3: Quality Assessment}\label{subsec:phase-3-quality-assessment}
 
 \subsubsection{Quality Assessment Framework}\label{subsubsec:phase-3-quality-assessment:quality-assessment-framework}
-Our assessment criteria examine four  dimensions of research quality, each addressing distinct aspects of scholarly rigor and practical value. The first  establishes the minimum quality threshold, requiring studies to demonstrate systematic research methodologies rather than anecdotal evidence or untested assertions. Papers must clearly articulate their research objectives and contextual foundations, providing readers with sufficient information to evaluate the study's premises and potential limitations.
+Our evaluation criteria examine four dimensions of research quality, each addressing distinct aspects of scholarly rigor and practical relevance. The first dimension establishes a minimum quality threshold by requiring studies to demonstrate systematic research methodologies rather than anecdotal evidence or untested assertions. We mandate that papers clearly articulate their research objectives and theoretical foundations while providing sufficient contextual information for readers to evaluate the study's premises and limitations.
+The rigor dimension evaluates the appropriateness and robustness of the research design, examining whether the chosen methodologies align with the stated objectives and whether data collection approaches produce valid and reliable evidence.
 
-The rigor dimension evaluates the appropriateness and robustness of the research design, examining whether the chosen methodologies align with the stated objectives and whether data collection approaches yield valid, reliable evidence.
-
-Credibility forms our third assessment dimension, focusing on the transparency and objectivity of reported findings. In a field often characterized by competing optimization claims and performance benchmarks, we pay particular attention to whether studies present results comprehensively, acknowledging limitations and potential biases. The final relevance dimension ensures the research contributes meaningfully to either academic knowledge or practical applications.
+Credibility forms our third dimension of evaluation, focusing on the transparency and objectivity of reported findings. In a field often characterized by competing optimization claims and performance benchmarks, we pay attention to whether studies present results comprehensively, acknowledging limitations and potential biases. The final relevance dimension ensures that the research contributes meaningfully to academic knowledge or practical applications.
 
 \subsubsection{Assessment Methodology}\label{subsubsec:phase-3-quality-assessment:assessment-methodology}
-The quality assessment process employs a two-phase approach designed to  identify high-quality studies while maintaining rigorous standards. Phase 1 serves as an initial filter, applying only the minimum quality threshold criteria to quickly eliminate studies lacking fundamental methodological soundness.
+The quality assessment employs a two-phase approach to  identify quality studies. Phase 1 serves an initial filter, applying only the minimum quality threshold criteria to  eliminate studies lacking fundamental methodological soundness.
 
-Papers passing Phase 1 advance to comprehensive evaluation in Phase 2, where coauthors assess all remaining quality dimensions. Each criterion receives a binary 'yes/no' assessment, with studies requiring at least 75\% positive evaluations across all criteria to qualify for inclusion.
+Papers that pass Phase 1 advance to Phase 2, where coauthors assess all remaining quality dimensions. We apply binary 'yes/no' evaluations for each criterion, requiring studies to achieve at least 75\% positive assessments across all criteria for inclusion.
 
-To maintain assessment consistency coauthors independently evaluate each study, with their judgments compared using Krippendorff's $alpha$ coefficient. Our target reliability threshold of $\alpha > 0.8$ reflects an acceptable standards necessary for systematic reviews in technical domains.
+To ensure consistency, coauthors independently evaluate each study. We measure inter-rater agreement using Krippendorff's alpha coefficient, maintaining a target reliability threshold of $\alpha > 0.8$ to meet established standards for systematic reviews in technical domains.
 
 \subsubsection{Validation and Threshold Enforcement}\label{subsubsec:phase-3-quality-assessment:validation-and-threshold-enforcement}
 
-Testing on a representative sample of 50 papers allowed to refine assessment criteria and verify scoring consistency.
 Our final inclusion requirements enforce three complementary standards: perfect adherence to minimum quality thresholds, 75\% positive evaluations across all criteria, and maintained inter-rater reliability.
 
-\subsection{Phase 4: Data Extraction}\label{subsec:phase-4-data-extraction}
-Our extraction methodology employs NVivo \cite{kitchenham2007guidelines} qualitative analysis software to  code and organize study contents according to a hierarchical framework encompassing four primary dimensions. The Method dimension captures technical specifications, including detailed descriptions of numerical algorithms or distributed computing techniques (M-01), their implementation approaches (M-02), and validation methodologies (M-03). This proves particularly crucial for enabling comparative analysis across studies with varying technical implementations.
+\subsection{Phase 4: Data extraction}\label{subsec:phase-4-data-extraction}
+Our extraction methodology employs qualitative analysis software from NVivo \citep{kitchenham2007guidelines} to code and organize the content of the study according to a hierarchical framework with four primary dimensions. The Method dimension captures technical specifications, including detailed descriptions of numerical algorithms or distributed computing techniques (M-01), their implementation approaches (M-02), and validation methodologies (M-03). This proves to be particularly crucial for enabling comparative analysis between studies with varying technical implementations.
 
-The context dimension documents essential environmental factors that influence research outcomes, including problem domains (C-01), dataset characteristics (C-02), and computing environments (C-03). Capturing these contextual elements allows to properly situate each study's findings within its specific experimental conditions.
+The context dimension documents essential environmental factors that influence research results, including problem domains (C-01), data set characteristics (C-02), and computing environments (C-03). Capturing these contextual elements allows us to situate each study's findings within its specific experimental conditions.
 
-For the results dimension, we extract quantitative outcomes (R-01) using standardized metrics wherever possible, along with any comparative analyses (R-02) and assessments of statistical significance (R-03). This structured approach to performance data enables meaningful cross-study comparisons despite variations in reporting formats. The Findings dimension then captures higher-level insights, including key contributions (F-01), acknowledged limitations (F-02), and suggested future directions (F-03), which collectively inform our gap analysis and research agenda.
+For the results dimension, we extract quantitative outcomes (R-01) using standardized metrics wherever possible, along with any comparative analyses (R-02) and statistical significance assessments (R-03). This structured approach to performance data enables meaningful cross-study comparisons despite variations in reporting formats. The Findings dimension then captures higher-level insights, including key contributions (F-01), acknowledged limitations (F-02), and suggested future directions (F-03), which collectively inform our gap analysis and research agenda. The codes are summarized in Table \cref{tab:eval_framework}.
+
 
 The extraction process follows a systematic workflow in NVivo, beginning with the creation of hierarchical nodes. Coauthors code each paper using this structure, applying both deductive coding based on our predefined categories and inductive coding to capture emergent themes. Matrix coding queries then help identify patterns and relationships across studies, such as correlations between methodological approaches and performance outcomes.
 
 
 \subsection{Phase 5: Combined Analysis}\label{subsec:phase-5-combined-analysis}
-This phase employs two complementary analytical approaches; the meta-analysis and network analysis which together provide both quantitative and structural understanding of the research landscape.
+Studies vary in their algorithms, architectures, datasets, and evaluation metrics. We analyze these differences and present the results using forest plots.
 
-\subsubsection{Meta-Analysis Methodology}\label{subsubsec:phase-5-combined-analysis:meta-analysis-methodology}
-
-Our meta-analytical approach accounts for the inherent heterogeneity across studies in both technical implementations and experimental conditions. The studies may vary between studies due to differences in algorithms, architectures, datasets, and evaluation metrics. For common outcome measures such as computational efficiency and scalability improvements, visualization were done through forest plots, which  serve multiple analytical purposes.
-
-
-\subsubsection{Network Analysis Framework}\label{subsubsec:phase-5-combined-analysis:network-analysis-framework}
-
-\ATM{Network analysis examines interconnected papers through
-    a comprehensive network graph for visualization, community detection identifies clusters of densely connected nodes that are similar; and centrality measure analysis quantifies node importance.}
+\begin{table}[h]
+    \centering
+    \caption{Data extraction methodology}
+    \label{tab:eval_framework}
+    \begin{tabular}{>{\bfseries}ll}
+        \toprule
+        \textbf{Category} & \textbf{Evaluation criteria}                 \\
+        \midrule
+        Method [M]        & M-01: Numerical method/algorithm description \\
+                          & M-02: Implementation approach                \\
+                          & M-03: Validation technique                   \\
+        \addlinespace
+        Context [C]       & C-01: Problem domain                         \\
+                          & C-02: Dataset characteristics                \\
+                          & C-03: Computing environment                  \\
+        \addlinespace
+        Results [R]       & R-01: Performance metrics                    \\
+                          & R-02: Comparative analysis                   \\
+                          & R-03: Statistical significance               \\
+        \addlinespace
+        Findings [F]      & F-01: Key contributions                      \\
+                          & F-02: Limitations                            \\
+                          & F-03: Future directions                      \\
+        \bottomrule
+    \end{tabular}
+\end{table}
 
 
 \subsection{Phase 6: Study Classification and Bias Assessment}\label{subsec:phase-6-study-classification-and-bias-assessment}
-
-
+\textcolor{red}{Pouya agree to write}
+\begin{comment}
 \subsubsection{Multidimensional Study Classification}\label{subsubsec:phase-6-study-classification-and-bias-assessment:multidimensional-study-classification}
 The focus dimension distinguishes between studies emphasizing theoretical foundations, methodological innovations, or practical applications; a particularly important distinction given the varied nature of research in this interdisciplinary field.
 
@@ -535,10 +550,11 @@ This phased approach ensures a systematic and comprehensive review of computatio
 computing techniques
 
 The entire selection process was documented using PRISMA flow diagrams as shown in \cref{fig:PRISMA-standards}, which visually tracked the progression from initial search results to final inclusion in the study.
+\end{comment}
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.9\textwidth]{media/flow-diagram.pdf}
+    \includegraphics[width=0.9\textwidth]{media/flow-diagram.png}
     \caption{PRISMA standards followed}
     \label{fig:PRISMA-standards}
     \Description{PRISMA standards followed}
