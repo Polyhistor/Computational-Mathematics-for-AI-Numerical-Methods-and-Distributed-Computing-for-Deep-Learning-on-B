@@ -133,18 +133,14 @@
 %% Of note is the shared affiliation of the first two authors, and the
 %% "authornote" and "authornotemark" commands
 %% used to denote shared contribution to the research.
-\author{Ben Trovato}
-\authornote{Both authors are people.}
-\email{trovato@corporation.com}
-\orcid{1234-5678-9012}
-\author{G.K.M. Tobin}
-\authornotemark[1]
-\email{webmaster@marysville-ohio.com}
+\author{Pouya Ataei}
+\email{pouya.ataei@aut.ac.nz}
+\orcid{0000-0002-0993-3574}
 \affiliation{%
-    \institution{Institute for Clarity in Documentation}
-    \city{Dublin}
-    \state{Ohio}
-    \country{USA}
+    \institution{Auckland University of Technology}
+    \city{Auckland}
+    \state{Auckland}
+    \country{New Zealand}
 }
 
 \author{Marcellin Atemkeng}
@@ -349,33 +345,44 @@ our work reveals cross-domain synergies, unresolved trade-offs, and critical res
 the field develop robust, scalable, and efficient deep learning systems suited for complex, high-stakes applications in healthcare, cybersecurity, and beyond.
 
 \section{Methodology}\label{sec:methodology}
-This research adopts a SLR framework to explore two complementary yet distinct domains within the field of deep learning for big data: (SLR1) numerical methods and (SLR2) distributed computing techniques. The SLR methodology is informed by the guidelines outlined by \citet{kitchenham2004procedures}.
+This research adopts a SLR framework to explore domains within the field of deep learning for big data with particular focus on numerical methods and distributed computing techniques. The SLR methodology is informed by the guidelines outlined by \citet{kitchenham2004procedures} and inspired by \citet{ataei2022state}.
 
 \subsection{Phase 1: Planning and Protocol Development}\label{subsec:phase-1-planning-and-protocol-development}
 
 \subsubsection{Research Questions Formulation}\label{subsubsec:phase-1-planning-and-protocol-development:research-questions-formulation}
 
-The research questions address both the technical specifications and performance characteristics of deep learning systems for big data. SLR1 focuses on identifying numerical methods and evaluating their computational efficiency and accuracy:
+The research questions address both the technical specifications and performance characteristics of deep learning systems for big data. This SLR focuses on identifying numerical methods and evaluating their computational efficiency and accuracy (RQ1.1 and RQ1.2), while also paying attention to distributed computing techniques and evaluates their effectiveness in scaling deep learning applications (RQ2.1 and RQ2.2). Based on the following research questions are formulated:
 
 \begin{itemize}
     \item \textbf{RQ1.1}: What are the state-of-the-art numerical methods used in deep learning for big data?
     \item \textbf{RQ1.2}: How do these methods perform in terms of computational efficiency and accuracy?
-\end{itemize}
-
-SLR2 investigates distributed computing techniques and evaluates their effectiveness in scaling deep learning applications. Specifically, it addresses:
-
-\begin{itemize}
     \item \textbf{RQ2.1}: Which distributed computing techniques enable scaling of deep learning for big data applications?
     \item \textbf{RQ2.2}: What is the measured effectiveness of these techniques in terms of scalability and performance metrics?
 \end{itemize}
 
+
+
 \subsubsection{Literature Review Classification Framework}\label{subsubsec:phase-1-planning-and-protocol-development:literature-review-classification-framework}
 We employ Cooper's taxonomy of literature reviews \citep{cooper1988organizing} as our classification framework. This approach examines studies through six critical dimensions: the focus of research (ranging from theoretical to applied), the review's goal (integration vs. critical analysis), the author's perspective (neutral or advocacy), coverage breadth, organizational approach, and intended audience.
+
+Our study adopts the following specific positioning within Cooper's taxonomy:
+
+\textbf{Focus:} We examine both research methods (numerical optimization techniques and distributed computing approaches) and research outcomes (performance metrics, efficiency measures), as evidenced by our dual research question structure addressing both "what methods" and "how they perform."
+
+\textbf{Goal:} Integration rather than criticism, explicitly bridging fragmented literature across domains to provide "a coherent foundation for understanding and designing efficient AI systems."
+
+\textbf{Perspective:} Neutral representation with balanced analysis, systematically presenting both strengths and limitations (e.g., nature-inspired algorithms' 42\% adoption despite 2.8/12 theoretical rigor scores).
+
+\textbf{Coverage:} Representative scope through systematic search of 7 databases, PRISMA guidelines, and 77 papers (2013-2024), with Delphi consensus ensuring deliberate boundary-setting.
+
+\textbf{Organization:} Methodological structure around two complementary technical approaches (numerical methods and distributed computing), with further stratification by technical characteristics.
+
+\textbf{Audience:} Specialized scholars in computational AI, as indicated by technical depth, mathematical specifications, and domain-specific terminology for researchers engaging with both mathematical foundations and empirical findings.
 
 
 
 \subsubsection{Search Strategy Development}\label{subsubsec:phase-1-planning-and-protocol-development:search-strategy-development}
-For SLR1, we construct search strings that combine ``deep learning'' with numerical method terminology (``numerical method'', ``computational mathematic'', ``optimization algorithm'') and big data concept.
+For RQ1.1 and RQ1.2, we construct search strings that combine ``deep learning'' with numerical method terminology (``numerical method'', ``computational mathematic'', ``optimization algorithm'') and big data concept.
 
 For SLR2, we use keywords including ``distributed computing'', ``parallel processing'', and ``GPU acceleration'' while maintaining the core deep learning and big data context. We adapt all search strings to meet each database's specific syntax requirements.
 
@@ -503,41 +510,24 @@ Studies vary in their algorithms, architectures, datasets, and evaluation metric
 % <<BRIAN>> Is this subsection still todo?
 
 
-\subsection{Phase 6: Study Classification and Bias Assessment}\label{subsec:phase-6-study-classification-and-bias-assessment}
-\textcolor{red}{Pouya agree to write}
-\begin{comment}
-\subsubsection{Multidimensional Study Classification}\label{subsubsec:phase-6-study-classification-and-bias-assessment:multidimensional-study-classification}
-The focus dimension distinguishes between studies emphasizing theoretical foundations, methodological innovations, or practical applications; a particularly important distinction given the varied nature of research in this interdisciplinary field.
 
-The goal dimension reveals important patterns in how studies position themselves within the research landscape. Integration-focused works that synthesize existing knowledge play a different but equally valuable role compared to studies offering pointed criticism of current approaches or those identifying central issues requiring attention.
 
-Perspective classification separates neutral, comprehensive reporting from position papers advocating particular approaches. In a field characterized by competing optimization strategies and architectural paradigms, understanding this dimension helps contextualize reported findings and performance claims. The coverage dimension then examines the breadth of literature considered, distinguishing between exhaustive reviews and more focused examinations of important works.
 
-Organization and audience classifications reveal whether studies adopt conceptual or methodological structures.
 
-\subsubsection{Comprehensive Bias Assessment}\label{subsubsec:phase-6-study-classification-and-bias-assessment:comprehensive-bias-assessment}
 
-Our bias assessment methodology employs both visual and statistical techniques to detect potential distortions in the evidence base. Funnel plot analysis serves as our primary visual tool for identifying publication bias. In the context of deep learning research, we pay particular attention to potential biases against no results or modest improvements, which may be underrepresented in the literature despite their importance for understanding the true landscape of methodological performance.
+\subsection{Phase 6: Synthesis and Reporting}\label{subsec:phase-7-synthesis-and-reporting}
 
-Egger's test complements this visual analysis with formal statistical testing for small-study effects. This linear regression approach helps quantify funnel plot asymmetries and determine whether smaller studies tend to show systematically different effects than larger, potentially more rigorous investigations.
+This final phase integrates findings from both systematic literature reviews through a comparative analysis framework. We identify synergies between numerical methods and distributed computing techniques, revealing how algorithmic choices interact with parallel architectures to impact overall system performance. The analysis highlights fundamental trade-offs between computational efficiency, scalability, and accuracy across different application contexts. Emerging trends are mapped to reveal promising research directions at the intersection of numerical optimization and distributed systems.
 
-\subsection{Phase 7: Synthesis and Reporting}\label{subsec:phase-7-synthesis-and-reporting}
+This phased approach ensures a systematic and comprehensive review of computational mathematics for AI in big data contexts, combining insights from numerical methods and distributed computing techniques to provide actionable guidance for researchers and practitioners.
 
-This final phase integrates findings from both systematic literature reviews through a  comparative analysis. We identify  synergies between numerical methods and distributed computing techniques, revealing how algorithmic choices interact with parallel architectures to impact overall system performance. The analysis highlights fundamental trade-offs between computational efficiency, scalability, and accuracy across different application contexts. Emerging trends are mapped to reveal promising research directions at the intersection of numerical optimization and distributed systems.
-
-This phased approach ensures a systematic and comprehensive review of computational mathematics for AI in big data contexts, combining insights from numerical methods and distributed
-computing techniques
-
-The entire selection process was documented using PRISMA flow diagrams as shown in \cref{fig:PRISMA-standards}, which visually tracked the progression from initial search results to final inclusion in the study.
-\end{comment}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.9\textwidth]{media/flow-diagram.pdf}
-    \caption{PRISMA standards followed}
-    \label{fig:PRISMA-standards}
-    \Description{PRISMA standards followed}
-\end{figure}
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=0.9\textwidth]{media/flow-diagram.pdf}
+%     \caption{PRISMA standards followed}
+%     \label{fig:PRISMA-standards}
+%     \Description{PRISMA standards followed}
+% \end{figure}
 
 \section{Findings and Analysis}\label{sec:findings-and-analysis}
 This section presents the findings from our systematic analysis of computational mathematics for AI, focusing on numerical methods and distributed computing techniques for deep learning on big data. Following the PRISMA guidelines \citep{moher2009preferred}, we analyzed 77 papers published between 2013 and 2024. The analysis is organized according to our research questions, examining numerical optimization methods (RQ1.1), their performance metrics (RQ1.2), distributed computing approaches (RQ2.1), and their scalability characteristics (RQ2.2).
