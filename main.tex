@@ -549,7 +549,7 @@ The structured Delphi process comprised four iterative rounds designed to achiev
 
     \item \textbf{Round 2} provided anonymized statistical summaries of group responses alongside peer rationales, enabling reviewers to understand alternative perspectives without bias from author identity.
 
-    \item \textbf{Round 3} employed nominal group techniques \citep{delbecq1971group} to develop operational screening guidelines addressing: (1) quantitative thresholds for big data characteristics, (2) minimum reporting standards for numerical methods, and (3) decision rules for hybrid approach classification.
+    \item \textbf{Round } employed nominal group techniques \citep{delbecq1971group} to develop operational screening guidelines addressing: (1) quantitative thresholds for big data characteristics, (2) minimum reporting standards for numerical methods, and (3) decision rules for hybrid approach classification.
 
     \item \textbf{Round 4} served as validation, achieving the target Krippendorff's α $\geq$ 0.8 required for systematic review reliability standards \citep{krippendorff2004reliability}.
 \end{enumerate}
@@ -621,18 +621,6 @@ The consensus resolution process demonstrated high effectiveness in resolving di
 \end{itemize}
 
 
-%  move to discussion 
-% \paragraph{Methodological Implications.}
-
-% This detailed analysis of disputed papers reveals several critical insights for systematic literature reviews in computational mathematics for AI:
-
-% \begin{enumerate}
-%     \item \textbf{Domain Boundary Challenges}: The 37.9\% of disputes related to big data relevance highlights the need for more precise operational definitions of "big data" in research contexts. Our analysis suggests that volume alone is insufficient; studies must demonstrate engagement with velocity, variety, or specialized infrastructure requirements.
-    
-%     \item \textbf{Interdisciplinary Classification Complexity}: The 27.6\% of disputes over numerical methods relevance indicates the challenge of categorizing research that spans computational mathematics and computer science. Our resolution process established that algorithms must demonstrate mathematical rigor beyond simple heuristic approaches.
-    
-%     \item \textbf{Reviewer Expertise Requirements}: The high initial disagreement rate (21.2\%) followed by successful resolution suggests that systematic reviews in this field require reviewers with diverse expertise spanning mathematics, computer science, and domain applications.
-% \end{enumerate}
 
 \paragraph{Impact on Final Selection.}
 
@@ -720,45 +708,10 @@ For the results dimension, we extract quantitative outcomes (R-01) using standar
 
 The extraction process follows a systematic workflow in NVivo, beginning with the creation of hierarchical nodes. Coauthors code each paper using this structure, applying both deductive coding based on our predefined categories and inductive coding to capture emergent themes. Matrix coding queries then help identify patterns and relationships across studies, such as correlations between methodological approaches and performance outcomes.
 
-\subsection{Phase 5: Combined Analysis}\label{subsec:phase-5-combined-analysis}
-Studies vary in their algorithms, architectures, datasets, and evaluation metrics. We analyze these differences and present the results using forest plots.
-
-\begin{table}[ht]
-    \centering
-    \caption{Data extraction methodology}
-    \label{tab:eval_framework}
-    \begin{tabular}{>{\bfseries}ll}
-        \toprule
-        \textbf{Category} & \textbf{Evaluation criteria}                 \\
-        \midrule
-        Method [M]        & M-01: Numerical method/algorithm description \\
-                          & M-02: Implementation approach                \\
-                          & M-03: Validation technique                   \\
-        \addlinespace
-        Context [C]       & C-01: Problem domain                         \\
-                          & C-02: Dataset characteristics                \\
-                          & C-03: Computing environment                  \\
-        \addlinespace
-        Results [R]       & R-01: Performance metrics                    \\
-                          & R-02: Comparative analysis                   \\
-                          & R-03: Statistical significance               \\
-        \addlinespace
-        Findings [F]      & F-01: Key contributions                      \\
-                          & F-02: Limitations                            \\
-                          & F-03: Future directions                      \\
-        \bottomrule
-    \end{tabular}
-\end{table}
-
-% <<BRIAN>> Is this subsection still todo?
 
 
 
-
-
-
-
-\subsection{Phase 6: Synthesis and Reporting}\label{subsec:phase-7-synthesis-and-reporting}
+\subsection{Phase 5: Synthesis and Reporting}\label{subsec:phase-7-synthesis-and-reporting}
 
 This final phase integrates findings from both systematic literature reviews through a comparative analysis framework. We identify synergies between numerical methods and distributed computing techniques, revealing how algorithmic choices interact with parallel architectures to impact overall system performance. The analysis highlights fundamental trade-offs between computational efficiency, scalability, and accuracy across different application contexts. Emerging trends are mapped to reveal promising research directions at the intersection of numerical optimization and distributed systems.
 
@@ -880,7 +833,7 @@ This systematic inter-reviewer agreement process demonstrates methodological rig
 %     \Description{PRISMA standards followed}
 % \end{figure}
 
-\section{Findings and Analysis}\label{sec:findings-and-analysis}
+\section{Findings}\label{sec:findings-and-analysis}
 This section presents the findings from our systematic analysis of computational mathematics for AI, focusing on numerical methods and distributed computing techniques for deep learning on big data. Following the PRISMA guidelines \citep{moher2009preferred}, we analyzed 77 papers published between 2013 and 2024. The analysis is organized according to our research questions, examining numerical optimization methods (RQ1.1), their performance metrics (RQ1.2), distributed computing approaches (RQ2.1), and their scalability characteristics (RQ2.2).
 
 
@@ -1724,6 +1677,18 @@ The methodological gap between theoretical understanding and practical applicati
 
 %Several important limitations of the current research landscape emerged from our analysis. The lack of standardized benchmarks makes it difficult to compare different optimization approaches directly, while the variability in reporting practices complicates efforts to assess reproducibility. The ambiguity around what constitutes "big data" in many studies suggests the need for more rigorous characterization of dataset scale and complexity. Additionally, the focus on short-term performance metrics in many papers may obscure important considerations about long-term maintainability and adaptability of optimization approaches.
 
+\paragraph{Methodological Implications.}
+
+This detailed analysis of disputed papers reveals several critical insights for systematic literature reviews in computational mathematics for AI:
+
+\begin{enumerate}
+    \item \textbf{Domain Boundary Challenges}: The 37.9\% of disputes related to big data relevance highlights the need for more precise operational definitions of "big data" in research contexts. Our analysis suggests that volume alone is insufficient; studies must demonstrate engagement with velocity, variety, or specialized infrastructure requirements.
+    
+    \item \textbf{Interdisciplinary Classification Complexity}: The 27.6\% of disputes over numerical methods relevance indicates the challenge of categorizing research that spans computational mathematics and computer science. Our resolution process established that algorithms must demonstrate mathematical rigor beyond simple heuristic approaches.
+    
+    \item \textbf{Reviewer Expertise Requirements}: The high initial disagreement rate (21.2\%) followed by successful resolution suggests that systematic reviews in this field require reviewers with diverse expertise spanning mathematics, computer science, and domain applications.
+\end{enumerate}
+
 %Looking forward, several key opportunities emerge for advancing the field. Developing theoretical frameworks that better explain the empirical success of nature-inspired algorithms could help bridge the current theory-practice gap. Creating more sophisticated benchmarks that capture real-world deployment constraints would enable more meaningful comparisons between approaches. Investigating the potential of meta-learning techniques to automate optimization strategy selection based on problem characteristics could yield significant productivity improvements. Finally, exploring the intersection of optimization techniques with emerging hardware architectures may unlock new efficiency gains as computing platforms continue to evolve.
 
 %The practical implications of these findings are substantial. For researchers, they suggest the need for more interdisciplinary work that combines mathematical rigor with empirical validation. For practitioners, they provide clear guidance about which optimization approaches are likely to be most effective in different application contexts. Perhaps most importantly, they highlight the growing importance of considering optimization not as an isolated technical challenge, but as an integral part of the broader system design process that must account for domain requirements, hardware constraints, and operational considerations.
@@ -1784,55 +1749,43 @@ For practitioners, our findings suggest several practical recommendations:
 As computational resources continue to evolve and deep learning models grow in complexity, the field of computational mathematics for AI will remain critical for enabling the next generation of intelligent systems capable of extracting meaningful insights from big data. Our systematic review provides a comprehensive foundation for understanding the current state of this rapidly evolving field and identifying promising directions for future research and development.
 
 
-% \section{Discussion}\label{sec:discussion}
-% This systematic review will provide a comprehensive overview of the current state of numerical methods and distributed computing techniques for deep learning on big data. The findings will be interpreted considering the strength of evidence, applicability, and generalizability. Limitations of the review and the included studies will be discussed, and implications for future research will be outlined.
+\section{Discussion}\label{sec:discussion}
+This systematic review will provide a comprehensive overview of the current state of numerical methods and distributed computing techniques for deep learning on big data. The findings will be interpreted considering the strength of evidence, applicability, and generalizability. Limitations of the review and the included studies will be discussed, and implications for future research will be outlined.
 
 
-%The findings of this systematic review reveal several fundamental insights about the current state and future directions of computational optimization for deep learning on big data. Our analysis of 77 studies demonstrates that the field has evolved significantly from its early focus on generic optimization approaches to more sophisticated, domain-aware solutions that account for specific application requirements and hardware constraints. This evolution reflects the growing maturity of deep learning applications across diverse sectors and the increasing complexity of both models and datasets.
+The findings of this systematic review reveal several fundamental insights about the current state and future directions of computational optimization for deep learning on big data. Our analysis of 77 studies demonstrates that the field has evolved significantly from its early focus on generic optimization approaches to more sophisticated, domain-aware solutions that account for specific application requirements and hardware constraints. This evolution reflects the growing maturity of deep learning applications across diverse sectors and the increasing complexity of both models and datasets.
 
-%One of the most striking findings is the clear domain-dependence of optimization effectiveness. The healthcare domain's strong preference for nature-inspired algorithms (62.5\% adoption) suggests that these methods are particularly well-suited for handling the high-dimensional, noisy data characteristic of medical applications. The 27.4\% accuracy improvements observed in medical imaging tasks provide compelling evidence for this approach. Similarly, the cybersecurity domain's reliance on Bayesian methods (53.8\% adoption) underscores the importance of uncertainty quantification in security applications, where the cost of false positives and negatives can be substantial. These domain-specific patterns challenge the traditional assumption that optimization techniques can be universally applied, suggesting instead that algorithm selection must consider the fundamental characteristics of both the data and the task.
+One of the most striking findings is the clear domain-dependence of optimization effectiveness. The healthcare domain's strong preference for nature-inspired algorithms (62.5\% adoption) suggests that these methods are particularly well-suited for handling the high-dimensional, noisy data characteristic of medical applications. The 27.4\% accuracy improvements observed in medical imaging tasks provide compelling evidence for this approach. Similarly, the cybersecurity domain's reliance on Bayesian methods (53.8\% adoption) underscores the importance of uncertainty quantification in security applications, where the cost of false positives and negatives can be substantial. These domain-specific patterns challenge the traditional assumption that optimization techniques can be universally applied, suggesting instead that algorithm selection must consider the fundamental characteristics of both the data and the task.
 
-%The distributed computing findings reveal both significant progress and remaining challenges in scaling deep learning to big data problems. The ability of federated learning systems to maintain efficiency up to 800 client nodes represents a major advancement for distributed training scenarios. However, the subsequent decline in efficiency due to communication overhead and statistical heterogeneity points to fundamental limitations in current approaches. The success of hybrid 3D parallelism in achieving near-linear scaling to 64 GPUs demonstrates the potential of combining multiple parallelism strategies, but also highlights the need for more sophisticated load balancing techniques as model complexity continues to increase.
+The distributed computing findings reveal both significant progress and remaining challenges in scaling deep learning to big data problems. The ability of federated learning systems to maintain efficiency up to 800 client nodes represents a major advancement for distributed training scenarios. However, the subsequent decline in efficiency due to communication overhead and statistical heterogeneity points to fundamental limitations in current approaches. The success of hybrid 3D parallelism in achieving near-linear scaling to 64 GPUs demonstrates the potential of combining multiple parallelism strategies, but also highlights the need for more sophisticated load balancing techniques as model complexity continues to increase.
 
-%A critical tension emerges between theoretical rigor and practical effectiveness in our analysis. The inverse relationship we observed --- where the most theoretically sound methods (gradient-based) show limited adoption (12\%) while less theoretically grounded approaches (nature-inspired) dominate practical use (42\%) --- raises important questions about research priorities in the field. This disconnect suggests that current theoretical frameworks may not adequately capture the practical considerations that drive algorithm selection in real-world applications. The reproducibility gap, where only 23.5\% of nature-inspired studies provide source code compared to 67.2\% of gradient-based studies, further complicates this issue by making it difficult to validate empirical claims.
+A critical tension emerges between theoretical rigor and practical effectiveness in our analysis. The inverse relationship we observed --- where the most theoretically sound methods (gradient-based) show limited adoption (12\%) while less theoretically grounded approaches (nature-inspired) dominate practical use (42\%) --- raises important questions about research priorities in the field. This disconnect suggests that current theoretical frameworks may not adequately capture the practical considerations that drive algorithm selection in real-world applications. The reproducibility gap, where only 23.5\% of nature-inspired studies provide source code compared to 67.2\% of gradient-based studies, further complicates this issue by making it difficult to validate empirical claims.
 
-%The performance trade-offs we identified have significant implications for system design. The 73.8\% memory reduction achieved by some optimization techniques comes at the cost of up to 5.8\% accuracy degradation, forcing practitioners to make difficult decisions about resource allocation. Similarly, while privacy-preserving techniques can limit accuracy loss to under 3\%, they often require careful parameter tuning and may not be suitable for all applications. These trade-offs underscore the need for multi-objective optimization frameworks that can explicitly balance competing requirements.
+The performance trade-offs we identified have significant implications for system design. The 73.8\% memory reduction achieved by some optimization techniques comes at the cost of up to 5.8\% accuracy degradation, forcing practitioners to make difficult decisions about resource allocation. Similarly, while privacy-preserving techniques can limit accuracy loss to under 3\%, they often require careful parameter tuning and may not be suitable for all applications. These trade-offs underscore the need for multi-objective optimization frameworks that can explicitly balance competing requirements.
 
-%Several important limitations of the current research landscape emerged from our analysis. The lack of standardized benchmarks makes it difficult to compare different optimization approaches directly, while the variability in reporting practices complicates efforts to assess reproducibility. The ambiguity around what constitutes "big data" in many studies suggests the need for more rigorous characterization of dataset scale and complexity. Additionally, the focus on short-term performance metrics in many papers may obscure important considerations about long-term maintainability and adaptability of optimization approaches.
+Several important limitations of the current research landscape emerged from our analysis. The lack of standardized benchmarks makes it difficult to compare different optimization approaches directly, while the variability in reporting practices complicates efforts to assess reproducibility. The ambiguity around what constitutes "big data" in many studies suggests the need for more rigorous characterization of dataset scale and complexity. Additionally, the focus on short-term performance metrics in many papers may obscure important considerations about long-term maintainability and adaptability of optimization approaches.
 
-%Looking forward, several key opportunities emerge for advancing the field. Developing theoretical frameworks that better explain the empirical success of nature-inspired algorithms could help bridge the current theory-practice gap. Creating more sophisticated benchmarks that capture real-world deployment constraints would enable more meaningful comparisons between approaches. Investigating the potential of meta-learning techniques to automate optimization strategy selection based on problem characteristics could yield significant productivity improvements. Finally, exploring the intersection of optimization techniques with emerging hardware architectures may unlock new efficiency gains as computing platforms continue to evolve.
+Looking forward, several key opportunities emerge for advancing the field. Developing theoretical frameworks that better explain the empirical success of nature-inspired algorithms could help bridge the current theory-practice gap. Creating more sophisticated benchmarks that capture real-world deployment constraints would enable more meaningful comparisons between approaches. Investigating the potential of meta-learning techniques to automate optimization strategy selection based on problem characteristics could yield significant productivity improvements. Finally, exploring the intersection of optimization techniques with emerging hardware architectures may unlock new efficiency gains as computing platforms continue to evolve.
 
-%The practical implications of these findings are substantial. For researchers, they suggest the need for more interdisciplinary work that combines mathematical rigor with empirical validation. For practitioners, they provide clear guidance about which optimization approaches are likely to be most effective in different application contexts. Perhaps most importantly, they highlight the growing importance of considering optimization not as an isolated technical challenge, but as an integral part of the broader system design process that must account for domain requirements, hardware constraints, and operational considerations.
+The practical implications of these findings are substantial. For researchers, they suggest the need for more interdisciplinary work that combines mathematical rigor with empirical validation. For practitioners, they provide clear guidance about which optimization approaches are likely to be most effective in different application contexts. Perhaps most importantly, they highlight the growing importance of considering optimization not as an isolated technical challenge, but as an integral part of the broader system design process that must account for domain requirements, hardware constraints, and operational considerations.
 
-%As deep learning continues to advance and datasets grow ever larger, the role of computational optimization will only become more critical. The findings presented here suggest that future progress will depend on our ability to develop more nuanced, context-aware approaches that can balance theoretical soundness with practical effectiveness. By addressing the challenges identified in this review while building on the successes demonstrated across different domains, the field can continue to enable new applications and capabilities in AI.
+As deep learning continues to advance and datasets grow ever larger, the role of computational optimization will only become more critical. The findings presented here suggest that future progress will depend on our ability to develop more nuanced, context-aware approaches that can balance theoretical soundness with practical effectiveness. By addressing the challenges identified in this review while building on the successes demonstrated across different domains, the field can continue to enable new applications and capabilities in AI.
 
-\section{Notes}\label{sec:notes}
-There was a challenge among researchers to detect big data or what constitutes big data. While some studies did run their numerical method against a large set of data, it was not always clear if it was big data.
+% \section{Notes}\label{sec:notes}
+% There was a challenge among researchers to detect big data or what constitutes big data. While some studies did run their numerical method against a large set of data, it was not always clear if it was big data.
 
-For instance one paper discussed fault prediction with a large amount of data, but it did not occur naturally to us that this data could be big data. It was only clarified during the discussion phase that the data was indeed big data.
+% For instance one paper discussed fault prediction with a large amount of data, but it did not occur naturally to us that this data could be big data. It was only clarified during the discussion phase that the data was indeed big data.
 
 
 \section{Conclusion}\label{sec:conclusion}
 
-This systematic analysis of computational mathematics for AI optimization synthesizes findings from 77 studies (2016-2024) examining numerical methods and distributed computing techniques for deep learning on big data. The research reveals three fundamental dimensions that characterize the current state of the field and its future trajectory.
+This systematic review of 77 studies (2016-2024) reveals that computational mathematics for AI has evolved toward domain-specific, multi-objective optimization approaches that balance accuracy, efficiency, and scalability for deep learning on big data.
 
-\subsection{Domain-Specific Optimization Patterns}
-The analysis demonstrates clear domain-dependent preferences in optimization approaches, each yielding significant performance improvements. Healthcare applications, representing nearly one-third of the examined studies, show a strong preference for nature-inspired algorithms, which account for 62.5\% of optimization techniques in this domain. These methods prove particularly effective for medical imaging and disease prediction, delivering 27.4\% accuracy gains when handling complex, high-dimensional medical data. In cybersecurity applications, Bayesian methods dominate with 53.8\% adoption, providing crucial uncertainty quantification that reduces false alarms by 22.3\% while maintaining 93.7\% recall rates. Financial services applications favor evolutionary algorithms (41.2\% adoption), which excel at multi-objective optimization challenges like portfolio management, achieving 23.5\% improvements in risk-adjusted returns.
+Our analysis identified three critical patterns. First, optimization technique selection is highly domain-dependent: healthcare applications favor nature-inspired algorithms (62.5\% adoption, 27.4\% accuracy gains), cybersecurity applications prefer Bayesian methods (53.8\% adoption) for uncertainty quantification, and financial applications use evolutionary algorithms (41.2\% adoption) for multi-objective optimization. Second, distributed computing has achieved significant scaling advances, with federated learning maintaining efficiency up to 800 client nodes and hybrid parallelism achieving near-linear scaling across 64 GPUs. Third, a concerning theory-practice gap exists where widely-adopted nature-inspired algorithms (42\% of approaches) lack theoretical rigor compared to gradient-based methods.
 
-\subsection{Distributed Computing Advancements}
-The study identifies significant progress in distributed computing approaches that enable scaling deep learning to big data problems. Federated learning systems demonstrate remarkable scalability, maintaining efficiency up to 800 client nodes before communication overhead and statistical heterogeneity begin diminishing returns. Hybrid parallelism strategies combining data, pipeline, and tensor approaches achieve near-linear scaling efficiency when distributing models across 64 GPUs, making billion-parameter models tractable. Communication optimization techniques yield particularly impressive results, with graduated compression methods reducing bandwidth requirements by 73\% without compromising model quality. Energy efficiency improvements reach 58.4\% in edge computing deployments through adaptive computation techniques that dynamically adjust model complexity based on input difficulty.
+The field requires stronger theoretical foundations for popular metaheuristic approaches, standardized evaluation benchmarks, and adaptive frameworks for scaling beyond current limits. Hardware-aware optimization through algorithm-architecture co-design represents a promising direction for efficiency improvements.
 
-\subsection{Key Trade-offs and Research Gaps}
-The analysis reveals several critical tensions that define current challenges in the field. Nature-inspired algorithms dominate practical adoption (42\% of approaches) despite scoring lowest in theoretical rigor (2.8/12), while gradient-based methods show the strongest theoretical foundations (8.7/12) but see limited adoption (12\%). This theory-practice gap raises important questions about the reliability and generalizability of widely-used methods. Performance trade-offs emerge prominently in memory optimization, where 73.8\% reductions in memory requirements sometimes come at the cost of 5.8\% accuracy degradation. Privacy-preserving techniques demonstrate that formal guarantees can be achieved with less than 3\% accuracy loss, though implementation challenges remain.
-
-The study identifies several reproducibility challenges, with only 23.5\% of nature-inspired algorithm studies providing source code compared to 67.2\% for gradient-based methods. Scaling limitations become apparent in federated learning systems, where efficiency declines beyond 800 nodes due to statistical heterogeneity effects. Energy consumption remains problematic for large-scale deployments despite 58.4\% improvements, highlighting the need for continued innovation in efficient computing.
-
-\subsection{Future Directions and Practical Implications}
-The findings suggest several critical directions for future research. Strengthening theoretical foundations for widely-used nature-inspired approaches could bridge the current theory-practice gap, while standardized benchmarks could address reproducibility challenges in distributed training. Developing adaptive federated learning frameworks capable of scaling beyond 800 nodes represents another key opportunity. Hardware-aware optimizations through algorithm-architecture co-design may yield further efficiency gains, particularly for edge deployments.
-
-For practitioners, the results provide clear guidance: healthcare applications should prioritize nature-inspired methods for complex medical data, while cybersecurity systems benefit most from Bayesian approaches with uncertainty quantification. Financial models achieve optimal results with evolutionary multi-objective optimization techniques. Edge deployments require communication-efficient federated learning with privacy guarantees, whereas cloud and HPC systems need hybrid parallelism strategies for training billion-parameter models.
-
-This comprehensive analysis reveals a field in transition, moving from general-purpose solutions to specialized, context-aware optimization frameworks. While distributed computing innovations have dramatically improved scalability, fundamental tensions remain between theoretical rigor and empirical performance. Addressing these challenges while continuing to advance scalability, efficiency, and privacy preservation will define the next era of computational mathematics for AI.
+This analysis reveals computational mathematics for AI is transitioning from general-purpose to specialized, context-aware optimization frameworks. Success depends on addressing the theory-practice gap while advancing scalability, efficiency, and privacy preservation for next-generation AI systems.
 
 \appendix
 \section{List of Included Papers}\label{app:list-of-included-papers}
