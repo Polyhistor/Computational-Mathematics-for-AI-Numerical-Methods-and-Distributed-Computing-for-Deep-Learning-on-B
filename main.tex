@@ -518,22 +518,25 @@ The deduplication process revealed substantial overlap across databases, with 68
 
 \subsubsection{Multi-Phase Screening and Selection Process}\label{subsubsec:phase-2-literature-search-and-study-selection:multi-phase-screening-and-selection-process}
 
-Our screening process employed a systematic reduction methodology with clearly defined criteria at each phase. \Cref{fig:study_selection_flow} illustrates the complete selection flow with quantitative metrics at each stage.
+% Our screening process employed a systematic reduction methodology with clearly defined criteria at each phase. \Cref{fig:study_selection_flow} illustrates the complete selection flow with quantitative metrics at each stage.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{media/prisma1.png}
-    \caption{PRISMA flow diagram showing systematic literature selection process with quantitative reduction at each screening phase, demonstrating rigorous selection criteria with final retention rate of 3.8\%.}
-    \label{fig:study_selection_flow}
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.9\textwidth]{media/prisma1.png}
+%     \caption{PRISMA flow diagram showing systematic literature selection process with quantitative reduction at each screening phase, demonstrating rigorous selection criteria with final retention rate of 3.8\%.}
+%     \label{fig:study_selection_flow}
+% \end{figure}
 
-**Phase 1: Title and Abstract Screening** reduced the corpus from 1,352 to 864 papers (63.9% retention), with 488 papers (36.1%) excluded for lack of relevance to computational mathematics for deep learning or insufficient big data focus. The primary exclusion criteria included: studies focusing solely on traditional machine learning without deep learning components (187 papers, 38.3%), research lacking computational mathematics or numerical methods (156 papers, 32.0%), and applications without demonstrable big data characteristics (145 papers, 29.7%).
+\begin{enumerate}
+    \item \textbf{Phase 1: Title and Abstract Screening} reduced the corpus from 1,352 to 864 papers (63.9\% retention), with 488 papers (36.1\%) excluded for lack of relevance to computational mathematics for deep learning or insufficient big data focus. The primary exclusion criteria included: studies focusing solely on traditional machine learning without deep learning components (187 papers, 38.3\%), research lacking computational mathematics or numerical methods (156 papers, 32.0\%), and applications without demonstrable big data characteristics (145 papers, 29.7\%).
 
-**Phase 2: Full-Text Assessment** applied more rigorous criteria, retaining 347 papers (40.2% of Phase 1 output) while excluding 517 papers (59.8%). The exclusion reasons at this phase were more methodologically focused: insufficient detail about numerical implementations (198 papers, 38.3%), lack of quantitative performance evaluation (167 papers, 32.3%), and methodological quality concerns (152 papers, 29.4%).
+    \item \textbf{Phase 2: Full-Text Assessment} applied more rigorous criteria, retaining 347 papers (40.2\% of Phase 1 output) while excluding 517 papers (59.8\%). The exclusion reasons at this phase were more methodologically focused: insufficient detail about numerical implementations (198 papers, 38.3\%), lack of quantitative performance evaluation (167 papers, 32.3\%), and methodological quality concerns (152 papers, 29.4\%).
 
-**Phase 3: Quality Screening** represented the most selective phase, with 132 papers (38.0% of Phase 2 output) advancing to the quality assessment framework. This phase excluded 215 papers (62.0%) primarily due to: methodological rigor concerns (89 papers, 41.4%), insufficient reproducibility information (76 papers, 35.3%), and limited contribution novelty (50 papers, 23.3%).
+    \item \textbf{Phase 3: Quality Screening} represented the most selective phase, with 132 papers (38.0\% of Phase 2 output) advancing to the quality assessment framework. This phase excluded 215 papers (62.0\%) primarily due to: methodological rigor concerns (89 papers, 41.4\%), insufficient reproducibility information (76 papers, 35.3\%), and limited contribution novelty (50 papers, 23.3\%).
+\end{enumerate}
 
-The overall selection process achieved a 3.8% retention rate (77 papers from 2,041 initial retrievals), indicating highly selective criteria that prioritized methodological rigor and relevance to our specific research questions.
+The overall selection process achieved a 3.8\% retention rate (77 papers from 2,041 initial retrievals), indicating highly selective criteria that prioritized methodological rigor and relevance to our specific research questions.
+
 
 \subsubsection{Inter-Reviewer Agreement and Consensus Resolution}\label{subsubsec:phase-2-literature-search-and-study-selection:inter-reviewer-agreement-and-consensus-resolution}
 
@@ -562,7 +565,7 @@ The initial screening phase revealed challenges in inter-rater reliability, with
     \label{tab:consensus_analysis}
 \end{table}
 
-\paragraph{Controversial Papers Resolution.} Twenty-eight papers (21.2% of Phase 3 papers) required comprehensive consensus resolution due to split reviewer decisions. These controversial papers underwent detailed analysis to identify sources of disagreement and establish consistent evaluation criteria.
+\paragraph{Controversial Papers Resolution:} Twenty-eight papers (21.2\% of Phase 3 papers) required comprehensive consensus resolution due to split reviewer decisions. These controversial papers underwent detailed analysis to identify sources of disagreement and establish consistent evaluation criteria.
 
 The primary sources of disagreement were systematically categorized:
 \begin{itemize}
@@ -572,7 +575,7 @@ The primary sources of disagreement were systematically categorized:
     \item \textbf{Distributed computing classification}: 24\% involved classification of hybrid approaches combining numerical and distributed techniques
 \end{itemize}
 
-\paragraph{Detailed Reviewer Deliberation Process.} The 28 disputed papers underwent comprehensive reflection involving detailed individual reviewer rationales. The distribution of final decisions following the deliberation process is summarized below:
+\paragraph{Detailed Reviewer Deliberation Process:} The 28 disputed papers underwent comprehensive reflection involving detailed individual reviewer rationales. The distribution of final decisions following the deliberation process is summarized below:
 
 \begingroup
 \setlength{\tabcolsep}{8pt}
@@ -609,13 +612,15 @@ This systematic selection process demonstrates methodological rigor through mult
 
 The structured Delphi process comprised four iterative rounds designed to achieve methodological consensus:
 
-**Round 1** involved independent evaluation of 50 randomly selected papers by each reviewer, with detailed rationale documentation for all inclusion/exclusion decisions. This round revealed three primary disagreement areas requiring structured resolution.
+\begin{enumerate}
+    \item \textbf{Round 1} involved independent evaluation of 50 randomly selected papers by each reviewer, with detailed rationale documentation for all inclusion/exclusion decisions. This round revealed three primary disagreement areas requiring structured resolution.
 
-**Round 2** provided anonymized statistical summaries of group responses alongside peer rationales, enabling reviewers to understand alternative perspectives without bias from author identity.
+    \item \textbf{Round 2} provided anonymized statistical summaries of group responses alongside peer rationales, enabling reviewers to understand alternative perspectives without bias from author identity.
 
-**Round 3** employed nominal group techniques \citep{delbecq1971group} to develop operational screening guidelines addressing: (1) quantitative thresholds for big data characteristics, (2) minimum reporting standards for numerical methods, and (3) decision rules for hybrid approach classification.
+    \item \textbf{Round 3} employed nominal group techniques \citep{delbecq1971group} to develop operational screening guidelines addressing: (1) quantitative thresholds for big data characteristics, (2) minimum reporting standards for numerical methods, and (3) decision rules for hybrid approach classification.
 
-**Round 4** served as validation, achieving the target Krippendorff's α $\geq$ 0.8 required for systematic review reliability standards \citep{krippendorff2018content}.
+    \item \textbf{Round 4} served as validation, achieving the target Krippendorff's α $\geq$ 0.8 required for systematic review reliability standards \citep{krippendorff2004reliability}.
+\end{enumerate}
 
 \begin{figure}
     \centering
@@ -626,7 +631,7 @@ The structured Delphi process comprised four iterative rounds designed to achiev
 \end{figure}
 
 \subsubsection{Hierarchical Decision Framework}\label{subsubsec:phase-2-literature-search-and-study-selection:hierarchical-decision-framework}
-Following the Delphi-based consensus methodology outlined in \citet{dalkey1969delphi} and the systematic review guidelines in  \citet{kitchenham2004procedures}, we conduct a  consensus meeting to establish classification criteria. The meeting employs the Nominal Group Technique as described in \citet{delbecq1971group}, which yields a formalized decision framework.
+Following the Delphi-based consensus methodology outlined in \citet{dalkey1969delphi} and the systematic review guidelines in  \citet{kitchenham2004procedures}, we conduct a  consensus meeting to establish classification criteria (depicted in Figure~\ref{fig:decision-flow2}). The meeting employs the Nominal Group Technique as described in \citet{delbecq1971group}, which yields a formalized decision framework.
 
 \paragraph{Technical Foundation Verification:}
 The first verification gate confirms each paper's relevance to our core technical domains by requiring explicit evidence of deep learning implementation coupled with either numerical methods or distributed computing approaches.
