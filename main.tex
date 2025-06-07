@@ -365,33 +365,100 @@ The research questions address both the technical specifications and performance
 \subsubsection{Literature Review Classification Framework}\label{subsubsec:phase-1-planning-and-protocol-development:literature-review-classification-framework}
 We employ Cooper's taxonomy of literature reviews \citep{cooper1988organizing} as our classification framework. This approach examines studies through six critical dimensions: the focus of research (ranging from theoretical to applied), the review's goal (integration vs. critical analysis), the author's perspective (neutral or advocacy), coverage breadth, organizational approach, and intended audience.
 
-Our study adopts the following specific positioning within Cooper's taxonomy:
+Our study adopts the specific positioning within Cooper's taxonomy shown in \cref{tab:cooper_taxonomy}:
 
-\textbf{Focus:} We examine both research methods (numerical optimization techniques and distributed computing approaches) and research outcomes (performance metrics, efficiency measures), as evidenced by our dual research question structure addressing both "what methods" and "how they perform."
-
-\textbf{Goal:} Integration rather than criticism, explicitly bridging fragmented literature across domains to provide "a coherent foundation for understanding and designing efficient AI systems."
-
-\textbf{Perspective:} Neutral representation with balanced analysis, systematically presenting both strengths and limitations (e.g., nature-inspired algorithms' 42\% adoption despite 2.8/12 theoretical rigor scores).
-
-\textbf{Coverage:} Representative scope through systematic search of 7 databases, PRISMA guidelines, and 77 papers (2013-2024), with Delphi consensus ensuring deliberate boundary-setting.
-
-\textbf{Organization:} Methodological structure around two complementary technical approaches (numerical methods and distributed computing), with further stratification by technical characteristics.
-
-\textbf{Audience:} Specialized scholars in computational AI, as indicated by technical depth, mathematical specifications, and domain-specific terminology for researchers engaging with both mathematical foundations and empirical findings.
+\begin{table}[!htb]
+    \centering
+    \begingroup
+    \setlength{\tabcolsep}{8pt}
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabular}{>{\bfseries}p{2.5cm} p{11cm}}
+        \toprule
+        \textbf{Dimension} & \textbf{Our Study's Positioning} \\
+        \midrule
+        Focus & Research methods (numerical optimization techniques and distributed computing approaches) and research outcomes (performance metrics, efficiency measures), evidenced by dual research question structure \\
+        \addlinespace
+        Goal & Integration rather than criticism, explicitly bridging fragmented literature across domains to provide "a coherent foundation for understanding and designing efficient AI systems" \\
+        \addlinespace
+        Perspective & Neutral representation with balanced analysis, systematically presenting both strengths and limitations (e.g., nature-inspired algorithms' 42\% adoption despite 2.8/12 theoretical rigor scores) \\
+        \addlinespace
+        Coverage & Representative scope through systematic search of 7 databases, PRISMA guidelines, and 77 papers (2013-2024), with Delphi consensus ensuring deliberate boundary-setting \\
+        \addlinespace
+        Organization & Methodological structure around two complementary technical approaches (numerical methods and distributed computing), with further stratification by technical characteristics \\
+        \addlinespace
+        Audience & Specialized scholars in computational AI, indicated by technical depth, mathematical specifications, and domain-specific terminology for researchers engaging with both mathematical foundations and empirical findings \\
+        \bottomrule
+    \end{tabular}
+    \endgroup
+    \caption{Our study's positioning within Cooper's taxonomy of literature reviews.}
+    \label{tab:cooper_taxonomy}
+\end{table}
 
 
 
 \subsubsection{Search Strategy Development}\label{subsubsec:phase-1-planning-and-protocol-development:search-strategy-development}
-For RQ1.1 and RQ1.2, we construct search strings that combine ``deep learning'' with numerical method terminology (``numerical method'', ``computational mathematic'', ``optimization algorithm'') and big data concept.
+We develop comprehensive search strategies to address both numerical methods (RQ1.1 and RQ1.2) and distributed computing approaches (RQ2.1 and RQ2.2) within a unified systematic literature review framework. Our search strategy development follows the PRISMA-S guidelines \citep{rethlefsen2021prisma}, which provide an extension to the PRISMA statement specifically for reporting literature searches in systematic reviews.
 
-For SLR2, we use keywords including ``distributed computing'', ``parallel processing'', and ``GPU acceleration'' while maintaining the core deep learning and big data context. We adapt all search strings to meet each database's specific syntax requirements.
+\paragraph{PRISMA-S Guided Search Development Process}
+The PRISMA-S framework guided our search strategy development through its structured approach to search transparency and reproducibility. Following PRISMA-S recommendations, we document our complete search methodology including: (1) the rationale for database selection, (2) detailed justification for keyword selection based on domain expertise and preliminary scoping, (3) explicit documentation of search string adaptations for each database, and (4) comprehensive reporting of search limitations and boundary decisions. This systematic approach ensures our search strategy is both comprehensive and reproducible.
+
+\paragraph{Keyword Selection Rationale}
+Our keyword selection strategy was informed by three complementary approaches following PRISMA-S guidance for comprehensive search development. First, we conducted a preliminary scoping review of seminal papers in computational mathematics for AI \citep{lecun2015deep, goodfellow2016deep, bottou2018optimization} to identify core terminology used by domain experts. Second, we performed controlled vocabulary analysis using Medical Subject Headings (MeSH) and Association for Computing Machinery (ACM) Computing Classification System terms to ensure coverage of established taxonomies. Third, we engaged in iterative keyword expansion through citation chaining and expert consultation with computational mathematics researchers to validate our term selection.
+
+The selection of ``deep learning'' as our primary search term reflects its established status as the dominant paradigm in modern AI applications \citep{lecun2015deep}. We supplemented this with ``neural network*'' to capture earlier literature that may not use contemporary terminology. For numerical methods, we selected ``numerical method*'' to encompass traditional computational approaches, ``computational mathematics'' to include theoretical foundations, and ``optimization algorithm*'' to capture the algorithmic implementations that bridge theory and practice. The distributed computing dimension required ``distributed computing'', ``parallel processing'', ``GPU acceleration'', and ``federated learning'' to cover the spectrum from traditional high-performance computing to modern edge-distributed approaches. Our inclusion of ``big data'' and ``large-scale'' ensures focus on scalability challenges that distinguish our work from small-scale optimization studies.
+
+Our core search strings are:
+
+\textbf{RQ1.1 and RQ1.2 (Numerical Methods):}
+\begin{verbatim}
+("deep learning" AND ("numerical method*" OR "computational mathematics" 
+OR "optimization algorithm*") AND ("big data"))
+\end{verbatim}
+
+\textbf{RQ2.1 and RQ2.2 (Distributed Computing):}
+\begin{verbatim}
+(("deep learning" OR "neural network*") AND ("distributed computing" 
+OR "parallel processing" OR "GPU acceleration" OR "federated learning") 
+AND ("big data" OR "large-scale") AND (scalability OR performance))
+\end{verbatim}
+
+Following PRISMA-S requirements for search string transparency, we adapt these core search concepts to meet each database's specific syntax requirements as shown in \cref{tab:search_strings}:
+
+\begin{table}[!htb]
+    \centering
+    \begingroup
+    \renewcommand{\arraystretch}{1.3}
+    \setlength{\tabcolsep}{6pt}
+    \begin{tabular}{>{\bfseries}p{3cm} p{11cm}}
+        \toprule
+        \textbf{Database} & \textbf{Search String} \\
+        \midrule
+        IEEE Xplore & \texttt{(("deep learning" AND ("numerical method*" OR "computational mathematics" OR "optimization algorithm*") AND ("big data")))} \\
+        \addlinespace
+        Scopus & \texttt{( TITLE-ABS ( "deep learning" ) AND ( TITLE-ABS ( "numerical method*" OR "computational mathematics" OR "optimization algorithm*" ) ) AND TITLE-ABS ( "big data" ) )} \\
+        \addlinespace
+        AIS eLibrary & \texttt{([[Title:"deep learning"] AND [Title: "numerical method*"]] OR [Title: "computational mathematics"] OR [[Title: "optimization algorithm*"] AND [Title: "big data"]])} \\
+        \addlinespace
+        ACM Digital Library & \texttt{([[[Title: "deep learning"] AND [Title: "numerical method*"]] OR [Title: "computational mathematics"] OR [[Title: "optimization algorithm*"] AND [Title: "big data"]]] AND [[Abstract: "deep learning"] OR [Abstract: "numerical method*"] OR [Abstract: "computational mathematics"] OR [Abstract: "optimization algorithm*"] OR [Abstract: "big data"]])} \\
+        \addlinespace
+        SpringerLink & \texttt{( TITLE-ABS ( "deep learning" ) AND ( TITLE-ABS ( "numerical method*" OR "computational mathematics" OR "optimization algorithm*" ) ) AND TITLE-ABS ( "big data" ) )} \\
+        \addlinespace
+        Web of Science & \texttt{TS=("deep learning" AND ("numerical method*" OR "computational mathematics" OR "optimization algorithm*") AND ("big data"))} \\
+        \addlinespace
+        JSTOR & \texttt{("deep learning" AND ("numerical method*" OR "computational mathematics" OR "optimization algorithm*") AND ("big data"))} \\
+        \bottomrule
+    \end{tabular}
+    \endgroup
+    \caption{Database-specific search strings adapted for systematic literature review.}
+    \label{tab:search_strings}
+\end{table}
 
 \subsubsection{Information Sources and Eligibility Criteria}\label{subsubsec:phase-1-planning-and-protocol-development:information-sources-and-eligibility-criteria}
 We conduct our search across seven major academic databases (IEEE Xplore, ACM Digital Library, SpringerLink, Scopus, Web of Science, JSTOR, AIS) to ensure coverage of both computer science and applied mathematics literature.
 
 \noindent\paragraph{Inclusion Criteria:}
 \begin{itemize}
-    \item Studies published between 2014 and 2024
+    \item Studies published between 2013 and 2024
     \item Peer-reviewed journal articles and complete conference proceedings
     \item English-language publications with full text available
     \item Research focusing specifically on numerical methods in deep learning for big data applications
