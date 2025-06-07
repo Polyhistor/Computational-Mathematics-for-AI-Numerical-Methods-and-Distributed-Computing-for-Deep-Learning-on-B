@@ -538,75 +538,7 @@ The deduplication process revealed substantial overlap across databases, with 68
 The overall selection process achieved a 3.8\% retention rate (77 papers from 2,041 initial retrievals), indicating highly selective criteria that prioritized methodological rigor and relevance to our specific research questions.
 
 
-\subsubsection{Inter-Reviewer Agreement and Consensus Resolution}\label{subsubsec:phase-2-literature-search-and-study-selection:inter-reviewer-agreement-and-consensus-resolution}
-
-The initial screening phase revealed challenges in inter-rater reliability, with Krippendorff's alpha measuring 0.43 across five reviewers. This moderate agreement necessitated implementation of a structured Delphi consensus protocol combining RAND/UCLA methodology \citep{fitch2001rand} with Dalkey's classical framework \citep{dalkey1969delphi}.
-
-\Cref{tab:consensus_analysis} presents the detailed analysis of inter-reviewer agreement patterns across the 132 papers entering quality screening, revealing specific areas of disagreement that required consensus resolution.
-
-\begin{table}[!htb]
-    \centering
-    \begingroup
-    \setlength{\tabcolsep}{10pt}
-    \renewcommand{\arraystretch}{1.3}
-    \begin{tabular}{lccc}
-        \toprule
-        \textbf{Agreement Level} & \textbf{Number of Papers} & \textbf{Percentage (\%)} & \textbf{Action Required} \\
-        \midrule
-        Complete consensus (5/5) & 47 & 35.6 & Direct inclusion \\
-        Strong consensus (4/5) & 57 & 43.2 & Minor discussion \\
-        Split decision (3/2) & 28 & 21.2 & Full consensus process \\
-        \midrule
-        \textbf{Total} & \textbf{132} & \textbf{100.0} & \\
-        \bottomrule
-    \end{tabular}
-    \endgroup
-    \caption{Inter-reviewer agreement patterns showing distribution of consensus levels and corresponding resolution procedures.}
-    \label{tab:consensus_analysis}
-\end{table}
-
-\paragraph{Controversial Papers Resolution:} Twenty-eight papers (21.2\% of Phase 3 papers) required comprehensive consensus resolution due to split reviewer decisions. These controversial papers underwent detailed analysis to identify sources of disagreement and establish consistent evaluation criteria.
-
-The primary sources of disagreement were systematically categorized:
-\begin{itemize}
-    \item \textbf{Big data context ambiguity}: 45\% of disputes centered on whether studies adequately demonstrated big data characteristics (volume, velocity, variety, or specialized infrastructure requirements)
-    \item \textbf{Numerical methods relevance}: 38\% involved disagreements about the relevance of optimization approaches to computational mathematics for deep learning
-    \item \textbf{Methodological rigor assessment}: 31\% concerned the adequacy of experimental design and validation procedures
-    \item \textbf{Distributed computing classification}: 24\% involved classification of hybrid approaches combining numerical and distributed techniques
-\end{itemize}
-
-\paragraph{Detailed Reviewer Deliberation Process:} The 28 disputed papers underwent comprehensive reflection involving detailed individual reviewer rationales. The distribution of final decisions following the deliberation process is summarized below:
-
-\begingroup
-\setlength{\tabcolsep}{8pt}
-\renewcommand{\arraystretch}{1.3}
-\begin{center}
-\begin{tabular}{lccccc}
-    \toprule
-    \textbf{Final Decision} & \textbf{Alpha} & \textbf{Beta} & \textbf{Gamma} & \textbf{Delta} & \textbf{Epsilon} \\
-    \midrule
-    Include & 12 & 15 & 14 & 16 & 11 \\
-    Exclude & 16 & 13 & 14 & 12 & 17 \\
-    \midrule
-    \textbf{Agreement Rate (\%)} & \textbf{85.7} & \textbf{89.3} & \textbf{82.1} & \textbf{92.9} & \textbf{78.6} \\
-    \bottomrule
-\end{tabular}
-\end{center}
-\endgroup
-
-\textbf{Table:} Final reviewer decisions following deliberation process, showing high post-consensus agreement rates across all reviewers.
-
-The consensus resolution process achieved substantial improvement in inter-reviewer reliability, with post-deliberation Krippendorff's alpha increasing to 0.87, exceeding the 0.8 threshold for acceptable agreement in systematic reviews.
-
-\paragraph{Quantitative Selection Metrics.} The final selection achieved impressive selectivity metrics demonstrating rigorous quality control:
-\begin{itemize}
-    \item \textbf{Overall retention rate}: 3.8% (77 papers from 2,041 initial retrievals)
-    \item \textbf{Quality screening efficiency}: 58.3% of papers entering Phase 3 were ultimately included
-    \item \textbf{Reviewer consensus rate}: 78.8% of papers achieved immediate consensus without requiring deliberation
-    \item \textbf{Inter-reviewer reliability}: Post-consensus Krippendorff's α = 0.87
-\end{itemize}
-
-This systematic selection process demonstrates methodological rigor through multiple validation checkpoints, comprehensive inter-reviewer agreement protocols, and transparent documentation of all exclusion decisions. The low overall retention rate (3.8%) reflects our commitment to including only the highest-quality studies that directly address computational mathematics for deep learning in big data contexts.
+The multi-phase screening process employed systematic inter-reviewer agreement protocols at each stage (detailed in \Cref{subsec:inter-reviewer-agreement-and-consensus-resolution}). Initial inter-rater reliability challenges (Krippendorff's α = 0.43) necessitated implementation of a structured Delphi consensus protocol, ultimately achieving post-consensus reliability of α = 0.87.
 
 \subsubsection{Refining Screening Through Delphi Consensus}\label{subsubsec:phase-2-literature-search-and-study-selection:refining-screening-through-delphi-consensus}
 
@@ -622,7 +554,7 @@ The structured Delphi process comprised four iterative rounds designed to achiev
     \item \textbf{Round 4} served as validation, achieving the target Krippendorff's α $\geq$ 0.8 required for systematic review reliability standards \citep{krippendorff2004reliability}.
 \end{enumerate}
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.9\textwidth]{media/Company Structure.png}
     \caption{Paper Classification Decision Framework}
@@ -667,7 +599,7 @@ The 29 disputed papers from our "Disputed Papers.csv" analysis revealed systemat
 
 \paragraph{Quality Assessment Phase Analysis.}
 
-The quality assessment grid (quality\_assessment\_grid.csv) documented 132 papers that progressed to the formal quality evaluation phase. This phase demonstrated remarkable diversity in the research landscape:
+The quality assessment grid documented 132 papers that progressed to the formal quality evaluation phase. This phase demonstrated remarkable diversity in the research landscape:
 
 \begin{itemize}
     \item \textbf{Temporal Distribution}: Papers spanned 2018-2024, with 2021-2023 representing the peak period (89 papers, 67.4\% of quality-assessed papers).
@@ -688,17 +620,19 @@ The consensus resolution process demonstrated high effectiveness in resolving di
     \item \textbf{Post-Deliberation Agreement}: Krippendorff's alpha improved from 0.43 to 0.87, exceeding the 0.8 threshold for acceptable agreement
 \end{itemize}
 
-\paragraph{Methodological Implications.}
 
-This detailed analysis of disputed papers reveals several critical insights for systematic literature reviews in computational mathematics for AI:
+%  move to discussion 
+% \paragraph{Methodological Implications.}
 
-\begin{enumerate}
-    \item \textbf{Domain Boundary Challenges}: The 37.9\% of disputes related to big data relevance highlights the need for more precise operational definitions of "big data" in research contexts. Our analysis suggests that volume alone is insufficient; studies must demonstrate engagement with velocity, variety, or specialized infrastructure requirements.
+% This detailed analysis of disputed papers reveals several critical insights for systematic literature reviews in computational mathematics for AI:
+
+% \begin{enumerate}
+%     \item \textbf{Domain Boundary Challenges}: The 37.9\% of disputes related to big data relevance highlights the need for more precise operational definitions of "big data" in research contexts. Our analysis suggests that volume alone is insufficient; studies must demonstrate engagement with velocity, variety, or specialized infrastructure requirements.
     
-    \item \textbf{Interdisciplinary Classification Complexity}: The 27.6\% of disputes over numerical methods relevance indicates the challenge of categorizing research that spans computational mathematics and computer science. Our resolution process established that algorithms must demonstrate mathematical rigor beyond simple heuristic approaches.
+%     \item \textbf{Interdisciplinary Classification Complexity}: The 27.6\% of disputes over numerical methods relevance indicates the challenge of categorizing research that spans computational mathematics and computer science. Our resolution process established that algorithms must demonstrate mathematical rigor beyond simple heuristic approaches.
     
-    \item \textbf{Reviewer Expertise Requirements}: The high initial disagreement rate (21.2\%) followed by successful resolution suggests that systematic reviews in this field require reviewers with diverse expertise spanning mathematics, computer science, and domain applications.
-\end{enumerate}
+%     \item \textbf{Reviewer Expertise Requirements}: The high initial disagreement rate (21.2\%) followed by successful resolution suggests that systematic reviews in this field require reviewers with diverse expertise spanning mathematics, computer science, and domain applications.
+% \end{enumerate}
 
 \paragraph{Impact on Final Selection.}
 
@@ -829,6 +763,114 @@ Studies vary in their algorithms, architectures, datasets, and evaluation metric
 This final phase integrates findings from both systematic literature reviews through a comparative analysis framework. We identify synergies between numerical methods and distributed computing techniques, revealing how algorithmic choices interact with parallel architectures to impact overall system performance. The analysis highlights fundamental trade-offs between computational efficiency, scalability, and accuracy across different application contexts. Emerging trends are mapped to reveal promising research directions at the intersection of numerical optimization and distributed systems.
 
 This phased approach ensures a systematic and comprehensive review of computational mathematics for AI in big data contexts, combining insights from numerical methods and distributed computing techniques to provide actionable guidance for researchers and practitioners.
+
+\subsection{Inter-Reviewer Agreement and Consensus Resolution}\label{subsec:inter-reviewer-agreement-and-consensus-resolution}
+
+Inter-reviewer agreement and consensus resolution protocols were applied systematically across all phases of the review process to ensure methodological rigor and minimize bias in study selection and quality assessment. This section details the comprehensive approach used to achieve and maintain high inter-rater reliability throughout the systematic literature review.
+
+\subsubsection{Initial Agreement Challenges and Protocol Development}\label{subsubsec:inter-reviewer-agreement-initial-challenges}
+
+The initial screening phase revealed challenges in inter-rater reliability, with Krippendorff's alpha measuring 0.43 across five reviewers. This moderate agreement necessitated implementation of a structured Delphi consensus protocol combining RAND/UCLA methodology \citep{fitch2001rand} with Dalkey's classical framework \citep{dalkey1969delphi}.
+
+\Cref{tab:consensus_analysis} presents the detailed analysis of inter-reviewer agreement patterns across the 132 papers entering quality screening, revealing specific areas of disagreement that required consensus resolution.
+
+\begin{table}[!htb]
+    \centering
+    \begingroup
+    \setlength{\tabcolsep}{10pt}
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{lccc}
+        \toprule
+        \textbf{Agreement Level} & \textbf{Number of Papers} & \textbf{Percentage (\%)} & \textbf{Action Required} \\
+        \midrule
+        Complete consensus (5/5) & 47 & 35.6 & Direct inclusion \\
+        Strong consensus (4/5) & 57 & 43.2 & Minor discussion \\
+        Split decision (3/2) & 28 & 21.2 & Full consensus process \\
+        \midrule
+        \textbf{Total} & \textbf{132} & \textbf{100.0} & \\
+        \bottomrule
+    \end{tabular}
+    \endgroup
+    \caption{Inter-reviewer agreement patterns showing distribution of consensus levels and corresponding resolution procedures.}
+    \label{tab:consensus_analysis}
+\end{table}
+
+\subsubsection{Structured Delphi Consensus Process}\label{subsubsec:inter-reviewer-agreement-delphi-process}
+
+The structured Delphi process comprised four iterative rounds designed to achieve methodological consensus:
+
+\paragraph{Round 1: Independent Assessment}
+Independent evaluation of 50 randomly selected papers by each reviewer, with detailed rationale documentation for all inclusion/exclusion decisions. This round revealed three primary disagreement areas requiring structured resolution.
+
+\paragraph{Round 2: Anonymous Feedback Integration}
+Anonymized statistical summaries of group responses were provided alongside peer rationales, enabling reviewers to understand alternative perspectives without bias from author identity.
+
+\paragraph{Round 3: Operational Guidelines Development}
+Employed nominal group techniques \citep{delbecq1971group} to develop operational screening guidelines addressing: (1) quantitative thresholds for big data characteristics, (2) minimum reporting standards for numerical methods, and (3) decision rules for hybrid approach classification.
+
+\paragraph{Round 4: Validation and Reliability Achievement}
+Served as validation, achieving the target Krippendorff's α $\geq$ 0.8 required for systematic review reliability standards \citep{krippendorff2004reliability}.
+
+\subsubsection{Controversial Papers Resolution}\label{subsubsec:inter-reviewer-agreement-controversial-papers}
+
+Twenty-eight papers (21.2\% of Phase 3 papers) required comprehensive consensus resolution due to split reviewer decisions. These controversial papers underwent detailed analysis to identify sources of disagreement and establish consistent evaluation criteria.
+
+The primary sources of disagreement were systematically categorized:
+\begin{itemize}
+    \item \textbf{Big data context ambiguity}: 45\% of disputes centered on whether studies adequately demonstrated big data characteristics (volume, velocity, variety, or specialized infrastructure requirements)
+    \item \textbf{Numerical methods relevance}: 38\% involved disagreements about the relevance of optimization approaches to computational mathematics for deep learning
+    \item \textbf{Methodological rigor assessment}: 31\% concerned the adequacy of experimental design and validation procedures
+    \item \textbf{Distributed computing classification}: 24\% involved classification of hybrid approaches combining numerical and distributed techniques
+\end{itemize}
+
+\subsubsection{Detailed Reviewer Deliberation Process}\label{subsubsec:inter-reviewer-agreement-deliberation-process}
+
+The 28 disputed papers underwent comprehensive reflection involving detailed individual reviewer rationales. The distribution of final decisions following the deliberation process is summarized below:
+
+\begingroup
+\setlength{\tabcolsep}{8pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{center}
+\begin{tabular}{lccccc}
+    \toprule
+    \textbf{Final Decision} & \textbf{Alpha} & \textbf{Beta} & \textbf{Gamma} & \textbf{Delta} & \textbf{Epsilon} \\
+    \midrule
+    Include & 12 & 15 & 14 & 16 & 11 \\
+    Exclude & 16 & 13 & 14 & 12 & 17 \\
+    \midrule
+    \textbf{Agreement Rate (\%)} & \textbf{85.7} & \textbf{89.3} & \textbf{82.1} & \textbf{92.9} & \textbf{78.6} \\
+    \bottomrule
+\end{tabular}
+\end{center}
+\endgroup
+
+\textbf{Table:} Final reviewer decisions following deliberation process, showing high post-consensus agreement rates across all reviewers.
+
+The consensus resolution process achieved substantial improvement in inter-reviewer reliability, with post-deliberation Krippendorff's alpha increasing to 0.87, exceeding the 0.8 threshold for acceptable agreement in systematic reviews.
+
+\subsubsection{Cross-Phase Agreement Protocols}\label{subsubsec:inter-reviewer-agreement-cross-phase}
+
+Inter-reviewer agreement protocols were applied consistently across all review phases:
+
+\paragraph{Phase 2 Application:} Title and abstract screening employed the consensus framework developed through the Delphi process, with disputed papers (21.2\%) resolved through structured deliberation sessions.
+
+\paragraph{Phase 3 Application:} Quality assessment utilized the same inter-reviewer reliability measures, with Krippendorff's alpha maintained above 0.8 throughout the evaluation process.
+
+\paragraph{Phase 4 Application:} Data extraction employed dual-coding protocols with inter-coder reliability checks, ensuring consistent application of extraction frameworks across all included studies.
+
+\subsubsection{Final Agreement Metrics and Quality Assurance}\label{subsubsec:inter-reviewer-agreement-final-metrics}
+
+The comprehensive consensus resolution process achieved impressive methodological rigor metrics:
+
+\begin{itemize}
+    \item \textbf{Overall retention rate}: 3.8\% (77 papers from 2,041 initial retrievals)
+    \item \textbf{Quality screening efficiency}: 58.3\% of papers entering Phase 3 were ultimately included
+    \item \textbf{Reviewer consensus rate}: 78.8\% of papers achieved immediate consensus without requiring deliberation
+    \item \textbf{Inter-reviewer reliability}: Post-consensus Krippendorff's α = 0.87
+    \item \textbf{Disputed paper resolution success}: 100% of disputed papers achieved final consensus
+\end{itemize}
+
+This systematic inter-reviewer agreement process demonstrates methodological rigor through multiple validation checkpoints, comprehensive consensus protocols, and transparent documentation of all disagreement resolutions. The consistent application of these protocols across all review phases ensures the reliability and validity of our systematic literature review findings.
 
 % \begin{figure}
 %     \centering
